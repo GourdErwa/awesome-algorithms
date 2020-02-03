@@ -1,6 +1,6 @@
-package io.groud.java.leetcode.array;
+package io.groud.leetcode.algorithms.array;
 
-import io.groud.scala.leetcode.array.TwoSum;
+import io.groud.leetcode.algorithms.array.TwoSum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -10,7 +10,7 @@ import static org.junit.Assert.assertArrayEquals;
  */
 class TwoSumTest {
 
-    private final io.groud.scala.leetcode.array.TwoSum twoSum = new TwoSum();
+    private final TwoSum twoSum = new TwoSum();
 
     private static final int[] ARRAY_NUMS_1 = {2, 7, 11, 15};
     private static final int TARGET_1 = 9;

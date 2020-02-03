@@ -1,4 +1,4 @@
-package io.groud.scala.leetcode.array;
+package io.groud.leetcode.algorithms.array;
 
 import java.util.HashMap;
 import java.util.Map;
