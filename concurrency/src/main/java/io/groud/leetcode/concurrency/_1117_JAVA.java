@@ -10,10 +10,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @author Li.Wei by 2020/2/3
  */
-public class H20_1117_JAVA {
+public class _1117_JAVA {
 
     /**
      * Semaphore + CyclicBarrier
+     * <p>
+     * CyclicBarrier 比较重量级
      */
     class H2O {
 
@@ -58,7 +60,7 @@ public class H20_1117_JAVA {
     // AtomicInteger
 }
 
-class H20_1117_JAVA_1 {
+class _1117_JAVA_1 {
 
     /**
      * Semaphore + AtomicInteger
