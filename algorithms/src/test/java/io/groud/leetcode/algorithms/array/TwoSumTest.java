@@ -1,9 +1,8 @@
 package io.groud.leetcode.algorithms.array;
 
-import io.groud.leetcode.algorithms.array.TwoSum;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * @author Li.Wei by 2019/11/27

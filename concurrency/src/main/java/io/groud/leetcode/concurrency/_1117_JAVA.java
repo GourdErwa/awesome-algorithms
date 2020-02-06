@@ -55,9 +55,6 @@ public class _1117_JAVA {
             o.release();
         }
     }
-
-
-    // AtomicInteger
 }
 
 class _1117_JAVA_1 {
