@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 /**
  * https://leetcode-cn.com/problems/plus-one/
+ * 66. 加一
  *
  * @author Li.Wei by 2020/2/6
  */
-public class _66_JAVA {
+public class _66_JAVA_加一 {
     // 日常暴力思维-不是最优解法
     public int[] plusOne(int[] digits) {
 
@@ -77,7 +78,7 @@ public class _66_JAVA {
 
 
     public static void main(String[] args) {
-        _66_JAVA java = new _66_JAVA();
+        _66_JAVA_加一 java = new _66_JAVA_加一();
 
         System.out.println(Arrays.toString(java.plusOne1(new int[]{1, 2, 3})));
 

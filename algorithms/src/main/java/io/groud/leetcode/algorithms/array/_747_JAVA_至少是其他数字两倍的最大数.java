@@ -2,10 +2,11 @@ package io.groud.leetcode.algorithms.array;
 
 /**
  * https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
+ * 747. 至少是其他数字两倍的最大数
  *
  * @author Li.Wei by 2020/2/6
  */
-public class _747_JAVA {
+public class _747_JAVA_至少是其他数字两倍的最大数 {
 
     /**
      * 2 次循环比较，有一个条件不满足时跳出内层循环
@@ -50,7 +51,7 @@ public class _747_JAVA {
     }
 
     public static void main(String[] args) {
-        _747_JAVA java = new _747_JAVA();
+        _747_JAVA_至少是其他数字两倍的最大数 java = new _747_JAVA_至少是其他数字两倍的最大数();
 //        System.out.println(java.dominantIndex(new int[]{3, 6, 3, 22, 5, 6}));
 //        System.out.println(java.dominantIndex(new int[]{1, 7, 3, 6, 5, 6}));
 //        System.out.println(java.dominantIndex(new int[]{0, 0, 2, 3}));

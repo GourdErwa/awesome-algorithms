@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  */
 class TwoSumTest {
 
-    private final TwoSum twoSum = new TwoSum();
+    private final _1_JAVA_两数之和 a1JAVA两数之和 = new _1_JAVA_两数之和();
 
     private static final int[] ARRAY_NUMS_1 = {2, 7, 11, 15};
     private static final int TARGET_1 = 9;
@@ -21,19 +21,19 @@ class TwoSumTest {
 
     @Test
     void twoSum() {
-        assertArrayEquals(twoSum.twoSum(ARRAY_NUMS_1, TARGET_1), ASSERT_1);
-        assertArrayEquals(twoSum.twoSum(ARRAY_NUMS_2, TARGET_2), ASSERT_2);
+        assertArrayEquals(a1JAVA两数之和.twoSum(ARRAY_NUMS_1, TARGET_1), ASSERT_1);
+        assertArrayEquals(a1JAVA两数之和.twoSum(ARRAY_NUMS_2, TARGET_2), ASSERT_2);
     }
 
     @Test
     void twoSum1() {
-        assertArrayEquals(twoSum.twoSum1(ARRAY_NUMS_1, TARGET_1), ASSERT_1);
-        assertArrayEquals(twoSum.twoSum1(ARRAY_NUMS_2, TARGET_2), ASSERT_2);
+        assertArrayEquals(a1JAVA两数之和.twoSum1(ARRAY_NUMS_1, TARGET_1), ASSERT_1);
+        assertArrayEquals(a1JAVA两数之和.twoSum1(ARRAY_NUMS_2, TARGET_2), ASSERT_2);
     }
 
     @Test
     void twoSum2() {
-        assertArrayEquals(twoSum.twoSum2(ARRAY_NUMS_1, TARGET_1), ASSERT_1);
-        assertArrayEquals(twoSum.twoSum2(ARRAY_NUMS_2, TARGET_2), ASSERT_2);
+        assertArrayEquals(a1JAVA两数之和.twoSum2(ARRAY_NUMS_1, TARGET_1), ASSERT_1);
+        assertArrayEquals(a1JAVA两数之和.twoSum2(ARRAY_NUMS_2, TARGET_2), ASSERT_2);
     }
 }
