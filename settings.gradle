@@ -1,4 +1,5 @@
 rootProject.name = 'leetcode'
 include 'algorithms'
 include 'concurrency'
+include 'data-structures'
 

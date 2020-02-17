@@ -55,4 +55,34 @@ public class S {
     public void con() {
         index = ++index > 10 ? 0 : index;
     }
+
+    /**
+     * Code:
+     * stack=2, locals=3, args_size=3
+     * 0: iload_1
+     * 1: iload_2
+     * 2: if_icmple     9
+     * 5: iconst_1
+     * 6: goto          10
+     * 9: iconst_0
+     * 10: ireturn
+     */
+    public boolean lt(int m, int n) {
+        return m > n;
+    }
+
+    /**
+     * Code:
+     * stack=2, locals=3, args_size=3
+     * 0: iload_1
+     * 1: iload_2
+     * 2: if_icmplt     9
+     * 5: iconst_1
+     * 6: goto          10
+     * 9: iconst_0
+     * 10: ireturn
+     */
+    public boolean lte(int m, int n) {
+        return m >= n;
+    }
 }

@@ -37,6 +37,7 @@ public class _1114_JAVA {
         }
     }
 }
+
 class _1114_JAVA_1 {
     class Foo {
 
