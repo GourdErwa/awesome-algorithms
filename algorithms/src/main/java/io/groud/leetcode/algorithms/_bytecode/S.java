@@ -85,4 +85,20 @@ public class S {
     public boolean lte(int m, int n) {
         return m >= n;
     }
+
+    // 测试 在 for 外面声明对象问题。
+    public void forObjectOutline() {
+        Object o;
+        for (int i = 0; i < 10; i++) {
+            o = new Object();
+            System.out.println(o);
+        }
+    }
+
+    public void forObjectInline() {
+        for (int i = 0; i < 10; i++) {
+            Object o = new Object();
+            System.out.println(o);
+        }
+    }
 }

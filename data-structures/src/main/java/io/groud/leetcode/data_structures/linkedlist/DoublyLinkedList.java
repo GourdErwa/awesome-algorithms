@@ -10,6 +10,7 @@ import com.sun.tools.javac.util.Assert;
  * @author Li.Wei by 2020/2/17
  */
 public class DoublyLinkedList {
+
     private DoublyLinkedList() {
     }
 
