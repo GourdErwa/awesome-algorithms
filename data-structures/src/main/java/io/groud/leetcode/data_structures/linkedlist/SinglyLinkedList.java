@@ -1,7 +1,5 @@
 package io.groud.leetcode.data_structures.linkedlist;
 
-import com.sun.tools.javac.util.Assert;
-
 /**
  * 设计链表 - 单链表实现
  * https://leetcode-cn.com/problems/design-linked-list/
@@ -98,9 +96,9 @@ public class SinglyLinkedList {
         linkedList.addAtHead(1);
         linkedList.addAtTail(3);
         linkedList.addAtIndex(1, 2);   //链表变为1-> 2-> 3
-        Assert.check(linkedList.get(1) == 2);
+        //Assert.check(linkedList.get(1) == 2);
         linkedList.deleteAtIndex(1);  //现在链表是1-> 3
-        Assert.check(linkedList.get(1) == 3);
+        //Assert.check(linkedList.get(1) == 3);
 
         MyLinkedList linkedList1 = new MyLinkedList();
         linkedList1.addAtHead(1);
@@ -123,16 +121,16 @@ public class SinglyLinkedList {
         linkedList3.addAtHead(6);
         linkedList3.addAtTail(4);
 
-        Assert.check(linkedList3.get(4) == 4);
+        //Assert.check(linkedList3.get(4) == 4);
         linkedList3.addAtHead(4);
 
         MyLinkedList linkedList4 = new MyLinkedList();
         linkedList4.addAtHead(1);
         linkedList4.addAtTail(3);
         linkedList4.addAtIndex(1, 2);
-        Assert.check(linkedList4.get(1) == 2);
+        //Assert.check(linkedList4.get(1) == 2);
         linkedList4.deleteAtIndex(1);
-        Assert.check(linkedList4.get(1) == 3);
+        //Assert.check(linkedList4.get(1) == 3);
 
         MyLinkedList linkedList5 = new MyLinkedList();
         linkedList5.addAtHead(7);
@@ -141,9 +139,9 @@ public class SinglyLinkedList {
         linkedList5.addAtTail(8);
         linkedList5.addAtHead(6);
         linkedList5.addAtHead(0);
-        Assert.check(linkedList5.get(5) == 8);
+        //Assert.check(linkedList5.get(5) == 8);
         linkedList5.addAtHead(2);
-        Assert.check(linkedList5.get(5) == 7);
+        //Assert.check(linkedList5.get(5) == 7);
 
         // ["addAtTail","addAtTail","addAtIndex","deleteAtIndex","deleteAtIndex","addAtTail"]
         // [[0],[5],[6,3],[7],[5],[4]]

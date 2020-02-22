@@ -1,6 +1,5 @@
 package io.groud.leetcode.algorithms.linkedlist;
 
-import com.sun.tools.javac.util.Assert;
 
 /**
  * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/

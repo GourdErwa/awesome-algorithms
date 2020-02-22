@@ -74,6 +74,11 @@ public class _102_JAVA_二叉树的层次遍历 {
     }
 
 
+    /*
+     *   [3]
+     * [9, 20]
+     *   [15, 7]
+     */
     public static void main(String[] args) {
         TreeNode treeNode15 = new TreeNode(15);
         TreeNode treeNode7 = new TreeNode(7);

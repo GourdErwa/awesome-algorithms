@@ -1,7 +1,5 @@
 package io.groud.leetcode.algorithms.linkedlist;
 
-import com.sun.tools.javac.util.Assert;
-
 /**
  * https://leetcode-cn.com/problems/linked-list-cycle-ii/
  * <p>
@@ -68,6 +66,6 @@ public class _142_JAVA_环形链表II {
         n4.next = n2;
         _142_JAVA_环形链表II java = new _142_JAVA_环形链表II();
         ListNode r = java.detectCycle(n1);
-        Assert.check(r != null);
+        //Assert.check(r != null);
     }
 }
