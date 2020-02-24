@@ -42,7 +42,7 @@ public class _JAVA_递归乘法 {
     public int multiply2Help(int A, int B, int missPart) {
         if (A < 2) return missPart + B;
         missPart += (A & 1) == 1 ? B : 0; // 是否为奇数
-        return multiply2Help(A / 2, B << 1, missPart);
+        return multiply2Help(A >> 1, B << 1, missPart); // 位移运算优化
     }
 
     public static void main(String[] args) {
@@ -53,5 +53,7 @@ public class _JAVA_递归乘法 {
         System.out.println(java.multiply2(10, 10));
 //        if (java.multiply1(10, 10) != 100) throw new AssertionError();
 //        if (java.multiply1(10, 11) != 110) throw new AssertionError();
+
+        System.out.println(10 >> 1);
     }
 }

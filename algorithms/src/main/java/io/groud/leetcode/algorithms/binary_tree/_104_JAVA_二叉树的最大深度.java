@@ -1,7 +1,5 @@
 package io.groud.leetcode.algorithms.binary_tree;
 
-import java.util.*;
-
 /**
  * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
  * 关键字：广度优先、深度优先
@@ -29,8 +27,9 @@ public class _104_JAVA_二叉树的最大深度 {
     }
 
     // 二叉树的最大深度：自底向上，子节点每计算一次深度 +1
+    // 递推关系：f(n) = 1 + Max(f(n.left),f(n.right))
     public int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) return 0; // 基本情况
         final int leftDepth = maxDepth(root.left); // 左子树
         final int rightDepth = maxDepth(root.right); // 右子树
         return Math.max(leftDepth, rightDepth) + 1; // 只记录最大深度
