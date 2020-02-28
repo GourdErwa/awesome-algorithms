@@ -101,4 +101,8 @@ public class S {
             System.out.println(o);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("~~");
+    }
 }

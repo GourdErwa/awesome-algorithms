@@ -12,20 +12,35 @@ import java.util.Arrays;
  */
 public class _344_JAVA_反转字符串 {
 
-    public void reverseString(char[] s) {
+    public void reverseString(char[] chars) {
         int min = 0;
-        int max = s.length - 1;
+        int max = chars.length - 1;
         while (min < max) {
-            char minVal = s[min];
-            s[min++] = s[max];
-            s[max--] = minVal;
+            char minVal = chars[min];
+            chars[min++] = chars[max];
+            chars[max--] = minVal;
         }
+    }
+
+    /**
+     * 基本条件：
+     */
+    public void reverseString1(char[] chars) {
+        reverseStringHelper(chars, 0, chars.length - 1);
+    }
+
+    public void reverseStringHelper(char[] chars, int l, int r) {
+        if (l > r) return;
+        char aChar = chars[l];
+        chars[l] = chars[r];
+        chars[r] = aChar;
+        reverseStringHelper(chars, l + 1, r - 1);
     }
 
     public static void main(String[] args) {
         _344_JAVA_反转字符串 java = new _344_JAVA_反转字符串();
-        char[] s = {'h', 'l', 'l', 'o', 'w'};
-        java.reverseString(s);
-        System.out.println(Arrays.toString(s));
+        char[] chars = {'h', 'l', 'l', 'o', 'w'};
+        java.reverseString1(chars);
+        System.out.println(Arrays.toString(chars));
     }
 }

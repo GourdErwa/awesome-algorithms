@@ -66,7 +66,9 @@ public class _JAVA_青蛙跳台阶问题 {
     public int numWaysFor(int n) {
         if (n < 2) return n;
 
-        int i = 2; int a = 1; int b = 1; // 与尾递归 numWaysTailHelp 一致
+        int i = 2;
+        int a = 1;
+        int b = 1; // 与尾递归 numWaysTailHelp 一致
         int count = a + b; // 保存次数，将尾递归的返回值提取为变量
 
         while (i <= n) { // 1-n 的过程
