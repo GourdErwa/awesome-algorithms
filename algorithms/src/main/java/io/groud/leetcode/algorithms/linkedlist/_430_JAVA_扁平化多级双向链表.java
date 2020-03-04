@@ -4,8 +4,9 @@ package io.groud.leetcode.algorithms.linkedlist;
  * https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/
  * <p>
  * 关键字：前序遍历
- *
+ * <p>
  * TODO 未完成
+ *
  * @author Li.Wei by 2020/2/18
  */
 public class _430_JAVA_扁平化多级双向链表 {
