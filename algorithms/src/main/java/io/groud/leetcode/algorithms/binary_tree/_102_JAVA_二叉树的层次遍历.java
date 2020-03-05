@@ -4,9 +4,9 @@ import java.util.*;
 
 /**
  * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
- * tag：广度优先、深度优先
+ * tag：bfs、dfs
  * <p>
- * 迭代每一层即广度优先，使用递归直接深度遍历每一列即深度优先
+ * 迭代每一层即bfs，使用递归直接深度遍历每一列即dfs
  *
  * @author Li.Wei by 2020/2/20
  */
@@ -28,7 +28,7 @@ public class _102_JAVA_二叉树的层次遍历 {
         }
     }
 
-    // 迭代-广度优先
+    // 迭代-bfs
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) return Collections.emptyList();
 

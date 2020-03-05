@@ -5,15 +5,16 @@ import java.util.LinkedList;
 
 /**
  * https://leetcode-cn.com/problems/number-of-islands/
- *关键字：深度优先、广度优先
+ * 关键字：dfs、bfs
+ *
  * @author Li.Wei by 2020/3/1
  */
 public class _200_JAVA_岛屿数量 {
 
     /**
-    Flood fill 算法是从一个区域中提取若干个连通的点与其他相邻区域区分开（或分别染成不同颜色）的经典算法。
-     因为其思路类似洪水从一个区域扩散到所有能到达的区域而得名。
-     在 GNU Go 和 扫雷 中，Flood Fill算法被用来计算需要被清除的区域
+     * Flood fill 算法是从一个区域中提取若干个连通的点与其他相邻区域区分开（或分别染成不同颜色）的经典算法。
+     * 因为其思路类似洪水从一个区域扩散到所有能到达的区域而得名。
+     * 在 GNU Go 和 扫雷 中，Flood Fill算法被用来计算需要被清除的区域
      */
     static class Solution {
         // 遍历四个方向的节点

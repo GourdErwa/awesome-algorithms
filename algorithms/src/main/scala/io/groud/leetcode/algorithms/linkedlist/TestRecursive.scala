@@ -11,14 +11,14 @@ object TestRecursive {
     addHelp(n - 1, sum + n)
   }
 
-/*  public int addHelp(int n, int sum) {
-    while (true) {
-      if (n == 1)
-        return sum + 1;
-      sum += n;
-      n--;
-    }
-  }*/
+  /*  public int addHelp(int n, int sum) {
+      while (true) {
+        if (n == 1)
+          return sum + 1;
+        sum += n;
+        n--;
+      }
+    }*/
   def add(n: Int): Int = {
     if (n == 1) return 1
     n + add(n - 1)

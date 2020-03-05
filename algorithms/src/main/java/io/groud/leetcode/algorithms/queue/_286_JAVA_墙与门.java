@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * https://leetcode-cn.com/problems/walls-and-gates/
  * <p>
- * 关键字：广度优先
+ * 关键字：bfs
  *
  * @author Li.Wei by 2020/2/28
  */
@@ -50,7 +50,7 @@ public class _286_JAVA_墙与门 {
                             nextCol < 0 || nextCol >= cols || // 越界检查
                             rooms[nextRow][nextCol] != Integer.MAX_VALUE // 仅处理房间数据
                             || rooms[nextRow][nextCol] - oldValue > 1 // 如果比当前路径次数大，不进行遍历
-                    )continue;
+                    ) continue;
 
                     rooms[nextRow][nextCol] = oldValue + 1;
                     queue.add(new int[]{nextRow, nextCol});
@@ -115,6 +115,7 @@ public class _286_JAVA_墙与门 {
             return Integer.MAX_VALUE;
         }
     }
+
     // 保证 2 个房间直接的距离最短，即可保证到门的距离最短
     static class Solution2 {
         public void helper(int[][] rooms, int row, int col, int distance) {

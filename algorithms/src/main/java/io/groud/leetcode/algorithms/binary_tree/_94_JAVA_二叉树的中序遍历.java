@@ -38,7 +38,7 @@ public class _94_JAVA_二叉树的中序遍历 {
     /**
      * 迭代 借助队列存储遍历的节点
      * <p>
-     * 深度优先，搜索左子树。
+     * dfs，搜索左子树。
      */
     public List<Integer> inorderTraversal1(TreeNode root) {
         if (null == root) return Collections.emptyList();

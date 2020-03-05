@@ -40,6 +40,7 @@ public class _394_JAVA_字符串解码 {
             }
             return sb.toString();
         }
+
         // 永远保持 字符串拼接在一起，类似 ef ，当 f 入栈时，让 e 出栈拼接为 ef 重新入栈
         // 添加字符串时，如果栈为空直接出栈，否则是一个嵌套子表达式，重新入栈
         private void pushStr(Deque<String> deque, StringBuilder sb, String s) {
@@ -53,7 +54,7 @@ public class _394_JAVA_字符串解码 {
     public static void main(String[] args) {
         Solution o = new Solution();
         // System.out.println(o.decodeString("2[ab]"));
-         System.out.println(o.decodeString("2[abc]3[cd]ef2[kj]"));
+        System.out.println(o.decodeString("2[abc]3[cd]ef2[kj]"));
         System.out.println(o.decodeString("3[a2[c]]"));
     }
 
