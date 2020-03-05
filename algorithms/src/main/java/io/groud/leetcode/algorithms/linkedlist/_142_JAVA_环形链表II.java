@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/linked-list-cycle-ii/
  * <p>
- * 关键字：快慢指针、环形判断、环形入口节点判断
+ * tag：快慢指针、环形判断、环形入口节点判断
  *
  * @author Li.Wei by 2020/2/18
  */

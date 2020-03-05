@@ -5,7 +5,7 @@ import static io.groud.leetcode.algorithms.linkedlist.LinkedListUtil.*;
 /**
  * https://leetcode-cn.com/problems/palindrome-linked-list/
  * <p>
- * 关键字：快慢指针寻找中间点、反转链表
+ * tag：快慢指针寻找中间点、反转链表
  *
  * @author Li.Wei by 2020/2/18
  */

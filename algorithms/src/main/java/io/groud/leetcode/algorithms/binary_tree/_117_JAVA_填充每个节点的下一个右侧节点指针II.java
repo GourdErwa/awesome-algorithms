@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/
  * <p>
- * 关键字：二叉树
+ * tag：二叉树
  * <p>
  * 思路1：层级遍历，逐层保存后依次连接
  * 思路2：递归，当前节点的左右子节点应该 next 的节点为当前节点的 next 节点下的子节点

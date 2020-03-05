@@ -4,7 +4,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
  * <p>
- * 关键字：相交链表、双指针相遇条件推导。推导过程中，针对公共部分长度尝试抵消，对于减法的运算转换为加法运算（程序指针只能做加法）。
+ * tag：相交链表、双指针相遇条件推导。推导过程中，针对公共部分长度尝试抵消，对于减法的运算转换为加法运算（程序指针只能做加法）。
  * <p>
  * 精选回答：https://leetcode-cn.com/problems/intersection-of-two-linked-lists/solution/tu-jie-xiang-jiao-lian-biao-by-user7208t/
  * <p>

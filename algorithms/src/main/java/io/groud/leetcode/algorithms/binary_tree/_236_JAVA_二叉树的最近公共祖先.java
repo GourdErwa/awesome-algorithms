@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.binary_tree;
 /**
  * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
  * <p>
- * 关键字：回溯
+ * tag：回溯
  * <p>
  * 思路：
  *

@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/odd-even-linked-list/
  * <p>
- * 关键字：原地算法、节点重新连接，哨兵节点。
+ * tag：原地算法、节点重新连接，哨兵节点。
  *
  * @author Li.Wei by 2020/2/18
  */

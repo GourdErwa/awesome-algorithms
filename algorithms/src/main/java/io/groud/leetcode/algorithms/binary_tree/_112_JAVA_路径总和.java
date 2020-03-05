@@ -2,7 +2,7 @@ package io.groud.leetcode.algorithms.binary_tree;
 
 /**
  * https://leetcode-cn.com/problems/path-sum/
- * 关键字：递归（自顶向下）
+ * tag：递归（自顶向下）
  *
  * @author Li.Wei by 2020/2/20
  */

@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/rotate-list/
  * <p>
- * 关键字：循环链表，断链。
+ * tag：循环链表，断链。
  *
  * @author Li.Wei by 2020/2/18
  */

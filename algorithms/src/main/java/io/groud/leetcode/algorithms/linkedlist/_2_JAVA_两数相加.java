@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/add-two-numbers/
  * <p>
- * 关键字：求和、迭代、进位问题
+ * tag：求和、迭代、进位问题
  *
  * @author Li.Wei by 2020/2/18
  */

@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/odd-even-linked-list/
  * <p>
- * 关键字：递归
+ * tag：递归
  *
  * @author Li.Wei by 2020/2/18
  */

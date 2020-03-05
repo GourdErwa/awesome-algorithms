@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms.linkedlist;
 /**
  * https://leetcode-cn.com/problems/remove-linked-list-elements/
  * <p>
- * 关键字：双指针、哨兵节点
+ * tag：双指针、哨兵节点
  *
  * @author Li.Wei by 2020/2/18
  */

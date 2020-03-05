@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/
  * <p>
- * 关键字：完美二叉树
+ * tag：完美二叉树
  *
  * @author Li.Wei by 2020/2/20
  */

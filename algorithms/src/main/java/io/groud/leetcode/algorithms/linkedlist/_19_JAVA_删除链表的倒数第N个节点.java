@@ -5,7 +5,7 @@ package io.groud.leetcode.algorithms.linkedlist;
  * <p>
  * 你能尝试使用一趟扫描实现吗？
  * <p>
- * 关键字：删除倒数节点、滑动窗口
+ * tag：删除倒数节点、滑动窗口
  *
  * @author Li.Wei by 2020/2/18
  */
