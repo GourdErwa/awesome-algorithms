@@ -1,13 +1,12 @@
 package io.groud.leetcode.algorithms.stack;
 
-import scala.Int;
-
 import java.util.Deque;
 import java.util.LinkedList;
 
 /**
  * https://leetcode-cn.com/problems/decode-string/
  *
+ * TODO 需要优化
  * @author Li.Wei by 2020/3/1
  */
 public class _394_JAVA_字符串解码 {
