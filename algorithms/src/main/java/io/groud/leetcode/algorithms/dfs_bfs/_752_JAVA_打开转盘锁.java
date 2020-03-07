@@ -1,4 +1,4 @@
-package io.groud.leetcode.algorithms.bfs;
+package io.groud.leetcode.algorithms.dfs_bfs;
 
 import java.util.*;
 

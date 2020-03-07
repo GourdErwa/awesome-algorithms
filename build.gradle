@@ -4,7 +4,7 @@ allprojects {
     }
 
     apply plugin: 'idea'
-    group 'io.groud'
+    group 'io.groud.leetcode'
     version '0.1'
 }
 

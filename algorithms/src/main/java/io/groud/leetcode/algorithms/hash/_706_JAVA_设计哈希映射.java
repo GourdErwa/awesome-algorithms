@@ -1,4 +1,4 @@
-package io.groud.leetcode.algorithms.hashmap;
+package io.groud.leetcode.algorithms.hash;
 
 public class _706_JAVA_设计哈希映射 {
 
