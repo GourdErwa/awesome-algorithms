@@ -1,5 +1,11 @@
 # Project exclude paths
 /.gradle/
-./*/build/
 .idea/*
-.settings/*
+.project
+
+**/.settings/
+*/build/*
+*/bin/*
+*/out/*
+*/.classpath
+*/.project

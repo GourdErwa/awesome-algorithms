@@ -5,8 +5,9 @@ import java.util.LinkedList;
 
 /**
  * https://leetcode-cn.com/problems/decode-string/
- *
+ * <p>
  * TODO 需要优化
+ *
  * @author Li.Wei by 2020/3/1
  */
 public class _394_JAVA_字符串解码 {

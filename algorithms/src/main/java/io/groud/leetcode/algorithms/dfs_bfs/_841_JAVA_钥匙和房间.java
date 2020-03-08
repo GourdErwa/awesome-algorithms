@@ -6,7 +6,6 @@ import java.util.*;
  * https://leetcode-cn.com/problems/keys-and-rooms/
  * tag：dfs、bfs
  *
- *
  * @author Li.Wei by 2020/3/4
  */
 public class _841_JAVA_钥匙和房间 {
@@ -14,7 +13,7 @@ public class _841_JAVA_钥匙和房间 {
     /**
      * bfs , 记忆访问过的房间，最终比对访问与总房间数
      * 使用双向队列，修改入队出队方式直接变为 dfs 遍历即可。
-     *
+     * <p>
      * visited.add(r) 判断比使用 visited.contains 方法没有再 add 性能更优。
      * 因为 hashSet 底层使用 hashMap 实现，判断重复时候已经可以拿到返回值。
      * 尤其在出现 hash 冲突时，两次操作耗时更长

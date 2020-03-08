@@ -98,9 +98,9 @@ public class _542_JAVA_01矩阵 {
                     for (int[] round : around) {
                         int r = sr + round[0];
                         int c = sc + round[1];
-                        if (r < 0 || r >= rows || c < 0 || c >= cols)continue;
+                        if (r < 0 || r >= rows || c < 0 || c >= cols) continue;
                         int nextVal = matrix[r][c];
-                        if (nextVal == 0 || nextVal < currVal || remember[r][c] == 1 ) continue;
+                        if (nextVal == 0 || nextVal < currVal || remember[r][c] == 1) continue;
                         matrix[r][c] = Math.min(currVal, nextVal); // 记录为最小路径
                         remember[r][c] = 1;
                         queue.add(new int[]{r, c});
