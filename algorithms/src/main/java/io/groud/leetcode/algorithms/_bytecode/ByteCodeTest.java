@@ -3,7 +3,7 @@ package io.groud.leetcode.algorithms._bytecode;
 /**
  * @author Li.Wei by 2020/2/8
  */
-public class S {
+public class ByteCodeTest {
     int index = 0;
 
     /**
