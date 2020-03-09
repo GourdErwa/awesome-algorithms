@@ -3,4 +3,5 @@ include 'algorithms'
 include 'concurrency'
 include 'data-structures'
 include 'sort'
+include 'algorithms-template'
 

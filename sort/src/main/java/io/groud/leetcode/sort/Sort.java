@@ -15,7 +15,8 @@ public interface Sort {
     }
 
     public static void main(String[] args) {
-        Sort sort = new SelectSort();
+        Sort sort = new QuickSort();
         sort.sortPrint(new Integer[]{8, 6, 9, 3, 5, 7, 2, 1, 4});
+        sort.sortPrint(new Integer[]{8, 6, 9});
     }
 }

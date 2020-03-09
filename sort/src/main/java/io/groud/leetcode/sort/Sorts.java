@@ -7,6 +7,9 @@ package io.groud.leetcode.sort;
  */
 public class Sorts {
 
+    private Sorts() {
+    }
+
     /***************************************************************************
      *  Helper sorting functions.
      ***************************************************************************/
@@ -16,7 +19,7 @@ public class Sorts {
         return min.compareTo(max) < 0;
     }
 
-    // exchange a[i] and a[j]
+    // 替换
     public static <T> void swap(T[] a, int i, int j) {
         if (i == j) return;
         T swap = a[i];
@@ -24,8 +27,9 @@ public class Sorts {
         a[j] = swap;
     }
 
-    static <T extends Comparable> boolean comSwap(T[] a, int i, int j) {
-        if (a[i].compareTo(a[j]) > 0) {
+    // 比较替换
+    public static <T extends Comparable> boolean comSwap(T[] a, int i, int j) {
+        if (i != j && a[i].compareTo(a[j]) > 0) {
             T temp = a[i];
             a[i] = a[j];
             a[j] = temp;
@@ -34,22 +38,18 @@ public class Sorts {
         return false;
     }
 
-    /***************************************************************************
-     *  Check if array is sorted - useful for debugging.
-     ***************************************************************************/
-
     public static <T extends Comparable<T>> boolean isSorted(T[] a) {
         return isSorted(a, 0, a.length);
     }
 
-    // is the array a[lo..hi) sorted
+    // 数组在 lo - hi 序列上是否有序
     public static <T extends Comparable<T>> boolean isSorted(T[] a, int lo, int hi) {
         for (int i = lo + 1; i < hi; i++)
             if (less(a[i], a[i - 1])) return false;
         return true;
     }
 
-    // print array to standard output
+    // 控制台打印数组内容
     public static <T> void show(Comparable<T>[] a) {
         System.out.println();
         for (Comparable<T> tComparable : a) System.out.print(tComparable + " ");
