@@ -83,6 +83,16 @@ public class _322_JAVA_零钱兑换 {
         }
     }
 
+    /*
+    dp 思路：
+    确定状态
+
+    确定子问题
+
+    状态转移方程
+
+    计算顺序
+     */
     // 动态规划-自上而下[通过]
     // https://leetcode-cn.com/problems/coin-change/solution/322-ling-qian-dui-huan-by-leetcode-solution/
     public class Solution3 {
@@ -99,8 +109,7 @@ public class _322_JAVA_零钱兑换 {
             int min = Integer.MAX_VALUE;
             for (int coin : coins) {
                 int res = coinChange(coins, rem - coin, count);
-                if (res >= 0 && res < min)
-                    min = 1 + res;
+                if ((res >= 0) && (res < min)) min = 1 + res;
             }
             count[rem - 1] = (min == Integer.MAX_VALUE) ? -1 : min;
             return count[rem - 1];
