@@ -4,7 +4,7 @@
 .project
 
 **/.settings/
-*/build/*
+**/build/*
 */bin/*
 */out/*
 */.classpath
