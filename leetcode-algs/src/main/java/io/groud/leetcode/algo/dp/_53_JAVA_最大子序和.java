@@ -7,7 +7,7 @@ package io.groud.leetcode.algo.dp;
  * TODO 贪心、分治未完成
  */
 public class _53_JAVA_最大子序和 {
-    /**
+    /*
      * DP
      * 1. 确定状态
      * 最优策略的最后一步：最终最大值 = max(f(n))
