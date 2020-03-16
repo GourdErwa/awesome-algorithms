@@ -14,7 +14,7 @@ class SortTest {
     private static final Sort[] IMP =
             {
                     new BubbleSort(), new InsertionSort(), new QuickSort(), new SelectSort()
-                    , new MergeSort()
+                    , new MergeSortInPlace(), new MergeSortNonInPlace()
             };
 
     @BeforeEach
@@ -28,7 +28,7 @@ class SortTest {
     @Test
     void sort() {
         for (Sort sort : IMP) {
-            //sort.sortPrint(INTEGER_ARRAY_DEFAULT);
+            sort.sortPrint(INTEGER_ARRAY_DEFAULT);
         }
     }
 

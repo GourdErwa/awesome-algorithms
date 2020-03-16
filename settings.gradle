@@ -1,8 +1,9 @@
 rootProject.name = 'algorithms'
-include 'leetcode-algs'
-include 'leetcode-concurrency'
 include 'data-structures'
 include 'algs4'
 include 'algs-template'
-include 'jz-offer'
+include 'leetcode-algs'
+include 'leetcode-concurrency'
+include 'leetcode-jz_offer'
+include 'leetcode-msbd'
 

@@ -29,22 +29,22 @@ import static io.groud.algs.tpl.sort.Sorts.swap;
 public class SelectSort implements Sort {
 
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
-        int length = array.length;
+    public <T extends Comparable<T>> T[] sort(T[] a) {
+        int length = a.length;
         int i = 0;
         while (i < length) { // 遍历每个元素
-            T min = array[i]; // 当前元素最小值临时变量
+            T min = a[i]; // 当前元素最小值临时变量
             int minIndex = i; // 当前元素最小值对应数组下标
 
             for (int j = i + 1; j < length; j++) { // 当前元素与后续数组元素比对
-                if (less(array[j], min)) { // 如果后续元素比当前元素小更新最小值记录
+                if (less(a[j], min)) { // 如果后续元素比当前元素小更新最小值记录
                     minIndex = j;
-                    min = array[j];
+                    min = a[j];
                 }
             }
-            swap(array, i, minIndex); // 交换
+            swap(a, i, minIndex); // 交换
             i++;
         }
-        return array;
+        return a;
     }
 }

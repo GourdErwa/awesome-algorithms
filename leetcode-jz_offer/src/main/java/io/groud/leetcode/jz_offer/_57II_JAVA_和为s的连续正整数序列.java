@@ -1,4 +1,4 @@
-package io.gourd.jzoffer;
+package io.groud.leetcode.jz_offer;
 
 import java.util.ArrayList;
 import java.util.Arrays;

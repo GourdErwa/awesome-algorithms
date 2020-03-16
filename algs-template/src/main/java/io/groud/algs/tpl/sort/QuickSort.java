@@ -26,27 +26,27 @@ package io.groud.algs.tpl.sort;
  */
 public class QuickSort implements Sort {
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
-        partitionSort(array, 0, array.length - 1);
-        return array;
+    public <T extends Comparable<T>> T[] sort(T[] a) {
+        partitionSort(a, 0, a.length - 1);
+        return a;
     }
 
     // 8 6 9
-    private <T extends Comparable<T>> void partitionSort(T[] array, int lo, int hi) {
+    private <T extends Comparable<T>> void partitionSort(T[] a, int lo, int hi) {
         if (lo >= hi) return;
 
-        T flag = array[lo]; // 当前中间值
+        T flag = a[lo]; // 当前中间值
         int i = lo + 1;// 中间值左边指针
         int y = hi;// 中间值右边指针
         while (true) {
-            while (array[i].compareTo(flag) < 0 && i < hi) i++; // 找大于中间值
-            while (array[y].compareTo(flag) > 0 && y > lo) y--; // 找小于中间值
+            while (a[i].compareTo(flag) < 0 && i < hi) i++; // 找大于中间值
+            while (a[y].compareTo(flag) > 0 && y > lo) y--; // 找小于中间值
             if (i >= y) break; // 碰撞说明寻找结束，此时 y 的位置是中间值的位置
-            Sorts.swap(array, i++, y--); // 如果没有碰撞，交换数据继续寻找
+            Sorts.swap(a, i++, y--); // 如果没有碰撞，交换数据继续寻找
         }
 
-        Sorts.swap(array, lo, y); // 将中间值放到正确 y 的位置
-        partitionSort(array, lo, y); // 中间值左部分继续排序
-        partitionSort(array, y + 1, hi); // 中间值右部分继续排序
+        Sorts.swap(a, lo, y); // 将中间值放到正确 y 的位置
+        partitionSort(a, lo, y); // 中间值左部分继续排序
+        partitionSort(a, y + 1, hi); // 中间值右部分继续排序
     }
 }

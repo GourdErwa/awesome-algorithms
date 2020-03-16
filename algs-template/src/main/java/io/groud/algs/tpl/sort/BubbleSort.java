@@ -41,18 +41,18 @@ import static io.groud.algs.tpl.sort.Sorts.comSwap;
 public class BubbleSort implements Sort {
 
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
-        int length = array.length;
+    public <T extends Comparable<T>> T[] sort(T[] a) {
+        int length = a.length;
         int count = 1;
         while (count < length) {
             int forLength = length - count;
             boolean needSwap = false; // 如果一次都不需要进行交换，说明本身已经有序
             for (int i = 0; i < forLength; i++) {
-                needSwap = needSwap || comSwap(array, i, i + 1);
+                needSwap = comSwap(a, i, i + 1) || needSwap; // 注意顺序，比较交换必须要先进行
             }
-            if (!needSwap) return array;
+            if (!needSwap) return a;
             count++;
         }
-        return array;
+        return a;
     }
 }

@@ -16,8 +16,8 @@ package io.groud.algs.tpl.sort;
 public class TemplateSort implements Sort {
 
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
+    public <T extends Comparable<T>> T[] sort(T[] a) {
         // 模板
-        return array;
+        return a;
     }
 }

@@ -29,7 +29,7 @@ public class Sorts {
 
     // 比较替换
     public static <T extends Comparable<T>> boolean comSwap(T[] a, int i, int j) {
-        if (i != j && a[i].compareTo(a[j]) > 0) {
+        if (i != j && less(a[j], a[i])) {
             T temp = a[i];
             a[i] = a[j];
             a[j] = temp;

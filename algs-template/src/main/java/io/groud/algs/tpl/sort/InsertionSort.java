@@ -29,18 +29,18 @@ import static io.groud.algs.tpl.sort.Sorts.comSwap;
 public class InsertionSort implements Sort {
 
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
-        int length = array.length;
+    public <T extends Comparable<T>> T[] sort(T[] a) {
+        int length = a.length;
         int i = 1;
         while (i < length) {
             int curr = i;
             while (curr > 0) {
                 // 当前值 < 前面的值进行替换，如果无需进行替换，说明已经在正确位置
-                if (!comSwap(array, curr - 1, curr)) break;
+                if (!comSwap(a, curr - 1, curr)) break;
                 curr--; // 左移指针，准备进行下一次比较插入
             }
             i++; // 指向下一个待插入的元素
         }
-        return array;
+        return a;
     }
 }
