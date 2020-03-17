@@ -11,8 +11,10 @@ public class _162_JAVA_寻找峰值 {
             int from = 0, to = nums.length - 1;
             while (from < to) {
                 int mid = from + ((to - from) >> 1);
-                if (nums[mid] > nums[mid + 1]) to = mid;
-                else from = mid + 1;
+                if (nums[mid] > nums[mid + 1])
+                    to = mid;
+                else
+                    from = mid + 1;
             }
             return from;
         }

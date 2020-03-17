@@ -48,6 +48,6 @@ public class _209_JAVA_长度最小的子数组 {
 
     public static void main(String[] args) {
         _209_JAVA_长度最小的子数组 java = new _209_JAVA_长度最小的子数组();
-        java.minSubArrayLen1(7, new int[]{2, 3, 1, 2, 4, 3});
+        java.minSubArrayLen1(7, new int[] {2, 3, 1, 2, 4, 3});
     }
 }

@@ -42,7 +42,8 @@ public class _202_JAVA_快乐数 {
             while (fast != 1) {
                 fast = nextNum(nextNum(fast));
                 slow = nextNum(slow);
-                if (slow == fast) return false;
+                if (slow == fast)
+                    return false;
             }
             return true;
         }

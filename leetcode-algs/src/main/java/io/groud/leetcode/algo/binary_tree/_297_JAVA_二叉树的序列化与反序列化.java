@@ -36,11 +36,12 @@ public class _297_JAVA_二叉树的序列化与反序列化 {
          / \
         4   5
      序列化为 "[1,2,3,null,null,4,5]"
-
+    
      */
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        if (root == null) return "null";
+        if (root == null)
+            return "null";
         return serializeHelp(root, new StringBuilder()).toString();
     }
 
@@ -59,7 +60,8 @@ public class _297_JAVA_二叉树的序列化与反序列化 {
 
     // 反序列化
     public TreeNode deserialize(String data) {
-        if (data == null) return null;
+        if (data == null)
+            return null;
         Deque<String> strings = new LinkedList<>(Arrays.asList(data.split(",")));
         return deserializeHelp(strings);
     }
@@ -67,7 +69,8 @@ public class _297_JAVA_二叉树的序列化与反序列化 {
     // 反序列化递归辅助类
     public TreeNode deserializeHelp(Deque<String> data) {
         final String curr = data.pollFirst();
-        if ("null".equals(curr)) return null; // 当前节点为 null
+        if ("null".equals(curr))
+            return null; // 当前节点为 null
 
         final TreeNode node = new TreeNode(Integer.valueOf(curr));
         node.left = deserializeHelp(data);

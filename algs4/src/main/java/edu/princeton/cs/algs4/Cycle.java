@@ -1,47 +1,34 @@
 /******************************************************************************
- *  Compilation:  javac Cycle.java
- *  Execution:    java  Cycle filename.txt
- *  Dependencies: Graph.java Stack.java In.java StdOut.java
- *  Data files:   https://algs4.cs.princeton.edu/41graph/tinyG.txt
- *                https://algs4.cs.princeton.edu/41graph/mediumG.txt
- *                https://algs4.cs.princeton.edu/41graph/largeG.txt  
+ * Compilation: javac Cycle.java Execution: java Cycle filename.txt Dependencies: Graph.java Stack.java In.java
+ * StdOut.java Data files: https://algs4.cs.princeton.edu/41graph/tinyG.txt
+ * https://algs4.cs.princeton.edu/41graph/mediumG.txt https://algs4.cs.princeton.edu/41graph/largeG.txt
  *
- *  Identifies a cycle.
- *  Runs in O(E + V) time.
+ * Identifies a cycle. Runs in O(E + V) time.
  *
- *  % java Cycle tinyG.txt
- *  3 4 5 3 
+ * % java Cycle tinyG.txt 3 4 5 3
  *
- *  % java Cycle mediumG.txt 
- *  15 0 225 15 
+ * % java Cycle mediumG.txt 15 0 225 15
  *
- *  % java Cycle largeG.txt 
- *  996673 762 840164 4619 785187 194717 996673 
+ * % java Cycle largeG.txt 996673 762 840164 4619 785187 194717 996673
  *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
 
 /**
- * The {@code Cycle} class represents a data type for
- * determining whether an undirected graph has a simple cycle.
- * The <em>hasCycle</em> operation determines whether the graph has
- * a cycle and, if so, the <em>cycle</em> operation returns one.
+ * The {@code Cycle} class represents a data type for determining whether an undirected graph has a simple cycle. The
+ * <em>hasCycle</em> operation determines whether the graph has a cycle and, if so, the <em>cycle</em> operation returns
+ * one.
  * <p>
- * This implementation uses depth-first search.
- * The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in the
- * worst case, where <em>V</em> is the number of vertices and
- * <em>E</em> is the number of edges.
- * (The depth-first search part takes only <em>O</em>(<em>V</em>) time;
- * however, checking for self-loops and parallel edges takes
- * &Theta;(<em>V</em> + <em>E</em>) time in the worst case.)
- * Each instance method takes &Theta;(1) time.
- * It uses &Theta;(<em>V</em>) extra space (not including the graph).
+ * This implementation uses depth-first search. The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in the worst
+ * case, where <em>V</em> is the number of vertices and <em>E</em> is the number of edges. (The depth-first search part
+ * takes only <em>O</em>(<em>V</em>) time; however, checking for self-loops and parallel edges takes &Theta;(<em>V</em>
+ * + <em>E</em>) time in the worst case.) Each instance method takes &Theta;(1) time. It uses &Theta;(<em>V</em>) extra
+ * space (not including the graph).
  *
  * <p>
- * For additional documentation, see
- * <a href="https://algs4.cs.princeton.edu/41graph">Section 4.1</a>
- * of <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/41graph">Section 4.1</a> of <i>Algorithms,
+ * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
@@ -52,21 +39,22 @@ public class Cycle {
     private Stack<Integer> cycle;
 
     /**
-     * Determines whether the undirected graph {@code G} has a cycle and,
-     * if so, finds such a cycle.
+     * Determines whether the undirected graph {@code G} has a cycle and, if so, finds such a cycle.
      *
-     * @param G the undirected graph
+     * @param G
+     *            the undirected graph
      */
     public Cycle(Graph G) {
-        if (hasSelfLoop(G)) return;
-        if (hasParallelEdges(G)) return;
+        if (hasSelfLoop(G))
+            return;
+        if (hasParallelEdges(G))
+            return;
         marked = new boolean[G.V()];
         edgeTo = new int[G.V()];
         for (int v = 0; v < G.V(); v++)
             if (!marked[v])
                 dfs(G, -1, v);
     }
-
 
     // does this graph have a self loop?
     // side effect: initialize cycle to be self loop
@@ -123,8 +111,7 @@ public class Cycle {
     /**
      * Returns a cycle in the graph {@code G}.
      *
-     * @return a cycle if the graph {@code G} has a cycle,
-     * and {@code null} otherwise
+     * @return a cycle if the graph {@code G} has a cycle, and {@code null} otherwise
      */
     public Iterable<Integer> cycle() {
         return cycle;
@@ -135,7 +122,8 @@ public class Cycle {
         for (int w : G.adj(v)) {
 
             // short circuit if cycle already found
-            if (cycle != null) return;
+            if (cycle != null)
+                return;
 
             if (!marked[w]) {
                 edgeTo[w] = v;
@@ -157,7 +145,8 @@ public class Cycle {
     /**
      * Unit tests the {@code Cycle} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);
@@ -173,30 +162,24 @@ public class Cycle {
         }
     }
 
-
 }
 
-
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

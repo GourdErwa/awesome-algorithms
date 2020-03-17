@@ -1,8 +1,7 @@
 package io.groud.leetcode.algo.array;
 
 /**
- * https://leetcode-cn.com/problems/find-pivot-index/
- * 724. 寻找数组的中心索引
+ * https://leetcode-cn.com/problems/find-pivot-index/ 724. 寻找数组的中心索引
  *
  * @author Li.Wei by 2020/2/6
  */
@@ -32,8 +31,8 @@ public class _724_JAVA_寻找数组的中心索引 {
     public static void main(String[] args) {
         _724_JAVA_寻找数组的中心索引 java = new _724_JAVA_寻找数组的中心索引();
 
-        System.out.println(java.pivotIndex1(new int[]{1, 7, 3, 6, 5, 6}));
-        System.out.println(java.pivotIndex1(new int[]{-1, -1, -1, 0, 1, 1}));
-        System.out.println(java.pivotIndex1(new int[]{1, 0}));
+        System.out.println(java.pivotIndex1(new int[] {1, 7, 3, 6, 5, 6}));
+        System.out.println(java.pivotIndex1(new int[] {-1, -1, -1, 0, 1, 1}));
+        System.out.println(java.pivotIndex1(new int[] {1, 0}));
     }
 }

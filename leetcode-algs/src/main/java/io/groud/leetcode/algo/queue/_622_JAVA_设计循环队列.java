@@ -6,30 +6,18 @@ package io.groud.leetcode.algo.queue;
 public class _622_JAVA_设计循环队列 {
 
     /**
-     * head 与 tail 相等有两种情况
-     * 1. 队列为空时，默认为都为 -1
-     * 2. 队列只有一个元素时，head 与 tail 指向该元素
+     * head 与 tail 相等有两种情况 1. 队列为空时，默认为都为 -1 2. 队列只有一个元素时，head 与 tail 指向该元素
      * <p>
-     * 入队时：
-     * 1. 队列是否已满
-     * 2. 可入队时，调整 tail 指向刚刚入队的元素
-     * 3. 考虑 head 初始化时指向 -1 时指针位置
+     * 入队时： 1. 队列是否已满 2. 可入队时，调整 tail 指向刚刚入队的元素 3. 考虑 head 初始化时指向 -1 时指针位置
      * <p>
-     * 出队时：
-     * 1. 队列是否为空
-     * 2. 出队时，如果 head 等于 tail，说明没有下一个可用元素，head tail 重新设置为 -1。否则指向下一个可用位置
+     * 出队时： 1. 队列是否为空 2. 出队时，如果 head 等于 tail，说明没有下一个可用元素，head tail 重新设置为 -1。否则指向下一个可用位置
      * <p>
-     * 判断为空：
-     * 没有可出队的元素表示为空，即 head 等于 -1 时。
+     * 判断为空： 没有可出队的元素表示为空，即 head 等于 -1 时。
      * <p>
-     * 判断队列是否已满：
-     * tail 的下一个位置不等于 head 的位置时，表示队列未满，可继续入队
+     * 判断队列是否已满： tail 的下一个位置不等于 head 的位置时，表示队列未满，可继续入队
      * <p>
-     * 缺陷：
-     * 频繁的调用 isEmpty 与 isFull 方法进行计算。可使用一个容量的变量进行控制。
-     * 取余与三元运算计算效率问题
-     * - index = (index + 1) % size
-     * - index = (index + 1) == size ? 0 : index;
+     * 缺陷： 频繁的调用 isEmpty 与 isFull 方法进行计算。可使用一个容量的变量进行控制。 取余与三元运算计算效率问题 - index = (index + 1) % size - index = (index +
+     * 1) == size ? 0 : index;
      */
     static class MyCircularQueue {
 
@@ -83,32 +71,28 @@ public class _622_JAVA_设计循环队列 {
         }
 
         /**
-         * Get the front item from the queue.
-         * 从队首获取元素。如果队列为空，返回 -1 。
+         * Get the front item from the queue. 从队首获取元素。如果队列为空，返回 -1 。
          */
         public int Front() {
             return isEmpty() ? -1 : array[head];
         }
 
         /**
-         * Get the last item from the queue.
-         * 获取队尾元素。如果队列为空，返回 -1 。
+         * Get the last item from the queue. 获取队尾元素。如果队列为空，返回 -1 。
          */
         public int Rear() {
             return isEmpty() ? -1 : array[tail];
         }
 
         /**
-         * Checks whether the circular queue is empty or not.
-         * 检查循环队列是否为空。
+         * Checks whether the circular queue is empty or not. 检查循环队列是否为空。
          */
         public boolean isEmpty() {
             return head == -1;
         }
 
         /**
-         * Checks whether the circular queue is full or not.
-         * 检查循环队列是否已满。
+         * Checks whether the circular queue is full or not. 检查循环队列是否已满。
          */
         public boolean isFull() {
             return circularIndex(tail) == head;

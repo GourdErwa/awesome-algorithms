@@ -11,19 +11,14 @@ class SortTest {
 
     private static final Integer[] INTEGER_ARRAY_DEFAULT = {8, 6, 9, 3, 5, 7, 2, 1, 4};
 
-    private static final Sort[] IMP =
-            {
-                    new BubbleSort(), new InsertionSort(), new QuickSort(), new SelectSort()
-                    , new MergeSortInPlace(), new MergeSortNonInPlace()
-            };
+    private static final Sort[] IMP = {new BubbleSort(), new InsertionSort(), new QuickSort(), new SelectSort(),
+        new MergeSortInPlace(), new MergeSortNonInPlace()};
 
     @BeforeEach
-    void setUp() {
-    }
+    void setUp() {}
 
     @AfterEach
-    void tearDown() {
-    }
+    void tearDown() {}
 
     @Test
     void sort() {
@@ -33,6 +28,5 @@ class SortTest {
     }
 
     @Test
-    void sortPrint() {
-    }
+    void sortPrint() {}
 }

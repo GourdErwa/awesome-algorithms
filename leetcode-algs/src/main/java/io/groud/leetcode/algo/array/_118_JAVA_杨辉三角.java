@@ -5,8 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * https://leetcode-cn.com/problems/pascals-triangle/
- * 118. 杨辉三角
+ * https://leetcode-cn.com/problems/pascals-triangle/ 118. 杨辉三角
  * <p>
  * 解法：观察一下规律，发现当前一行只比上一行多了一个元素，最最关键的一点：本行元素等于上一行元素往后错一位再逐个相加：
  *

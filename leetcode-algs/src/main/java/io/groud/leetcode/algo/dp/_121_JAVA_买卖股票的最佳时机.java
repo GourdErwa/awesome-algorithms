@@ -3,8 +3,7 @@ package io.groud.leetcode.algo.dp;
 /**
  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
  * <p>
- * tag: dp
- * TODO dp 未实现
+ * tag: dp TODO dp 未实现
  *
  * @author Li.Wei by 2020/3/9
  */
@@ -13,7 +12,8 @@ public class _121_JAVA_买卖股票的最佳时机 {
     // 高低价格记录，比较处理
     static class Solution {
         public int maxProfit(int[] prices) {
-            if (prices == null || prices.length < 2) return 0;
+            if (prices == null || prices.length < 2)
+                return 0;
             int r = 0; // 返回利润
             int hi = prices[0]; // 当前最高价格
             int lo = prices[0]; // 当前最低价格
@@ -41,8 +41,10 @@ public class _121_JAVA_买卖股票的最佳时机 {
             int minPrice = Integer.MAX_VALUE;
             int maxProfit = 0;
             for (int price : prices) {
-                if (price <= minPrice) minPrice = price;
-                if (price - minPrice >= maxProfit) maxProfit = price - minPrice;
+                if (price <= minPrice)
+                    minPrice = price;
+                if (price - minPrice >= maxProfit)
+                    maxProfit = price - minPrice;
             }
             return maxProfit;
         }
@@ -69,7 +71,8 @@ public class _121_JAVA_买卖股票的最佳时机 {
      */
     class Solution2 {
         public int maxProfit(int[] prices) {
-            if (prices == null || prices.length == 0) return 0;
+            if (prices == null || prices.length == 0)
+                return 0;
             int length = prices.length;
             int[] dp = new int[length];
             dp[0] = 0;
@@ -87,8 +90,8 @@ public class _121_JAVA_买卖股票的最佳时机 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.maxProfit(new int[]{7, 1, 5, 3, 6, 4}) == 5);
-        System.out.println(s.maxProfit(new int[]{7, 6, 4, 3, 1}) == 0);
+        System.out.println(s.maxProfit(new int[] {7, 1, 5, 3, 6, 4}) == 5);
+        System.out.println(s.maxProfit(new int[] {7, 6, 4, 3, 1}) == 0);
 
     }
 }

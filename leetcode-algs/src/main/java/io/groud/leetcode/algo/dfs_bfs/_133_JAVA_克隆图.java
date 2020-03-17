@@ -3,8 +3,7 @@ package io.groud.leetcode.algo.dfs_bfs;
 import java.util.*;
 
 /**
- * https://leetcode-cn.com/problems/clone-graph/
- * tag：dfs、bfs
+ * https://leetcode-cn.com/problems/clone-graph/ tag：dfs、bfs
  *
  * @author Li.Wei by 2020/3/4
  */
@@ -37,21 +36,24 @@ public class _133_JAVA_克隆图 {
         }
 
         private Node dfs(Node node, Map<Node, Node> visited) {
-            if (node == null) return null;
+            if (node == null)
+                return null;
 
             Node cloneNode = visited.get(node);
-            if (cloneNode != null) return cloneNode;
+            if (cloneNode != null)
+                return cloneNode;
 
             Node newNode = new Node(node.val, new ArrayList<>());
             visited.put(node, newNode);
 
-            for (Node neighbor : node.neighbors) newNode.neighbors.add(dfs(neighbor, visited));
+            for (Node neighbor : node.neighbors)
+                newNode.neighbors.add(dfs(neighbor, visited));
             return newNode;
         }
 
-
         private Node bfs(Node node, Map<Node, Node> visited) {
-            if (node == null) return null;
+            if (node == null)
+                return null;
 
             Queue<Node> queue = new LinkedList<>();
             queue.add(node);
@@ -74,4 +76,3 @@ public class _133_JAVA_克隆图 {
         }
     }
 }
-

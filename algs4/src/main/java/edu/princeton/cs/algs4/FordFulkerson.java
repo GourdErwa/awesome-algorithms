@@ -1,36 +1,28 @@
 /******************************************************************************
- *  Compilation:  javac FordFulkerson.java
- *  Execution:    java FordFulkerson V E
- *  Dependencies: FlowNetwork.java FlowEdge.java Queue.java
- *  Data files:   https://algs4.cs.princeton.edu/65maxflow/tinyFN.txt
+ * Compilation: javac FordFulkerson.java Execution: java FordFulkerson V E Dependencies: FlowNetwork.java FlowEdge.java
+ * Queue.java Data files: https://algs4.cs.princeton.edu/65maxflow/tinyFN.txt
  *
- *  Ford-Fulkerson algorithm for computing a max flow and 
- *  a min cut using shortest augmenting path rule.
+ * Ford-Fulkerson algorithm for computing a max flow and a min cut using shortest augmenting path rule.
  *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
 
 /**
- * The {@code FordFulkerson} class represents a data type for computing a
- * <em>maximum st-flow</em> and <em>minimum st-cut</em> in a flow
- * network.
+ * The {@code FordFulkerson} class represents a data type for computing a <em>maximum st-flow</em> and <em>minimum
+ * st-cut</em> in a flow network.
  * <p>
- * This implementation uses the <em>Ford-Fulkerson</em> algorithm with
- * the <em>shortest augmenting path</em> heuristic.
- * The constructor takes <em>O</em>(<em>E V</em> (<em>E</em> + <em>V</em>))
- * time, where <em>V</em> is the number of vertices and <em>E</em> is
- * the number of edges. In practice, the algorithm will run much faster.
- * The {@code inCut()} and {@code value()} methods take &Theta;(1) time.
- * It uses &Theta;(<em>V</em>) extra space (not including the network).
+ * This implementation uses the <em>Ford-Fulkerson</em> algorithm with the <em>shortest augmenting path</em> heuristic.
+ * The constructor takes <em>O</em>(<em>E V</em> (<em>E</em> + <em>V</em>)) time, where <em>V</em> is the number of
+ * vertices and <em>E</em> is the number of edges. In practice, the algorithm will run much faster. The {@code inCut()}
+ * and {@code value()} methods take &Theta;(1) time. It uses &Theta;(<em>V</em>) extra space (not including the
+ * network).
  * <p>
- * If the capacities and initial flow values are all integers, then this
- * implementation guarantees to compute an integer-valued maximum flow.
- * If the capacities are floating-point numbers, then floating-point
- * roundoff error can accumulate.
+ * If the capacities and initial flow values are all integers, then this implementation guarantees to compute an
+ * integer-valued maximum flow. If the capacities are floating-point numbers, then floating-point roundoff error can
+ * accumulate.
  * <p>
- * For additional documentation, see
- * <a href="https://algs4.cs.princeton.edu/64maxflow">Section 6.4</a> of
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/64maxflow">Section 6.4</a> of
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
@@ -39,29 +31,37 @@ package edu.princeton.cs.algs4;
 public class FordFulkerson {
     private static final double FLOATING_POINT_EPSILON = 1E-11;
 
-    private final int V;          // number of vertices
-    private boolean[] marked;     // marked[v] = true iff s->v path in residual graph
-    private FlowEdge[] edgeTo;    // edgeTo[v] = last edge on shortest residual s->v path
-    private double value;         // current value of max flow
+    private final int V; // number of vertices
+    private boolean[] marked; // marked[v] = true iff s->v path in residual graph
+    private FlowEdge[] edgeTo; // edgeTo[v] = last edge on shortest residual s->v path
+    private double value; // current value of max flow
 
     /**
-     * Compute a maximum flow and minimum cut in the network {@code G}
-     * from vertex {@code s} to vertex {@code t}.
+     * Compute a maximum flow and minimum cut in the network {@code G} from vertex {@code s} to vertex {@code t}.
      *
-     * @param G the flow network
-     * @param s the source vertex
-     * @param t the sink vertex
-     * @throws IllegalArgumentException unless {@code 0 <= s < V}
-     * @throws IllegalArgumentException unless {@code 0 <= t < V}
-     * @throws IllegalArgumentException if {@code s == t}
-     * @throws IllegalArgumentException if initial flow is infeasible
+     * @param G
+     *            the flow network
+     * @param s
+     *            the source vertex
+     * @param t
+     *            the sink vertex
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= s < V}
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= t < V}
+     * @throws IllegalArgumentException
+     *             if {@code s == t}
+     * @throws IllegalArgumentException
+     *             if initial flow is infeasible
      */
     public FordFulkerson(FlowNetwork G, int s, int t) {
         V = G.V();
         validate(s);
         validate(t);
-        if (s == t) throw new IllegalArgumentException("Source equals sink");
-        if (!isFeasible(G, s, t)) throw new IllegalArgumentException("Initial flow is infeasible");
+        if (s == t)
+            throw new IllegalArgumentException("Source equals sink");
+        if (!isFeasible(G, s, t))
+            throw new IllegalArgumentException("Initial flow is infeasible");
 
         // while there exists an augmenting path, use it
         value = excess(G, t);
@@ -97,10 +97,11 @@ public class FordFulkerson {
     /**
      * Returns true if the specified vertex is on the {@code s} side of the mincut.
      *
-     * @param v vertex
-     * @return {@code true} if vertex {@code v} is on the {@code s} side of the micut;
-     * {@code false} otherwise
-     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     * @param v
+     *            vertex
+     * @return {@code true} if vertex {@code v} is on the {@code s} side of the micut; {@code false} otherwise
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= v < V}
      */
     public boolean inCut(int v) {
         validate(v);
@@ -113,8 +114,7 @@ public class FordFulkerson {
             throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V - 1));
     }
 
-
-    // is there an augmenting path? 
+    // is there an augmenting path?
     // if so, upon termination edgeTo[] will contain a parent-link representation of such a path
     // this implementation finds a shortest augmenting path (fewest number of edges),
     // which performs well both in theory and in practice
@@ -147,13 +147,14 @@ public class FordFulkerson {
         return marked[t];
     }
 
-
     // return excess flow at vertex v
     private double excess(FlowNetwork G, int v) {
         double excess = 0.0;
         for (FlowEdge e : G.adj(v)) {
-            if (v == e.from()) excess -= e.flow();
-            else excess += e.flow();
+            if (v == e.from())
+                excess -= e.flow();
+            else
+                excess += e.flow();
         }
         return excess;
     }
@@ -183,7 +184,8 @@ public class FordFulkerson {
             return false;
         }
         for (int v = 0; v < G.V(); v++) {
-            if (v == s || v == t) continue;
+            if (v == s || v == t)
+                continue;
             else if (Math.abs(excess(G, v)) > FLOATING_POINT_EPSILON) {
                 System.err.println("Net flow out of " + v + " doesn't equal zero");
                 return false;
@@ -191,7 +193,6 @@ public class FordFulkerson {
         }
         return true;
     }
-
 
     // check optimality conditions
     private boolean check(FlowNetwork G, int s, int t) {
@@ -229,11 +230,11 @@ public class FordFulkerson {
         return true;
     }
 
-
     /**
      * Unit tests the {@code FordFulkerson} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
 
@@ -257,7 +258,8 @@ public class FordFulkerson {
         // print min-cut
         StdOut.print("Min cut: ");
         for (int v = 0; v < G.V(); v++) {
-            if (maxflow.inCut(v)) StdOut.print(v + " ");
+            if (maxflow.inCut(v))
+                StdOut.print(v + " ");
         }
         StdOut.println();
 
@@ -267,25 +269,21 @@ public class FordFulkerson {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

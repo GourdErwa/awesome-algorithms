@@ -12,8 +12,7 @@ public class _590_JAVA_N叉树的后序遍历 {
         public int val;
         public List<Node> children;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -27,7 +26,8 @@ public class _590_JAVA_N叉树的后序遍历 {
         class Solution {
             // 递归
             public List<Integer> postorder(Node root) {
-                if (root == null) return Collections.emptyList();
+                if (root == null)
+                    return Collections.emptyList();
                 List<Integer> r = new ArrayList<>();
                 if (root.children != null) {
                     for (Node child : root.children) {
@@ -41,7 +41,8 @@ public class _590_JAVA_N叉树的后序遍历 {
             // 迭代 dfs
             // TODO 待快速实现
             public List<Integer> postorderDfs(Node root) {
-                if (root == null) return Collections.emptyList();
+                if (root == null)
+                    return Collections.emptyList();
                 LinkedList<Integer> r = new LinkedList<>();
                 Deque<Node> deque = new LinkedList<>(); // 使用栈的语义
                 deque.add(root);
@@ -56,4 +57,3 @@ public class _590_JAVA_N叉树的后序遍历 {
         }
     }
 }
-

@@ -1,11 +1,9 @@
 /******************************************************************************
- *  Compilation:  javac BinaryIn.java
- *  Execution:    java BinaryIn input output
- *  Dependencies: none             
+ * Compilation: javac BinaryIn.java Execution: java BinaryIn input output Dependencies: none
  *
- *  This library is for reading binary data from an input stream.
+ * This library is for reading binary data from an input stream.
  *
- *  % java BinaryIn https://introcs.cs.princeton.edu/java/cover.png output.png
+ * % java BinaryIn https://introcs.cs.princeton.edu/java/cover.png output.png
  *
  ******************************************************************************/
 
@@ -18,33 +16,28 @@ import java.net.URLConnection;
 import java.util.NoSuchElementException;
 
 /**
- * <i>Binary input</i>. This class provides methods for reading
- * in bits from a binary input stream, either
- * one bit at a time (as a {@code boolean}),
- * 8 bits at a time (as a {@code byte} or {@code char}),
- * 16 bits at a time (as a {@code short}),
- * 32 bits at a time (as an {@code int} or {@code float}), or
- * 64 bits at a time (as a {@code double} or {@code long}).
+ * <i>Binary input</i>. This class provides methods for reading in bits from a binary input stream, either one bit at a
+ * time (as a {@code boolean}), 8 bits at a time (as a {@code byte} or {@code char}), 16 bits at a time (as a
+ * {@code short}), 32 bits at a time (as an {@code int} or {@code float}), or 64 bits at a time (as a {@code double} or
+ * {@code long}).
  * <p>
- * The binary input stream can be from standard input, a filename,
- * a URL name, a Socket, or an InputStream.
+ * The binary input stream can be from standard input, a filename, a URL name, a Socket, or an InputStream.
  * <p>
- * All primitive types are assumed to be represented using their
- * standard Java representations, in big-endian (most significant
- * byte first) order.
+ * All primitive types are assumed to be represented using their standard Java representations, in big-endian (most
+ * significant byte first) order.
  * <p>
- * The client should not intermix calls to {@code BinaryIn} with calls
- * to {@code In}; otherwise unexpected behavior will result.
+ * The client should not intermix calls to {@code BinaryIn} with calls to {@code In}; otherwise unexpected behavior will
+ * result.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
 public final class BinaryIn {
-    private static final int EOF = -1;   // end of file
+    private static final int EOF = -1; // end of file
 
-    private BufferedInputStream in;      // the input stream
-    private int buffer;                  // one character buffer
-    private int n;                       // number of bits left in buffer
+    private BufferedInputStream in; // the input stream
+    private int buffer; // one character buffer
+    private int n; // number of bits left in buffer
 
     /**
      * Initializes a binary input stream from standard input.
@@ -57,7 +50,8 @@ public final class BinaryIn {
     /**
      * Initializes a binary input stream from an {@code InputStream}.
      *
-     * @param is the {@code InputStream} object
+     * @param is
+     *            the {@code InputStream} object
      */
     public BinaryIn(InputStream is) {
         in = new BufferedInputStream(is);
@@ -67,7 +61,8 @@ public final class BinaryIn {
     /**
      * Initializes a binary input stream from a socket.
      *
-     * @param socket the socket
+     * @param socket
+     *            the socket
      */
     public BinaryIn(Socket socket) {
         try {
@@ -82,7 +77,8 @@ public final class BinaryIn {
     /**
      * Initializes a binary input stream from a URL.
      *
-     * @param url the URL
+     * @param url
+     *            the URL
      */
     public BinaryIn(URL url) {
         try {
@@ -98,7 +94,8 @@ public final class BinaryIn {
     /**
      * Initializes a binary input stream from a filename or URL name.
      *
-     * @param name the name of the file or URL
+     * @param name
+     *            the name of the file or URL
      */
     public BinaryIn(String name) {
 
@@ -143,8 +140,7 @@ public final class BinaryIn {
     /**
      * Returns true if this binary input stream exists.
      *
-     * @return {@code true} if this binary input stream exists;
-     * {@code false} otherwise
+     * @return {@code true} if this binary input stream exists; {@code false} otherwise
      */
     public boolean exists() {
         return in != null;
@@ -153,8 +149,7 @@ public final class BinaryIn {
     /**
      * Returns true if this binary input stream is empty.
      *
-     * @return {@code true} if this binary input stream is empty;
-     * {@code false} otherwise
+     * @return {@code true} if this binary input stream is empty; {@code false} otherwise
      */
     public boolean isEmpty() {
         return buffer == EOF;
@@ -164,13 +159,16 @@ public final class BinaryIn {
      * Reads the next bit of data from this binary input stream and return as a boolean.
      *
      * @return the next bit of data from this binary input stream as a {@code boolean}
-     * @throws NoSuchElementException if this binary input stream is empty
+     * @throws NoSuchElementException
+     *             if this binary input stream is empty
      */
     public boolean readBoolean() {
-        if (isEmpty()) throw new NoSuchElementException("Reading from empty input stream");
+        if (isEmpty())
+            throw new NoSuchElementException("Reading from empty input stream");
         n--;
         boolean bit = ((buffer >> n) & 1) == 1;
-        if (n == 0) fillBuffer();
+        if (n == 0)
+            fillBuffer();
         return bit;
     }
 
@@ -178,16 +176,18 @@ public final class BinaryIn {
      * Reads the next 8 bits from this binary input stream and return as an 8-bit char.
      *
      * @return the next 8 bits of data from this binary input stream as a {@code char}
-     * @throws NoSuchElementException if there are fewer than 8 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 8 bits available
      */
     public char readChar() {
-        if (isEmpty()) throw new NoSuchElementException("Reading from empty input stream");
+        if (isEmpty())
+            throw new NoSuchElementException("Reading from empty input stream");
 
         // special case when aligned byte
         if (n == 8) {
             int x = buffer;
             fillBuffer();
-            return (char) (x & 0xff);
+            return (char)(x & 0xff);
         }
 
         // combine last N bits of current buffer with first 8-N bits of new buffer
@@ -195,48 +195,55 @@ public final class BinaryIn {
         x <<= (8 - n);
         int oldN = n;
         fillBuffer();
-        if (isEmpty()) throw new NoSuchElementException("Reading from empty input stream");
+        if (isEmpty())
+            throw new NoSuchElementException("Reading from empty input stream");
         n = oldN;
         x |= (buffer >>> n);
-        return (char) (x & 0xff);
+        return (char)(x & 0xff);
         // the above code doesn't quite work for the last character if N = 8
         // because buffer will be -1
     }
 
-
     /**
      * Reads the next r bits from this binary input stream and return as an r-bit character.
      *
-     * @param r number of bits to read
+     * @param r
+     *            number of bits to read
      * @return the next {@code r} bits of data from this binary input streamt as a {@code char}
-     * @throws NoSuchElementException   if there are fewer than {@code r} bits available
-     * @throws IllegalArgumentException unless {@code 1 <= r <= 16}
+     * @throws NoSuchElementException
+     *             if there are fewer than {@code r} bits available
+     * @throws IllegalArgumentException
+     *             unless {@code 1 <= r <= 16}
      */
     public char readChar(int r) {
-        if (r < 1 || r > 16) throw new IllegalArgumentException("Illegal value of r = " + r);
+        if (r < 1 || r > 16)
+            throw new IllegalArgumentException("Illegal value of r = " + r);
 
         // optimize r = 8 case
-        if (r == 8) return readChar();
+        if (r == 8)
+            return readChar();
 
         char x = 0;
         for (int i = 0; i < r; i++) {
             x <<= 1;
             boolean bit = readBoolean();
-            if (bit) x |= 1;
+            if (bit)
+                x |= 1;
         }
         return x;
     }
-
 
     /**
      * Reads the remaining bytes of data from this binary input stream and return as a string.
      *
      * @return the remaining bytes of data from this binary input stream as a {@code String}
-     * @throws NoSuchElementException if this binary input stream is empty or if the number of bits
-     *                                available is not a multiple of 8 (byte-aligned)
+     * @throws NoSuchElementException
+     *             if this binary input stream is empty or if the number of bits available is not a multiple of 8
+     *             (byte-aligned)
      */
     public String readString() {
-        if (isEmpty()) throw new NoSuchElementException("Reading from empty input stream");
+        if (isEmpty())
+            throw new NoSuchElementException("Reading from empty input stream");
 
         StringBuilder sb = new StringBuilder();
         while (!isEmpty()) {
@@ -246,12 +253,12 @@ public final class BinaryIn {
         return sb.toString();
     }
 
-
     /**
      * Reads the next 16 bits from this binary input stream and return as a 16-bit short.
      *
      * @return the next 16 bits of data from this binary input stream as a {@code short}
-     * @throws NoSuchElementException if there are fewer than 16 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 16 bits available
      */
     public short readShort() {
         short x = 0;
@@ -267,7 +274,8 @@ public final class BinaryIn {
      * Reads the next 32 bits from this binary input stream and return as a 32-bit int.
      *
      * @return the next 32 bits of data from this binary input stream as a {@code int}
-     * @throws NoSuchElementException if there are fewer than 32 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 32 bits available
      */
     public int readInt() {
         int x = 0;
@@ -282,22 +290,28 @@ public final class BinaryIn {
     /**
      * Reads the next r bits from this binary input stream return as an r-bit int.
      *
-     * @param r number of bits to read
+     * @param r
+     *            number of bits to read
      * @return the next {@code r} bits of data from this binary input stream as a {@code int}
-     * @throws NoSuchElementException   if there are fewer than r bits available
-     * @throws IllegalArgumentException unless {@code 1 <= r <= 32}
+     * @throws NoSuchElementException
+     *             if there are fewer than r bits available
+     * @throws IllegalArgumentException
+     *             unless {@code 1 <= r <= 32}
      */
     public int readInt(int r) {
-        if (r < 1 || r > 32) throw new IllegalArgumentException("Illegal value of r = " + r);
+        if (r < 1 || r > 32)
+            throw new IllegalArgumentException("Illegal value of r = " + r);
 
         // optimize r = 32 case
-        if (r == 32) return readInt();
+        if (r == 32)
+            return readInt();
 
         int x = 0;
         for (int i = 0; i < r; i++) {
             x <<= 1;
             boolean bit = readBoolean();
-            if (bit) x |= 1;
+            if (bit)
+                x |= 1;
         }
         return x;
     }
@@ -306,7 +320,8 @@ public final class BinaryIn {
      * Reads the next 64 bits from this binary input stream and return as a 64-bit long.
      *
      * @return the next 64 bits of data from this binary input stream as a {@code long}
-     * @throws NoSuchElementException if there are fewer than 64 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 64 bits available
      */
     public long readLong() {
         long x = 0;
@@ -322,7 +337,8 @@ public final class BinaryIn {
      * Reads the next 64 bits from this binary input stream and return as a 64-bit double.
      *
      * @return the next 64 bits of data from this binary input stream as a {@code double}
-     * @throws NoSuchElementException if there are fewer than 64 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 64 bits available
      */
     public double readDouble() {
         return Double.longBitsToDouble(readLong());
@@ -332,30 +348,31 @@ public final class BinaryIn {
      * Reads the next 32 bits from this binary input stream and return as a 32-bit float.
      *
      * @return the next 32 bits of data from this binary input stream as a {@code float}
-     * @throws NoSuchElementException if there are fewer than 32 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 32 bits available
      */
     public float readFloat() {
         return Float.intBitsToFloat(readInt());
     }
 
-
     /**
      * Reads the next 8 bits from this binary input stream and return as an 8-bit byte.
      *
      * @return the next 8 bits of data from this binary input stream as a {@code byte}
-     * @throws NoSuchElementException if there are fewer than 8 bits available
+     * @throws NoSuchElementException
+     *             if there are fewer than 8 bits available
      */
     public byte readByte() {
         char c = readChar();
-        return (byte) (c & 0xff);
+        return (byte)(c & 0xff);
     }
 
     /**
-     * Unit tests the {@code BinaryIn} data type.
-     * Reads the name of a file or URL (first command-line argument)
-     * and writes it to a file (second command-line argument).
+     * Unit tests the {@code BinaryIn} data type. Reads the name of a file or URL (first command-line argument) and
+     * writes it to a file (second command-line argument).
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         BinaryIn in = new BinaryIn(args[0]);
@@ -371,25 +388,21 @@ public final class BinaryIn {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

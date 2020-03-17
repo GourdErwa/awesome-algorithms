@@ -5,9 +5,7 @@ package io.groud.leetcode.algo.bit_operation;
  * <p>
  * tag：位运算、hash
  * <p>
- * 解法：
- * 1. 位运算 TODO 位运算未完成
- * 3. 放入 map ，出现 3 次重复移除
+ * 解法： 1. 位运算 TODO 位运算未完成 3. 放入 map ，出现 3 次重复移除
  *
  * @author Li.Wei by 2020/2/24
  */

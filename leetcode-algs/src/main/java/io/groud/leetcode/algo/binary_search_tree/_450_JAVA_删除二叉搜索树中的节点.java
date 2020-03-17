@@ -25,17 +25,14 @@ public class _450_JAVA_删除二叉搜索树中的节点 {
     /**
      * 基本情况：node == null ，寻找结束
      * <p>
-     * 递推关系：
-     * 如果 key = node.val 表示找到要删除的节点，否则根据比值继续左右寻找。
-     * 找到 node 后有三种情况：
-     * 1. node 是叶子节点直接返回 null
-     * 2. node 是仅存在一个子节点时，与存在的节点交换数据
-     * 3. node 存在左右子树时，我们可以找他的前驱或者后继节点，该处代码实现寻找后继。找到后继节点后更新值，然后删除后继节点
+     * 递推关系： 如果 key = node.val 表示找到要删除的节点，否则根据比值继续左右寻找。 找到 node 后有三种情况： 1. node 是叶子节点直接返回 null 2. node
+     * 是仅存在一个子节点时，与存在的节点交换数据 3. node 存在左右子树时，我们可以找他的前驱或者后继节点，该处代码实现寻找后继。找到后继节点后更新值，然后删除后继节点
      * <p>
      * 思考：此题需要返回根节点，所以递归函数的返回值需要在返回后计算(.left .right)
      */
     public TreeNode deleteNode(TreeNode node, int key) {
-        if (node == null) return null;
+        if (node == null)
+            return null;
         if (key > node.val) { // 向右找
             node.right = deleteNode(node.right, key);
         } else if (key < node.val) { // 向左找
@@ -83,4 +80,3 @@ public class _450_JAVA_删除二叉搜索树中的节点 {
         System.out.println(treeNode);
     }
 }
-

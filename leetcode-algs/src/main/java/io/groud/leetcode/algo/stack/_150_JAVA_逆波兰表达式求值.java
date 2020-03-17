@@ -67,6 +67,6 @@ public class _150_JAVA_逆波兰表达式求值 {
 
     public static void main(String[] args) {
         Solution o = new Solution();
-        System.out.println(o.evalRPN1(new String[]{"4", "13", "5", "/", "+"}));
+        System.out.println(o.evalRPN1(new String[] {"4", "13", "5", "/", "+"}));
     }
 }

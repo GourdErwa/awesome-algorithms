@@ -9,9 +9,7 @@ import java.util.Set;
  * <p>
  * tag：位运算、hash
  * <p>
- * 解法：
- * 1. 位运算 TODO 位运算未完成
- * 3. 放入 HasSet ，出现 2 次重复移除
+ * 解法： 1. 位运算 TODO 位运算未完成 3. 放入 HasSet ，出现 2 次重复移除
  *
  * @author Li.Wei by 2020/2/24
  */
@@ -21,9 +19,11 @@ public class _260_JAVA_只出现一次的数字III {
     class Solution {
         public int[] singleNumber(int[] nums) {
             Set<Integer> dup = new HashSet<>();
-            for (int num : nums) if (!dup.add(num)) dup.remove(num);
+            for (int num : nums)
+                if (!dup.add(num))
+                    dup.remove(num);
             Iterator<Integer> iterator = dup.iterator();
-            return new int[]{iterator.next(), iterator.next()};
+            return new int[] {iterator.next(), iterator.next()};
         }
     }
 }

@@ -1,10 +1,8 @@
 /******************************************************************************
- *  Compilation:  javac EdgeWeightedDirectedCycle.java
- *  Execution:    java EdgeWeightedDirectedCycle V E F
- *  Dependencies: EdgeWeightedDigraph.java DirectedEdge.java Stack.java
+ * Compilation: javac EdgeWeightedDirectedCycle.java Execution: java EdgeWeightedDirectedCycle V E F Dependencies:
+ * EdgeWeightedDigraph.java DirectedEdge.java Stack.java
  *
- *  Finds a directed cycle in an edge-weighted digraph.
- *  Runs in O(E + V) time.
+ * Finds a directed cycle in an edge-weighted digraph. Runs in O(E + V) time.
  *
  *
  ******************************************************************************/
@@ -12,48 +10,41 @@
 package edu.princeton.cs.algs4;
 
 /**
- * The {@code EdgeWeightedDirectedCycle} class represents a data type for
- * determining whether an edge-weighted digraph has a directed cycle.
- * The <em>hasCycle</em> operation determines whether the edge-weighted
- * digraph has a directed cycle and, if so, the <em>cycle</em> operation
- * returns one.
+ * The {@code EdgeWeightedDirectedCycle} class represents a data type for determining whether an edge-weighted digraph
+ * has a directed cycle. The <em>hasCycle</em> operation determines whether the edge-weighted digraph has a directed
+ * cycle and, if so, the <em>cycle</em> operation returns one.
  * <p>
- * This implementation uses <em>depth-first search</em>.
- * The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in the
- * worst case, where <em>V</em> is the number of vertices and
- * <em>E</em> is the number of edges.
- * Each instance method takes &Theta;(1) time.
- * It uses &Theta;(<em>V</em>) extra space (not including the
- * edge-weighted digraph).
+ * This implementation uses <em>depth-first search</em>. The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in
+ * the worst case, where <em>V</em> is the number of vertices and <em>E</em> is the number of edges. Each instance
+ * method takes &Theta;(1) time. It uses &Theta;(<em>V</em>) extra space (not including the edge-weighted digraph).
  * <p>
- * See {@link Topological} to compute a topological order if the
- * edge-weighted digraph is acyclic.
+ * See {@link Topological} to compute a topological order if the edge-weighted digraph is acyclic.
  * <p>
- * For additional documentation,
- * see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
- * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of <i>Algorithms, 4th
+ * Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
 public class EdgeWeightedDirectedCycle {
-    private boolean[] marked;             // marked[v] = has vertex v been marked?
-    private DirectedEdge[] edgeTo;        // edgeTo[v] = previous edge on path to v
-    private boolean[] onStack;            // onStack[v] = is vertex on the stack?
-    private Stack<DirectedEdge> cycle;    // directed cycle (or null if no such cycle)
+    private boolean[] marked; // marked[v] = has vertex v been marked?
+    private DirectedEdge[] edgeTo; // edgeTo[v] = previous edge on path to v
+    private boolean[] onStack; // onStack[v] = is vertex on the stack?
+    private Stack<DirectedEdge> cycle; // directed cycle (or null if no such cycle)
 
     /**
-     * Determines whether the edge-weighted digraph {@code G} has a directed cycle and,
-     * if so, finds such a cycle.
+     * Determines whether the edge-weighted digraph {@code G} has a directed cycle and, if so, finds such a cycle.
      *
-     * @param G the edge-weighted digraph
+     * @param G
+     *            the edge-weighted digraph
      */
     public EdgeWeightedDirectedCycle(EdgeWeightedDigraph G) {
         marked = new boolean[G.V()];
         onStack = new boolean[G.V()];
         edgeTo = new DirectedEdge[G.V()];
         for (int v = 0; v < G.V(); v++)
-            if (!marked[v]) dfs(G, v);
+            if (!marked[v])
+                dfs(G, v);
 
         // check that digraph has a cycle
         assert check();
@@ -67,9 +58,10 @@ public class EdgeWeightedDirectedCycle {
             int w = e.to();
 
             // short circuit if directed cycle found
-            if (cycle != null) return;
+            if (cycle != null)
+                return;
 
-                // found new vertex, so recur
+            // found new vertex, so recur
             else if (!marked[w]) {
                 edgeTo[w] = e;
                 dfs(G, w);
@@ -96,24 +88,21 @@ public class EdgeWeightedDirectedCycle {
     /**
      * Does the edge-weighted digraph have a directed cycle?
      *
-     * @return {@code true} if the edge-weighted digraph has a directed cycle,
-     * {@code false} otherwise
+     * @return {@code true} if the edge-weighted digraph has a directed cycle, {@code false} otherwise
      */
     public boolean hasCycle() {
         return cycle != null;
     }
 
     /**
-     * Returns a directed cycle if the edge-weighted digraph has a directed cycle,
-     * and {@code null} otherwise.
+     * Returns a directed cycle if the edge-weighted digraph has a directed cycle, and {@code null} otherwise.
      *
-     * @return a directed cycle (as an iterable) if the edge-weighted digraph
-     * has a directed cycle, and {@code null} otherwise
+     * @return a directed cycle (as an iterable) if the edge-weighted digraph has a directed cycle, and {@code null}
+     *         otherwise
      */
     public Iterable<DirectedEdge> cycle() {
         return cycle;
     }
-
 
     // certify that digraph is either acyclic or has a directed cycle
     private boolean check() {
@@ -123,7 +112,8 @@ public class EdgeWeightedDirectedCycle {
             // verify cycle
             DirectedEdge first = null, last = null;
             for (DirectedEdge e : cycle()) {
-                if (first == null) first = e;
+                if (first == null)
+                    first = e;
                 if (last != null) {
                     if (last.to() != e.from()) {
                         System.err.printf("cycle edges %s and %s not incident\n", last, e);
@@ -139,14 +129,14 @@ public class EdgeWeightedDirectedCycle {
             }
         }
 
-
         return true;
     }
 
     /**
      * Unit tests the {@code EdgeWeightedDirectedCycle} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
 
@@ -198,25 +188,21 @@ public class EdgeWeightedDirectedCycle {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

@@ -22,7 +22,8 @@ public class _61_JAVA_旋转链表 {
     // 右移的部分直接脱链后挂在到头部部分即可
     // 类似于删除的变种题目
     public ListNode rotateRight(ListNode head, int k) {
-        if (head == null || k == 0) return head;
+        if (head == null || k == 0)
+            return head;
 
         ListNode s = head; // 窗口指针的前一个节点
         int n = 1;
@@ -30,7 +31,7 @@ public class _61_JAVA_旋转链表 {
             n++;
             s = s.next;
         }
-        s.next = head; //  形成环形链表
+        s.next = head; // 形成环形链表
 
         int m = n - k % n - 1; // 寻找断链位置，断链位置的下一个节点为新头节点
         while (m-- >= 0) {
@@ -44,8 +45,10 @@ public class _61_JAVA_旋转链表 {
     // 官方题解
     public ListNode rotateRight1(ListNode head, int k) {
         // base cases
-        if (head == null) return null;
-        if (head.next == null) return head;
+        if (head == null)
+            return null;
+        if (head.next == null)
+            return head;
 
         // close the linked list into the ring
         ListNode oldTail = head;

@@ -1,11 +1,8 @@
 /******************************************************************************
- *  Compilation:  javac DirectedEulerianCycle.java
- *  Execution:    java DirectedEulerianCycle V E
- *  Dependencies: Digraph.java Stack.java StdOut.java
- *                BreadthFirstPaths.java
- *                DigraphGenerator.java StdRandom.java
+ * Compilation: javac DirectedEulerianCycle.java Execution: java DirectedEulerianCycle V E Dependencies: Digraph.java
+ * Stack.java StdOut.java BreadthFirstPaths.java DigraphGenerator.java StdRandom.java
  *
- *  Find an Eulerian cycle in a digraph, if one exists.
+ * Find an Eulerian cycle in a digraph, if one exists.
  *
  ******************************************************************************/
 
@@ -14,24 +11,17 @@ package edu.princeton.cs.algs4;
 import java.util.Iterator;
 
 /**
- * The {@code DirectedEulerianCycle} class represents a data type
- * for finding an Eulerian cycle or path in a digraph.
- * An <em>Eulerian cycle</em> is a cycle (not necessarily simple) that
- * uses every edge in the digraph exactly once.
+ * The {@code DirectedEulerianCycle} class represents a data type for finding an Eulerian cycle or path in a digraph. An
+ * <em>Eulerian cycle</em> is a cycle (not necessarily simple) that uses every edge in the digraph exactly once.
  * <p>
- * This implementation uses a nonrecursive depth-first search.
- * The constructor takes &Theta;(<em>E</em> + <em>V</em>) time in the worst
- * case, where <em>E</em> is the number of edges and <em>V</em> is the
- * number of vertices
- * Each instance method takes &Theta;(1) time.
- * It uses &Theta;(<em>V</em>) extra space (not including the digraph).
+ * This implementation uses a nonrecursive depth-first search. The constructor takes &Theta;(<em>E</em> + <em>V</em>)
+ * time in the worst case, where <em>E</em> is the number of edges and <em>V</em> is the number of vertices Each
+ * instance method takes &Theta;(1) time. It uses &Theta;(<em>V</em>) extra space (not including the digraph).
  * <p>
- * To compute Eulerian paths in digraphs, see {@link DirectedEulerianPath}.
- * To compute Eulerian cycles and paths in undirected graphs, see
- * {@link EulerianCycle} and {@link EulerianPath}.
+ * To compute Eulerian paths in digraphs, see {@link DirectedEulerianPath}. To compute Eulerian cycles and paths in
+ * undirected graphs, see {@link EulerianCycle} and {@link EulerianPath}.
  * <p>
- * For additional documentation,
- * see <a href="https://algs4.cs.princeton.edu/42digraph">Section 4.2</a> of
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/42digraph">Section 4.2</a> of
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
@@ -39,17 +29,19 @@ import java.util.Iterator;
  * @author Nate Liu
  */
 public class DirectedEulerianCycle {
-    private Stack<Integer> cycle = null;  // Eulerian cycle; null if no such cylce
+    private Stack<Integer> cycle = null; // Eulerian cycle; null if no such cylce
 
     /**
      * Computes an Eulerian cycle in the specified digraph, if one exists.
      *
-     * @param G the digraph
+     * @param G
+     *            the digraph
      */
     public DirectedEulerianCycle(Digraph G) {
 
         // must have at least one edge
-        if (G.E() == 0) return;
+        if (G.E() == 0)
+            return;
 
         // necessary condition: indegree(v) = outdegree(v) for each vertex v
         // (without this check, DFS might return a path instead of a cycle)
@@ -58,7 +50,7 @@ public class DirectedEulerianCycle {
                 return;
 
         // create local view of adjacency lists, to iterate one vertex at a time
-        Iterator<Integer>[] adj = (Iterator<Integer>[]) new Iterator[G.V()];
+        Iterator<Integer>[] adj = (Iterator<Integer>[])new Iterator[G.V()];
         for (int v = 0; v < G.V(); v++)
             adj[v] = G.adj(v).iterator();
 
@@ -90,8 +82,7 @@ public class DirectedEulerianCycle {
     /**
      * Returns the sequence of vertices on an Eulerian cycle.
      *
-     * @return the sequence of vertices on an Eulerian cycle;
-     * {@code null} if no such cycle
+     * @return the sequence of vertices on an Eulerian cycle; {@code null} if no such cycle
      */
     public Iterable<Integer> cycle() {
         return cycle;
@@ -100,8 +91,7 @@ public class DirectedEulerianCycle {
     /**
      * Returns true if the digraph has an Eulerian cycle.
      *
-     * @return {@code true} if the digraph has an Eulerian cycle;
-     * {@code false} otherwise
+     * @return {@code true} if the digraph has an Eulerian cycle; {@code false} otherwise
      */
     public boolean hasEulerianCycle() {
         return cycle != null;
@@ -115,23 +105,23 @@ public class DirectedEulerianCycle {
         return -1;
     }
 
-
     /**************************************************************************
      *
-     *  The code below is solely for testing correctness of the data type.
+     * The code below is solely for testing correctness of the data type.
      *
      **************************************************************************/
 
     // Determines whether a digraph has an Eulerian cycle using necessary
     // and sufficient conditions (without computing the cycle itself):
-    //    - at least one edge
-    //    - indegree(v) = outdegree(v) for every vertex
-    //    - the graph is connected, when viewed as an undirected graph
-    //      (ignoring isolated vertices)
+    // - at least one edge
+    // - indegree(v) = outdegree(v) for every vertex
+    // - the graph is connected, when viewed as an undirected graph
+    // (ignoring isolated vertices)
     private static boolean satisfiesNecessaryAndSufficientConditions(Digraph G) {
 
         // Condition 0: at least 1 edge
-        if (G.E() == 0) return false;
+        if (G.E() == 0)
+            return false;
 
         // Condition 1: indegree(v) == outdegree(v) for every vertex
         for (int v = 0; v < G.V(); v++)
@@ -158,23 +148,25 @@ public class DirectedEulerianCycle {
     private boolean certifySolution(Digraph G) {
 
         // internal consistency check
-        if (hasEulerianCycle() == (cycle() == null)) return false;
+        if (hasEulerianCycle() == (cycle() == null))
+            return false;
 
         // hashEulerianCycle() returns correct value
-        if (hasEulerianCycle() != satisfiesNecessaryAndSufficientConditions(G)) return false;
+        if (hasEulerianCycle() != satisfiesNecessaryAndSufficientConditions(G))
+            return false;
 
         // nothing else to check if no Eulerian cycle
-        if (cycle == null) return true;
+        if (cycle == null)
+            return true;
 
         // check that cycle() uses correct number of edges
-        if (cycle.size() != G.E() + 1) return false;
+        if (cycle.size() != G.E() + 1)
+            return false;
 
         // check that cycle() is a directed cycle of G
-        // TODO
 
         return true;
     }
-
 
     private static void unitTest(Digraph G, String description) {
         StdOut.println(description);
@@ -195,11 +187,11 @@ public class DirectedEulerianCycle {
         StdOut.println();
     }
 
-
     /**
      * Unit tests the {@code DirectedEulerianCycle} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);
@@ -251,25 +243,21 @@ public class DirectedEulerianCycle {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

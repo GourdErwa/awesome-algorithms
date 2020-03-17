@@ -22,7 +22,7 @@ public class _95_JAVA_不同的二叉搜索树II {
 
     public List<TreeNode> generateTreesHelper(int start, int end) {
         List<TreeNode> allTrees = new LinkedList<>();
-        if (start > end) { //此时没有数字，将null加入到结果中
+        if (start > end) { // 此时没有数字，将null加入到结果中
             allTrees.add(null);
             return allTrees;
         }

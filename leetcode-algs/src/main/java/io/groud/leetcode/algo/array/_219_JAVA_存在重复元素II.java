@@ -27,7 +27,8 @@ public class _219_JAVA_存在重复元素II {
                 Integer startIndex = dup.get(num);
                 if (startIndex == null) {
                     dup.put(num, i);
-                } else if (i - startIndex <= k) return true;
+                } else if (i - startIndex <= k)
+                    return true;
                 dup.put(num, i); // 超过 k 更新下标为最新
             }
             return false;
@@ -38,11 +39,13 @@ public class _219_JAVA_存在重复元素II {
     class Solution1 {
         public boolean containsNearbyDuplicate(int[] nums, int k) {
             int length = nums.length;
-            if (length < 2 || k <= 0 || k == 35000) return false;
+            if (length < 2 || k <= 0 || k == 35000)
+                return false;
             int fast = 1;
             int slow = 0;
             while (slow < length - 1) {
-                if (nums[slow] == nums[fast]) return true;
+                if (nums[slow] == nums[fast])
+                    return true;
                 if (fast < slow + k && fast < length - 1) {
                     fast++;
                 } else {

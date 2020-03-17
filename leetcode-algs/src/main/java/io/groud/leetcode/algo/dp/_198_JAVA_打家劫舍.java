@@ -29,7 +29,8 @@ public class _198_JAVA_打家劫舍 {
      */
     class Solution {
         public int rob(int[] nums) {
-            if (nums == null || nums.length == 0) return 0;
+            if (nums == null || nums.length == 0)
+                return 0;
             int length = nums.length;
             int[] dp = new int[length + 1];
             dp[0] = 0;

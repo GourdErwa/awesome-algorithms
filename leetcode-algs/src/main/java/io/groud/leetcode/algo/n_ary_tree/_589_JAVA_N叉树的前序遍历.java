@@ -6,14 +6,14 @@ import java.util.*;
  * https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/
  *
  * @author Li.Wei by 2020/3/9
+ * @since 1.0
  */
 public class _589_JAVA_N叉树的前序遍历 {
     class Node {
         public int val;
         public List<Node> children;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -27,7 +27,8 @@ public class _589_JAVA_N叉树的前序遍历 {
         class Solution {
             // 递归
             public List<Integer> preorder(Node root) {
-                if (root == null) return Collections.emptyList();
+                if (root == null)
+                    return Collections.emptyList();
                 List<Integer> r = new ArrayList<>();
                 r.add(root.val);
                 if (root.children != null) {
@@ -40,7 +41,8 @@ public class _589_JAVA_N叉树的前序遍历 {
 
             // 迭代 dfs
             public List<Integer> preorderDfs(Node root) {
-                if (root == null) return Collections.emptyList();
+                if (root == null)
+                    return Collections.emptyList();
 
                 List<Integer> r = new ArrayList<>();
                 Deque<Node> deque = new LinkedList<>(); // 使用栈的语义

@@ -37,11 +37,12 @@ public class _213_JAVA_打家劫舍II {
      */
     class Solution {
         public int rob(int[] nums) {
-            if (nums == null || nums.length == 0) return 0;
+            if (nums == null || nums.length == 0)
+                return 0;
             int length = nums.length;
-            if (length == 1) return nums[0];
-            return Math.max(robHelper(nums, 0, length - 1),
-                    robHelper(nums, 1, length));
+            if (length == 1)
+                return nums[0];
+            return Math.max(robHelper(nums, 0, length - 1), robHelper(nums, 1, length));
         }
 
         private int robHelper(int[] nums, int lo, int hi) {

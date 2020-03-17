@@ -18,8 +18,7 @@ public class _359_JAVA_日志速率限制器 {
 
         private final Map<String, Integer> map = new HashMap<>();
 
-        public Logger() {
-        }
+        public Logger() {}
 
         public boolean shouldPrintMessage(int timestamp, String message) {
             Integer oldTimes = map.get(message);
@@ -30,14 +29,14 @@ public class _359_JAVA_日志速率限制器 {
 
             // 该日志内容存在情况下
             boolean print = timestamp - oldTimes >= 10;
-            if (print) map.put(message, timestamp); // 如果打印了，更新最后打印的时间挫，否则被丢弃
+            if (print)
+                map.put(message, timestamp); // 如果打印了，更新最后打印的时间挫，否则被丢弃
             return print;
         }
     }
 
-/**
- * Your Logger object will be instantiated and called as such:
- * Logger obj = new Logger();
- * boolean param_1 = obj.shouldPrintMessage(timestamp,message);
- */
+    /**
+     * Your Logger object will be instantiated and called as such: Logger obj = new Logger(); boolean param_1 =
+     * obj.shouldPrintMessage(timestamp,message);
+     */
 }

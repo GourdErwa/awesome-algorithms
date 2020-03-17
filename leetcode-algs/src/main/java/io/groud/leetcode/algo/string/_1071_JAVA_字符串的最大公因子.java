@@ -10,7 +10,8 @@ public class _1071_JAVA_字符串的最大公因子 {
     // 处理复杂。未完成
     class Solution {
         public String gcdOfStrings(String str1, String str2) {
-            if (str1 == null || str2 == null) return "";
+            if (str1 == null || str2 == null)
+                return "";
             int length1 = str1.length();
             int length2 = str2.length();
             String longStr = str1;
@@ -39,7 +40,8 @@ public class _1071_JAVA_字符串的最大公因子 {
     static class Solution1 {
         public String gcdOfStrings(String str1, String str2) {
             // 假设 str1 是 N 个 x，str2 是 M 个 x，那么 str1+str2 肯定是等于 str2+str1 的。
-            if (!(str1 + str2).equals(str2 + str1)) return "";
+            if (!(str1 + str2).equals(str2 + str1))
+                return "";
             // 辗转相除法求 gcd。
             return str1.substring(0, gcd(str1.length(), str2.length()));
         }

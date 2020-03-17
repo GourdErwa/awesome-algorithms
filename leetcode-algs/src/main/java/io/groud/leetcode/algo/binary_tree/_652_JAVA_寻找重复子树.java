@@ -38,7 +38,8 @@ public class _652_JAVA_寻找重复子树 {
     // 思路：使用一个遍历方式遍历所有子树(需记录 null 节点保证结构的一致性)到 HashMap<k=遍历结果字符串,v=node>，最终比对遍历结果是否有重复
     class Solution {
         public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-            if (root == null) return Collections.emptyList();
+            if (root == null)
+                return Collections.emptyList();
 
             Map<String, TreeNode> dup = new HashMap<>(); // 因为可能出现 3 个重复，我们只添加第一次出现重复的节点
             Set<TreeNode> dupTreeNode = new HashSet<>(); // 最终重复树记录
@@ -50,11 +51,15 @@ public class _652_JAVA_寻找重复子树 {
                 String cx = serialization(curr);
 
                 TreeNode node = dup.get(cx);
-                if (node == null) dup.put(cx, curr);
-                else dupTreeNode.add(node);
+                if (node == null)
+                    dup.put(cx, curr);
+                else
+                    dupTreeNode.add(node);
 
-                if (curr.left != null) queue.add(curr.left);
-                if (curr.right != null) queue.add(curr.right);
+                if (curr.left != null)
+                    queue.add(curr.left);
+                if (curr.right != null)
+                    queue.add(curr.right);
             }
             return new ArrayList<>(dupTreeNode);
         }
@@ -73,12 +78,14 @@ public class _652_JAVA_寻找重复子树 {
                 if (curr.left != null) {
                     sb.append(curr.left.val);
                     queue.add(curr.left);
-                } else sb.append("null");
+                } else
+                    sb.append("null");
 
                 if (curr.right != null) {
                     sb.append(curr.right.val);
                     queue.add(curr.right);
-                } else sb.append("null");
+                } else
+                    sb.append("null");
             }
             return sb.toString();
         }

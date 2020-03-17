@@ -19,15 +19,16 @@ public class _220_JAVA_存在重复元素III {
         for (int i = 0; i < nums.length; ++i) {
             long num = nums[i];
             Long ceil = set.ceiling(num - t); // 大于或等于给定元素
-            if (ceil != null && ceil <= num + t) return true;
+            if (ceil != null && ceil <= num + t)
+                return true;
 
-//            Long floor = set.floor(num); // 小于或等于给定元素
-//            if (floor != null && num <= floor + t) return true;
+            // Long floor = set.floor(num); // 小于或等于给定元素
+            // if (floor != null && num <= floor + t) return true;
 
             set.add(num);
 
             if (set.size() > k) {
-                set.remove(((long) nums[i - k]));
+                set.remove(((long)nums[i - k]));
             }
         }
         return false;

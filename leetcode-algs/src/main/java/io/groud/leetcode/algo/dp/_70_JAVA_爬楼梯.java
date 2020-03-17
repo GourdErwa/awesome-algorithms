@@ -14,9 +14,11 @@ public class _70_JAVA_爬楼梯 {
         private final Map<Integer, Integer> status = new HashMap<>();
 
         public int climbStairs(int n) {
-            if (n <= 2) return n; // 基本情况
+            if (n <= 2)
+                return n; // 基本情况
             final Integer value = status.get(n);
-            if (value != null) return value;
+            if (value != null)
+                return value;
             int sum = climbStairs(n - 1) + climbStairs(n - 2); // 递推关系
             status.put(n, sum);
 

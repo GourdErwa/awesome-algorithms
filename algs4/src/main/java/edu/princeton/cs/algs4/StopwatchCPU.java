@@ -1,14 +1,9 @@
 /******************************************************************************
- *  Compilation:  javac StopwatchCPU.java
- *  Execution:    java StopwtachCPU n
- *  Dependencies: none
+ * Compilation: javac StopwatchCPU.java Execution: java StopwtachCPU n Dependencies: none
  *
- *  A version of Stopwatch.java that measures CPU time on a single
- *  core or processor (instead of wall clock time).
+ * A version of Stopwatch.java that measures CPU time on a single core or processor (instead of wall clock time).
  *
- *  % java8 StopwatchCPU 100000000
- *  6.666667e+11 (1.05 seconds)
- *  6.666667e+11 (7.50 seconds)
+ * % java8 StopwatchCPU 100000000 6.666667e+11 (1.05 seconds) 6.666667e+11 (7.50 seconds)
  *
  ******************************************************************************/
 
@@ -18,11 +13,9 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 
 /**
- * The {@code StopwatchCPU} data type is for measuring
- * the CPU time used during a programming task.
+ * The {@code StopwatchCPU} data type is for measuring the CPU time used during a programming task.
  * <p>
- * See {@link Stopwatch} for a version that measures wall-clock time
- * (the real time that elapses).
+ * See {@link Stopwatch} for a version that measures wall-clock time (the real time that elapses).
  *
  * @author Josh Hug
  * @author Robert Sedgewick
@@ -54,15 +47,13 @@ public class StopwatchCPU {
     }
 
     /**
-     * Unit tests the {@code StopwatchCPU} data type.
-     * Takes a command-line argument {@code n} and computes the
-     * sum of the square roots of the first {@code n} positive integers,
-     * first using {@code Math.sqrt()}, then using {@code Math.pow()}.
-     * It prints to standard output the sum and the amount of time to
-     * compute the sum. Note that the discrete sum can be approximated by
-     * an integral - the sum should be approximately 2/3 * (n^(3/2) - 1).
+     * Unit tests the {@code StopwatchCPU} data type. Takes a command-line argument {@code n} and computes the sum of
+     * the square roots of the first {@code n} positive integers, first using {@code Math.sqrt()}, then using
+     * {@code Math.pow()}. It prints to standard output the sum and the amount of time to compute the sum. Note that the
+     * discrete sum can be approximated by an integral - the sum should be approximately 2/3 * (n^(3/2) - 1).
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
@@ -88,25 +79,21 @@ public class StopwatchCPU {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

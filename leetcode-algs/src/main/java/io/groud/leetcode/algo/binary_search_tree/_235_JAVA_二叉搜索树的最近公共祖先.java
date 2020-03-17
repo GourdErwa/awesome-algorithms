@@ -28,10 +28,14 @@ public class _235_JAVA_二叉搜索树的最近公共祖先 {
      * 递推关系：
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) return null;
-        if (root.val > p.val && root.val < q.val) return root;
-        if (root.val < p.val && root.val > q.val) return root;
-        if (root.val == p.val || root.val == q.val) return root;
+        if (root == null)
+            return null;
+        if (root.val > p.val && root.val < q.val)
+            return root;
+        if (root.val < p.val && root.val > q.val)
+            return root;
+        if (root.val == p.val || root.val == q.val)
+            return root;
 
         if (root.val > q.val && root.val > p.val) {
             return lowestCommonAncestor(root.left, p, q);

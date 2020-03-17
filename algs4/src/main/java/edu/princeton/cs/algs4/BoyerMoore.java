@@ -1,59 +1,46 @@
 /******************************************************************************
- *  Compilation:  javac BoyerMoore.java
- *  Execution:    java BoyerMoore pattern text
- *  Dependencies: StdOut.java
+ * Compilation: javac BoyerMoore.java Execution: java BoyerMoore pattern text Dependencies: StdOut.java
  *
- *  Reads in two strings, the pattern and the input text, and
- *  searches for the pattern in the input text using the
- *  bad-character rule part of the Boyer-Moore algorithm.
- *  (does not implement the strong good suffix rule)
+ * Reads in two strings, the pattern and the input text, and searches for the pattern in the input text using the
+ * bad-character rule part of the Boyer-Moore algorithm. (does not implement the strong good suffix rule)
  *
- *  % java BoyerMoore abracadabra abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad 
- *  pattern:               abracadabra
+ * % java BoyerMoore abracadabra abacadabrabracabracadabrabrabracad text: abacadabrabracabracadabrabrabracad pattern:
+ * abracadabra
  *
- *  % java BoyerMoore rab abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad 
- *  pattern:         rab
+ * % java BoyerMoore rab abacadabrabracabracadabrabrabracad text: abacadabrabracabracadabrabrabracad pattern: rab
  *
- *  % java BoyerMoore bcara abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad 
- *  pattern:                                   bcara
+ * % java BoyerMoore bcara abacadabrabracabracadabrabrabracad text: abacadabrabracabracadabrabrabracad pattern: bcara
  *
- *  % java BoyerMoore rabrabracad abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad
- *  pattern:                        rabrabracad
+ * % java BoyerMoore rabrabracad abacadabrabracabracadabrabrabracad text: abacadabrabracabracadabrabrabracad pattern:
+ * rabrabracad
  *
- *  % java BoyerMoore abacad abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad
- *  pattern: abacad
+ * % java BoyerMoore abacad abacadabrabracabracadabrabrabracad text: abacadabrabracabracadabrabrabracad pattern: abacad
  *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
 
 /**
- * The {@code BoyerMoore} class finds the first occurrence of a pattern string
- * in a text string.
+ * The {@code BoyerMoore} class finds the first occurrence of a pattern string in a text string.
  * <p>
- * This implementation uses the Boyer-Moore algorithm (with the bad-character
- * rule, but not the strong good suffix rule).
+ * This implementation uses the Boyer-Moore algorithm (with the bad-character rule, but not the strong good suffix
+ * rule).
  * <p>
- * For additional documentation,
- * see <a href="https://algs4.cs.princeton.edu/53substring">Section 5.3</a> of
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/53substring">Section 5.3</a> of
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
 public class BoyerMoore {
-    private final int R;     // the radix
-    private int[] right;     // the bad-character skip array
+    private final int R; // the radix
+    private int[] right; // the bad-character skip array
 
-    private char[] pattern;  // store the pattern as a character array
-    private String pat;      // or as a string
+    private char[] pattern; // store the pattern as a character array
+    private String pat; // or as a string
 
     /**
      * Preprocesses the pattern string.
      *
-     * @param pat the pattern string
+     * @param pat
+     *            the pattern string
      */
     public BoyerMoore(String pat) {
         this.R = 256;
@@ -70,8 +57,10 @@ public class BoyerMoore {
     /**
      * Preprocesses the pattern string.
      *
-     * @param pattern the pattern string
-     * @param R       the alphabet size
+     * @param pattern
+     *            the pattern string
+     * @param R
+     *            the alphabet size
      */
     public BoyerMoore(char[] pattern, int R) {
         this.R = R;
@@ -88,12 +77,11 @@ public class BoyerMoore {
     }
 
     /**
-     * Returns the index of the first occurrrence of the pattern string
-     * in the text string.
+     * Returns the index of the first occurrrence of the pattern string in the text string.
      *
-     * @param txt the text string
-     * @return the index of the first occurrence of the pattern string
-     * in the text string; n if no such match
+     * @param txt
+     *            the text string
+     * @return the index of the first occurrence of the pattern string in the text string; n if no such match
      */
     public int search(String txt) {
         int m = pat.length();
@@ -107,19 +95,18 @@ public class BoyerMoore {
                     break;
                 }
             }
-            if (skip == 0) return i;    // found
+            if (skip == 0)
+                return i; // found
         }
-        return n;                       // not found
+        return n; // not found
     }
 
-
     /**
-     * Returns the index of the first occurrrence of the pattern string
-     * in the text string.
+     * Returns the index of the first occurrrence of the pattern string in the text string.
      *
-     * @param text the text string
-     * @return the index of the first occurrence of the pattern string
-     * in the text string; n if no such match
+     * @param text
+     *            the text string
+     * @return the index of the first occurrence of the pattern string in the text string; n if no such match
      */
     public int search(char[] text) {
         int m = pattern.length;
@@ -133,18 +120,18 @@ public class BoyerMoore {
                     break;
                 }
             }
-            if (skip == 0) return i;    // found
+            if (skip == 0)
+                return i; // found
         }
-        return n;                       // not found
+        return n; // not found
     }
 
-
     /**
-     * Takes a pattern string and an input string as command-line arguments;
-     * searches for the pattern string in the text string; and prints
-     * the first occurrence of the pattern string in the text string.
+     * Takes a pattern string and an input string as command-line arguments; searches for the pattern string in the text
+     * string; and prints the first occurrence of the pattern string in the text string.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         String pat = args[0];
@@ -172,27 +159,22 @@ public class BoyerMoore {
     }
 }
 
-
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

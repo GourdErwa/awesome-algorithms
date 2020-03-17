@@ -12,8 +12,7 @@ public class _429_JAVA_N叉树的层序遍历 {
         public int val;
         public List<Node> children;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -27,7 +26,8 @@ public class _429_JAVA_N叉树的层序遍历 {
         class Solution {
             // bfs
             public List<List<Integer>> levelOrder(Node root) {
-                if (root == null) return Collections.emptyList();
+                if (root == null)
+                    return Collections.emptyList();
 
                 List<List<Integer>> r = new ArrayList<>();
                 Queue<Node> deque = new LinkedList<>(); // 使用队列的语义

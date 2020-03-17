@@ -30,13 +30,15 @@ public class _347_JAVA_前K个高频元素 {
             @Override
             public int compareTo(Node o) {
                 int diff = o.count - count;
-                if (diff == 0) return val - o.val;
+                if (diff == 0)
+                    return val - o.val;
                 return diff;
             }
         }
 
         public List<Integer> topKFrequent(int[] nums, int k) {
-            if (nums.length == 1) return null;
+            if (nums.length == 1)
+                return null;
             Map<Integer, Node> map = new HashMap<>();
             // 使用 map 进行计数 ，也可使用数组但是编码复杂性较高
             for (int num : nums) {
@@ -95,7 +97,7 @@ public class _347_JAVA_前K个高频元素 {
 
     // 数组排序记录出现次数，出现次数记录再次排序取最值
     class Solution3 {
-        //前 K 个高频元素
+        // 前 K 个高频元素
         public List<Integer> topKFrequent(int[] nums, int k) {
             List<Integer> list = new ArrayList();
             Arrays.sort(nums);
@@ -136,8 +138,8 @@ public class _347_JAVA_前K个高频元素 {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        //List<Integer> integers = solution.topKFrequent(new int[]{1, 1, 1, 2, 2, 2, 2, 3}, 2);
-        List<Integer> integers = solution.topKFrequent(new int[]{1, 2}, 2);
+        // List<Integer> integers = solution.topKFrequent(new int[]{1, 1, 1, 2, 2, 2, 2, 3}, 2);
+        List<Integer> integers = solution.topKFrequent(new int[] {1, 2}, 2);
         System.out.println(integers);
     }
 }

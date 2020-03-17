@@ -5,8 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode-cn.com/problems/reverse-string/
  * <p>
- * 技巧：
- * 双指针，分别从头尾向中间遍历
+ * 技巧： 双指针，分别从头尾向中间遍历
  *
  * @author Li.Wei by 2020/2/8
  */
@@ -30,7 +29,9 @@ public class _344_JAVA_反转字符串 {
     }
 
     public void reverseStringHelper(char[] chars, int l, int r) {
-        if (l > r) return;
+        if (l > r) {
+            return;
+        }
         char aChar = chars[l];
         chars[l] = chars[r];
         chars[r] = aChar;

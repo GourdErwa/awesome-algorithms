@@ -1,8 +1,7 @@
 package io.groud.leetcode.algo.array;
 
 /**
- * https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
- * 747. 至少是其他数字两倍的最大数
+ * https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/ 747. 至少是其他数字两倍的最大数
  *
  * @author Li.Wei by 2020/2/6
  */
@@ -28,8 +27,7 @@ public class _747_JAVA_至少是其他数字两倍的最大数 {
     }
 
     /**
-     * 循环一次记录临时变量第一大、第二大以及第一大数的数组下标
-     * 最终比较第一大、第二大结果
+     * 循环一次记录临时变量第一大、第二大以及第一大数的数组下标 最终比较第一大、第二大结果
      */
     public int dominantIndex1(int[] nums) {
         int max1 = 0; // 临时变量第一大数
@@ -52,9 +50,9 @@ public class _747_JAVA_至少是其他数字两倍的最大数 {
 
     public static void main(String[] args) {
         _747_JAVA_至少是其他数字两倍的最大数 java = new _747_JAVA_至少是其他数字两倍的最大数();
-//        System.out.println(java.dominantIndex(new int[]{3, 6, 3, 22, 5, 6}));
-//        System.out.println(java.dominantIndex(new int[]{1, 7, 3, 6, 5, 6}));
-//        System.out.println(java.dominantIndex(new int[]{0, 0, 2, 3}));
-        System.out.println(java.dominantIndex(new int[]{0, 0, 0, 1}));
+        // System.out.println(java.dominantIndex(new int[]{3, 6, 3, 22, 5, 6}));
+        // System.out.println(java.dominantIndex(new int[]{1, 7, 3, 6, 5, 6}));
+        // System.out.println(java.dominantIndex(new int[]{0, 0, 2, 3}));
+        System.out.println(java.dominantIndex(new int[] {0, 0, 0, 1}));
     }
 }

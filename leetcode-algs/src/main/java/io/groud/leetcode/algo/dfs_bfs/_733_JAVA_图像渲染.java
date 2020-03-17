@@ -1,8 +1,7 @@
 package io.groud.leetcode.algo.dfs_bfs;
 
 /**
- * https://leetcode-cn.com/problems/flood-fill/
- * tag：dfs、bfs
+ * https://leetcode-cn.com/problems/flood-fill/ tag：dfs、bfs
  * <p>
  * TODO 并查集未完成
  *
@@ -20,9 +19,11 @@ public class _733_JAVA_图像渲染 {
         private int cols;
 
         public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-            if (image == null || image.length == 0) return null;
+            if (image == null || image.length == 0)
+                return null;
             int oldColor = image[sr][sc];
-            if (oldColor == newColor) return image; // 如果染色值与目标颜色值一致直接返回
+            if (oldColor == newColor)
+                return image; // 如果染色值与目标颜色值一致直接返回
 
             this.rows = image.length;
             this.cols = image[0].length;
@@ -35,10 +36,10 @@ public class _733_JAVA_图像渲染 {
             for (int[] round : around) {
                 int r = sr + round[0];
                 int c = sc + round[1];
-                if (r < 0 || r >= rows || c < 0 || c >= cols || image[r][c] != oldColor) continue;
+                if (r < 0 || r >= rows || c < 0 || c >= cols || image[r][c] != oldColor)
+                    continue;
                 floodFillHelper(image, r, c, oldColor, newColor);
             }
         }
     }
 }
-

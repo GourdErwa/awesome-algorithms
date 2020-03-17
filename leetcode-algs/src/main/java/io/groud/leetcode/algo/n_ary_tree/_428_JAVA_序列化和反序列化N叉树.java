@@ -12,8 +12,7 @@ public class _428_JAVA_序列化和反序列化N叉树 {
         public int val;
         public List<Node> children;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -25,14 +24,14 @@ public class _428_JAVA_序列化和反序列化N叉树 {
         }
     }
 
-
     // [1 [3[5 6] 2 4]]
     // [1,null,3,2,4,null,5,6]
     static class Codec {
 
         // 序列化时，使用空格隔开字符，dfs 遍历组合成字符串
         public String serialize(Node root) {
-            if (root == null) return null;
+            if (root == null)
+                return null;
             StringBuilder sb = new StringBuilder();
             Queue<Node> queue = new LinkedList<>();
             queue.add(root);
@@ -52,11 +51,13 @@ public class _428_JAVA_序列化和反序列化N叉树 {
 
         // 反序列化，使用 [] 判断节点入栈出栈情况
         public Node deserialize(String data) {
-            if (data == null || data.isEmpty()) return null;
+            if (data == null || data.isEmpty())
+                return null;
             String[] strings = data.trim().split(" ");
             Node root = new Node(Integer.valueOf(strings[0]), new ArrayList<>());
             int length = strings.length;
-            if (length == 1) return root; // 如果仅有一个节点，直接返回
+            if (length == 1)
+                return root; // 如果仅有一个节点，直接返回
 
             Deque<Node> deque = new LinkedList<>();
             Node curr = root;
@@ -89,7 +90,7 @@ public class _428_JAVA_序列化和反序列化N叉树 {
         }
 
         private void serialize(Node node, StringBuilder sb) {
-            //System.out.println(node.val);
+            // System.out.println(node.val);
             if (node == null) {
                 sb.append('#');
                 return;

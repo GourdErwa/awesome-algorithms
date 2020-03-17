@@ -14,8 +14,7 @@ public class _559_JAVA_N叉树的最大深度 {
         public int val;
         public List<Node> children;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -30,7 +29,8 @@ public class _559_JAVA_N叉树的最大深度 {
     // 最大深度 bfs
     class Solution {
         public int maxDepth(Node root) {
-            if (root == null) return 0;
+            if (root == null)
+                return 0;
             int max = 0;
             Queue<Node> deque = new LinkedList<>(); // 使用队列的语义
             deque.add(root);
@@ -49,7 +49,8 @@ public class _559_JAVA_N叉树的最大深度 {
     // 最大深度 dfs 递归-自顶向下
     class Solution1 {
         public int maxDepth(Node root) {
-            if (root == null) return 0;
+            if (root == null)
+                return 0;
             int max = 1;
             for (Node child : root.children) {
                 max = Math.max(maxDepth(child) + 1, max); // 当前结果依赖子问题的结果

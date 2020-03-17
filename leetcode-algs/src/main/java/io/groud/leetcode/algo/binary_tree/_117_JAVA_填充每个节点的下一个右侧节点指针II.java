@@ -8,8 +8,7 @@ import java.util.LinkedList;
  * <p>
  * tag：二叉树
  * <p>
- * 思路1：层级遍历，逐层保存后依次连接
- * 思路2：递归，当前节点的左右子节点应该 next 的节点为当前节点的 next 节点下的子节点
+ * 思路1：层级遍历，逐层保存后依次连接 思路2：递归，当前节点的左右子节点应该 next 的节点为当前节点的 next 节点下的子节点
  *
  * @author Li.Wei by 2020/2/20
  */
@@ -21,8 +20,7 @@ public class _117_JAVA_填充每个节点的下一个右侧节点指针II {
         public Node right;
         public Node next;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -38,10 +36,11 @@ public class _117_JAVA_填充每个节点的下一个右侧节点指针II {
 
     /*
     尾递归
-   因为每一层的节点逐个右指向，所以我们层级遍历处理。
-   */
+    因为每一层的节点逐个右指向，所以我们层级遍历处理。
+    */
     public Node connect(Node root) {
-        if (root == null) return null;
+        if (root == null)
+            return null;
         Deque<Node> linked = new LinkedList<>();
         linked.add(root);
         connect(linked);
@@ -50,25 +49,29 @@ public class _117_JAVA_填充每个节点的下一个右侧节点指针II {
 
     // 当前层
     public void connect(Deque<Node> linked) {
-        if (linked.isEmpty()) return;
+        if (linked.isEmpty())
+            return;
         Node prev = linked.removeFirst();
 
         int length = linked.size();
 
-        if (prev.left != null) linked.add(prev.left);
-        if (prev.right != null) linked.add(prev.right);
+        if (prev.left != null)
+            linked.add(prev.left);
+        if (prev.right != null)
+            linked.add(prev.right);
 
         while (length > 0) {
             Node curr = linked.removeFirst();
-            if (curr.left != null) linked.add(curr.left);
-            if (curr.right != null) linked.add(curr.right);
+            if (curr.left != null)
+                linked.add(curr.left);
+            if (curr.right != null)
+                linked.add(curr.right);
             prev.next = curr;
             prev = curr;
             length--;
         }
         connect(linked);
     }
-
 
     /*
      *   [3]

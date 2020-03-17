@@ -8,10 +8,7 @@ import java.util.Set;
  * <p>
  * tag：位运算、hash
  * <p>
- * 解法：
- * 1. 位运算
- * 2. 暴力双层循环(需要记忆)
- * 3. 放入 set ，出现重复移除
+ * 解法： 1. 位运算 2. 暴力双层循环(需要记忆) 3. 放入 set ，出现重复移除
  *
  * @author Li.Wei by 2020/2/24
  */
@@ -21,7 +18,9 @@ public class _136_JAVA_只出现一次的数字 {
     class Solution {
         public int singleNumber(int[] nums) {
             Set<Integer> dup = new HashSet<>();
-            for (int num : nums) if (!dup.add(num)) dup.remove(num);
+            for (int num : nums)
+                if (!dup.add(num))
+                    dup.remove(num);
             return dup.isEmpty() ? -1 : dup.iterator().next();
         }
     }
@@ -30,7 +29,8 @@ public class _136_JAVA_只出现一次的数字 {
     class Solution1 {
         public int singleNumber(int[] nums) {
             int r = nums[0];
-            for (int num : nums) r ^= num;
+            for (int num : nums)
+                r ^= num;
             return r;
         }
     }

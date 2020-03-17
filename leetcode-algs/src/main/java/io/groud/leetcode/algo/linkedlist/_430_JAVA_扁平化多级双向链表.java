@@ -42,7 +42,8 @@ public class _430_JAVA_扁平化多级双向链表 {
 
     static class Solution1 {
         public Node flatten(Node head) {
-            if (head == null) return null;
+            if (head == null)
+                return null;
 
             Node pseudoHead = new Node(0, null, head, null); // 哨兵节点
 
@@ -54,7 +55,8 @@ public class _430_JAVA_扁平化多级双向链表 {
 
         /* return the tail of the flatten list */
         public Node flattenDFS(Node prev, Node curr) {
-            if (curr == null) return prev;
+            if (curr == null)
+                return prev;
 
             // 修改参数，重新指向
             curr.prev = prev;

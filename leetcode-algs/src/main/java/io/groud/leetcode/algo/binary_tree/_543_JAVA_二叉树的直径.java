@@ -26,13 +26,15 @@ public class _543_JAVA_二叉树的直径 {
         private int ans = 1; // 最终返回的最大直径
 
         public int diameterOfBinaryTree(TreeNode root) {
-            if (root == null) return 0;
+            if (root == null)
+                return 0;
             diameterOfBinaryTreeHelper(root);
             return ans - 1; // 求长度，做减 1
         }
 
         public int diameterOfBinaryTreeHelper(TreeNode root) {
-            if (root == null) return 0;
+            if (root == null)
+                return 0;
             int left = diameterOfBinaryTreeHelper(root.left);
             int right = diameterOfBinaryTreeHelper(root.right);
             ans = Math.max(ans, left + right + 1); // 更新最大直径

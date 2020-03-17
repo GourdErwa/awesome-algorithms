@@ -26,6 +26,6 @@ public class _561_JAVA_数组拆分I {
 
     public static void main(String[] args) {
         _561_JAVA_数组拆分I java = new _561_JAVA_数组拆分I();
-        System.out.println(java.arrayPairSum(new int[]{1, 3, 2, 4}));
+        System.out.println(java.arrayPairSum(new int[] {1, 3, 2, 4}));
     }
 }

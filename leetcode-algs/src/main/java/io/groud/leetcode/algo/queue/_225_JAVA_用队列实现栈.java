@@ -15,19 +15,13 @@ public class _225_JAVA_用队列实现栈 {
     private static class MyStack {
 
         /**
-         * 使用队列实现栈的功能。
-         * 1
-         * 1-2 -> 2-1
-         * 2-1-3 -> 3-2-1
-         * 3-2-1-4 -> 4-3-2-1
+         * 使用队列实现栈的功能。 1 1-2 -> 2-1 2-1-3 -> 3-2-1 3-2-1-4 -> 4-3-2-1
          * <p>
-         * 只要每次添加元素后，将队列的前 N-1 个元素重新入队即可保留最后一个元素为队列头部。
-         * 实现了先进先出的「栈」，参考 restQueue 方法
+         * 只要每次添加元素后，将队列的前 N-1 个元素重新入队即可保留最后一个元素为队列头部。 实现了先进先出的「栈」，参考 restQueue 方法
          */
         private final Queue<Integer> queue = new ArrayDeque<>();
 
-        public MyStack() {
-        }
+        public MyStack() {}
 
         private void restQueue() {
             int size = queue.size();

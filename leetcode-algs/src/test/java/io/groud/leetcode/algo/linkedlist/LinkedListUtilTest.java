@@ -32,12 +32,10 @@ class LinkedListUtilTest {
     private final ListNode testG3N1 = new ListNode(1, testG3N2);
 
     @BeforeEach
-    void setUp() {
-    }
+    void setUp() {}
 
     @AfterEach
-    void tearDown() {
-    }
+    void tearDown() {}
 
     @Test
     void reverseList() {

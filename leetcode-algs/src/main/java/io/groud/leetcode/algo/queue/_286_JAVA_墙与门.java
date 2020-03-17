@@ -17,16 +17,12 @@ public class _286_JAVA_墙与门 {
     static class Solution {
 
         // 遍历四个方向的节点
-        private final int[][] dis = new int[][]{
-                {0, 1},
-                {0, -1},
-                {1, 0},
-                {-1, 0}
-        };
+        private final int[][] dis = new int[][] {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
         // 找到需要遍历的门，依次遍历后，所有房间的路径被更新为最小值
         public void wallsAndGates(int[][] rooms) {
-            if (rooms == null || rooms.length < 1) return;
+            if (rooms == null || rooms.length < 1)
+                return;
             final int rows = rooms.length;
             final int cols = rooms[0].length;
             final Queue<int[]> queue = new LinkedList<>();
@@ -34,7 +30,7 @@ public class _286_JAVA_墙与门 {
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     if (rooms[i][j] == 0) {
-                        queue.add(new int[]{i, j});
+                        queue.add(new int[] {i, j});
                     }
                 }
             }
@@ -48,13 +44,14 @@ public class _286_JAVA_墙与门 {
                     int nextRow = currRow + r[0];
                     int nextCol = currCol + r[1];
                     if (nextRow < 0 || nextRow >= rows || // 越界检查
-                            nextCol < 0 || nextCol >= cols || // 越界检查
-                            rooms[nextRow][nextCol] != Integer.MAX_VALUE // 仅处理房间数据
-                            || rooms[nextRow][nextCol] - oldValue > 1 // 如果比当前路径次数大，不进行遍历
-                    ) continue;
+                        nextCol < 0 || nextCol >= cols || // 越界检查
+                        rooms[nextRow][nextCol] != Integer.MAX_VALUE // 仅处理房间数据
+                        || rooms[nextRow][nextCol] - oldValue > 1 // 如果比当前路径次数大，不进行遍历
+                    )
+                        continue;
 
                     rooms[nextRow][nextCol] = oldValue + 1;
-                    queue.add(new int[]{nextRow, nextCol});
+                    queue.add(new int[] {nextRow, nextCol});
                 }
             }
         }
@@ -65,19 +62,16 @@ public class _286_JAVA_墙与门 {
     static class Solution1 {
 
         // 遍历四个方向的节点
-        private final int[][] dis = new int[][]{
-                {0, 1},
-                {0, -1},
-                {1, 0},
-                {-1, 0}
-        };
+        private final int[][] dis = new int[][] {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
         public void wallsAndGates(int[][] rooms) {
-            if (rooms == null) return;
+            if (rooms == null)
+                return;
 
             for (int i = 0; i < rooms.length; i++) {
                 for (int j = 0; j < rooms[0].length; j++) {
-                    if (rooms[i][j] == Integer.MAX_VALUE) rooms[i][j] = dfs(rooms, i, j);
+                    if (rooms[i][j] == Integer.MAX_VALUE)
+                        rooms[i][j] = dfs(rooms, i, j);
                 }
             }
         }
@@ -88,7 +82,7 @@ public class _286_JAVA_墙与门 {
 
             final int[][] distance = new int[rows][cols];
             final Queue<int[]> queue = new LinkedList<>();
-            queue.add(new int[]{x, y});
+            queue.add(new int[] {x, y});
 
             while (!queue.isEmpty()) {
                 int[] curr = queue.poll();
@@ -99,18 +93,19 @@ public class _286_JAVA_墙与门 {
                     int nextRow = currRow + r[0];
                     int nextCol = currCol + r[1];
                     if (nextRow < 0 || nextRow >= rows || // 越界检查
-                            nextCol < 0 || nextCol >= cols || // 越界检查
-                            rooms[nextRow][nextCol] == -1 || // 墙直接跳过
-                            distance[nextRow][nextCol] != 0 // 宽度遍历未访问过的元素
+                        nextCol < 0 || nextCol >= cols || // 越界检查
+                        rooms[nextRow][nextCol] == -1 || // 墙直接跳过
+                        distance[nextRow][nextCol] != 0 // 宽度遍历未访问过的元素
                     )
                         continue;
 
                     int newValue = distance[currRow][currCol] + 1; // 路径 + 1
-                    if (rooms[nextRow][nextCol] == 0) return newValue; // 如果当前为 0 表示找到最短路径直接返回
+                    if (rooms[nextRow][nextCol] == 0)
+                        return newValue; // 如果当前为 0 表示找到最短路径直接返回
 
                     // 否则更新访问历史记录，继续宽度遍历
                     distance[nextRow][nextCol] = newValue;
-                    queue.add(new int[]{nextRow, nextCol});
+                    queue.add(new int[] {nextRow, nextCol});
                 }
             }
             return Integer.MAX_VALUE;
@@ -136,9 +131,11 @@ public class _286_JAVA_墙与门 {
 
         public void wallsAndGates(int[][] rooms) {
             int m = rooms.length;
-            if (m == 0) return;
+            if (m == 0)
+                return;
             int n = rooms[0].length;
-            if (n == 0) return;
+            if (n == 0)
+                return;
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
@@ -151,12 +148,8 @@ public class _286_JAVA_墙与门 {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.wallsAndGates(new int[][]{
-                {2147483647, -1, 0, 2147483647},
-                {2147483647, 2147483647, 2147483647, -1},
-                {2147483647, -1, 2147483647, -1},
-                {0, -1, 2147483647, 2147483647}
-        });
+        solution.wallsAndGates(new int[][] {{2147483647, -1, 0, 2147483647}, {2147483647, 2147483647, 2147483647, -1},
+            {2147483647, -1, 2147483647, -1}, {0, -1, 2147483647, 2147483647}});
 
     }
 }

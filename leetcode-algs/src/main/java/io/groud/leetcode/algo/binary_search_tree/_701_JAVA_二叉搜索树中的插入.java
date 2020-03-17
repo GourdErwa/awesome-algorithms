@@ -25,12 +25,12 @@ public class _701_JAVA_二叉搜索树中的插入 {
     /**
      * 基本情况：找到插入的 node 为空时，寻找结束
      * <p>
-     * 递推关系：
-     * val < node.val 向左找：f(node,val) = node.left.f(node.left,val) return node
-     * val > node.val 向右找：f(node,val) = node.right.f(node.right,val) return node
+     * 递推关系： val < node.val 向左找：f(node,val) = node.left.f(node.left,val) return node val > node.val 向右找：f(node,val) =
+     * node.right.f(node.right,val) return node
      */
     public TreeNode insertIntoBST(TreeNode node, int val) {
-        if (node == null) return new TreeNode(val);
+        if (node == null)
+            return new TreeNode(val);
 
         if (val < node.val) {
             node.left = insertIntoBST(node.left, val); // 向左找
@@ -39,7 +39,6 @@ public class _701_JAVA_二叉搜索树中的插入 {
         }
         return node;
     }
-
 
     public static void main(String[] args) {
         _701_JAVA_二叉搜索树中的插入 o = new _701_JAVA_二叉搜索树中的插入();
@@ -78,4 +77,3 @@ public class _701_JAVA_二叉搜索树中的插入 {
         }
     }
 }
-

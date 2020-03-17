@@ -18,12 +18,14 @@ public class _1013_JAVA_将数组分成和相等的三个部分 {
                 int sumJ = 0;
                 for (int j = i + 1; j < length - 1; j++) {
                     sumJ += A[j];
-                    if (sumI != sumJ) continue; // 如果前 2 部分不相等直接跳出
+                    if (sumI != sumJ)
+                        continue; // 如果前 2 部分不相等直接跳出
                     int sumM = 0;
                     for (int m = j + 1; m < length; m++) {
                         sumM += A[m];
                     }
-                    if (sumJ == sumM) return true; // 如果相等返回
+                    if (sumJ == sumM)
+                        return true; // 如果相等返回
                 }
             }
             return false;
@@ -37,8 +39,10 @@ public class _1013_JAVA_将数组分成和相等的三个部分 {
 
             // 计算整个数组的和，如果和不能被 3 整除说明肯定不能分三份
             int sumA = 0;
-            for (int i : A) sumA += i;
-            if (sumA % 3 != 0) return false;
+            for (int i : A)
+                sumA += i;
+            if (sumA % 3 != 0)
+                return false;
 
             int partSum = sumA / 3; // 每份的和
 
@@ -48,11 +52,13 @@ public class _1013_JAVA_将数组分成和相等的三个部分 {
             int sum = 0;
             while (i < length - 2) {
                 sum += A[i];
-                if (sum == partSum) break;
+                if (sum == partSum)
+                    break;
                 i++;
             }
             // 如果第一部分的下标越界到最后一个位置说明该部分和不成立
-            if (i == length - 2) return false;
+            if (i == length - 2)
+                return false;
 
             // 寻找第二部分的 partSum
 
@@ -60,7 +66,8 @@ public class _1013_JAVA_将数组分成和相等的三个部分 {
             sum = 0; // 计数归 0
             while (i < length - 1) {
                 sum += A[i];
-                if (sum == partSum) break;
+                if (sum == partSum)
+                    break;
                 i++;
             }
             // 如果第二部分的下标越界到最后一个位置说明该部分和不成立
@@ -72,8 +79,10 @@ public class _1013_JAVA_将数组分成和相等的三个部分 {
     static class Solution2 {
         public boolean canThreePartsEqualSum(int[] A) {
             int sumA = 0;
-            for (int i : A) sumA += i;
-            if (sumA % 3 != 0) return false; // 不是 3 的倍数肯定不合法
+            for (int i : A)
+                sumA += i;
+            if (sumA % 3 != 0)
+                return false; // 不是 3 的倍数肯定不合法
             int partSum = sumA / 3; // 每份的和
             int sum = 0;
             int count = 0;
@@ -91,6 +100,6 @@ public class _1013_JAVA_将数组分成和相等的三个部分 {
     // [14,6,-10,2,18,-7,-4,11]
     public static void main(String[] args) {
         Solution o = new Solution();
-        System.out.println(o.canThreePartsEqualSum(new int[]{3, 3, 6, 5, -2, 2, 5, 1, -9, 4}));
+        System.out.println(o.canThreePartsEqualSum(new int[] {3, 3, 6, 5, -2, 2, 5, 1, -9, 4}));
     }
 }

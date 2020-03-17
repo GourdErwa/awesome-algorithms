@@ -20,7 +20,8 @@ public class _328_JAVA_奇偶数链表 {
     }
 
     public ListNode oddEvenList(ListNode head) {
-        if (head == null) return null;
+        if (head == null)
+            return null;
         ListNode last1 = head; // 奇数最后节点
         ListNode last2 = head.next; // 偶数最后节点
         ListNode newHead = last2; // 偶数头节点

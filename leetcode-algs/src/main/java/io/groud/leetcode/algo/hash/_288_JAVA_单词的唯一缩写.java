@@ -14,8 +14,8 @@ import java.util.Set;
 public class _288_JAVA_单词的唯一缩写 {
 
     /*
-["ValidWordAbbr","isUnique","isUnique","isUnique","isUnique"]
-[[["deer","door","cake","card"]],["dear"],["cart"],["cane"],["make"]]
+    ["ValidWordAbbr","isUnique","isUnique","isUnique","isUnique"]
+    [[["deer","door","cake","card"]],["dear"],["cart"],["cane"],["make"]]
      */
     // 暴力版本
     static class ValidWordAbbr {
@@ -39,7 +39,8 @@ public class _288_JAVA_单词的唯一缩写 {
         // 单词缩写方法
         private String unique(String word) {
             int length = word.length();
-            if (length < 3) return word;
+            if (length < 3)
+                return word;
             return word.charAt(0) + String.valueOf(length - 2) + word.charAt(length - 1);
         }
     }
@@ -57,7 +58,8 @@ public class _288_JAVA_单词的唯一缩写 {
                     map.put(unique, s); // 如果历史未放入，新增
                 } else {
                     // 如果新放入的不是重复的，重置为 "" ，表示至少放入 2 个，永远不是唯一缩写
-                    if (!v.equals(s)) map.put(unique, "");
+                    if (!v.equals(s))
+                        map.put(unique, "");
                 }
             }
         }
@@ -69,18 +71,18 @@ public class _288_JAVA_单词的唯一缩写 {
 
         private String unique(String word) {
             int length = word.length();
-            if (length < 3) return word;
+            if (length < 3)
+                return word;
             return word.charAt(0) + String.valueOf(length - 2) + word.charAt(length - 1);
         }
     }
 
     public static void main(String[] args) {
-        ValidWordAbbr obj = new ValidWordAbbr(new String[]{"hello", "hello"});
+        ValidWordAbbr obj = new ValidWordAbbr(new String[] {"hello", "hello"});
         System.out.println(obj.isUnique("hello"));
     }
-/**
- * Your ValidWordAbbr object will be instantiated and called as such:
- * ValidWordAbbr obj = new ValidWordAbbr(dictionary);
- * boolean param_1 = obj.isUnique(word);
- */
+    /**
+     * Your ValidWordAbbr object will be instantiated and called as such: ValidWordAbbr obj = new
+     * ValidWordAbbr(dictionary); boolean param_1 = obj.isUnique(word);
+     */
 }

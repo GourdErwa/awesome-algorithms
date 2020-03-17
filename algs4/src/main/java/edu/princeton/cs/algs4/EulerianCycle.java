@@ -1,48 +1,39 @@
 /******************************************************************************
- *  Compilation:  javac EulerianCycle.java
- *  Execution:    java  EulerianCycle V E
- *  Dependencies: Graph.java Stack.java StdOut.java
+ * Compilation: javac EulerianCycle.java Execution: java EulerianCycle V E Dependencies: Graph.java Stack.java
+ * StdOut.java
  *
- *  Find an Eulerian cycle in a graph, if one exists.
+ * Find an Eulerian cycle in a graph, if one exists.
  *
- *  Runs in O(E + V) time.
+ * Runs in O(E + V) time.
  *
- *  This implementation is tricker than the one for digraphs because
- *  when we use edge v-w from v's adjacency list, we must be careful
- *  not to use the second copy of the edge from w's adjaceny list.
+ * This implementation is tricker than the one for digraphs because when we use edge v-w from v's adjacency list, we
+ * must be careful not to use the second copy of the edge from w's adjaceny list.
  *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
 
 /**
- * The {@code EulerianCycle} class represents a data type
- * for finding an Eulerian cycle or path in a graph.
- * An <em>Eulerian cycle</em> is a cycle (not necessarily simple) that
- * uses every edge in the graph exactly once.
+ * The {@code EulerianCycle} class represents a data type for finding an Eulerian cycle or path in a graph. An
+ * <em>Eulerian cycle</em> is a cycle (not necessarily simple) that uses every edge in the graph exactly once.
  * <p>
- * This implementation uses a nonrecursive depth-first search.
- * The constructor takes &Theta;(<em>E</em> + <em>V</em>) time in the worst
- * case, where <em>E</em> is the number of edges and <em>V</em> is the
- * number of vertices
- * Each instance method takes &Theta;(1) time.
- * It uses &Theta;(<em>E</em> + <em>V</em>) extra space in the worst case
- * (not including the graph).
+ * This implementation uses a nonrecursive depth-first search. The constructor takes &Theta;(<em>E</em> + <em>V</em>)
+ * time in the worst case, where <em>E</em> is the number of edges and <em>V</em> is the number of vertices Each
+ * instance method takes &Theta;(1) time. It uses &Theta;(<em>E</em> + <em>V</em>) extra space in the worst case (not
+ * including the graph).
  * <p>
- * To compute Eulerian paths in graphs, see {@link EulerianPath}.
- * To compute Eulerian cycles and paths in digraphs, see
+ * To compute Eulerian paths in graphs, see {@link EulerianPath}. To compute Eulerian cycles and paths in digraphs, see
  * {@link DirectedEulerianCycle} and {@link DirectedEulerianPath}.
  * <p>
- * For additional documentation,
- * see <a href="https://algs4.cs.princeton.edu/41graph">Section 4.1</a> of
- * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/41graph">Section 4.1</a> of <i>Algorithms,
+ * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  * @author Nate Liu
  */
 public class EulerianCycle {
-    private Stack<Integer> cycle = new Stack<Integer>();  // Eulerian cycle; null if no such cycle
+    private Stack<Integer> cycle = new Stack<Integer>(); // Eulerian cycle; null if no such cycle
 
     // an undirected edge, with a field to indicate whether the edge has already been used
     private static class Edge {
@@ -58,21 +49,26 @@ public class EulerianCycle {
 
         // returns the other vertex of the edge
         public int other(int vertex) {
-            if (vertex == v) return w;
-            else if (vertex == w) return v;
-            else throw new IllegalArgumentException("Illegal endpoint");
+            if (vertex == v)
+                return w;
+            else if (vertex == w)
+                return v;
+            else
+                throw new IllegalArgumentException("Illegal endpoint");
         }
     }
 
     /**
      * Computes an Eulerian cycle in the specified graph, if one exists.
      *
-     * @param G the graph
+     * @param G
+     *            the graph
      */
     public EulerianCycle(Graph G) {
 
         // must have at least one edge
-        if (G.E() == 0) return;
+        if (G.E() == 0)
+            return;
 
         // necessary condition: all vertices have even degree
         // (this test is needed or it might find an Eulerian path instead of cycle)
@@ -82,7 +78,7 @@ public class EulerianCycle {
 
         // create local view of adjacency lists, to iterate one vertex at a time
         // the helper Edge data type is used to avoid exploring both copies of an edge v-w
-        Queue<Edge>[] adj = (Queue<Edge>[]) new Queue[G.V()];
+        Queue<Edge>[] adj = (Queue<Edge>[])new Queue[G.V()];
         for (int v = 0; v < G.V(); v++)
             adj[v] = new Queue<Edge>();
 
@@ -116,7 +112,8 @@ public class EulerianCycle {
             int v = stack.pop();
             while (!adj[v].isEmpty()) {
                 Edge edge = adj[v].dequeue();
-                if (edge.isUsed) continue;
+                if (edge.isUsed)
+                    continue;
                 edge.isUsed = true;
                 stack.push(v);
                 v = edge.other(v);
@@ -135,8 +132,7 @@ public class EulerianCycle {
     /**
      * Returns the sequence of vertices on an Eulerian cycle.
      *
-     * @return the sequence of vertices on an Eulerian cycle;
-     * {@code null} if no such cycle
+     * @return the sequence of vertices on an Eulerian cycle; {@code null} if no such cycle
      */
     public Iterable<Integer> cycle() {
         return cycle;
@@ -145,8 +141,7 @@ public class EulerianCycle {
     /**
      * Returns true if the graph has an Eulerian cycle.
      *
-     * @return {@code true} if the graph has an Eulerian cycle;
-     * {@code false} otherwise
+     * @return {@code true} if the graph has an Eulerian cycle; {@code false} otherwise
      */
     public boolean hasEulerianCycle() {
         return cycle != null;
@@ -162,19 +157,20 @@ public class EulerianCycle {
 
     /**************************************************************************
      *
-     *  The code below is solely for testing correctness of the data type.
+     * The code below is solely for testing correctness of the data type.
      *
      **************************************************************************/
 
     // Determines whether a graph has an Eulerian cycle using necessary
     // and sufficient conditions (without computing the cycle itself):
-    //    - at least one edge
-    //    - degree(v) is even for every vertex v
-    //    - the graph is connected (ignoring isolated vertices)
+    // - at least one edge
+    // - degree(v) is even for every vertex v
+    // - the graph is connected (ignoring isolated vertices)
     private static boolean satisfiesNecessaryAndSufficientConditions(Graph G) {
 
         // Condition 0: at least 1 edge
-        if (G.E() == 0) return false;
+        if (G.E() == 0)
+            return false;
 
         // Condition 1: degree(v) is even for every vertex
         for (int v = 0; v < G.V(); v++)
@@ -195,16 +191,20 @@ public class EulerianCycle {
     private boolean certifySolution(Graph G) {
 
         // internal consistency check
-        if (hasEulerianCycle() == (cycle() == null)) return false;
+        if (hasEulerianCycle() == (cycle() == null))
+            return false;
 
         // hashEulerianCycle() returns correct value
-        if (hasEulerianCycle() != satisfiesNecessaryAndSufficientConditions(G)) return false;
+        if (hasEulerianCycle() != satisfiesNecessaryAndSufficientConditions(G))
+            return false;
 
         // nothing else to check if no Eulerian cycle
-        if (cycle == null) return true;
+        if (cycle == null)
+            return true;
 
         // check that cycle() uses correct number of edges
-        if (cycle.size() != G.E() + 1) return false;
+        if (cycle.size() != G.E() + 1)
+            return false;
 
         // check that cycle() is a cycle of G
         // TODO
@@ -212,10 +212,12 @@ public class EulerianCycle {
         // check that first and last vertices in cycle() are the same
         int first = -1, last = -1;
         for (int v : cycle()) {
-            if (first == -1) first = v;
+            if (first == -1)
+                first = v;
             last = v;
         }
-        if (first != last) return false;
+        if (first != last)
+            return false;
 
         return true;
     }
@@ -239,11 +241,11 @@ public class EulerianCycle {
         StdOut.println();
     }
 
-
     /**
      * Unit tests the {@code EulerianCycle} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);
@@ -290,25 +292,21 @@ public class EulerianCycle {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

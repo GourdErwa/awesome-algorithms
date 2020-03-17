@@ -25,7 +25,8 @@ public class _205_JAVA_同构字符串 {
             for (int i = 0; i < length; i++) {
                 Character newValue = chars2[i];
                 Character oldValue = map.put(chars1[i], newValue);
-                if (oldValue != null && !newValue.equals(oldValue)) return false;
+                if (oldValue != null && !newValue.equals(oldValue))
+                    return false;
             }
 
             map.clear();
@@ -33,7 +34,8 @@ public class _205_JAVA_同构字符串 {
             for (int i = 0; i < length; i++) {
                 Character newValue = chars1[i];
                 Character oldValue = map.put(chars2[i], newValue);
-                if (oldValue != null && !newValue.equals(oldValue)) return false;
+                if (oldValue != null && !newValue.equals(oldValue))
+                    return false;
             }
             return true;
         }
@@ -49,12 +51,13 @@ public class _205_JAVA_同构字符串 {
             char[] tArr = t.toCharArray();
 
             for (int i = 0; i < sArr.length; i++) {
-                int sc = (int) sArr[i];
-                int tc = (int) tArr[i];
+                int sc = (int)sArr[i];
+                int tc = (int)tArr[i];
                 if (mapS[sc] != '\0' || mapT[tc]) {
-                    if (mapS[sc] != tc) return false;
+                    if (mapS[sc] != tc)
+                        return false;
                 } else {
-                    mapS[sc] = (char) tc;
+                    mapS[sc] = (char)tc;
                     mapT[tc] = true;
                 }
             }
@@ -74,7 +77,7 @@ public class _205_JAVA_同构字符串 {
         System.out.println(solution.isIsomorphic("paper", "title")); // true
 
         for (int i = 0; i < 128; i++) {
-            System.out.println(((char) i));
+            System.out.println(((char)i));
         }
     }
 }

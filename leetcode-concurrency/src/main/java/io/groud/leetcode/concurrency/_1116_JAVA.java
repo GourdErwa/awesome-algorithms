@@ -6,8 +6,7 @@ import java.util.function.IntConsumer;
 /**
  * https://leetcode-cn.com/problems/print-zero-even-odd/
  * <p>
- * 输入：n = 5
- * 输出："0102030405"
+ * 输入：n = 5 输出："0102030405"
  *
  * @author Li.Wei by 2020/2/4
  */
@@ -91,7 +90,6 @@ public class _1116_JAVA {
                 e.printStackTrace();
             }
         }).start();
-
 
         new Thread(() -> {
             try {

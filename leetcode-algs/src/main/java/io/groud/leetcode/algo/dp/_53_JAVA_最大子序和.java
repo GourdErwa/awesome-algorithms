@@ -1,8 +1,7 @@
 package io.groud.leetcode.algo.dp;
 
 /**
- * https://leetcode-cn.com/problems/maximum-subarray/
- * tag：dp、分治、贪心
+ * https://leetcode-cn.com/problems/maximum-subarray/ tag：dp、分治、贪心
  *
  * TODO 贪心、分治未完成
  */
@@ -27,7 +26,8 @@ public class _53_JAVA_最大子序和 {
      */
     static class Solution {
         public int maxSubArray(int[] nums) {
-            if (nums == null || nums.length == 0) return 0;
+            if (nums == null || nums.length == 0)
+                return 0;
             int ans = nums[0];
             int[] dp = new int[nums.length];
             dp[0] = ans;
@@ -41,12 +41,15 @@ public class _53_JAVA_最大子序和 {
 
         // dp 优化版本
         public int maxSubArrayOptimization(int[] nums) {
-            if (nums == null || nums.length == 0) return 0;
+            if (nums == null || nums.length == 0)
+                return 0;
             int ans = nums[0];
             int currSum = ans; // 当前和，如果大于 0 说明前面是连续的求和，否则归 0 后重新计算
             for (int num : nums) {
-                if (num > 0) currSum += num;
-                else currSum = 0;
+                if (num > 0)
+                    currSum += num;
+                else
+                    currSum = 0;
                 ans = Math.max(ans, currSum);
             }
             return ans;
@@ -55,7 +58,7 @@ public class _53_JAVA_最大子序和 {
 
     public static void main(String[] args) {
         Solution o = new Solution();
-        System.out.println(o.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        System.out.println(o.maxSubArray(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}));
     }
 
 }

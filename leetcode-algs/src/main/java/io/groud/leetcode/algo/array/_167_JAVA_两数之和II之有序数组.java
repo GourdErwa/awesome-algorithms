@@ -25,7 +25,7 @@ public class _167_JAVA_两数之和II之有序数组 {
             int sum = numbers[j];
             for (int k = y - 1; k <= i; k++) { // 第二个和所在范围遍历
                 if (sum + numbers[k] == target) {
-                    return new int[]{++j, ++k};
+                    return new int[] {++j, ++k};
                 }
             }
         }
@@ -41,7 +41,7 @@ public class _167_JAVA_两数之和II之有序数组 {
         while (min < max) {
             int sum = numbers[min] + numbers[max];
             if (sum == target) {
-                return new int[]{++min, ++max};
+                return new int[] {++min, ++max};
             } else if (sum > target) {
                 max--;
             } else {

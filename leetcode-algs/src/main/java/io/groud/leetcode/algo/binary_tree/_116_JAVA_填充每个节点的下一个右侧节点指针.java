@@ -18,8 +18,7 @@ public class _116_JAVA_填充每个节点的下一个右侧节点指针 {
         public Node right;
         public Node next;
 
-        public Node() {
-        }
+        public Node() {}
 
         public Node(int _val) {
             val = _val;
@@ -35,10 +34,11 @@ public class _116_JAVA_填充每个节点的下一个右侧节点指针 {
 
     /*
     尾递归
-   因为每一层的节点逐个右指向，所以我们层级遍历处理。
-   */
+    因为每一层的节点逐个右指向，所以我们层级遍历处理。
+    */
     public Node connect(Node root) {
-        if (root == null) return null;
+        if (root == null)
+            return null;
         Deque<Node> linked = new LinkedList<>();
         linked.add(root);
         connect(linked);
@@ -47,18 +47,23 @@ public class _116_JAVA_填充每个节点的下一个右侧节点指针 {
 
     // 当前层
     public void connect(Deque<Node> linked) {
-        if (linked.isEmpty()) return;
+        if (linked.isEmpty())
+            return;
         Node prev = linked.removeFirst();
 
         int length = linked.size();
 
-        if (prev.left != null) linked.add(prev.left);
-        if (prev.right != null) linked.add(prev.right);
+        if (prev.left != null)
+            linked.add(prev.left);
+        if (prev.right != null)
+            linked.add(prev.right);
 
         while (length > 0) {
             Node curr = linked.removeFirst();
-            if (curr.left != null) linked.add(curr.left);
-            if (curr.right != null) linked.add(curr.right);
+            if (curr.left != null)
+                linked.add(curr.left);
+            if (curr.right != null)
+                linked.add(curr.right);
             prev.next = curr;
             prev = curr;
             length--;
@@ -66,12 +71,13 @@ public class _116_JAVA_填充每个节点的下一个右侧节点指针 {
         connect(linked);
     }
 
-
     // 普通递归
     public Node connect1(Node root) {
-        if (root == null) return null;
+        if (root == null)
+            return null;
 
-        if (root.left != null) root.left.next = root.right;
+        if (root.left != null)
+            root.left.next = root.right;
 
         if (root.right != null && root.next != null) {
             root.right.next = root.next.left;

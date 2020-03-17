@@ -1,9 +1,7 @@
 /******************************************************************************
- *  Compilation:  javac IndexMaxPQ.java
- *  Execution:    java IndexMaxPQ
- *  Dependencies: StdOut.java
+ * Compilation: javac IndexMaxPQ.java Execution: java IndexMaxPQ Dependencies: StdOut.java
  *
- *  Maximum-oriented indexed PQ implementation using a binary heap.
+ * Maximum-oriented indexed PQ implementation using a binary heap.
  *
  ******************************************************************************/
 
@@ -13,54 +11,49 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * The {@code IndexMaxPQ} class represents an indexed priority queue of generic keys.
- * It supports the usual <em>insert</em> and <em>delete-the-maximum</em>
- * operations, along with <em>delete</em> and <em>change-the-key</em>
- * methods. In order to let the client refer to items on the priority queue,
- * an integer between {@code 0} and {@code maxN - 1}
- * is associated with each key—the client
- * uses this integer to specify which key to delete or change.
- * It also supports methods for peeking at a maximum key,
- * testing if the priority queue is empty, and iterating through
+ * The {@code IndexMaxPQ} class represents an indexed priority queue of generic keys. It supports the usual
+ * <em>insert</em> and <em>delete-the-maximum</em> operations, along with <em>delete</em> and <em>change-the-key</em>
+ * methods. In order to let the client refer to items on the priority queue, an integer between {@code 0} and
+ * {@code maxN - 1} is associated with each key—the client uses this integer to specify which key to delete or change.
+ * It also supports methods for peeking at a maximum key, testing if the priority queue is empty, and iterating through
  * the keys.
  * <p>
- * This implementation uses a <em>binary heap</em> along with an
- * array to associate keys with integers in the given range.
- * The <em>insert</em>, <em>delete-the-maximum</em>, <em>delete</em>,
- * <em>change-key</em>, <em>decrease-key</em>, and <em>increase-key</em>
- * operations take &Theta;(log <em>n</em>) time in the worst case,
- * where <em>n</em> is the number of elements in the priority queue.
- * Construction takes time proportional to the specified capacity.
+ * This implementation uses a <em>binary heap</em> along with an array to associate keys with integers in the given
+ * range. The <em>insert</em>, <em>delete-the-maximum</em>, <em>delete</em>, <em>change-key</em>, <em>decrease-key</em>,
+ * and <em>increase-key</em> operations take &Theta;(log <em>n</em>) time in the worst case, where <em>n</em> is the
+ * number of elements in the priority queue. Construction takes time proportional to the specified capacity.
  * <p>
- * For additional documentation, see
- * <a href="https://algs4.cs.princeton.edu/24pq">Section 2.4</a> of
- * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/24pq">Section 2.4</a> of <i>Algorithms, 4th
+ * Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
- * @param <Key> the generic type of key on this priority queue
+ * @param <Key>
+ *            the generic type of key on this priority queue
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
 public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer> {
-    private int maxN;        // maximum number of elements on PQ
-    private int n;           // number of elements on PQ
-    private int[] pq;        // binary heap using 1-based indexing
-    private int[] qp;        // inverse of pq - qp[pq[i]] = pq[qp[i]] = i
-    private Key[] keys;      // keys[i] = priority of i
+    private int maxN; // maximum number of elements on PQ
+    private int n; // number of elements on PQ
+    private int[] pq; // binary heap using 1-based indexing
+    private int[] qp; // inverse of pq - qp[pq[i]] = pq[qp[i]] = i
+    private Key[] keys; // keys[i] = priority of i
 
     /**
-     * Initializes an empty indexed priority queue with indices between {@code 0}
-     * and {@code maxN - 1}.
+     * Initializes an empty indexed priority queue with indices between {@code 0} and {@code maxN - 1}.
      *
-     * @param maxN the keys on this priority queue are index from {@code 0} to {@code maxN - 1}
-     * @throws IllegalArgumentException if {@code maxN < 0}
+     * @param maxN
+     *            the keys on this priority queue are index from {@code 0} to {@code maxN - 1}
+     * @throws IllegalArgumentException
+     *             if {@code maxN < 0}
      */
     public IndexMaxPQ(int maxN) {
-        if (maxN < 0) throw new IllegalArgumentException();
+        if (maxN < 0)
+            throw new IllegalArgumentException();
         this.maxN = maxN;
         n = 0;
-        keys = (Key[]) new Comparable[maxN + 1];    // make this of length maxN??
+        keys = (Key[])new Comparable[maxN + 1]; // make this of length maxN??
         pq = new int[maxN + 1];
-        qp = new int[maxN + 1];                   // make this of length maxN??
+        qp = new int[maxN + 1]; // make this of length maxN??
         for (int i = 0; i <= maxN; i++)
             qp[i] = -1;
     }
@@ -68,8 +61,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Returns true if this priority queue is empty.
      *
-     * @return {@code true} if this priority queue is empty;
-     * {@code false} otherwise
+     * @return {@code true} if this priority queue is empty; {@code false} otherwise
      */
     public boolean isEmpty() {
         return n == 0;
@@ -78,10 +70,11 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Is {@code i} an index on this priority queue?
      *
-     * @param i an index
-     * @return {@code true} if {@code i} is an index on this priority queue;
-     * {@code false} otherwise
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+     * @param i
+     *            an index
+     * @return {@code true} if {@code i} is an index on this priority queue; {@code false} otherwise
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
      */
     public boolean contains(int i) {
         validateIndex(i);
@@ -100,15 +93,19 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Associate key with index i.
      *
-     * @param i   an index
-     * @param key the key to associate with index {@code i}
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-     * @throws IllegalArgumentException if there already is an item
-     *                                  associated with index {@code i}
+     * @param i
+     *            an index
+     * @param key
+     *            the key to associate with index {@code i}
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
+     * @throws IllegalArgumentException
+     *             if there already is an item associated with index {@code i}
      */
     public void insert(int i, Key key) {
         validateIndex(i);
-        if (contains(i)) throw new IllegalArgumentException("index is already in the priority queue");
+        if (contains(i))
+            throw new IllegalArgumentException("index is already in the priority queue");
         n++;
         qp[i] = n;
         pq[n] = i;
@@ -120,10 +117,12 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * Returns an index associated with a maximum key.
      *
      * @return an index associated with a maximum key
-     * @throws NoSuchElementException if this priority queue is empty
+     * @throws NoSuchElementException
+     *             if this priority queue is empty
      */
     public int maxIndex() {
-        if (n == 0) throw new NoSuchElementException("Priority queue underflow");
+        if (n == 0)
+            throw new NoSuchElementException("Priority queue underflow");
         return pq[1];
     }
 
@@ -131,10 +130,12 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * Returns a maximum key.
      *
      * @return a maximum key
-     * @throws NoSuchElementException if this priority queue is empty
+     * @throws NoSuchElementException
+     *             if this priority queue is empty
      */
     public Key maxKey() {
-        if (n == 0) throw new NoSuchElementException("Priority queue underflow");
+        if (n == 0)
+            throw new NoSuchElementException("Priority queue underflow");
         return keys[pq[1]];
     }
 
@@ -142,45 +143,56 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
      * Removes a maximum key and returns its associated index.
      *
      * @return an index associated with a maximum key
-     * @throws NoSuchElementException if this priority queue is empty
+     * @throws NoSuchElementException
+     *             if this priority queue is empty
      */
     public int delMax() {
-        if (n == 0) throw new NoSuchElementException("Priority queue underflow");
+        if (n == 0)
+            throw new NoSuchElementException("Priority queue underflow");
         int max = pq[1];
         exch(1, n--);
         sink(1);
 
         assert pq[n + 1] == max;
-        qp[max] = -1;        // delete
-        keys[max] = null;    // to help with garbage collection
-        pq[n + 1] = -1;        // not needed
+        qp[max] = -1; // delete
+        keys[max] = null; // to help with garbage collection
+        pq[n + 1] = -1; // not needed
         return max;
     }
 
     /**
      * Returns the key associated with index {@code i}.
      *
-     * @param i the index of the key to return
+     * @param i
+     *            the index of the key to return
      * @return the key associated with index {@code i}
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-     * @throws NoSuchElementException   no key is associated with index {@code i}
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
+     * @throws NoSuchElementException
+     *             no key is associated with index {@code i}
      */
     public Key keyOf(int i) {
         validateIndex(i);
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
-        else return keys[i];
+        if (!contains(i))
+            throw new NoSuchElementException("index is not in the priority queue");
+        else
+            return keys[i];
     }
 
     /**
      * Change the key associated with index {@code i} to the specified value.
      *
-     * @param i   the index of the key to change
-     * @param key change the key associated with index {@code i} to this key
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+     * @param i
+     *            the index of the key to change
+     * @param key
+     *            change the key associated with index {@code i} to this key
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
      */
     public void changeKey(int i, Key key) {
         validateIndex(i);
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i))
+            throw new NoSuchElementException("index is not in the priority queue");
         keys[i] = key;
         swim(qp[i]);
         sink(qp[i]);
@@ -189,9 +201,12 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Change the key associated with index {@code i} to the specified value.
      *
-     * @param i   the index of the key to change
-     * @param key change the key associated with index {@code i} to this key
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+     * @param i
+     *            the index of the key to change
+     * @param key
+     *            change the key associated with index {@code i} to this key
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
      * @deprecated Replaced by {@code changeKey(int, Key)}.
      */
     @Deprecated
@@ -203,19 +218,27 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Increase the key associated with index {@code i} to the specified value.
      *
-     * @param i   the index of the key to increase
-     * @param key increase the key associated with index {@code i} to this key
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-     * @throws IllegalArgumentException if {@code key <= keyOf(i)}
-     * @throws NoSuchElementException   no key is associated with index {@code i}
+     * @param i
+     *            the index of the key to increase
+     * @param key
+     *            increase the key associated with index {@code i} to this key
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
+     * @throws IllegalArgumentException
+     *             if {@code key <= keyOf(i)}
+     * @throws NoSuchElementException
+     *             no key is associated with index {@code i}
      */
     public void increaseKey(int i, Key key) {
         validateIndex(i);
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i))
+            throw new NoSuchElementException("index is not in the priority queue");
         if (keys[i].compareTo(key) == 0)
-            throw new IllegalArgumentException("Calling increaseKey() with a key equal to the key in the priority queue");
+            throw new IllegalArgumentException(
+                "Calling increaseKey() with a key equal to the key in the priority queue");
         if (keys[i].compareTo(key) > 0)
-            throw new IllegalArgumentException("Calling increaseKey() with a key that is strictly less than the key in the priority queue");
+            throw new IllegalArgumentException(
+                "Calling increaseKey() with a key that is strictly less than the key in the priority queue");
 
         keys[i] = key;
         swim(qp[i]);
@@ -224,19 +247,27 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Decrease the key associated with index {@code i} to the specified value.
      *
-     * @param i   the index of the key to decrease
-     * @param key decrease the key associated with index {@code i} to this key
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-     * @throws IllegalArgumentException if {@code key >= keyOf(i)}
-     * @throws NoSuchElementException   no key is associated with index {@code i}
+     * @param i
+     *            the index of the key to decrease
+     * @param key
+     *            decrease the key associated with index {@code i} to this key
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
+     * @throws IllegalArgumentException
+     *             if {@code key >= keyOf(i)}
+     * @throws NoSuchElementException
+     *             no key is associated with index {@code i}
      */
     public void decreaseKey(int i, Key key) {
         validateIndex(i);
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i))
+            throw new NoSuchElementException("index is not in the priority queue");
         if (keys[i].compareTo(key) == 0)
-            throw new IllegalArgumentException("Calling decreaseKey() with a key equal to the key in the priority queue");
+            throw new IllegalArgumentException(
+                "Calling decreaseKey() with a key equal to the key in the priority queue");
         if (keys[i].compareTo(key) < 0)
-            throw new IllegalArgumentException("Calling decreaseKey() with a key that is strictly greater than the key in the priority queue");
+            throw new IllegalArgumentException(
+                "Calling decreaseKey() with a key that is strictly greater than the key in the priority queue");
         keys[i] = key;
         sink(qp[i]);
     }
@@ -244,13 +275,17 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Remove the key on the priority queue associated with index {@code i}.
      *
-     * @param i the index of the key to remove
-     * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
-     * @throws NoSuchElementException   no key is associated with index {@code i}
+     * @param i
+     *            the index of the key to remove
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= i < maxN}
+     * @throws NoSuchElementException
+     *             no key is associated with index {@code i}
      */
     public void delete(int i) {
         validateIndex(i);
-        if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
+        if (!contains(i))
+            throw new NoSuchElementException("index is not in the priority queue");
         int index = qp[i];
         exch(index, n--);
         swim(index);
@@ -261,8 +296,10 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
 
     // throw an IllegalArgumentException if i is an invalid index
     private void validateIndex(int i) {
-        if (i < 0) throw new IllegalArgumentException("index is negative: " + i);
-        if (i >= maxN) throw new IllegalArgumentException("index >= capacity: " + i);
+        if (i < 0)
+            throw new IllegalArgumentException("index is negative: " + i);
+        if (i >= maxN)
+            throw new IllegalArgumentException("index >= capacity: " + i);
     }
 
     /***************************************************************************
@@ -280,7 +317,6 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
         qp[pq[j]] = j;
     }
 
-
     /***************************************************************************
      * Heap helper functions.
      ***************************************************************************/
@@ -294,18 +330,18 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     private void sink(int k) {
         while (2 * k <= n) {
             int j = 2 * k;
-            if (j < n && less(j, j + 1)) j++;
-            if (!less(k, j)) break;
+            if (j < n && less(j, j + 1))
+                j++;
+            if (!less(k, j))
+                break;
             exch(k, j);
             k = j;
         }
     }
 
-
     /**
-     * Returns an iterator that iterates over the keys on the
-     * priority queue in descending order.
-     * The iterator doesn't implement {@code remove()} since it's optional.
+     * Returns an iterator that iterates over the keys on the priority queue in descending order. The iterator doesn't
+     * implement {@code remove()} since it's optional.
      *
      * @return an iterator that iterates over the keys in descending order
      */
@@ -334,7 +370,8 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
         }
 
         public Integer next() {
-            if (!hasNext()) throw new NoSuchElementException();
+            if (!hasNext())
+                throw new NoSuchElementException();
             return copy.delMax();
         }
     }
@@ -342,7 +379,8 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     /**
      * Unit tests the {@code IndexMaxPQ} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         // insert a bunch of strings
@@ -396,25 +434,21 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

@@ -10,8 +10,7 @@ import java.util.function.IntConsumer;
  */
 public class _1195_JAVA {
     /**
-     * 使用信号量控制
-     * 考虑最终信号量释放问题，保证程序正常结束
+     * 使用信号量控制 考虑最终信号量释放问题，保证程序正常结束
      */
     static class FizzBuzz {
         private int n;
@@ -24,7 +23,7 @@ public class _1195_JAVA {
         private int i;
 
         public FizzBuzz(int n) {
-            //从1开始
+            // 从1开始
             this.i = 1;
             this.n = n;
         }
@@ -70,7 +69,7 @@ public class _1195_JAVA {
 
         // printNumber.accept(x) outputs "x", where x is an integer.
         public void number(IntConsumer printNumber) throws InterruptedException {
-            ///主要是这儿执行完后其他的还在等，所以会超时，这个时候释放掉所有的就行了。
+            /// 主要是这儿执行完后其他的还在等，所以会超时，这个时候释放掉所有的就行了。
             while (i <= n) {
                 numSem.acquire();
                 if (i % 3 == 0 && i % 5 == 0) {
@@ -138,8 +137,7 @@ public class _1195_JAVA {
 
 class _1195_JAVA_1 {
     /**
-     * 使用信号量 + for 循环内部对变量的判断控制
-     * 该实现考虑，如果某方法耗时较长时性能问题
+     * 使用信号量 + for 循环内部对变量的判断控制 该实现考虑，如果某方法耗时较长时性能问题
      */
     class FizzBuzz {
         private Semaphore semaphore = new Semaphore(1);
@@ -154,7 +152,7 @@ class _1195_JAVA_1 {
 
         // printFizz.run() outputs "fizz".
         public void fizz(Runnable printFizz) throws InterruptedException {
-            for (; ; ) {
+            for (;;) {
                 // Acquire the permit, try to run the logic exclusively.
                 this.semaphore.acquire(1);
 
@@ -176,7 +174,7 @@ class _1195_JAVA_1 {
 
         // printBuzz.run() outputs "buzz".
         public void buzz(Runnable printBuzz) throws InterruptedException {
-            for (; ; ) {
+            for (;;) {
                 this.semaphore.acquire(1);
 
                 try {
@@ -196,7 +194,7 @@ class _1195_JAVA_1 {
 
         // printFizzBuzz.run() outputs "fizzbuzz".
         public void fizzbuzz(Runnable printFizzBuzz) throws InterruptedException {
-            for (; ; ) {
+            for (;;) {
                 this.semaphore.acquire(1);
 
                 try {
@@ -216,7 +214,7 @@ class _1195_JAVA_1 {
 
         // printNumber.accept(x) outputs "x", where x is an integer.
         public void number(IntConsumer printNumber) throws InterruptedException {
-            for (; ; ) {
+            for (;;) {
                 this.semaphore.acquire(1);
 
                 try {

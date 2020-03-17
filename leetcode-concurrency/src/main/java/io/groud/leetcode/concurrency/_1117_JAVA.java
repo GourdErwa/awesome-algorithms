@@ -26,8 +26,7 @@ public class _1117_JAVA {
         // 屏障 ，保证线程三三成组执行
         private final CyclicBarrier barrier = new CyclicBarrier(3);
 
-        public H2O() {
-        }
+        public H2O() {}
 
         public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
 
@@ -71,8 +70,7 @@ class _1117_JAVA_1 {
         // 屏障 ，保证线程三三成组执行
         private final AtomicInteger barrier = new AtomicInteger();
 
-        public H2O() {
-        }
+        public H2O() {}
 
         public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
             h2.acquire();

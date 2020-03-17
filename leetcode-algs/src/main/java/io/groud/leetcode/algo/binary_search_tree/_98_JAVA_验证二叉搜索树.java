@@ -23,18 +23,22 @@ public class _98_JAVA_验证二叉搜索树 {
     }
 
     /**
-     * 基本条件：
-     * root 为空返回 true
+     * 基本条件： root 为空返回 true
      */
     public boolean helper(TreeNode node, Integer lower, Integer upper) {
-        if (node == null) return true;
+        if (node == null)
+            return true;
 
         int val = node.val;
-        if (lower != null && val <= lower) return false;
-        if (upper != null && val >= upper) return false;
+        if (lower != null && val <= lower)
+            return false;
+        if (upper != null && val >= upper)
+            return false;
 
-        if (!helper(node.right, val, upper)) return false;
-        if (!helper(node.left, lower, val)) return false;
+        if (!helper(node.right, val, upper))
+            return false;
+        if (!helper(node.left, lower, val))
+            return false;
         return true;
     }
 

@@ -22,8 +22,7 @@ public class _677_JAVA_键值映射 {
         // 可以优化为递归调用，最后基本情况获取到是否是相同单词覆盖进行处理
         private final Set<String> has = new HashSet<>();
 
-        public MapSum() {
-        }
+        public MapSum() {}
 
         public void insert(String key, int val) {
             TrieNode cur = root;
@@ -39,7 +38,8 @@ public class _677_JAVA_键值映射 {
             TrieNode cur = root;
             for (char c : prefix.toCharArray()) {
                 TrieNode trieNode = cur.childrenMap.get(c);
-                if (trieNode == null) return 0;
+                if (trieNode == null)
+                    return 0;
                 cur = trieNode;
             }
             return cur.sum;

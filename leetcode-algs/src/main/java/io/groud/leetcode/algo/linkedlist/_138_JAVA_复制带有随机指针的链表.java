@@ -34,7 +34,7 @@ public class _138_JAVA_复制带有随机指针的链表 {
         Node node = map.get(head); // 不存在构建节点放入 map
         if (node == null) {
             Node newNode = new Node(head.val);
-            map.put(head, newNode);  // 每个节点关联的 map，只保存一份
+            map.put(head, newNode); // 每个节点关联的 map，只保存一份
 
             newNode.next = copyRandomList(head.next);
             newNode.random = copyRandomList(head.random);
@@ -43,7 +43,6 @@ public class _138_JAVA_复制带有随机指针的链表 {
             return node;
         }
     }
-
 
     // 官方题解
     private final HashMap<Node, Node> visitedHash = new HashMap<>();

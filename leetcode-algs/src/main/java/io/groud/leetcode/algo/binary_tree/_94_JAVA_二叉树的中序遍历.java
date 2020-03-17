@@ -21,19 +21,22 @@ public class _94_JAVA_二叉树的中序遍历 {
 
     // 递归
     public List<Integer> inorderTraversal(TreeNode root) {
-        if (null == root) return Collections.emptyList();
+        if (null == root)
+            return Collections.emptyList();
         final List<Integer> r = new ArrayList<>();
         helper(r, root);
         return r;
     }
 
     public void helper(List<? super Integer> out, TreeNode treeNode) {
-        if (null == treeNode) return;
-        if (null != treeNode.left) helper(out, treeNode.left);
+        if (null == treeNode)
+            return;
+        if (null != treeNode.left)
+            helper(out, treeNode.left);
         out.add(treeNode.val);
-        if (null != treeNode.right) helper(out, treeNode.right);
+        if (null != treeNode.right)
+            helper(out, treeNode.right);
     }
-
 
     /**
      * 迭代 借助队列存储遍历的节点
@@ -41,7 +44,8 @@ public class _94_JAVA_二叉树的中序遍历 {
      * dfs，搜索左子树。
      */
     public List<Integer> inorderTraversal1(TreeNode root) {
-        if (null == root) return Collections.emptyList();
+        if (null == root)
+            return Collections.emptyList();
 
         final List<Integer> out = new ArrayList<>(); // 存储结果
         final Deque<TreeNode> stack = new ArrayDeque<>(); // 遍历的节点

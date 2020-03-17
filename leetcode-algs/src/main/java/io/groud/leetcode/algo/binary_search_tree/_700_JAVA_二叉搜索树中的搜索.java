@@ -26,16 +26,14 @@ public class _700_JAVA_二叉搜索树中的搜索 {
     // 2.利用二叉搜索树的性质，二分查找
 
     /**
-     * 基本条件：f(node,val) = node.val == val
-     * 递推关系：
-     * node.left.val <= val 时，f(node,val) = f(node.left,val)
-     * node.right.val>= val 时，f(node,val) = f(node.right,val)
+     * 基本条件：f(node,val) = node.val == val 递推关系： node.left.val <= val 时，f(node,val) = f(node.left,val) node.right.val>=
+     * val 时，f(node,val) = f(node.right,val)
      */
     public TreeNode searchBST(TreeNode node, int val) {
-        if (node == null || node.val == val) return node;
+        if (node == null || node.val == val)
+            return node;
         return (node.val > val) ? searchBST(node.left, val) : searchBST(node.right, val);
     }
-
 
     public static void main(String[] args) {
         _700_JAVA_二叉搜索树中的搜索 o = new _700_JAVA_二叉搜索树中的搜索();
@@ -50,4 +48,3 @@ public class _700_JAVA_二叉搜索树中的搜索 {
         System.out.println(treeNode);
     }
 }
-

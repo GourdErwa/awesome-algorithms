@@ -9,13 +9,9 @@ package io.groud.leetcode.algo.linkedlist;
  * <p>
  * 示例：
  * <p>
- * 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
- * 输出：7 -> 0 -> 8
- * 原因：342 + 465 = 807
+ * 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4) 输出：7 -> 0 -> 8 原因：342 + 465 = 807
  * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/add-two-numbers
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ * 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/add-two-numbers 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
  * @author Li.Wei by 2019/11/27
  */
@@ -43,9 +39,6 @@ class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
+        return "ListNode{" + "val=" + val + ", next=" + next + '}';
     }
 }

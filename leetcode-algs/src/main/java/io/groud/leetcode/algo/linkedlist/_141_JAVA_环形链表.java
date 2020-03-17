@@ -20,9 +20,7 @@ public class _141_JAVA_环形链表 {
 
         @Override
         public String toString() {
-            return "{" +
-                    "val=" + val +
-                    '}';
+            return "{" + "val=" + val + '}';
         }
     }
 
@@ -52,6 +50,6 @@ public class _141_JAVA_环形链表 {
         n3.next = n4;
         n4.next = n2;
         _141_JAVA_环形链表 java = new _141_JAVA_环形链表();
-        //Assert.check(java.hasCycle(n1));
+        // Assert.check(java.hasCycle(n1));
     }
 }

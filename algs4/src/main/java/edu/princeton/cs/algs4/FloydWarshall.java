@@ -1,55 +1,44 @@
 /******************************************************************************
- *  Compilation:  javac FloydWarshall.java
- *  Execution:    java FloydWarshall V E
- *  Dependencies: AdjMatrixEdgeWeightedDigraph.java
+ * Compilation: javac FloydWarshall.java Execution: java FloydWarshall V E Dependencies:
+ * AdjMatrixEdgeWeightedDigraph.java
  *
- *  Floyd-Warshall all-pairs shortest path algorithm.
+ * Floyd-Warshall all-pairs shortest path algorithm.
  *
- *  % java FloydWarshall 100 500
+ * % java FloydWarshall 100 500
  *
- *  Should check for negative cycles during triple loop; otherwise
- *  intermediate numbers can get exponentially large.
- *  Reference: "The Floyd-Warshall algorithm on graphs with negative cycles"
- *  by Stefan Hougardy
+ * Should check for negative cycles during triple loop; otherwise intermediate numbers can get exponentially large.
+ * Reference: "The Floyd-Warshall algorithm on graphs with negative cycles" by Stefan Hougardy
  *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
 
-
 /**
- * The {@code FloydWarshall} class represents a data type for solving the
- * all-pairs shortest paths problem in edge-weighted digraphs with
- * no negative cycles.
- * The edge weights can be positive, negative, or zero.
- * This class finds either a shortest path between every pair of vertices
- * or a negative cycle.
+ * The {@code FloydWarshall} class represents a data type for solving the all-pairs shortest paths problem in
+ * edge-weighted digraphs with no negative cycles. The edge weights can be positive, negative, or zero. This class finds
+ * either a shortest path between every pair of vertices or a negative cycle.
  * <p>
- * This implementation uses the Floyd-Warshall algorithm.
- * The constructor takes &Theta;(<em>V</em><sup>3</sup>) time,
- * where <em>V</em> is the number of vertices.
- * Each instance method takes &Theta;(1) time.
- * It uses &Theta;(<em>V</em><sup>2</sup>) extra space
- * (not including the edge-weighted digraph).
+ * This implementation uses the Floyd-Warshall algorithm. The constructor takes &Theta;(<em>V</em><sup>3</sup>) time,
+ * where <em>V</em> is the number of vertices. Each instance method takes &Theta;(1) time. It uses
+ * &Theta;(<em>V</em><sup>2</sup>) extra space (not including the edge-weighted digraph).
  * <p>
- * For additional documentation,
- * see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
- * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of <i>Algorithms, 4th
+ * Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
 public class FloydWarshall {
-    private boolean hasNegativeCycle;  // is there a negative cycle?
-    private double[][] distTo;         // distTo[v][w] = length of shortest v->w path
-    private DirectedEdge[][] edgeTo;   // edgeTo[v][w] = last edge on shortest v->w path
+    private boolean hasNegativeCycle; // is there a negative cycle?
+    private double[][] distTo; // distTo[v][w] = length of shortest v->w path
+    private DirectedEdge[][] edgeTo; // edgeTo[v][w] = last edge on shortest v->w path
 
     /**
-     * Computes a shortest paths tree from each vertex to to every other vertex in
-     * the edge-weighted digraph {@code G}. If no such shortest path exists for
-     * some pair of vertices, it computes a negative cycle.
+     * Computes a shortest paths tree from each vertex to to every other vertex in the edge-weighted digraph {@code G}.
+     * If no such shortest path exists for some pair of vertices, it computes a negative cycle.
      *
-     * @param G the edge-weighted digraph
+     * @param G
+     *            the edge-weighted digraph
      */
     public FloydWarshall(AdjMatrixEdgeWeightedDigraph G) {
         int V = G.V();
@@ -80,7 +69,8 @@ public class FloydWarshall {
         for (int i = 0; i < V; i++) {
             // compute shortest paths using only 0, 1, ..., i as intermediate vertices
             for (int v = 0; v < V; v++) {
-                if (edgeTo[v][i] == null) continue;  // optimization
+                if (edgeTo[v][i] == null)
+                    continue; // optimization
                 for (int w = 0; w < V; w++) {
                     if (distTo[v][w] > distTo[v][i] + distTo[i][w]) {
                         distTo[v][w] = distTo[v][i] + distTo[i][w];
@@ -109,8 +99,7 @@ public class FloydWarshall {
     /**
      * Returns a negative cycle, or {@code null} if there is no such cycle.
      *
-     * @return a negative cycle as an iterable of edges,
-     * or {@code null} if there is no such cycle
+     * @return a negative cycle as an iterable of edges, or {@code null} if there is no such cycle
      */
     public Iterable<DirectedEdge> negativeCycle() {
         for (int v = 0; v < distTo.length; v++) {
@@ -132,12 +121,15 @@ public class FloydWarshall {
     /**
      * Is there a path from the vertex {@code s} to vertex {@code t}?
      *
-     * @param s the source vertex
-     * @param t the destination vertex
-     * @return {@code true} if there is a path from vertex {@code s}
-     * to vertex {@code t}, and {@code false} otherwise
-     * @throws IllegalArgumentException unless {@code 0 <= s < V}
-     * @throws IllegalArgumentException unless {@code 0 <= t < V}
+     * @param s
+     *            the source vertex
+     * @param t
+     *            the destination vertex
+     * @return {@code true} if there is a path from vertex {@code s} to vertex {@code t}, and {@code false} otherwise
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= s < V}
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= t < V}
      */
     public boolean hasPath(int s, int t) {
         validateVertex(s);
@@ -148,12 +140,16 @@ public class FloydWarshall {
     /**
      * Returns the length of a shortest path from vertex {@code s} to vertex {@code t}.
      *
-     * @param s the source vertex
-     * @param t the destination vertex
-     * @return the length of a shortest path from vertex {@code s} to vertex {@code t};
-     * {@code Double.POSITIVE_INFINITY} if no such path
-     * @throws UnsupportedOperationException if there is a negative cost cycle
-     * @throws IllegalArgumentException      unless {@code 0 <= v < V}
+     * @param s
+     *            the source vertex
+     * @param t
+     *            the destination vertex
+     * @return the length of a shortest path from vertex {@code s} to vertex {@code t}; {@code Double.POSITIVE_INFINITY}
+     *         if no such path
+     * @throws UnsupportedOperationException
+     *             if there is a negative cost cycle
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= v < V}
      */
     public double dist(int s, int t) {
         validateVertex(s);
@@ -166,19 +162,24 @@ public class FloydWarshall {
     /**
      * Returns a shortest path from vertex {@code s} to vertex {@code t}.
      *
-     * @param s the source vertex
-     * @param t the destination vertex
-     * @return a shortest path from vertex {@code s} to vertex {@code t}
-     * as an iterable of edges, and {@code null} if no such path
-     * @throws UnsupportedOperationException if there is a negative cost cycle
-     * @throws IllegalArgumentException      unless {@code 0 <= v < V}
+     * @param s
+     *            the source vertex
+     * @param t
+     *            the destination vertex
+     * @return a shortest path from vertex {@code s} to vertex {@code t} as an iterable of edges, and {@code null} if no
+     *         such path
+     * @throws UnsupportedOperationException
+     *             if there is a negative cost cycle
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= v < V}
      */
     public Iterable<DirectedEdge> path(int s, int t) {
         validateVertex(s);
         validateVertex(t);
         if (hasNegativeCycle())
             throw new UnsupportedOperationException("Negative cost cycle exists");
-        if (!hasPath(s, t)) return null;
+        if (!hasPath(s, t))
+            return null;
         Stack<DirectedEdge> path = new Stack<DirectedEdge>();
         for (DirectedEdge e = edgeTo[s][t]; e != null; e = edgeTo[s][e.from()]) {
             path.push(e);
@@ -216,7 +217,8 @@ public class FloydWarshall {
     /**
      * Unit tests the {@code FloydWarshall} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
 
@@ -228,8 +230,10 @@ public class FloydWarshall {
             int v = StdRandom.uniform(V);
             int w = StdRandom.uniform(V);
             double weight = Math.round(100 * (StdRandom.uniform() - 0.15)) / 100.0;
-            if (v == w) G.addEdge(new DirectedEdge(v, w, Math.abs(weight)));
-            else G.addEdge(new DirectedEdge(v, w, weight));
+            if (v == w)
+                G.addEdge(new DirectedEdge(v, w, Math.abs(weight)));
+            else
+                G.addEdge(new DirectedEdge(v, w, weight));
         }
 
         StdOut.println(G);
@@ -246,8 +250,10 @@ public class FloydWarshall {
         for (int v = 0; v < G.V(); v++) {
             StdOut.printf("%3d: ", v);
             for (int w = 0; w < G.V(); w++) {
-                if (spt.hasPath(v, w)) StdOut.printf("%6.2f ", spt.dist(v, w));
-                else StdOut.printf("  Inf ");
+                if (spt.hasPath(v, w))
+                    StdOut.printf("%6.2f ", spt.dist(v, w));
+                else
+                    StdOut.printf("  Inf ");
             }
             StdOut.println();
         }
@@ -281,25 +287,21 @@ public class FloydWarshall {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

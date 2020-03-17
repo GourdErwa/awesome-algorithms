@@ -14,8 +14,7 @@ public class _208_JAVA_实现前缀树 {
             private boolean has;
             private List<Node> child = new ArrayList<>();
 
-            public Node() {
-            }
+            public Node() {}
 
             public Node(char c) {
                 this.c = c;
@@ -24,8 +23,7 @@ public class _208_JAVA_实现前缀树 {
 
         private final Node root = new Node();
 
-        public Trie() {
-        }
+        public Trie() {}
 
         public void insert(String word) {
             int length = word.length();
@@ -66,7 +64,8 @@ public class _208_JAVA_实现前缀树 {
             int length = word.length();
             Node curr = root;
             for (int i = 0; i < length; i++) {
-                if (curr.child.isEmpty()) return null;
+                if (curr.child.isEmpty())
+                    return null;
                 char c = word.charAt(i);
                 boolean find = false;
                 for (Node node : curr.child) {
@@ -76,7 +75,8 @@ public class _208_JAVA_实现前缀树 {
                         break;
                     }
                 }
-                if (!find) return null;
+                if (!find)
+                    return null;
             }
             return curr;
         }
@@ -92,8 +92,7 @@ public class _208_JAVA_实现前缀树 {
 
         private TrieNode root = new TrieNode();
 
-        public Trie1() {
-        }
+        public Trie1() {}
 
         public void insert(String word) {
             TrieNode cur = root;
@@ -116,7 +115,8 @@ public class _208_JAVA_实现前缀树 {
             TrieNode cur = root;
             for (char c : word.toCharArray()) {
                 TrieNode trieNode = cur.childrenMap.get(c);
-                if (trieNode == null) return null;
+                if (trieNode == null)
+                    return null;
                 cur = trieNode;
             }
             return cur;
@@ -132,14 +132,14 @@ public class _208_JAVA_实现前缀树 {
 
         private TrieNode root = new TrieNode();
 
-        public Trie2() {
-        }
+        public Trie2() {}
 
         public void insert(String word) {
             TrieNode tmp = root;
             for (char c : word.toCharArray()) {
                 int n = c - 'a';
-                if (tmp.next[n] == null) tmp.next[n] = new TrieNode();
+                if (tmp.next[n] == null)
+                    tmp.next[n] = new TrieNode();
                 tmp = tmp.next[n];
             }
             tmp.word = true;
@@ -161,7 +161,8 @@ public class _208_JAVA_实现前缀树 {
             for (char c : word.toCharArray()) {
                 int n = c - 'a';
                 TrieNode trieNode = tmp.next[n];
-                if (trieNode == null) return null;
+                if (trieNode == null)
+                    return null;
                 tmp = trieNode;
             }
             return tmp;
@@ -169,9 +170,9 @@ public class _208_JAVA_实现前缀树 {
     }
 
     /*
-["Trie","insert","insert","insert","insert","insert","insert","search","search","search","search","search","search","search","search","search","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith"]
-[[],["app"],["apple"],["beer"],["add"],["jam"],["rental"],["apps"],["app"],["ad"],["applepie"],["rest"],["jan"],["rent"],["beer"],["jam"],["apps"],["app"],["ad"],["applepie"],["rest"],["jan"],["rent"],["beer"],["jam"]]
- */
+    ["Trie","insert","insert","insert","insert","insert","insert","search","search","search","search","search","search","search","search","search","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith","startsWith"]
+    [[],["app"],["apple"],["beer"],["add"],["jam"],["rental"],["apps"],["app"],["ad"],["applepie"],["rest"],["jan"],["rent"],["beer"],["jam"],["apps"],["app"],["ad"],["applepie"],["rest"],["jan"],["rent"],["beer"],["jam"]]
+    */
     public static void main(String[] args) {
         Trie trie = new Trie();
         trie.insert("app");
@@ -184,15 +185,15 @@ public class _208_JAVA_实现前缀树 {
         System.out.println(trie.startsWith("jam"));
         System.out.println(trie.startsWith("ad"));
     }
-/*
- Trie trie = new Trie();
-
- trie.insert("apple");
- trie.search("apple");   // 返回 true
- trie.search("app");     // 返回 false
- trie.startsWith("app"); // 返回 true
- trie.insert("app");
- trie.search("app");     // 返回 true
-
- */
+    /*
+     Trie trie = new Trie();
+    
+     trie.insert("apple");
+     trie.search("apple");   // 返回 true
+     trie.search("app");     // 返回 false
+     trie.startsWith("app"); // 返回 true
+     trie.insert("app");
+     trie.search("app");     // 返回 true
+    
+     */
 }

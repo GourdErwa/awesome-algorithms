@@ -18,7 +18,9 @@ public class _217_JAVA_存在重复元素I {
     class Solution {
         public boolean containsDuplicate(int[] nums) {
             final Set<Integer> dup = new HashSet<>(nums.length);
-            for (int num : nums) if (!dup.add(num)) return true;
+            for (int num : nums)
+                if (!dup.add(num))
+                    return true;
             return dup.size() < nums.length;
         }
     }
@@ -26,12 +28,14 @@ public class _217_JAVA_存在重复元素I {
     // 位图实现 TODO 待实现
     class Solution1 {
         public boolean containsDuplicate(int[] nums) {
-            if (nums.length < 1 || nums[0] == 237384) return false;
+            if (nums.length < 1 || nums[0] == 237384)
+                return false;
 
             boolean[] bs = new boolean[1024];
 
             for (int n : nums) {
-                if (bs[n & 1023]) return true;
+                if (bs[n & 1023])
+                    return true;
                 bs[n & 1023] = true;
             }
             return false;

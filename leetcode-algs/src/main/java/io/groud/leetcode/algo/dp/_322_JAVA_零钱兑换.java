@@ -5,8 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode-cn.com/problems/coin-change/
  * <p>
- * tag：dfs、回溯、dp
- * importance：☆☆☆☆☆
+ * tag：dfs、回溯、dp importance：☆☆☆☆☆
  * <p>
  * TODO 未完成，重点题
  *
@@ -23,8 +22,10 @@ public class _322_JAVA_零钱兑换 {
         }
 
         private int coinChangeHelper(int[] coins, int amount, int maxCoinNum, int coinNum, int sum) {
-            if (sum == amount) return coinNum;
-            if (coinNum >= maxCoinNum) return -1;
+            if (sum == amount)
+                return coinNum;
+            if (coinNum >= maxCoinNum)
+                return -1;
 
             return -1;
         }
@@ -41,7 +42,8 @@ public class _322_JAVA_零钱兑换 {
         }
 
         public void dfs(int[] coins, int index, int amount, int coinNum) {
-            if (index < 0) return;
+            if (index < 0)
+                return;
 
             for (int c = amount / coins[index]; c >= 0; c--) { // 采用当前硬币时，分别遍历不同的个数
                 int na = amount - c * coins[index]; // 当前剩余未凑金额
@@ -50,7 +52,8 @@ public class _322_JAVA_零钱兑换 {
                     minCoinNum = Math.min(minCoinNum, currCoinNum);
                     break;// 剪枝1
                 }
-                if (currCoinNum + 1 >= minCoinNum) break; // 剪枝2
+                if (currCoinNum + 1 >= minCoinNum)
+                    break; // 剪枝2
 
                 dfs(coins, index - 1, na, currCoinNum);
             }
@@ -74,7 +77,8 @@ public class _322_JAVA_零钱兑换 {
                 for (int x = 0; x <= maxVal; x++) {
                     if (amount >= x * coins[idxCoin]) {
                         int res = coinChange(idxCoin + 1, coins, amount - x * coins[idxCoin]);
-                        if (res != -1) minCost = Math.min(minCost, res + x);
+                        if (res != -1)
+                            minCost = Math.min(minCost, res + x);
                     }
                 }
                 return (minCost == Integer.MAX_VALUE) ? -1 : minCost;
@@ -83,39 +87,52 @@ public class _322_JAVA_零钱兑换 {
         }
     }
 
-    /*
-    dp 思路：
-    确定状态
-
-    确定子问题
-
-    状态转移方程
-
-    计算顺序
-     */
     // 动态规划-自上而下[通过]
     // https://leetcode-cn.com/problems/coin-change/solution/322-ling-qian-dui-huan-by-leetcode-solution/
     public class Solution3 {
 
         public int coinChange(int[] coins, int amount) {
-            if (amount < 1) return 0;
+            if (amount < 1)
+                return 0;
             return coinChange(coins, amount, new int[amount]);
         }
 
         private int coinChange(int[] coins, int rem, int[] count) {
-            if (rem < 0) return -1;
-            if (rem == 0) return 0;
-            if (count[rem - 1] != 0) return count[rem - 1];
+            if (rem < 0)
+                return -1;
+            if (rem == 0)
+                return 0;
+            if (count[rem - 1] != 0)
+                return count[rem - 1];
             int min = Integer.MAX_VALUE;
             for (int coin : coins) {
                 int res = coinChange(coins, rem - coin, count);
-                if ((res >= 0) && (res < min)) min = 1 + res;
+                if ((res >= 0) && (res < min))
+                    min = 1 + res;
             }
             count[rem - 1] = (min == Integer.MAX_VALUE) ? -1 : min;
             return count[rem - 1];
         }
     }
 
+    /*
+     * dp 思路
+     * ==========================================
+     * 1. 确定状态
+     * 最优策略的最后一步：dp[i] = 最小兑换次数 i 对应状态为金额
+     * 子问题：凑齐当前金额硬币数 = (当前金额 - 硬币面值) + 1 硬币数
+     *
+     * 2. 转移方程
+     * dp[i] = min(dp[i] , dp[i-coin]+1) , coin ∈ coins[0,length)
+     *
+     * 3. 初始条件与边界情况
+     * dp[0] = 0
+     *
+     * 4. 计算顺序
+     * 当前值依赖前面计算结果，从小到大
+     *
+     * 5. 优化时间空间复杂度
+     */
     // 动态规划-自下而上[通过]
     // https://leetcode-cn.com/problems/coin-change/solution/322-ling-qian-dui-huan-by-leetcode-solution/
     public class Solution4 {

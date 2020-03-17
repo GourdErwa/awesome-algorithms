@@ -1,6 +1,0 @@
-/**
- * 剑指 Offer 面试题
- *
- * @author Li.Wei by 2020/3/6
- */
-package io.groud.leetcode.algo.jz_offer;

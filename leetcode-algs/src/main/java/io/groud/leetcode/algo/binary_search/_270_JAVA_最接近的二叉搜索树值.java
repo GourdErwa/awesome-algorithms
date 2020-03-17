@@ -26,12 +26,13 @@ public class _270_JAVA_最接近的二叉搜索树值 {
                         ans = Math.min(diffNode > (target - root.left.val) ? root.val : root.left.val, ans);
 
                     root = root.left;
-                } else if (diffNode < 0D && root.right != null) { //右子树
+                } else if (diffNode < 0D && root.right != null) { // 右子树
                     if (root.val < target && root.right.val > target)
                         ans = Math.min(-diffNode > (root.right.val - target) ? root.val : root.right.val, ans);
 
                     root = root.right;
-                } else break;
+                } else
+                    break;
             }
             return ans;
         }

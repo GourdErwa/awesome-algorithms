@@ -20,16 +20,12 @@ public class _142_JAVA_环形链表II {
 
         @Override
         public String toString() {
-            return "{" +
-                    "val=" + val +
-                    '}';
+            return "{" + "val=" + val + '}';
         }
     }
 
-
     /**
-     * 双指针,每次移动慢指针一步，而移动快指针两步。每一次迭代，快速指针将额外移动一步。
-     * 如果环的长度为 M，经过 M 次迭代后，快指针肯定会多绕环一周，并赶上慢指针。
+     * 双指针,每次移动慢指针一步，而移动快指针两步。每一次迭代，快速指针将额外移动一步。 如果环的长度为 M，经过 M 次迭代后，快指针肯定会多绕环一周，并赶上慢指针。
      * <p>
      * 环形长度证明：https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/huan-xing-lian-biao-ii-by-leetcode/
      */
@@ -66,6 +62,6 @@ public class _142_JAVA_环形链表II {
         n4.next = n2;
         _142_JAVA_环形链表II java = new _142_JAVA_环形链表II();
         ListNode r = java.detectCycle(n1);
-        //Assert.check(r != null);
+        // Assert.check(r != null);
     }
 }

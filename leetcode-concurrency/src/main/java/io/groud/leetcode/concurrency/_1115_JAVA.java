@@ -3,14 +3,11 @@ package io.groud.leetcode.concurrency;
 /**
  * https://leetcode-cn.com/problems/print-foobar-alternately/
  * <p>
- * 解题思路：
- * - 2 个线程异步启动，分别调用一个实例对象的成员方法
- * - 必须保证 foo 方法执行后执行 bar 方法，以保证字符串正确打印
+ * 解题思路： - 2 个线程异步启动，分别调用一个实例对象的成员方法 - 必须保证 foo 方法执行后执行 bar 方法，以保证字符串正确打印
  *
  * @author Li.Wei by 2020/2/4
  */
-public class _1115_JAVA {
-}
+public class _1115_JAVA {}
 
 class _1115_JAVA_1 {
 

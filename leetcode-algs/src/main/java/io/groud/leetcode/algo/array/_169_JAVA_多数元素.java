@@ -18,14 +18,16 @@ public class _169_JAVA_多数元素 {
         }
 
         public int majorityElement(int[] nums) {
-            if (nums.length == 1) return nums[0];
+            if (nums.length == 1)
+                return nums[0];
             int maxLength = nums.length >> 1;
             Map<Integer, Node> dup = new HashMap<>();
             for (int n : nums) {
                 Node node = dup.putIfAbsent(n, new Node());
                 if (node != null) {
                     node.count++;
-                    if (node.count > maxLength) return n;
+                    if (node.count > maxLength)
+                        return n;
                 }
             }
             return -1;
@@ -36,7 +38,7 @@ public class _169_JAVA_多数元素 {
     class Solution1 {
         public int majorityElement(int[] nums) {
             Arrays.sort(nums);
-            return nums[nums.length/2];
+            return nums[nums.length / 2];
         }
     }
 
@@ -47,9 +49,12 @@ public class _169_JAVA_多数元素 {
             int count = 0;
             Integer candidate = null;
             for (int num : nums) {
-                if (count == 0) candidate = num; // 如果等于 0 重新投票
-                if (candidate == num) count++;
-                else count --;
+                if (count == 0)
+                    candidate = num; // 如果等于 0 重新投票
+                if (candidate == num)
+                    count++;
+                else
+                    count--;
             }
             return candidate;
         }

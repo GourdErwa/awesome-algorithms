@@ -53,14 +53,18 @@ public class _337_JAVA_打家劫舍III {
         private final Map<TreeNode, Integer> dup = new HashMap<>();
 
         public int rob(TreeNode root) {
-            if (root == null) return 0;
+            if (root == null)
+                return 0;
             Integer value = dup.get(root);
-            if (value != null) return value;
+            if (value != null)
+                return value;
 
             // 子问题 1 ，当前节点偷
             int sum1 = root.val;
-            if (root.left != null) sum1 += (rob(root.left.left) + rob(root.left.right));
-            if (root.right != null) sum1 += (rob(root.right.left) + rob(root.right.right));
+            if (root.left != null)
+                sum1 += (rob(root.left.left) + rob(root.left.right));
+            if (root.right != null)
+                sum1 += (rob(root.right.left) + rob(root.right.right));
 
             // 子问题 2 ，当前节点不偷
             int sum2 = rob(root.left) + rob(root.right);
@@ -81,7 +85,8 @@ public class _337_JAVA_打家劫舍III {
 
         // 每个节点返回当前两种状态，int[] 下标 0 表示偷、1 表示不偷
         private int[] robHelper(TreeNode root) {
-            if (root == null) return new int[]{0, 0};
+            if (root == null)
+                return new int[] {0, 0};
 
             int[] left = robHelper(root.left); // 当前子节点偷.不偷的金额
             int[] right = robHelper(root.right); // 当前子节点偷.不偷的金额

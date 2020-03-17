@@ -29,7 +29,8 @@ public class _19_JAVA_删除链表的倒数第N个节点 {
         ListNode second = sentinel;// 第二个指针
 
         // 第二个指针先前进 n 步
-        for (int i = 0; i < n; i++) second = second.next;
+        for (int i = 0; i < n; i++)
+            second = second.next;
 
         while (second.next != null) { // 同步向后迭代
             first = first.next;

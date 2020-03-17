@@ -40,7 +40,8 @@ public class _105_JAVA_从前序与中序遍历序列构造二叉树 {
     }
 
     public TreeNode buildTreeHelper(int pRootIndex, int is, int ie) {
-        if (is > ie) return null;
+        if (is > ie)
+            return null;
         int rootVal = preorder[pRootIndex]; // 根节点值
         int rootIndex = inorderMap.get(rootVal);
         TreeNode root = new TreeNode(rootVal);// 构造根节点
@@ -51,6 +52,6 @@ public class _105_JAVA_从前序与中序遍历序列构造二叉树 {
 
     public static void main(String[] args) {
         _105_JAVA_从前序与中序遍历序列构造二叉树 o = new _105_JAVA_从前序与中序遍历序列构造二叉树();
-        o.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
+        o.buildTree(new int[] {3, 9, 20, 15, 7}, new int[] {9, 3, 15, 20, 7});
     }
 }

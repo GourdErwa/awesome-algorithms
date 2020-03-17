@@ -5,8 +5,7 @@ import java.util.*;
 /**
  * https://leetcode-cn.com/problems/insert-delete-getrandom-o1/
  * <p>
- * 思路：
- * 1.如果采用 jdk set 集合，则随机性无法使用，无法随机访问数据
+ * 思路： 1.如果采用 jdk set 集合，则随机性无法使用，无法随机访问数据
  *
  * @author Li.Wei by 2020/3/8
  */
@@ -20,8 +19,7 @@ public class _380_JAVA_常数时间插入删除和获取随机数据元素 {
         private final List<Integer> list = new ArrayList<>();
         private final Random random = new Random();
 
-        public RandomizedSet() {
-        }
+        public RandomizedSet() {}
 
         public boolean insert(int val) {
             Integer v = map.get(val);
@@ -39,7 +37,8 @@ public class _380_JAVA_常数时间插入删除和获取随机数据元素 {
         // map 也做最后的修改
         public boolean remove(int val) {
             Integer currValIndex = map.remove(val); // 当前删除值对应列表的下标
-            if (currValIndex == null) return false; // 不存在直接返回
+            if (currValIndex == null)
+                return false; // 不存在直接返回
 
             int count = list.size() - 1; // 当前列表元素个数
 
@@ -62,10 +61,10 @@ public class _380_JAVA_常数时间插入删除和获取随机数据元素 {
     /*
     ["RandomizedSet","remove","remove","insert","getRandom","remove","insert"]
     [[],[0],[0],[0],[],[0],[0]]
-
+    
     ["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
     [[],[1],[2],[2],[],[1],[2],[]]
-
+    
     ["RandomizedSet","insert","insert","getRandom","getRandom","insert","remove","getRandom","getRandom","insert","remove"]
     [[],[3],[3],[],[],[1],[3],[],[],[0],[0]]
      */

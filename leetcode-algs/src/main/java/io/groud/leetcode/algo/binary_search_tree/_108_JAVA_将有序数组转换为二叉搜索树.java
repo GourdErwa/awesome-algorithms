@@ -9,7 +9,6 @@ package io.groud.leetcode.algo.binary_search_tree;
  */
 public class _108_JAVA_将有序数组转换为二叉搜索树 {
 
-
     private static class TreeNode {
         int val;
         TreeNode left;
@@ -21,17 +20,19 @@ public class _108_JAVA_将有序数组转换为二叉搜索树 {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        if (nums == null) return null;
+        if (nums == null)
+            return null;
         return help(nums, 0, nums.length - 1);
     }
 
-
     private TreeNode help(int[] nums, int left, int right) {
-        if (left > right) return null;
+        if (left > right)
+            return null;
 
         int mid = right + left >> 1;
 
-        if (((left + right) & 1) == 1) mid++; // 奇数时选择中间右边的作为根节点
+        if (((left + right) & 1) == 1)
+            mid++; // 奇数时选择中间右边的作为根节点
 
         TreeNode newNode = new TreeNode(nums[mid]);
         newNode.left = help(nums, left, mid - 1);

@@ -28,7 +28,8 @@ public class _20_JAVA_有效的括号 {
                 default:
                     deque.push(c);
             }
-            if (!r) return false;
+            if (!r)
+                return false;
         }
         return deque.isEmpty();
     }

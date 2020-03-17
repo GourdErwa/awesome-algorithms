@@ -9,10 +9,7 @@ package io.groud.leetcode.algo.binary_search;
  */
 public class _287_JAVA_寻找重复数 {
     /**
-     * 双指针-循环链表入门点问题
-     * 思路：
-     * 慢指针走一步、快指针走二步。直到快慢指针相遇。
-     * 然后慢指针归 0 后继续走，快指针继续走，下一次相遇的点即为循环入门点。证明可画图推导
+     * 双指针-循环链表入门点问题 思路： 慢指针走一步、快指针走二步。直到快慢指针相遇。 然后慢指针归 0 后继续走，快指针继续走，下一次相遇的点即为循环入门点。证明可画图推导
      */
     static class Solution {
         public int findDuplicate(int[] nums) {
@@ -37,11 +34,8 @@ public class _287_JAVA_寻找重复数 {
     /**
      * 二分查找，抽屉原理
      * <p>
-     * 思路：
-     * n + 1 长度的数组放了 1-n 以内的数字
-     * >假设长度为 11，数字都是 [1-10] 范围内的。[2,3,4,4,4,4,4,9,8,7,4]
-     * 如果我们把长度二分后， 中间值下标 11/2 = 5 ，数组[5] = 4
-     * 左边小于 4 的有 2 个
+     * 思路： n + 1 长度的数组放了 1-n 以内的数字 >假设长度为 11，数字都是 [1-10] 范围内的。[2,3,4,4,4,4,4,9,8,7,4] 如果我们把长度二分后， 中间值下标 11/2 = 5 ，数组[5]
+     * = 4 左边小于 4 的有 2 个
      */
     public static class Solution1 {
 
@@ -53,7 +47,8 @@ public class _287_JAVA_寻找重复数 {
                 int mid = (left + right + 1) >>> 1;
                 int cnt = 0;
                 for (int num : nums) {
-                    if (num < mid) cnt += 1;
+                    if (num < mid)
+                        cnt += 1;
                 }
                 // 根据抽屉原理，小于等于 4 的数的个数如果大于等于 4 个，
                 // 此时重复元素一定出现在 [1, 3] 区间里
@@ -73,6 +68,6 @@ public class _287_JAVA_寻找重复数 {
 
     public static void main(String[] args) {
         Solution1 o = new Solution1();
-        System.out.println(o.findDuplicate(new int[]{1, 3, 4, 4, 4}));
+        System.out.println(o.findDuplicate(new int[] {1, 3, 4, 4, 4}));
     }
 }

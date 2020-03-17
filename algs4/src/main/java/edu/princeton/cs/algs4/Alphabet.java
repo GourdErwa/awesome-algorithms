@@ -1,14 +1,10 @@
 /******************************************************************************
- *  Compilation:  javac Alphabet.java
- *  Execution:    java Alphabet
- *  Dependencies: StdOut.java
+ * Compilation: javac Alphabet.java Execution: java Alphabet Dependencies: StdOut.java
  *
- *  A data type for alphabets, for use with string-processing code
- *  that must convert between an alphabet of size R and the integers
- *  0 through R-1.
+ * A data type for alphabets, for use with string-processing code that must convert between an alphabet of size R and
+ * the integers 0 through R-1.
  *
- *  Warning: supports only the basic multilingual plane (BMP), i.e,
- *           Unicode characters between U+0000 and U+FFFF.
+ * Warning: supports only the basic multilingual plane (BMP), i.e, Unicode characters between U+0000 and U+FFFF.
  *
  ******************************************************************************/
 
@@ -60,7 +56,8 @@ public class Alphabet {
     /**
      * The base-64 alphabet (64 characters).
      */
-    public static final Alphabet BASE64 = new Alphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
+    public static final Alphabet BASE64 =
+        new Alphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
 
     /**
      * The ASCII alphabet (0-127).
@@ -77,15 +74,15 @@ public class Alphabet {
      */
     public static final Alphabet UNICODE16 = new Alphabet(65536);
 
-
-    private char[] alphabet;     // the characters in the alphabet
-    private int[] inverse;       // indices
-    private final int R;         // the radix of the alphabet
+    private char[] alphabet; // the characters in the alphabet
+    private int[] inverse; // indices
+    private final int R; // the radix of the alphabet
 
     /**
      * Initializes a new alphabet from the given set of characters.
      *
-     * @param alpha the set of characters
+     * @param alpha
+     *            the set of characters
      */
     public Alphabet(String alpha) {
 
@@ -112,7 +109,8 @@ public class Alphabet {
     /**
      * Initializes a new alphabet using characters 0 through R-1.
      *
-     * @param radix the number of characters in the alphabet (the radix R)
+     * @param radix
+     *            the number of characters in the alphabet (the radix R)
      */
     private Alphabet(int radix) {
         this.R = radix;
@@ -121,7 +119,7 @@ public class Alphabet {
 
         // can't use char since R can be as big as 65,536
         for (int i = 0; i < R; i++)
-            alphabet[i] = (char) i;
+            alphabet[i] = (char)i;
         for (int i = 0; i < R; i++)
             inverse[i] = i;
     }
@@ -136,9 +134,9 @@ public class Alphabet {
     /**
      * Returns true if the argument is a character in this alphabet.
      *
-     * @param c the character
-     * @return {@code true} if {@code c} is a character in this alphabet;
-     * {@code false} otherwise
+     * @param c
+     *            the character
+     * @return {@code true} if {@code c} is a character in this alphabet; {@code false} otherwise
      */
     public boolean contains(char c) {
         return inverse[c] != -1;
@@ -179,9 +177,11 @@ public class Alphabet {
     /**
      * Returns the index corresponding to the argument character.
      *
-     * @param c the character
+     * @param c
+     *            the character
      * @return the index corresponding to the character {@code c}
-     * @throws IllegalArgumentException unless {@code c} is a character in this alphabet
+     * @throws IllegalArgumentException
+     *             unless {@code c} is a character in this alphabet
      */
     public int toIndex(char c) {
         if (c >= inverse.length || inverse[c] == -1) {
@@ -193,10 +193,11 @@ public class Alphabet {
     /**
      * Returns the indices corresponding to the argument characters.
      *
-     * @param s the characters
+     * @param s
+     *            the characters
      * @return the indices corresponding to the characters {@code s}
-     * @throws IllegalArgumentException unless every character in {@code s}
-     *                                  is a character in this alphabet
+     * @throws IllegalArgumentException
+     *             unless every character in {@code s} is a character in this alphabet
      */
     public int[] toIndices(String s) {
         char[] source = s.toCharArray();
@@ -209,9 +210,11 @@ public class Alphabet {
     /**
      * Returns the character corresponding to the argument index.
      *
-     * @param index the index
+     * @param index
+     *            the index
      * @return the character corresponding to the index {@code index}
-     * @throws IllegalArgumentException unless {@code 0 <= index < R}
+     * @throws IllegalArgumentException
+     *             unless {@code 0 <= index < R}
      */
     public char toChar(int index) {
         if (index < 0 || index >= R) {
@@ -223,10 +226,11 @@ public class Alphabet {
     /**
      * Returns the characters corresponding to the argument indices.
      *
-     * @param indices the indices
+     * @param indices
+     *            the indices
      * @return the characters corresponding to the indices {@code indices}
-     * @throws IllegalArgumentException unless {@code 0 < indices[i] < R}
-     *                                  for every {@code i}
+     * @throws IllegalArgumentException
+     *             unless {@code 0 < indices[i] < R} for every {@code i}
      */
     public String toChars(int[] indices) {
         StringBuilder s = new StringBuilder(indices.length);
@@ -238,7 +242,8 @@ public class Alphabet {
     /**
      * Unit tests the {@code Alphabet} data type.
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
         int[] encoded1 = Alphabet.BASE64.toIndices("NowIsTheTimeForAllGoodMen");
@@ -256,25 +261,21 @@ public class Alphabet {
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

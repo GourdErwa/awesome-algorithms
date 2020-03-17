@@ -16,9 +16,11 @@ public class _509_JAVA_斐波那契数 {
     private final Map<Integer, Integer> status = new HashMap<>();
 
     public int fib(int N) {
-        if (N < 2) return N; // 基本情况
+        if (N < 2)
+            return N; // 基本情况
         final Integer value = status.get(N);
-        if (value != null) return value;
+        if (value != null)
+            return value;
         int sum = fib(N - 1) + fib(N - 2); // 递推关系
         status.put(N, sum);
         return sum;

@@ -47,7 +47,8 @@ public class _203_JAVA_移除链表元素 {
         while (curr != null) {
             if (curr.val == val) { // 相等，移除当前节点 curr
                 prev.next = curr.next; // 上一个节点直接指向下下一个节点
-            } else prev = curr; // 不能移除时，当前节点更新为上一个节点
+            } else
+                prev = curr; // 不能移除时，当前节点更新为上一个节点
 
             curr = curr.next; // 继续寻找下一个节点
         }

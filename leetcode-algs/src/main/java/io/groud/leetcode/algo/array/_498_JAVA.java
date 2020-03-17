@@ -1,8 +1,7 @@
 package io.groud.leetcode.algo.array;
 
 /**
- * https://leetcode-cn.com/problems/diagonal-traverse/
- * 498. 对角线遍历
+ * https://leetcode-cn.com/problems/diagonal-traverse/ 498. 对角线遍历
  *
  * @author Li.Wei by 2020/2/7
  */
@@ -43,11 +42,7 @@ public class _498_JAVA {
     public static void main(String[] args) {
         _498_JAVA java = new _498_JAVA();
 
-        System.out.println(java.findDiagonalOrder(new int[][]{
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        }));
+        System.out.println(java.findDiagonalOrder(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
     }
 
 }

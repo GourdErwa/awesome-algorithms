@@ -18,8 +18,7 @@ public class _232_JAVA_用栈实现队列 {
         /**
          * Initialize your data structure here.
          */
-        public MyQueue() {
-        }
+        public MyQueue() {}
 
         /**
          * Push element x to the back of queue.
@@ -50,7 +49,6 @@ public class _232_JAVA_用栈实现队列 {
         }
     }
 
-
     class MyQueue1 {
 
         private final Queue<Integer> queue = new LinkedList<>();
@@ -58,8 +56,7 @@ public class _232_JAVA_用栈实现队列 {
         /**
          * Initialize your data structure here.
          */
-        public MyQueue1() {
-        }
+        public MyQueue1() {}
 
         /**
          * Push element x to the back of queue.

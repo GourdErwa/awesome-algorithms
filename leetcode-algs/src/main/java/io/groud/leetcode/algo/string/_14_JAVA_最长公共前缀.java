@@ -16,7 +16,8 @@ public class _14_JAVA_最长公共前缀 {
 
     public String longestCommonPrefix(String[] strs) {
 
-        if (strs.length == 0) return "";
+        if (strs.length == 0)
+            return "";
 
         // 循环一次寻找最小长度的字符串
         int minLength = Integer.MAX_VALUE;
@@ -45,10 +46,10 @@ public class _14_JAVA_最长公共前缀 {
 
     public static void main(String[] args) {
         _14_JAVA_最长公共前缀 java = new _14_JAVA_最长公共前缀();
-        System.out.println(java.longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
+        System.out.println(java.longestCommonPrefix(new String[] {"dog", "racecar", "car"}));
 
-        System.out.println(java.longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
+        System.out.println(java.longestCommonPrefix(new String[] {"flower", "flow", "flight"}));
 
-        System.out.println(java.longestCommonPrefix(new String[]{"a"}));
+        System.out.println(java.longestCommonPrefix(new String[] {"a"}));
     }
 }

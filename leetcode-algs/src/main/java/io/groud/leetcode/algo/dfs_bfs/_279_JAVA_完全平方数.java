@@ -21,9 +21,11 @@ public class _279_JAVA_完全平方数 {
             for (int size = queue.size(); size > 0; size--) {// bfs 层序遍历
                 int poll = queue.poll().intValue();
                 // 当前剩余数字只能有它自身开根号结果的最大整数计算，可添加记忆进行优化
-                int maxSqrt = (int) Math.sqrt(poll);
-                if (maxSqrt * maxSqrt == poll) return step;
-                for (int i = maxSqrt; i > 0; i--) queue.add(poll - i * i); // 倒序，先遍历大的数据，因为 1 节点永远满足
+                int maxSqrt = (int)Math.sqrt(poll);
+                if (maxSqrt * maxSqrt == poll)
+                    return step;
+                for (int i = maxSqrt; i > 0; i--)
+                    queue.add(poll - i * i); // 倒序，先遍历大的数据，因为 1 节点永远满足
             }
         }
         return n;
@@ -44,13 +46,16 @@ public class _279_JAVA_完全平方数 {
 
     // TODO 神仙解法
     public int numSquares2(int n) {
-        while (n % 4 == 0) n /= 4;
-        if ((n % 8) == 7) return 4;
+        while (n % 4 == 0)
+            n /= 4;
+        if ((n % 8) == 7)
+            return 4;
 
         int a = 0;
         while ((a * a) <= n) {
-            int b = (int) Math.pow((n - a * a), 0.5);
-            if (a * a + b * b == n) return a != 0 && b != 0 ? 2 : 1;
+            int b = (int)Math.pow((n - a * a), 0.5);
+            if (a * a + b * b == n)
+                return a != 0 && b != 0 ? 2 : 1;
             a++;
         }
         return 3;
@@ -61,8 +66,8 @@ public class _279_JAVA_完全平方数 {
         System.out.println(Math.sqrt(13)); // 13 = 4 + 9.
         _279_JAVA_完全平方数 o = new _279_JAVA_完全平方数();
         System.out.println(o.numSquares1(12));
-        //System.out.println(o.numSquares1(13));
-        //System.out.println(o.numSquares1(16));
-        //System.out.println(o.numSquares1(20));
+        // System.out.println(o.numSquares1(13));
+        // System.out.println(o.numSquares1(16));
+        // System.out.println(o.numSquares1(20));
     }
 }

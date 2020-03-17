@@ -20,8 +20,7 @@ public class _706_JAVA_设计哈希映射 {
         /**
          * Initialize your data structure here.
          */
-        public MyHashMap() {
-        }
+        public MyHashMap() {}
 
         private int hash(int key) {
             return key % 100;
@@ -30,7 +29,8 @@ public class _706_JAVA_设计哈希映射 {
         private Node getNode(int key) {
             Node node = table[hash(key)];
             while (node != null) {
-                if (node.key == key) return node;
+                if (node.key == key)
+                    return node;
                 node = node.next;
             }
             return null;
@@ -73,7 +73,8 @@ public class _706_JAVA_设计哈希映射 {
         public void remove(int key) {
             int index = hash(key);
             Node node = table[index];
-            if (node == null) return;
+            if (node == null)
+                return;
 
             if (node.key == key) {
                 table[index] = node.next;
@@ -96,10 +97,10 @@ public class _706_JAVA_设计哈希映射 {
         hashMap.put(2, 2);
         hashMap.get(1); // 返回 1
         hashMap.get(3); // 返回 -1 (未找到)
-        hashMap.put(2, 1);  // 更新已有的值
+        hashMap.put(2, 1); // 更新已有的值
         hashMap.get(2); // 返回 1
         System.out.println(hashMap.get(2) == 1);
-        hashMap.remove(2);  // 删除键为2的数据
+        hashMap.remove(2); // 删除键为2的数据
         System.out.println(hashMap.get(2) == -1); // 返回 -1 (未找到)
 
         hashMap.put(103, 103);
@@ -107,7 +108,6 @@ public class _706_JAVA_设计哈希映射 {
         hashMap.put(10003, 10003);
         hashMap.put(100003, 100003);
         System.out.println(hashMap.get(100003) == 100003);
-
 
         hashMap.put(204, 204);
         hashMap.put(2004, 2004);
@@ -121,11 +121,8 @@ public class _706_JAVA_设计哈希映射 {
         hashMap.remove(200004);
         System.out.println(hashMap.get(200004) == -1);
     }
-/**
- * Your MyHashMap object will be instantiated and called as such:
- * MyHashMap obj = new MyHashMap();
- * obj.put(key,value);
- * int param_2 = obj.get(key);
- * obj.remove(key);
- */
+    /**
+     * Your MyHashMap object will be instantiated and called as such: MyHashMap obj = new MyHashMap();
+     * obj.put(key,value); int param_2 = obj.get(key); obj.remove(key);
+     */
 }

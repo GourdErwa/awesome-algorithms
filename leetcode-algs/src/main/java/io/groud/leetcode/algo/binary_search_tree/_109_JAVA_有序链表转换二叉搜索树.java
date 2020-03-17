@@ -9,7 +9,6 @@ package io.groud.leetcode.algo.binary_search_tree;
  */
 public class _109_JAVA_有序链表转换二叉搜索树 {
 
-
     private static class ListNode {
         int val;
         ListNode next;
@@ -41,7 +40,8 @@ public class _109_JAVA_有序链表转换二叉搜索树 {
     }
 
     public TreeNode buildTree(int left, int right) {
-        if (left > right) return null; // 基本情况，找到链表中间节点
+        if (left > right)
+            return null; // 基本情况，找到链表中间节点
         int mid = (left + right) >> 1; // 中间节点
 
         TreeNode leftNode = buildTree(left, mid - 1); // 构建左半部分
@@ -63,7 +63,8 @@ public class _109_JAVA_有序链表转换二叉搜索树 {
         }
 
         private TreeNode helper(ListNode head, ListNode tail) {
-            if (head == tail) return null;
+            if (head == tail)
+                return null;
             ListNode slow = head; // 快慢指针寻找中间节点
             ListNode fast = head;
             while (fast != tail && fast.next != tail) {

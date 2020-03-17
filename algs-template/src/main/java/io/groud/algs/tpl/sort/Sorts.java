@@ -7,11 +7,10 @@ package io.groud.algs.tpl.sort;
  */
 public class Sorts {
 
-    private Sorts() {
-    }
+    private Sorts() {}
 
     /***************************************************************************
-     *  Helper sorting functions.
+     * Helper sorting functions.
      ***************************************************************************/
 
     // is min < max ?
@@ -21,7 +20,8 @@ public class Sorts {
 
     // 替换
     public static <T> void swap(T[] a, int i, int j) {
-        if (i == j) return;
+        if (i == j)
+            return;
         T swap = a[i];
         a[i] = a[j];
         a[j] = swap;
@@ -45,13 +45,15 @@ public class Sorts {
     // 数组在 lo - hi 序列上是否有序
     public static <T extends Comparable<T>> boolean isSorted(T[] a, int lo, int hi) {
         for (int i = lo + 1; i < hi; i++)
-            if (less(a[i], a[i - 1])) return false;
+            if (less(a[i], a[i - 1]))
+                return false;
         return true;
     }
 
     // 控制台打印数组内容
     public static <T> void show(Comparable<T>[] a) {
         System.out.println();
-        for (Comparable<T> tComparable : a) System.out.print(tComparable + " ");
+        for (Comparable<T> tComparable : a)
+            System.out.print(tComparable + " ");
     }
 }

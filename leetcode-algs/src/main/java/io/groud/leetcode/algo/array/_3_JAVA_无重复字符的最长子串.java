@@ -14,7 +14,8 @@ public class _3_JAVA_无重复字符的最长子串 {
         /**
          * 滑动窗口
          *
-         * @param s s
+         * @param s
+         *            s
          * @return int
          * @see #lengthOfLongestSubstring1(String) 优化前处理逻辑
          */
@@ -28,7 +29,8 @@ public class _3_JAVA_无重复字符的最长子串 {
                 char c = s.charAt(j);
                 Integer value = window.get(c);
                 // 如果历史存在该值，更新左指针，指向当前找到的重复字符下标为新的左窗口边界
-                if (value != null) k = Math.max(k, value);
+                if (value != null)
+                    k = Math.max(k, value);
                 window.put(c, j + 1);
                 maxCount = Math.max(maxCount, j - k + 1);
                 j++;

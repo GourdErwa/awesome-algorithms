@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/
+/**
+ * https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/
  *
  * @author Li.Wei by 2020/3/6
  */
@@ -23,16 +24,18 @@ public class _57II_JAVA_和为s的连续正整数序列 {
                 int currSum = (s + e) * length; // 该值提取为变量进行动态加减即可保持窗口内的值
                 if (currSum == sum) {
                     int[] array = new int[length];
-                    for (int i = 0, n = s; i < length; i++) array[i] = n++;
+                    for (int i = 0, n = s; i < length; i++)
+                        array[i] = n++;
                     r.add(array);
                     s++;
-                } else if (currSum < sum) e++;
-                else s++;
+                } else if (currSum < sum)
+                    e++;
+                else
+                    s++;
             }
-            return r.toArray(new int[][]{});
+            return r.toArray(new int[][] {});
         }
     }
-
 
     static class Solution1 {
 
@@ -53,13 +56,14 @@ public class _57II_JAVA_和为s的连续正整数序列 {
                 } else {
                     int length = e - s + 1;
                     int[] array = new int[length];
-                    for (int i = 0, n = s; i < length; i++) array[i] = n++;
+                    for (int i = 0, n = s; i < length; i++)
+                        array[i] = n++;
                     r.add(array);
                     sum -= s;
                     s++;
                 }
             }
-            return r.toArray(new int[][]{});
+            return r.toArray(new int[][] {});
         }
     }
 

@@ -1,34 +1,25 @@
 /******************************************************************************
- *  Compilation:  javac Huffman.java
- *  Execution:    java Huffman - < input.txt   (compress)
- *  Execution:    java Huffman + < input.txt   (expand)
- *  Dependencies: BinaryIn.java BinaryOut.java
- *  Data files:   https://algs4.cs.princeton.edu/55compression/abra.txt
- *                https://algs4.cs.princeton.edu/55compression/tinytinyTale.txt
- *                https://algs4.cs.princeton.edu/55compression/medTale.txt
- *                https://algs4.cs.princeton.edu/55compression/tale.txt
+ * Compilation: javac Huffman.java Execution: java Huffman - < input.txt (compress) Execution: java Huffman + <
+ * input.txt (expand) Dependencies: BinaryIn.java BinaryOut.java Data files:
+ * https://algs4.cs.princeton.edu/55compression/abra.txt https://algs4.cs.princeton.edu/55compression/tinytinyTale.txt
+ * https://algs4.cs.princeton.edu/55compression/medTale.txt https://algs4.cs.princeton.edu/55compression/tale.txt
  *
- *  Compress or expand a binary input stream using the Huffman algorithm.
+ * Compress or expand a binary input stream using the Huffman algorithm.
  *
- *  % java Huffman - < abra.txt | java BinaryDump 60
- *  010100000100101000100010010000110100001101010100101010000100
- *  000000000000000000000000000110001111100101101000111110010100
- *  120 bits
+ * % java Huffman - < abra.txt | java BinaryDump 60 010100000100101000100010010000110100001101010100101010000100
+ * 000000000000000000000000000110001111100101101000111110010100 120 bits
  *
- *  % java Huffman - < abra.txt | java Huffman +
- *  ABRACADABRA!
+ * % java Huffman - < abra.txt | java Huffman + ABRACADABRA!
  *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
 
 /**
- * The {@code Huffman} class provides static methods for compressing
- * and expanding a binary input using Huffman codes over the 8-bit extended
- * ASCII alphabet.
+ * The {@code Huffman} class provides static methods for compressing and expanding a binary input using Huffman codes
+ * over the 8-bit extended ASCII alphabet.
  * <p>
- * For additional documentation,
- * see <a href="https://algs4.cs.princeton.edu/55compression">Section 5.5</a> of
+ * For additional documentation, see <a href="https://algs4.cs.princeton.edu/55compression">Section 5.5</a> of
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
@@ -40,8 +31,7 @@ public class Huffman {
     private static final int R = 256;
 
     // Do not instantiate.
-    private Huffman() {
-    }
+    private Huffman() {}
 
     // Huffman trie node
     private static class Node implements Comparable<Node> {
@@ -69,9 +59,8 @@ public class Huffman {
     }
 
     /**
-     * Reads a sequence of 8-bit bytes from standard input; compresses them
-     * using Huffman codes with an 8-bit alphabet; and writes the results
-     * to standard output.
+     * Reads a sequence of 8-bit bytes from standard input; compresses them using Huffman codes with an 8-bit alphabet;
+     * and writes the results to standard output.
      */
     public static void compress() {
         // read the input
@@ -104,7 +93,8 @@ public class Huffman {
                     BinaryStdOut.write(false);
                 } else if (code.charAt(j) == '1') {
                     BinaryStdOut.write(true);
-                } else throw new IllegalStateException("Illegal state");
+                } else
+                    throw new IllegalStateException("Illegal state");
             }
         }
 
@@ -131,7 +121,6 @@ public class Huffman {
         return pq.delMin();
     }
 
-
     // write bitstring-encoded trie to standard output
     private static void writeTrie(Node x) {
         if (x.isLeaf()) {
@@ -155,8 +144,8 @@ public class Huffman {
     }
 
     /**
-     * Reads a sequence of bits that represents a Huffman-compressed message from
-     * standard input; expands them; and writes the results to standard output.
+     * Reads a sequence of bits that represents a Huffman-compressed message from standard input; expands them; and
+     * writes the results to standard output.
      */
     public static void expand() {
 
@@ -171,14 +160,15 @@ public class Huffman {
             Node x = root;
             while (!x.isLeaf()) {
                 boolean bit = BinaryStdIn.readBoolean();
-                if (bit) x = x.right;
-                else x = x.left;
+                if (bit)
+                    x = x.right;
+                else
+                    x = x.left;
             }
             BinaryStdOut.write(x.ch, 8);
         }
         BinaryStdOut.close();
     }
-
 
     private static Node readTrie() {
         boolean isLeaf = BinaryStdIn.readBoolean();
@@ -190,39 +180,38 @@ public class Huffman {
     }
 
     /**
-     * Sample client that calls {@code compress()} if the command-line
-     * argument is "-" an {@code expand()} if it is "+".
+     * Sample client that calls {@code compress()} if the command-line argument is "-" an {@code expand()} if it is "+".
      *
-     * @param args the command-line arguments
+     * @param args
+     *            the command-line arguments
      */
     public static void main(String[] args) {
-        if (args[0].equals("-")) compress();
-        else if (args[0].equals("+")) expand();
-        else throw new IllegalArgumentException("Illegal command line argument");
+        if (args[0].equals("-"))
+            compress();
+        else if (args[0].equals("+"))
+            expand();
+        else
+            throw new IllegalArgumentException("Illegal command line argument");
     }
 
 }
 
 /******************************************************************************
- *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
+ * Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
- *  This file is part of algs4.jar, which accompanies the textbook
+ * This file is part of algs4.jar, which accompanies the textbook
  *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
+ * Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ * http://algs4.cs.princeton.edu
  *
  *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * algs4.jar is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+ * version.
  *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * algs4.jar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ * You should have received a copy of the GNU General Public License along with algs4.jar. If not, see
+ * http://www.gnu.org/licenses.
  ******************************************************************************/

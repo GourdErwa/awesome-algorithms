@@ -14,8 +14,7 @@ public class _1114_JAVA {
         private final CountDownLatch secondLatch = new CountDownLatch(1);
         private final CountDownLatch thirdLatch = new CountDownLatch(1);
 
-        public Foo() {
-        }
+        public Foo() {}
 
         public void first(Runnable printFirst) throws InterruptedException {
             // printFirst.run() outputs "first". Do not change or remove this line.
@@ -44,8 +43,7 @@ class _1114_JAVA_1 {
         private final Semaphore secondLatch = new Semaphore(0);
         private final Semaphore thirdLatch = new Semaphore(0);
 
-        public Foo() {
-        }
+        public Foo() {}
 
         public void first(Runnable printFirst) throws InterruptedException {
             // printFirst.run() outputs "first". Do not change or remove this line.
