@@ -12,6 +12,8 @@ package io.groud.leetcode.algo.dp;
  * 输入: "cbbd" 输出: "bb"
  * <p>
  * TODO 未完成
+ * 输入: "cbbd"
+ * 输出: "bb"
  *
  * @author Li.Wei by 2020/3/16
  */
@@ -25,7 +27,7 @@ public class _5_JAVA_最长回文子串 {
      * 子问题：
      *
      * 2. 转移方程
-     *
+     * dp[i][j] = max(dp[i+1,j-1],S(j)==S(i-1))
      *
      * 3. 初始条件与边界情况
      *
@@ -35,10 +37,31 @@ public class _5_JAVA_最长回文子串 {
      *
      * 5. 优化时间空间复杂度
      */
-    class Solution {
+    static class Solution {
         public String longestPalindrome(String s) {
-
-            return null;
+            int length = s.length();
+            boolean[][] dp = new boolean[length][length];
+            int maxLen = 1;
+            int start = 0;
+            for (int i = 1; i < length; i++) {
+                for (int j = 0; j < i; j++) {
+                    boolean b = (i - j < 3 || dp[i + 1][j - 1]) && s.charAt(i) == s.charAt(j);
+                    if (b) {
+                        dp[j][j] = true;
+                        int curLen = i - j + 1;
+                        if (curLen > maxLen) {
+                            maxLen = curLen;
+                            start = j;
+                        }
+                    }
+                }
+            }
+            return s.substring(start, start + maxLen);
         }
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.longestPalindrome("babad"));
     }
 }
