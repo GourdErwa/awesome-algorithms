@@ -92,10 +92,10 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Does this symbol table contain the given key?
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains {@code key} and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
         if (key == null)
@@ -107,11 +107,11 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Returns the value associated with the given key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with the given key if the key is in the symbol table and {@code null} if the key is
      *         not in the symbol table
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(Key key) {
         return get(root, key);
@@ -137,11 +137,11 @@ public class BST<Key extends Comparable<Key>, Value> {
      * symbol table if the specified value is {@code null}.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
         if (key == null)
@@ -172,7 +172,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Removes the smallest key and associated value from the symbol table.
      *
      * @throws NoSuchElementException
-     *             if the symbol table is empty
+     *         if the symbol table is empty
      */
     public void deleteMin() {
         if (isEmpty())
@@ -193,7 +193,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Removes the largest key and associated value from the symbol table.
      *
      * @throws NoSuchElementException
-     *             if the symbol table is empty
+     *         if the symbol table is empty
      */
     public void deleteMax() {
         if (isEmpty())
@@ -214,9 +214,9 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Removes the specified key and its associated value from this symbol table (if the key is in this symbol table).
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(Key key) {
         if (key == null)
@@ -253,7 +253,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      *
      * @return the smallest key in the symbol table
      * @throws NoSuchElementException
-     *             if the symbol table is empty
+     *         if the symbol table is empty
      */
     public Key min() {
         if (isEmpty())
@@ -273,7 +273,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      *
      * @return the largest key in the symbol table
      * @throws NoSuchElementException
-     *             if the symbol table is empty
+     *         if the symbol table is empty
      */
     public Key max() {
         if (isEmpty())
@@ -292,12 +292,12 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Returns the largest key in the symbol table less than or equal to {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the largest key in the symbol table less than or equal to {@code key}
      * @throws NoSuchElementException
-     *             if there is no such key
+     *         if there is no such key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Key floor(Key key) {
         if (key == null)
@@ -351,12 +351,12 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Returns the smallest key in the symbol table greater than or equal to {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the smallest key in the symbol table greater than or equal to {@code key}
      * @throws NoSuchElementException
-     *             if there is no such key
+     *         if there is no such key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Key ceiling(Key key) {
         if (key == null)
@@ -392,10 +392,10 @@ public class BST<Key extends Comparable<Key>, Value> {
      * symbol table.
      *
      * @param rank
-     *            the order statistic
+     *        the order statistic
      * @return the key in the symbol table of given {@code rank}
      * @throws IllegalArgumentException
-     *             unless {@code rank} is between 0 and <em>n</em>–1
+     *         unless {@code rank} is between 0 and <em>n</em>–1
      */
     public Key select(int rank) {
         if (rank < 0 || rank >= size()) {
@@ -422,10 +422,10 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Return the number of keys in the symbol table strictly less than {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the number of keys in the symbol table strictly less than {@code key}
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public int rank(Key key) {
         if (key == null)
@@ -462,12 +462,12 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Returns all keys in the symbol table in the given range, as an {@code Iterable}.
      *
      * @param lo
-     *            minimum endpoint
+     *        minimum endpoint
      * @param hi
-     *            maximum endpoint
+     *        maximum endpoint
      * @return all keys in the symbol table between {@code lo} (inclusive) and {@code hi} (inclusive)
      * @throws IllegalArgumentException
-     *             if either {@code lo} or {@code hi} is {@code null}
+     *         if either {@code lo} or {@code hi} is {@code null}
      */
     public Iterable<Key> keys(Key lo, Key hi) {
         if (lo == null)
@@ -497,12 +497,12 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Returns the number of keys in the symbol table in the given range.
      *
      * @param lo
-     *            minimum endpoint
+     *        minimum endpoint
      * @param hi
-     *            maximum endpoint
+     *        maximum endpoint
      * @return the number of keys in the symbol table between {@code lo} (inclusive) and {@code hi} (inclusive)
      * @throws IllegalArgumentException
-     *             if either {@code lo} or {@code hi} is {@code null}
+     *         if either {@code lo} or {@code hi} is {@code null}
      */
     public int size(Key lo, Key hi) {
         if (lo == null)
@@ -613,7 +613,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * Unit tests the {@code BST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         BST<String, Integer> st = new BST<String, Integer>();

@@ -46,14 +46,14 @@ public class Interval1D {
      * Initializes a closed interval [min, max].
      *
      * @param min
-     *            the smaller endpoint
+     *        the smaller endpoint
      * @param max
-     *            the larger endpoint
+     *        the larger endpoint
      * @throws IllegalArgumentException
-     *             if the min endpoint is greater than the max endpoint
+     *         if the min endpoint is greater than the max endpoint
      * @throws IllegalArgumentException
-     *             if either {@code min} or {@code max} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
-     *             {@code Double.NEGATIVE_INFINITY}
+     *         if either {@code min} or {@code max} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
+     *         {@code Double.NEGATIVE_INFINITY}
      */
     public Interval1D(double min, double max) {
         if (Double.isInfinite(min) || Double.isInfinite(max))
@@ -118,7 +118,7 @@ public class Interval1D {
      * Returns true if this interval intersects the specified interval.
      *
      * @param that
-     *            the other interval
+     *        the other interval
      * @return {@code true} if this interval intersects the argument interval; {@code false} otherwise
      */
     public boolean intersects(Interval1D that) {
@@ -133,7 +133,7 @@ public class Interval1D {
      * Returns true if this interval contains the specified value.
      *
      * @param x
-     *            the value
+     *        the value
      * @return {@code true} if this interval contains the value {@code x}; {@code false} otherwise
      */
     public boolean contains(double x) {
@@ -162,7 +162,7 @@ public class Interval1D {
      * Compares this transaction to the specified object.
      *
      * @param other
-     *            the other interval
+     *        the other interval
      * @return {@code true} if this interval equals the other interval; {@code false} otherwise
      */
     public boolean equals(Object other) {
@@ -237,7 +237,7 @@ public class Interval1D {
      * Unit tests the {@code Interval1D} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Interval1D[] intervals = new Interval1D[4];

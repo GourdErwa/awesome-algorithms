@@ -38,13 +38,13 @@ public class AcyclicLP {
      * Computes a longest paths tree from {@code s} to every other vertex in the directed acyclic graph {@code G}.
      *
      * @param G
-     *            the acyclic digraph
+     *        the acyclic digraph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             if the digraph is not acyclic
+     *         if the digraph is not acyclic
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public AcyclicLP(EdgeWeightedDigraph G, int s) {
         distTo = new double[G.V()];
@@ -79,11 +79,11 @@ public class AcyclicLP {
      * Returns the length of a longest path from the source vertex {@code s} to vertex {@code v}.
      *
      * @param v
-     *            the destination vertex
+     *        the destination vertex
      * @return the length of a longest path from the source vertex {@code s} to vertex {@code v};
      *         {@code Double.NEGATIVE_INFINITY} if no such path
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public double distTo(int v) {
         validateVertex(v);
@@ -94,11 +94,11 @@ public class AcyclicLP {
      * Is there a path from the source vertex {@code s} to vertex {@code v}?
      *
      * @param v
-     *            the destination vertex
+     *        the destination vertex
      * @return {@code true} if there is a path from the source vertex {@code s} to vertex {@code v}, and {@code false}
      *         otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean hasPathTo(int v) {
         validateVertex(v);
@@ -109,11 +109,11 @@ public class AcyclicLP {
      * Returns a longest path from the source vertex {@code s} to vertex {@code v}.
      *
      * @param v
-     *            the destination vertex
+     *        the destination vertex
      * @return a longest path from the source vertex {@code s} to vertex {@code v} as an iterable of edges, and
      *         {@code null} if no such path
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<DirectedEdge> pathTo(int v) {
         validateVertex(v);
@@ -137,7 +137,7 @@ public class AcyclicLP {
      * Unit tests the {@code AcyclicLP} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

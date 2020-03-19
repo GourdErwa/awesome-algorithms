@@ -29,14 +29,14 @@ public class Transaction implements Comparable<Transaction> {
      * Initializes a new transaction from the given arguments.
      *
      * @param who
-     *            the person involved in this transaction
+     *        the person involved in this transaction
      * @param when
-     *            the date of this transaction
+     *        the date of this transaction
      * @param amount
-     *            the amount of this transaction
+     *        the amount of this transaction
      * @throws IllegalArgumentException
-     *             if {@code amount} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY}, or
-     *             {@code Double.NEGATIVE_INFINITY}
+     *         if {@code amount} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY}, or
+     *         {@code Double.NEGATIVE_INFINITY}
      */
     public Transaction(String who, Date when, double amount) {
         if (Double.isNaN(amount) || Double.isInfinite(amount))
@@ -50,10 +50,10 @@ public class Transaction implements Comparable<Transaction> {
      * Initializes a new transaction by parsing a string of the form NAME DATE AMOUNT.
      *
      * @param transaction
-     *            the string to parse
+     *        the string to parse
      * @throws IllegalArgumentException
-     *             if {@code amount} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY}, or
-     *             {@code Double.NEGATIVE_INFINITY}
+     *         if {@code amount} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY}, or
+     *         {@code Double.NEGATIVE_INFINITY}
      */
     public Transaction(String transaction) {
         String[] a = transaction.split("\\s+");
@@ -105,7 +105,7 @@ public class Transaction implements Comparable<Transaction> {
      * Compares two transactions by amount.
      *
      * @param that
-     *            the other transaction
+     *        the other transaction
      * @return { a negative integer, zero, a positive integer}, depending on whether the amount of this transaction is {
      *         less than, equal to, or greater than } the amount of that transaction
      */
@@ -117,7 +117,7 @@ public class Transaction implements Comparable<Transaction> {
      * Compares this transaction to the specified object.
      *
      * @param other
-     *            the other transaction
+     *        the other transaction
      * @return true if this transaction is equal to {@code other}; false otherwise
      */
     @Override
@@ -183,7 +183,7 @@ public class Transaction implements Comparable<Transaction> {
      * Unit tests the {@code Transaction} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Transaction[] a = new Transaction[4];

@@ -39,7 +39,7 @@ public class BipartiteX {
      * Determines whether an undirected graph is bipartite and finds either a bipartition or an odd-length cycle.
      *
      * @param G
-     *            the graph
+     *        the graph
      */
     public BipartiteX(Graph G) {
         isBipartite = true;
@@ -108,13 +108,13 @@ public class BipartiteX {
      * Returns the side of the bipartite that vertex {@code v} is on.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the side of the bipartition that vertex {@code v} is on; two vertices are in the same side of the
      *         bipartition if and only if they have the same color
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      * @throws UnsupportedOperationException
-     *             if this method is called when the graph is not bipartite
+     *         if this method is called when the graph is not bipartite
      */
     public boolean color(int v) {
         validateVertex(v);
@@ -174,7 +174,7 @@ public class BipartiteX {
      * Unit tests the {@code BipartiteX} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V1 = Integer.parseInt(args[0]);

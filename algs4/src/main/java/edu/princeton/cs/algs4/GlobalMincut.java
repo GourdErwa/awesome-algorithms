@@ -62,11 +62,11 @@ public class GlobalMincut {
      * Computes a minimum cut in an edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      * @throws IllegalArgumentException
-     *             if the number of vertices of {@code G} is less than {@code 2}.
+     *         if the number of vertices of {@code G} is less than {@code 2}.
      * @throws IllegalArgumentException
-     *             if any edge weight is negative
+     *         if any edge weight is negative
      */
     public GlobalMincut(EdgeWeightedGraph G) {
         V = G.V();
@@ -79,9 +79,9 @@ public class GlobalMincut {
      * Validates the edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      * @throws IllegalArgumentException
-     *             if the number of vertices of {@code G} is less than {@code 2} or if any edge weight is negative
+     *         if the number of vertices of {@code G} is less than {@code 2} or if any edge weight is negative
      */
     private void validate(EdgeWeightedGraph G) {
         if (G.V() < 2)
@@ -106,11 +106,11 @@ public class GlobalMincut {
      * <em>v</em>-<em>w</em> crosses the mincut if and only if <em>v</em> and <em>w</em> have opposite parity.
      *
      * @param v
-     *            the vertex to check
+     *        the vertex to check
      * @return {@code true} if the vertex {@code v} is on the first subset of vertices of the minimum cut; or
      *         {@code false} if the vertex {@code v} is on the second subset.
      * @throws IllegalArgumentException
-     *             unless vertex {@code v} is between {@code 0 <= v < V}
+     *         unless vertex {@code v} is between {@code 0 <= v < V}
      */
     public boolean cut(int v) {
         validateVertex(v);
@@ -123,9 +123,9 @@ public class GlobalMincut {
      * belong to the second subset.
      *
      * @param t
-     *            the vertex {@code t}
+     *        the vertex {@code t}
      * @param uf
-     *            the union-find data type
+     *        the union-find data type
      */
     private void makeCut(int t, UF uf) {
         for (int v = 0; v < cut.length; v++) {
@@ -138,9 +138,9 @@ public class GlobalMincut {
      * which yields the desired minimum cut.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      * @param a
-     *            the starting vertex
+     *        the starting vertex
      */
     private void minCut(EdgeWeightedGraph G, int a) {
         UF uf = new UF(G.V());
@@ -165,12 +165,12 @@ public class GlobalMincut {
      * adjacency search</em> or <em>maximum cardinality search</em>.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      * @param marked
-     *            the array of contracted vertices, where {@code marked[v]} is {@code true} if the vertex {@code v} was
-     *            already contracted; or {@code false} otherwise
+     *        the array of contracted vertices, where {@code marked[v]} is {@code true} if the vertex {@code v} was
+     *        already contracted; or {@code false} otherwise
      * @param cp
-     *            the previous cut-of-the-phase
+     *        the previous cut-of-the-phase
      * @return the cut-of-the-phase
      */
     private CutPhase minCutPhase(EdgeWeightedGraph G, boolean[] marked, CutPhase cp) {
@@ -201,11 +201,11 @@ public class GlobalMincut {
      * Contracts the edges incidents on the vertices {@code s} and {@code t} of the given edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      * @param s
-     *            the vertex {@code s}
+     *        the vertex {@code s}
      * @param t
-     *            the vertex {@code t}
+     *        the vertex {@code t}
      * @return a new edge-weighted graph for which the edges incidents on the vertices {@code s} and {@code t} were
      *         contracted
      */
@@ -233,7 +233,7 @@ public class GlobalMincut {
      * Checks optimality conditions.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      * @return {@code true} if optimality conditions are fine
      */
     private boolean check(EdgeWeightedGraph G) {
@@ -269,7 +269,7 @@ public class GlobalMincut {
      * Unit tests the {@code GlobalMincut} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

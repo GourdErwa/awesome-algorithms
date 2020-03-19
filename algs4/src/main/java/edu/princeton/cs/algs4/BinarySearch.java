@@ -37,9 +37,9 @@ public class BinarySearch {
      * Returns the index of the specified key in the specified array.
      *
      * @param a
-     *            the array of integers, must be sorted in ascending order
+     *        the array of integers, must be sorted in ascending order
      * @param key
-     *            the search key
+     *        the search key
      * @return index of key in array {@code a} if present; {@code -1} otherwise
      */
     public static int indexOf(int[] a, int key) {
@@ -63,9 +63,9 @@ public class BinarySearch {
      * give the <em>rank</em> if the array has duplicate keys or if the key is not in the array.
      *
      * @param key
-     *            the search key
+     *        the search key
      * @param a
-     *            the array of integers, must be sorted in ascending order
+     *        the array of integers, must be sorted in ascending order
      * @return index of key in array {@code a} if present; {@code -1} otherwise
      * @deprecated Replaced by {@link #indexOf(int[], int)}.
      */
@@ -79,7 +79,7 @@ public class BinarySearch {
      * from standard input; prints to standard output those integers that do <em>not</em> appear in the file.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

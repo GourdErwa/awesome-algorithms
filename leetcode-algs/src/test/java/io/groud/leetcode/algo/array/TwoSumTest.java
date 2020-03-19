@@ -1,8 +1,8 @@
 package io.groud.leetcode.algo.array;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Li.Wei by 2019/11/27

@@ -27,7 +27,7 @@ import java.util.NoSuchElementException;
  * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Item>
- *            the generic type of an item in this queue
+ *        the generic type of an item in this queue
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -74,7 +74,7 @@ public class Queue<Item> implements Iterable<Item> {
      *
      * @return the item least recently added to this queue
      * @throws NoSuchElementException
-     *             if this queue is empty
+     *         if this queue is empty
      */
     public Item peek() {
         if (isEmpty())
@@ -86,7 +86,7 @@ public class Queue<Item> implements Iterable<Item> {
      * Adds the item to this queue.
      *
      * @param item
-     *            the item to add
+     *        the item to add
      */
     public void enqueue(Item item) {
         Node<Item> oldlast = last;
@@ -105,7 +105,7 @@ public class Queue<Item> implements Iterable<Item> {
      *
      * @return the item on this queue that was least recently added
      * @throws NoSuchElementException
-     *             if this queue is empty
+     *         if this queue is empty
      */
     public Item dequeue() {
         if (isEmpty())
@@ -170,7 +170,7 @@ public class Queue<Item> implements Iterable<Item> {
      * Unit tests the {@code Queue} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Queue<String> queue = new Queue<String>();

@@ -47,7 +47,7 @@ public class FenwickTree {
      * Time-Complexity: O(log(n))
      *
      * @param ind
-     *            index
+     *        index
      * @return sum
      */
     public int rsq(int ind) {
@@ -69,9 +69,9 @@ public class FenwickTree {
      * Time-Complexity: O(log(n))
      *
      * @param a
-     *            left index
+     *        left index
      * @param b
-     *            right index
+     *        right index
      * @return sum
      */
     public int rsq(int a, int b) {
@@ -86,9 +86,9 @@ public class FenwickTree {
      * Time-Complexity: O(log(n))
      *
      * @param ind
-     *            index
+     *        index
      * @param value
-     *            value
+     *        value
      */
     public void update(int ind, int value) {
         assert ind > 0;
@@ -113,7 +113,7 @@ public class FenwickTree {
      * 1 3 [3,2,3,4,5,6]
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

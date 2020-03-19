@@ -35,7 +35,7 @@ public class DirectedEulerianCycle {
      * Computes an Eulerian cycle in the specified digraph, if one exists.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      */
     public DirectedEulerianCycle(Digraph G) {
 
@@ -191,7 +191,7 @@ public class DirectedEulerianCycle {
      * Unit tests the {@code DirectedEulerianCycle} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);

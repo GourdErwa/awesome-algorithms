@@ -32,7 +32,7 @@ import java.util.TreeSet;
  * <i>Algorithms in Java, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Key>
- *            the generic type of a key in this set
+ *        the generic type of a key in this set
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -51,7 +51,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Initializes a new set that is an independent copy of the specified set.
      *
      * @param x
-     *            the set to copy
+     *        the set to copy
      */
     public SET(SET<Key> x) {
         set = new TreeSet<Key>(x.set);
@@ -61,9 +61,9 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Adds the key to this set (if it is not already present).
      *
      * @param key
-     *            the key to add
+     *        the key to add
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void add(Key key) {
         if (key == null)
@@ -75,10 +75,10 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Returns true if this set contains the given key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this set contains {@code key}; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
         if (key == null)
@@ -91,9 +91,9 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * {@code remove()}, but we plan to deprecate {@code delete()}.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(Key key) {
         if (key == null)
@@ -106,9 +106,9 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * {@code delete()}, but we plan to deprecate {@code delete()}.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void remove(Key key) {
         if (key == null)
@@ -149,7 +149,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      *
      * @return the largest key in this set
      * @throws NoSuchElementException
-     *             if this set is empty
+     *         if this set is empty
      */
     public Key max() {
         if (isEmpty())
@@ -162,7 +162,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      *
      * @return the smallest key in this set
      * @throws NoSuchElementException
-     *             if this set is empty
+     *         if this set is empty
      */
     public Key min() {
         if (isEmpty())
@@ -174,12 +174,12 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Returns the smallest key in this set greater than or equal to {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the smallest key in this set greater than or equal to {@code key}
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws NoSuchElementException
-     *             if there is no such key
+     *         if there is no such key
      */
     public Key ceiling(Key key) {
         if (key == null)
@@ -194,12 +194,12 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Returns the largest key in this set less than or equal to {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the largest key in this set table less than or equal to {@code key}
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws NoSuchElementException
-     *             if there is no such key
+     *         if there is no such key
      */
     public Key floor(Key key) {
         if (key == null)
@@ -214,10 +214,10 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Returns the union of this set and that set.
      *
      * @param that
-     *            the other set
+     *        the other set
      * @return the union of this set and that set
      * @throws IllegalArgumentException
-     *             if {@code that} is {@code null}
+     *         if {@code that} is {@code null}
      */
     public SET<Key> union(SET<Key> that) {
         if (that == null)
@@ -236,10 +236,10 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Returns the intersection of this set and that set.
      *
      * @param that
-     *            the other set
+     *        the other set
      * @return the intersection of this set and that set
      * @throws IllegalArgumentException
-     *             if {@code that} is {@code null}
+     *         if {@code that} is {@code null}
      */
     public SET<Key> intersects(SET<Key> that) {
         if (that == null)
@@ -266,7 +266,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * types. This is consistent with the behavior of {@code equals()} within Java's Collections framework.
      *
      * @param other
-     *            the other set
+     *        the other set
      * @return {@code true} if this set equals {@code other}; {@code false} otherwise
      */
     @Override
@@ -286,7 +286,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      *
      * @return does not return a value
      * @throws UnsupportedOperationException
-     *             if called
+     *         if called
      */
     @Override
     public int hashCode() {
@@ -309,7 +309,7 @@ public class SET<Key extends Comparable<Key>> implements Iterable<Key> {
      * Unit tests the {@code SET} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         SET<String> set = new SET<String>();

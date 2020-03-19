@@ -34,9 +34,9 @@ public class Complex {
      * Initializes a complex number from the specified real and imaginary parts.
      *
      * @param real
-     *            the real part
+     *        the real part
      * @param imag
-     *            the imaginary part
+     *        the imaginary part
      */
     public Complex(double real, double imag) {
         re = real;
@@ -81,7 +81,7 @@ public class Complex {
      * Returns the sum of this complex number and the specified complex number.
      *
      * @param that
-     *            the other complex number
+     *        the other complex number
      * @return the complex number whose value is {@code (this + that)}
      */
     public Complex plus(Complex that) {
@@ -94,7 +94,7 @@ public class Complex {
      * Returns the result of subtracting the specified complex number from this complex number.
      *
      * @param that
-     *            the other complex number
+     *        the other complex number
      * @return the complex number whose value is {@code (this - that)}
      */
     public Complex minus(Complex that) {
@@ -107,7 +107,7 @@ public class Complex {
      * Returns the product of this complex number and the specified complex number.
      *
      * @param that
-     *            the other complex number
+     *        the other complex number
      * @return the complex number whose value is {@code (this * that)}
      */
     public Complex times(Complex that) {
@@ -120,7 +120,7 @@ public class Complex {
      * Returns the product of this complex number and the specified scalar.
      *
      * @param alpha
-     *            the scalar
+     *        the scalar
      * @return the complex number whose value is {@code (alpha * this)}
      */
     public Complex scale(double alpha) {
@@ -131,7 +131,7 @@ public class Complex {
      * Returns the product of this complex number and the specified scalar.
      *
      * @param alpha
-     *            the scalar
+     *        the scalar
      * @return the complex number whose value is {@code (alpha * this)}
      * @deprecated Replaced by {@link #scale(double)}.
      */
@@ -181,7 +181,7 @@ public class Complex {
      * Returns the result of dividing the specified complex number into this complex number.
      *
      * @param that
-     *            the other complex number
+     *        the other complex number
      * @return the complex number whose value is {@code (this / that)}
      */
     public Complex divides(Complex that) {
@@ -228,7 +228,7 @@ public class Complex {
      * Unit tests the {@code Complex} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Complex a = new Complex(5.0, 6.0);

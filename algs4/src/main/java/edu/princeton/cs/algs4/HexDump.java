@@ -41,7 +41,7 @@ public class HexDump {
      * writes the number of bits.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int bytesPerLine = 16;

@@ -46,7 +46,7 @@ public class Insertion {
      * Rearranges the array in ascending order, using the natural order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(Comparable[] a) {
         int n = a.length;
@@ -63,11 +63,11 @@ public class Insertion {
      * Rearranges the subarray a[lo..hi) in ascending order, using the natural order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      * @param lo
-     *            left endpoint (inclusive)
+     *        left endpoint (inclusive)
      * @param hi
-     *            right endpoint (exclusive)
+     *        right endpoint (exclusive)
      */
     public static void sort(Comparable[] a, int lo, int hi) {
         for (int i = lo + 1; i < hi; i++) {
@@ -82,9 +82,9 @@ public class Insertion {
      * Rearranges the array in ascending order, using a comparator.
      *
      * @param a
-     *            the array
+     *        the array
      * @param comparator
-     *            the comparator specifying the order
+     *        the comparator specifying the order
      */
     public static void sort(Object[] a, Comparator comparator) {
         int n = a.length;
@@ -101,13 +101,13 @@ public class Insertion {
      * Rearranges the subarray a[lo..hi) in ascending order, using a comparator.
      *
      * @param a
-     *            the array
+     *        the array
      * @param lo
-     *            left endpoint (inclusive)
+     *        left endpoint (inclusive)
      * @param hi
-     *            right endpoint (exclusive)
+     *        right endpoint (exclusive)
      * @param comparator
-     *            the comparator specifying the order
+     *        the comparator specifying the order
      */
     public static void sort(Object[] a, int lo, int hi, Comparator comparator) {
         for (int i = lo + 1; i < hi; i++) {
@@ -125,7 +125,7 @@ public class Insertion {
      * Returns a permutation that gives the elements in the array in ascending order.
      *
      * @param a
-     *            the array
+     *        the array
      * @return a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]}, ..., {@code a[p[n-1]]} are in
      *         ascending order
      */
@@ -209,7 +209,7 @@ public class Insertion {
      * ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

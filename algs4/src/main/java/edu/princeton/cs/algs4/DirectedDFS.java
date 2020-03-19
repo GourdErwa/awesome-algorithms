@@ -38,11 +38,11 @@ public class DirectedDFS {
      * Computes the vertices in digraph {@code G} that are reachable from the source vertex {@code s}.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public DirectedDFS(Digraph G, int s) {
         marked = new boolean[G.V()];
@@ -54,11 +54,11 @@ public class DirectedDFS {
      * Computes the vertices in digraph {@code G} that are connected to any of the source vertices {@code sources}.
      *
      * @param G
-     *            the graph
+     *        the graph
      * @param sources
-     *            the source vertices
+     *        the source vertices
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V} for each vertex {@code s} in {@code sources}
+     *         unless {@code 0 <= s < V} for each vertex {@code s} in {@code sources}
      */
     public DirectedDFS(Digraph G, Iterable<Integer> sources) {
         marked = new boolean[G.V()];
@@ -82,10 +82,10 @@ public class DirectedDFS {
      * Is there a directed path from the source vertex (or any of the source vertices) and vertex {@code v}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if there is a directed path, {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean marked(int v) {
         validateVertex(v);
@@ -125,7 +125,7 @@ public class DirectedDFS {
      * Unit tests the {@code DirectedDFS} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

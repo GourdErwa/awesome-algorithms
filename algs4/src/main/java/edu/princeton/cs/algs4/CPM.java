@@ -36,7 +36,7 @@ public class CPM {
      * Reads the precedence constraints from standard input and prints a feasible schedule to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

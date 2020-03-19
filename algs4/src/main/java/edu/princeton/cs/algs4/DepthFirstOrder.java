@@ -40,7 +40,7 @@ public class DepthFirstOrder {
      * Determines a depth-first order for the digraph {@code G}.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      */
     public DepthFirstOrder(Digraph G) {
         pre = new int[G.V()];
@@ -59,7 +59,7 @@ public class DepthFirstOrder {
      * Determines a depth-first order for the edge-weighted digraph {@code G}.
      *
      * @param G
-     *            the edge-weighted digraph
+     *        the edge-weighted digraph
      */
     public DepthFirstOrder(EdgeWeightedDigraph G) {
         pre = new int[G.V()];
@@ -105,10 +105,10 @@ public class DepthFirstOrder {
      * Returns the preorder number of vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the preorder number of vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int pre(int v) {
         validateVertex(v);
@@ -119,10 +119,10 @@ public class DepthFirstOrder {
      * Returns the postorder number of vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the postorder number of vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int post(int v) {
         validateVertex(v);
@@ -196,7 +196,7 @@ public class DepthFirstOrder {
      * Unit tests the {@code DepthFirstOrder} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

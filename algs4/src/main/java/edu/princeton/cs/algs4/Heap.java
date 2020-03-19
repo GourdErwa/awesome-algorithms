@@ -39,7 +39,7 @@ public class Heap {
      * Rearranges the array in ascending order, using the natural order.
      *
      * @param pq
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(Comparable[] pq) {
         int n = pq.length;
@@ -97,7 +97,7 @@ public class Heap {
      * ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

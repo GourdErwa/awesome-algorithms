@@ -27,9 +27,9 @@ public class Interval2D {
      * Initializes a two-dimensional interval.
      *
      * @param x
-     *            the one-dimensional interval of x-coordinates
+     *        the one-dimensional interval of x-coordinates
      * @param y
-     *            the one-dimensional interval of y-coordinates
+     *        the one-dimensional interval of y-coordinates
      */
     public Interval2D(Interval1D x, Interval1D y) {
         this.x = x;
@@ -40,7 +40,7 @@ public class Interval2D {
      * Does this two-dimensional interval intersect that two-dimensional interval?
      *
      * @param that
-     *            the other two-dimensional interval
+     *        the other two-dimensional interval
      * @return true if this two-dimensional interval intersects that two-dimensional interval; false otherwise
      */
     public boolean intersects(Interval2D that) {
@@ -55,7 +55,7 @@ public class Interval2D {
      * Does this two-dimensional interval contain the point p?
      *
      * @param p
-     *            the two-dimensional point
+     *        the two-dimensional point
      * @return true if this two-dimensional interval contains the point p; false otherwise
      */
     public boolean contains(Point2D p) {
@@ -84,7 +84,7 @@ public class Interval2D {
      * Does this interval equal the other interval?
      *
      * @param other
-     *            the other interval
+     *        the other interval
      * @return true if this interval equals the other interval; false otherwise
      */
     public boolean equals(Object other) {
@@ -122,7 +122,7 @@ public class Interval2D {
      * Unit tests the {@code Interval2D} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         double xmin = Double.parseDouble(args[0]);

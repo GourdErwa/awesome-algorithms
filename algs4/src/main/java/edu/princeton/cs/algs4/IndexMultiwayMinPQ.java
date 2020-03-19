@@ -41,13 +41,13 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1} Worst case is O(n)
      *
      * @param N
-     *            number of keys in the priority queue, index from {@code 0} to {@code N-1}
+     *        number of keys in the priority queue, index from {@code 0} to {@code N-1}
      * @param D
-     *            dimension of the heap
+     *        dimension of the heap
      * @throws IllegalArgumentException
-     *             if {@code N < 0}
+     *         if {@code N < 0}
      * @throws IllegalArgumentException
-     *             if {@code D < 2}
+     *         if {@code D < 2}
      */
     public IndexMultiwayMinPQ(int N, int D) {
         if (N < 0)
@@ -67,15 +67,15 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Initializes an empty indexed priority queue with indices between {@code 0} to {@code N-1} Worst case is O(n)
      *
      * @param N
-     *            number of keys in the priority queue, index from {@code 0} to {@code N-1}
+     *        number of keys in the priority queue, index from {@code 0} to {@code N-1}
      * @param D
-     *            dimension of the heap
+     *        dimension of the heap
      * @param C
-     *            a Comparator over the keys
+     *        a Comparator over the keys
      * @throws IllegalArgumentException
-     *             if {@code N < 0}
+     *         if {@code N < 0}
      * @throws IllegalArgumentException
-     *             if {@code D < 2}
+     *         if {@code D < 2}
      */
     public IndexMultiwayMinPQ(int N, Comparator<Key> C, int D) {
         if (N < 0)
@@ -104,10 +104,10 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Does the priority queue contains the index i ? Worst case is O(1)
      *
      * @param i
-     *            an index
+     *        an index
      * @return true if i is on the priority queue, false if not
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      */
     public boolean contains(int i) {
         if (i < 0 || i >= nmax)
@@ -128,13 +128,13 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Associates a key with an index Worst case is O(log-d(n))
      *
      * @param i
-     *            an index
+     *        an index
      * @param key
-     *            a Key associated with i
+     *        a Key associated with i
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      * @throws IllegalArgumentException
-     *             if the index is already in the queue
+     *         if the index is already in the queue
      */
     public void insert(int i, Key key) {
         if (i < 0 || i >= nmax)
@@ -152,7 +152,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      *
      * @return the index associated with the minimum key
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public int minIndex() {
         if (isEmpty())
@@ -165,7 +165,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      *
      * @return the minimum key currently in the priority queue
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key minKey() {
         if (isEmpty())
@@ -178,7 +178,7 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      *
      * @return the index associated with the minimum key
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public int delMin() {
         if (isEmpty())
@@ -196,12 +196,12 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Gets the key associated with index i Worst case is O(1)
      *
      * @param i
-     *            an index
+     *        an index
      * @return the key associated with index i
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      * @throws IllegalArgumentException
-     *             if the index is not in the queue
+     *         if the index is not in the queue
      */
     public Key keyOf(int i) {
         if (i < 0 || i >= nmax)
@@ -216,13 +216,13 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * If the given key is lower, Worst case is O(log-d(n))
      *
      * @param i
-     *            an index
+     *        an index
      * @param key
-     *            the key to associate with i
+     *        the key to associate with i
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      * @throws IllegalArgumentException
-     *             if the index has no key associated with
+     *         if the index has no key associated with
      */
     public void changeKey(int i, Key key) {
         if (i < 0 || i >= nmax)
@@ -242,15 +242,15 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Decreases the key associated with index i to the given key Worst case is O(log-d(n))
      *
      * @param i
-     *            an index
+     *        an index
      * @param key
-     *            the key to associate with i
+     *        the key to associate with i
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      * @throws NoSuchElementException
-     *             if the index has no key associated with
+     *         if the index has no key associated with
      * @throws IllegalArgumentException
-     *             if the given key is greater than the current key
+     *         if the given key is greater than the current key
      */
     public void decreaseKey(int i, Key key) {
         if (i < 0 || i >= nmax)
@@ -267,15 +267,15 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Increases the key associated with index i to the given key Worst case is O(d*log-d(n))
      *
      * @param i
-     *            an index
+     *        an index
      * @param key
-     *            the key to associate with i
+     *        the key to associate with i
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      * @throws NoSuchElementException
-     *             if the index has no key associated with
+     *         if the index has no key associated with
      * @throws IllegalArgumentException
-     *             if the given key is lower than the current key
+     *         if the given key is lower than the current key
      */
     public void increaseKey(int i, Key key) {
         if (i < 0 || i >= nmax)
@@ -292,11 +292,11 @@ public class IndexMultiwayMinPQ<Key> implements Iterable<Integer> {
      * Deletes the key associated to the given index Worst case is O(d*log-d(n))
      *
      * @param i
-     *            an index
+     *        an index
      * @throws IllegalArgumentException
-     *             if the specified index is invalid
+     *         if the specified index is invalid
      * @throws NoSuchElementException
-     *             if the given index has no key associated with
+     *         if the given index has no key associated with
      */
     public void delete(int i) {
         if (i < 0 || i >= nmax)

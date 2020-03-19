@@ -48,7 +48,7 @@ public class SeparateChainingHashST<Key, Value> {
      * Initializes an empty symbol table with {@code m} chains.
      *
      * @param m
-     *            the initial number of chains
+     *        the initial number of chains
      */
     public SeparateChainingHashST(int m) {
         this.m = m;
@@ -98,10 +98,10 @@ public class SeparateChainingHashST<Key, Value> {
      * Returns true if this symbol table contains the specified key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains {@code key}; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
         if (key == null)
@@ -113,10 +113,10 @@ public class SeparateChainingHashST<Key, Value> {
      * Returns the value associated with the specified key in this symbol table.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with {@code key} in the symbol table; {@code null} if no such value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(Key key) {
         if (key == null)
@@ -131,11 +131,11 @@ public class SeparateChainingHashST<Key, Value> {
      * symbol table if the specified value is {@code null}.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
         if (key == null)
@@ -159,9 +159,9 @@ public class SeparateChainingHashST<Key, Value> {
      * Removes the specified key and its associated value from this symbol table (if the key is in this symbol table).
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(Key key) {
         if (key == null)
@@ -191,7 +191,7 @@ public class SeparateChainingHashST<Key, Value> {
      * Unit tests the {@code SeparateChainingHashST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         SeparateChainingHashST<String, Integer> st = new SeparateChainingHashST<String, Integer>();

@@ -44,9 +44,9 @@ public class RabinKarp {
      * Preprocesses the pattern string.
      *
      * @param pattern
-     *            the pattern string
+     *        the pattern string
      * @param R
-     *            the alphabet size
+     *        the alphabet size
      */
     public RabinKarp(char[] pattern, int R) {
         this.pat = String.valueOf(pattern);
@@ -58,7 +58,7 @@ public class RabinKarp {
      * Preprocesses the pattern string.
      *
      * @param pat
-     *            the pattern string
+     *        the pattern string
      */
     public RabinKarp(String pat) {
         this.pat = pat; // save pattern (needed only for Las Vegas)
@@ -98,7 +98,7 @@ public class RabinKarp {
      * Returns the index of the first occurrrence of the pattern string in the text string.
      *
      * @param txt
-     *            the text string
+     *        the text string
      * @return the index of the first occurrence of the pattern string in the text string; n if no such match
      */
     public int search(String txt) {
@@ -138,7 +138,7 @@ public class RabinKarp {
      * string; and prints the first occurrence of the pattern string in the text string.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String pat = args[0];

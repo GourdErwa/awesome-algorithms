@@ -29,7 +29,7 @@ public class DoublingRatio {
      * Returns the amount of time to call {@code ThreeSum.count()} with <em>n</em> random 6-digit integers.
      *
      * @param n
-     *            the number of integers
+     *        the number of integers
      * @return amount of time (in seconds) to call {@code ThreeSum.count()} with <em>n</em> random 6-digit integers
      */
     public static double timeTrial(int n) {
@@ -47,7 +47,7 @@ public class DoublingRatio {
      * forth, along with ratios of running times between successive array sizes.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         double prev = timeTrial(125);

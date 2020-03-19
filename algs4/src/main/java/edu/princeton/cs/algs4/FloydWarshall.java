@@ -38,7 +38,7 @@ public class FloydWarshall {
      * If no such shortest path exists for some pair of vertices, it computes a negative cycle.
      *
      * @param G
-     *            the edge-weighted digraph
+     *        the edge-weighted digraph
      */
     public FloydWarshall(AdjMatrixEdgeWeightedDigraph G) {
         int V = G.V();
@@ -122,14 +122,14 @@ public class FloydWarshall {
      * Is there a path from the vertex {@code s} to vertex {@code t}?
      *
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @param t
-     *            the destination vertex
+     *        the destination vertex
      * @return {@code true} if there is a path from vertex {@code s} to vertex {@code t}, and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= t < V}
+     *         unless {@code 0 <= t < V}
      */
     public boolean hasPath(int s, int t) {
         validateVertex(s);
@@ -141,15 +141,15 @@ public class FloydWarshall {
      * Returns the length of a shortest path from vertex {@code s} to vertex {@code t}.
      *
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @param t
-     *            the destination vertex
+     *        the destination vertex
      * @return the length of a shortest path from vertex {@code s} to vertex {@code t}; {@code Double.POSITIVE_INFINITY}
      *         if no such path
      * @throws UnsupportedOperationException
-     *             if there is a negative cost cycle
+     *         if there is a negative cost cycle
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public double dist(int s, int t) {
         validateVertex(s);
@@ -163,15 +163,15 @@ public class FloydWarshall {
      * Returns a shortest path from vertex {@code s} to vertex {@code t}.
      *
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @param t
-     *            the destination vertex
+     *        the destination vertex
      * @return a shortest path from vertex {@code s} to vertex {@code t} as an iterable of edges, and {@code null} if no
      *         such path
      * @throws UnsupportedOperationException
-     *             if there is a negative cost cycle
+     *         if there is a negative cost cycle
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<DirectedEdge> path(int s, int t) {
         validateVertex(s);
@@ -218,7 +218,7 @@ public class FloydWarshall {
      * Unit tests the {@code FloydWarshall} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

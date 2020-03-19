@@ -41,7 +41,7 @@ public class BoruvkaMST {
      * Compute a minimum spanning tree (or forest) of an edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      */
     public BoruvkaMST(EdgeWeightedGraph G) {
         UF uf = new UF(G.V());
@@ -169,7 +169,7 @@ public class BoruvkaMST {
      * Unit tests the {@code BoruvkaMST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

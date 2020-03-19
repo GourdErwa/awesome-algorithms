@@ -54,9 +54,9 @@ public class HopcroftKarp {
      * Determines a maximum matching (and a minimum vertex cover) in a bipartite graph.
      *
      * @param G
-     *            the bipartite graph
+     *        the bipartite graph
      * @throws IllegalArgumentException
-     *             if {@code G} is not bipartite
+     *         if {@code G} is not bipartite
      */
     public HopcroftKarp(Graph G) {
         bipartition = new BipartiteX(G);
@@ -217,11 +217,11 @@ public class HopcroftKarp {
      * Returns the vertex to which the specified vertex is matched in the maximum matching computed by the algorithm.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the vertex to which vertex {@code v} is matched in the maximum matching; {@code -1} if the vertex is not
      *         matched
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int mate(int v) {
         validate(v);
@@ -232,10 +232,10 @@ public class HopcroftKarp {
      * Returns true if the specified vertex is matched in the maximum matching computed by the algorithm.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if vertex {@code v} is matched in maximum matching; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean isMatched(int v) {
         validate(v);
@@ -265,10 +265,10 @@ public class HopcroftKarp {
      * Returns true if the specified vertex is in the minimum vertex cover computed by the algorithm.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if vertex {@code v} is in the minimum vertex cover; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean inMinVertexCover(int v) {
         validate(v);
@@ -359,7 +359,7 @@ public class HopcroftKarp {
      * maximum matching and minimum vertex cover; and prints the results.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

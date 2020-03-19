@@ -18,14 +18,13 @@ public class _494_JAVA_目标和 {
         }
 
         /**
-         * @param nums
-         *            数组
+         * @param nums 数组
          * @param i
-         *            当前访问下标
+         *        当前访问下标
          * @param currVal
-         *            当前访问下标值，存在 ± 情况
+         *        当前访问下标值，存在 ± 情况
          * @param sum
-         *            当前剩余求和部分
+         *        当前剩余求和部分
          * @return 满足次数
          */
         public int findTargetSumWaysHelper(int[] nums, int i, int currVal, int sum) {

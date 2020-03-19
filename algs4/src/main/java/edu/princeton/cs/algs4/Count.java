@@ -33,7 +33,7 @@ public class Count {
      * specified as a commmand-line argument; and prints the frequencies to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Alphabet alphabet = new Alphabet(args[0]);

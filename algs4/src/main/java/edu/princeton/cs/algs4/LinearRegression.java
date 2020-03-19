@@ -27,11 +27,11 @@ public class LinearRegression {
      * Performs a linear regression on the data points {@code (y[i], x[i])}.
      *
      * @param x
-     *            the values of the predictor variable
+     *        the values of the predictor variable
      * @param y
-     *            the corresponding values of the response variable
+     *        the corresponding values of the response variable
      * @throws IllegalArgumentException
-     *             if the lengths of the two arrays are not equal
+     *         if the lengths of the two arrays are not equal
      */
     public LinearRegression(double[] x, double[] y) {
         if (x.length != y.length) {
@@ -125,7 +125,7 @@ public class LinearRegression {
      * Returns the expected response {@code y} given the value of the predictor variable {@code x}.
      *
      * @param x
-     *            the value of the predictor variable
+     *        the value of the predictor variable
      * @return the expected response {@code y} given the value of the predictor variable {@code x}
      */
     public double predict(double x) {

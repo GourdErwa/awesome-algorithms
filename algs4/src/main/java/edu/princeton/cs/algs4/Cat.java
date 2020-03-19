@@ -36,7 +36,7 @@ public class Cat {
      * the results to the file specified as the last command-line argument.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Out out = new Out(args[args.length - 1]);

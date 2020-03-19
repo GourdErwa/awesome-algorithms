@@ -40,7 +40,7 @@ public class KWIK {
      * string in the text string with k characters of surrounding context on either side.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

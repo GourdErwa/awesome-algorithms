@@ -47,7 +47,7 @@ public class DegreesOfSeparation {
      * the names of the vertices adjacent to that vertex, separated by the delimiter.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String filename = args[0];

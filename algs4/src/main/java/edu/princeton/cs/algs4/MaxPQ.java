@@ -34,7 +34,7 @@ import java.util.NoSuchElementException;
  * Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Key>
- *            the generic type of key on this priority queue
+ *        the generic type of key on this priority queue
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -48,7 +48,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue with the given initial capacity.
      *
      * @param initCapacity
-     *            the initial capacity of this priority queue
+     *        the initial capacity of this priority queue
      */
     public MaxPQ(int initCapacity) {
         pq = (Key[])new Object[initCapacity + 1];
@@ -66,9 +66,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue with the given initial capacity, using the given comparator.
      *
      * @param initCapacity
-     *            the initial capacity of this priority queue
+     *        the initial capacity of this priority queue
      * @param comparator
-     *            the order in which to compare the keys
+     *        the order in which to compare the keys
      */
     public MaxPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
@@ -80,7 +80,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue using the given comparator.
      *
      * @param comparator
-     *            the order in which to compare the keys
+     *        the order in which to compare the keys
      */
     public MaxPQ(Comparator<Key> comparator) {
         this(1, comparator);
@@ -91,7 +91,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * sink-based heap construction.
      *
      * @param keys
-     *            the array of keys
+     *        the array of keys
      */
     public MaxPQ(Key[] keys) {
         n = keys.length;
@@ -126,7 +126,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      *
      * @return a largest key on this priority queue
      * @throws NoSuchElementException
-     *             if this priority queue is empty
+     *         if this priority queue is empty
      */
     public Key max() {
         if (isEmpty())
@@ -148,7 +148,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * Adds a new key to this priority queue.
      *
      * @param x
-     *            the new key to add to this priority queue
+     *        the new key to add to this priority queue
      */
     public void insert(Key x) {
 
@@ -167,7 +167,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      *
      * @return a largest key on this priority queue
      * @throws NoSuchElementException
-     *             if this priority queue is empty
+     *         if this priority queue is empty
      */
     public Key delMax() {
         if (isEmpty())
@@ -299,7 +299,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
      * Unit tests the {@code MaxPQ} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         MaxPQ<String> pq = new MaxPQ<String>();

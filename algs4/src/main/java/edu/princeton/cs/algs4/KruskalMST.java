@@ -44,7 +44,7 @@ public class KruskalMST {
      * Compute a minimum spanning tree (or forest) of an edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      */
     public KruskalMST(EdgeWeightedGraph G) {
         // more efficient to build heap by passing array of edges
@@ -152,7 +152,7 @@ public class KruskalMST {
      * Unit tests the {@code KruskalMST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

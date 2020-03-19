@@ -34,9 +34,9 @@ import java.util.TreeMap;
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Key>
- *            the generic type of keys in this symbol table
+ *        the generic type of keys in this symbol table
  * @param <Value>
- *            the generic type of values in this symbol table
+ *        the generic type of values in this symbol table
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -55,11 +55,11 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * Returns the value associated with the given key in this symbol table.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with the given key if the key is in this symbol table; {@code null} if the key is
      *         not in this symbol table
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(Key key) {
         if (key == null)
@@ -73,11 +73,11 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * symbol table if the specified value is {@code null}.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
         if (key == null)
@@ -93,9 +93,9 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * This is equivalent to {@code remove()}, but we plan to deprecate {@code delete()}.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(Key key) {
         if (key == null)
@@ -108,9 +108,9 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * This is equivalent to {@code delete()}, but we plan to deprecate {@code delete()}.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void remove(Key key) {
         if (key == null)
@@ -122,10 +122,10 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * Returns true if this symbol table contain the given key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains {@code key} and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
         if (key == null)
@@ -183,7 +183,7 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      *
      * @return the smallest key in this symbol table
      * @throws NoSuchElementException
-     *             if this symbol table is empty
+     *         if this symbol table is empty
      */
     public Key min() {
         if (isEmpty())
@@ -196,7 +196,7 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      *
      * @return the largest key in this symbol table
      * @throws NoSuchElementException
-     *             if this symbol table is empty
+     *         if this symbol table is empty
      */
     public Key max() {
         if (isEmpty())
@@ -208,12 +208,12 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * Returns the smallest key in this symbol table greater than or equal to {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the smallest key in this symbol table greater than or equal to {@code key}
      * @throws NoSuchElementException
-     *             if there is no such key
+     *         if there is no such key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Key ceiling(Key key) {
         if (key == null)
@@ -228,12 +228,12 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * Returns the largest key in this symbol table less than or equal to {@code key}.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the largest key in this symbol table less than or equal to {@code key}
      * @throws NoSuchElementException
-     *             if there is no such key
+     *         if there is no such key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Key floor(Key key) {
         if (key == null)
@@ -248,7 +248,7 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
      * Unit tests the {@code ST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         ST<String, Integer> st = new ST<String, Integer>();

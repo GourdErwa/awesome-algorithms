@@ -56,7 +56,7 @@ public class KosarajuSharirSCC {
      * Computes the strong components of the digraph {@code G}.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      */
     public KosarajuSharirSCC(Digraph G) {
 
@@ -100,15 +100,15 @@ public class KosarajuSharirSCC {
      * Are vertices {@code v} and {@code w} in the same strong component?
      *
      * @param v
-     *            one vertex
+     *        one vertex
      * @param w
-     *            the other vertex
+     *        the other vertex
      * @return {@code true} if vertices {@code v} and {@code w} are in the same strong component, and {@code false}
      *         otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= w < V}
+     *         unless {@code 0 <= w < V}
      */
     public boolean stronglyConnected(int v, int w) {
         validateVertex(v);
@@ -120,10 +120,10 @@ public class KosarajuSharirSCC {
      * Returns the component id of the strong component containing vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the component id of the strong component containing vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public int id(int v) {
         validateVertex(v);
@@ -153,7 +153,7 @@ public class KosarajuSharirSCC {
      * Unit tests the {@code KosarajuSharirSCC} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

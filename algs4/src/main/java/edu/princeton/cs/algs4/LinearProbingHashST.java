@@ -49,7 +49,7 @@ public class LinearProbingHashST<Key, Value> {
      * Initializes an empty symbol table with the specified initial capacity.
      *
      * @param capacity
-     *            the initial capacity
+     *        the initial capacity
      */
     public LinearProbingHashST(int capacity) {
         m = capacity;
@@ -80,10 +80,10 @@ public class LinearProbingHashST<Key, Value> {
      * Returns true if this symbol table contains the specified key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains {@code key}; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
         if (key == null)
@@ -115,11 +115,11 @@ public class LinearProbingHashST<Key, Value> {
      * symbol table if the specified value is {@code null}.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
         if (key == null)
@@ -150,10 +150,10 @@ public class LinearProbingHashST<Key, Value> {
      * Returns the value associated with the specified key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with {@code key}; {@code null} if no such value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(Key key) {
         if (key == null)
@@ -168,9 +168,9 @@ public class LinearProbingHashST<Key, Value> {
      * Removes the specified key and its associated value from this symbol table (if the key is in this symbol table).
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(Key key) {
         if (key == null)
@@ -250,7 +250,7 @@ public class LinearProbingHashST<Key, Value> {
      * Unit tests the {@code LinearProbingHashST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         LinearProbingHashST<String, Integer> st = new LinearProbingHashST<String, Integer>();

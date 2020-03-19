@@ -56,7 +56,7 @@ public class EulerianPath {
      * Computes an Eulerian path in the specified graph, if one exists.
      *
      * @param G
-     *            the graph
+     *        the graph
      */
     public EulerianPath(Graph G) {
 
@@ -240,7 +240,7 @@ public class EulerianPath {
      * Unit tests the {@code EulerianPath} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);

@@ -15,8 +15,6 @@
 
 package edu.princeton.cs.algs4;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
@@ -30,6 +28,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.TreeSet;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 /**
  * <i>Draw</i>. This class provides a basic capability for creating drawings with your programs. It uses a simple
@@ -204,7 +205,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Initializes an empty drawing object with the given name.
      *
      * @param name
-     *            the title of the drawing window.
+     *        the title of the drawing window.
      */
     public Draw(String name) {
         this.name = name;
@@ -266,11 +267,11 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the upper-left hand corner of the drawing window to be (x, y), where (0, 0) is upper left.
      *
      * @param x
-     *            the number of pixels from the left
+     *        the number of pixels from the left
      * @param y
-     *            the number of pixels from the top
+     *        the number of pixels from the top
      * @throws IllegalArgumentException
-     *             if the width or height is 0 or negative
+     *         if the width or height is 0 or negative
      */
     public void setLocationOnScreen(int x, int y) {
         if (x <= 0 || y <= 0)
@@ -282,8 +283,8 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the default close operation.
      *
      * @param value
-     *            the value, typically {@code JFrame.EXIT_ON_CLOSE} (close all windows) or
-     *            {@code JFrame.DISPOSE_ON_CLOSE} (close current window)
+     *        the value, typically {@code JFrame.EXIT_ON_CLOSE} (close all windows) or
+     *        {@code JFrame.DISPOSE_ON_CLOSE} (close current window)
      */
     public void setDefaultCloseOperation(int value) {
         frame.setDefaultCloseOperation(value);
@@ -295,11 +296,11 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Ordinarly, this method is called once, at the very beginning of a program.
      *
      * @param canvasWidth
-     *            the width as a number of pixels
+     *        the width as a number of pixels
      * @param canvasHeight
-     *            the height as a number of pixels
+     *        the height as a number of pixels
      * @throws IllegalArgumentException
-     *             unless both {@code canvasWidth} and {@code canvasHeight} are positive
+     *         unless both {@code canvasWidth} and {@code canvasHeight} are positive
      */
     public void setCanvasSize(int canvasWidth, int canvasHeight) {
         if (canvasWidth < 1 || canvasHeight < 1) {
@@ -366,13 +367,13 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the x-scale.
      *
      * @param min
-     *            the minimum value of the x-scale
+     *        the minimum value of the x-scale
      * @param max
-     *            the maximum value of the x-scale
+     *        the maximum value of the x-scale
      * @throws IllegalArgumentException
-     *             if {@code (max == min)}
+     *         if {@code (max == min)}
      * @throws IllegalArgumentException
-     *             if either {@code min} or {@code max} is either NaN or infinite
+     *         if either {@code min} or {@code max} is either NaN or infinite
      */
     public void setXscale(double min, double max) {
         validate(min, "min");
@@ -388,13 +389,13 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the y-scale.
      *
      * @param min
-     *            the minimum value of the y-scale
+     *        the minimum value of the y-scale
      * @param max
-     *            the maximum value of the y-scale
+     *        the maximum value of the y-scale
      * @throws IllegalArgumentException
-     *             if {@code (max == min)}
+     *         if {@code (max == min)}
      * @throws IllegalArgumentException
-     *             if either {@code min} or {@code max} is either NaN or infinite
+     *         if either {@code min} or {@code max} is either NaN or infinite
      */
     public void setYscale(double min, double max) {
         validate(min, "min");
@@ -442,9 +443,9 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Clears the screen to the given color.
      *
      * @param color
-     *            the color to make the background
+     *        the color to make the background
      * @throws IllegalArgumentException
-     *             if {@code color} is {@code null}
+     *         if {@code color} is {@code null}
      */
     public void clear(Color color) {
         validateNotNull(color, "color");
@@ -474,9 +475,9 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the radius of the pen to the given size.
      *
      * @param radius
-     *            the radius of the pen
+     *        the radius of the pen
      * @throws IllegalArgumentException
-     *             if {@code radius} is negative, NaN, or infinite
+     *         if {@code radius} is negative, NaN, or infinite
      */
     public void setPenRadius(double radius) {
         validate(radius, "pen radius");
@@ -508,9 +509,9 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the pen color to the given color.
      *
      * @param color
-     *            the color to make the pen
+     *        the color to make the pen
      * @throws IllegalArgumentException
-     *             if {@code color} is {@code null}
+     *         if {@code color} is {@code null}
      */
     public void setPenColor(Color color) {
         validateNotNull(color, "color");
@@ -522,13 +523,13 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the pen color to the given RGB color.
      *
      * @param red
-     *            the amount of red (between 0 and 255)
+     *        the amount of red (between 0 and 255)
      * @param green
-     *            the amount of green (between 0 and 255)
+     *        the amount of green (between 0 and 255)
      * @param blue
-     *            the amount of blue (between 0 and 255)
+     *        the amount of blue (between 0 and 255)
      * @throws IllegalArgumentException
-     *             if {@code red}, {@code green}, or {@code blue} is outside its prescribed range
+     *         if {@code red}, {@code green}, or {@code blue} is outside its prescribed range
      */
     public void setPenColor(int red, int green, int blue) {
         if (red < 0 || red >= 256)
@@ -583,9 +584,9 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Sets the font to the given value.
      *
      * @param font
-     *            the font
+     *        the font
      * @throws IllegalArgumentException
-     *             if {@code font} is {@code null}
+     *         if {@code font} is {@code null}
      */
     public void setFont(Font font) {
         validateNotNull(font, "font");
@@ -600,15 +601,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a line from (x0, y0) to (x1, y1).
      *
      * @param x0
-     *            the x-coordinate of the starting point
+     *        the x-coordinate of the starting point
      * @param y0
-     *            the y-coordinate of the starting point
+     *        the y-coordinate of the starting point
      * @param x1
-     *            the x-coordinate of the destination point
+     *        the x-coordinate of the destination point
      * @param y1
-     *            the y-coordinate of the destination point
+     *        the y-coordinate of the destination point
      * @throws IllegalArgumentException
-     *             if any coordinate is either NaN or infinite
+     *         if any coordinate is either NaN or infinite
      */
     public void line(double x0, double y0, double x1, double y1) {
         validate(x0, "x0");
@@ -623,11 +624,11 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws one pixel at (x, y).
      *
      * @param x
-     *            the x-coordinate of the pixel
+     *        the x-coordinate of the pixel
      * @param y
-     *            the y-coordinate of the pixel
+     *        the y-coordinate of the pixel
      * @throws IllegalArgumentException
-     *             if {@code x} or {@code y} is either NaN or infinite
+     *         if {@code x} or {@code y} is either NaN or infinite
      */
     private void pixel(double x, double y) {
         validate(x, "x");
@@ -639,11 +640,11 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a point at (x, y).
      *
      * @param x
-     *            the x-coordinate of the point
+     *        the x-coordinate of the point
      * @param y
-     *            the y-coordinate of the point
+     *        the y-coordinate of the point
      * @throws IllegalArgumentException
-     *             if either {@code x} or {@code y} is either NaN or infinite
+     *         if either {@code x} or {@code y} is either NaN or infinite
      */
     public void point(double x, double y) {
         validate(x, "x");
@@ -666,15 +667,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a circle of the specified radius, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the x-coordinate of the center of the circle
+     *        the x-coordinate of the center of the circle
      * @param y
-     *            the y-coordinate of the center of the circle
+     *        the y-coordinate of the center of the circle
      * @param radius
-     *            the radius of the circle
+     *        the radius of the circle
      * @throws IllegalArgumentException
-     *             if {@code radius} is negative
+     *         if {@code radius} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void circle(double x, double y, double radius) {
         validate(x, "x");
@@ -697,15 +698,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a filled circle of the specified radius, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the x-coordinate of the center of the circle
+     *        the x-coordinate of the center of the circle
      * @param y
-     *            the y-coordinate of the center of the circle
+     *        the y-coordinate of the center of the circle
      * @param radius
-     *            the radius of the circle
+     *        the radius of the circle
      * @throws IllegalArgumentException
-     *             if {@code radius} is negative
+     *         if {@code radius} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void filledCircle(double x, double y, double radius) {
         validate(x, "x");
@@ -728,17 +729,17 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws an ellipse with the specified semimajor and semiminor axes, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the ellipse
+     *        the <em>x</em>-coordinate of the center of the ellipse
      * @param y
-     *            the <em>y</em>-coordinate of the center of the ellipse
+     *        the <em>y</em>-coordinate of the center of the ellipse
      * @param semiMajorAxis
-     *            is the semimajor axis of the ellipse
+     *        is the semimajor axis of the ellipse
      * @param semiMinorAxis
-     *            is the semiminor axis of the ellipse
+     *        is the semiminor axis of the ellipse
      * @throws IllegalArgumentException
-     *             if either {@code semiMajorAxis} or {@code semiMinorAxis} is negative
+     *         if either {@code semiMajorAxis} or {@code semiMinorAxis} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void ellipse(double x, double y, double semiMajorAxis, double semiMinorAxis) {
         validate(x, "x");
@@ -763,17 +764,17 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a filled ellipse with the specified semimajor and semiminor axes, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the ellipse
+     *        the <em>x</em>-coordinate of the center of the ellipse
      * @param y
-     *            the <em>y</em>-coordinate of the center of the ellipse
+     *        the <em>y</em>-coordinate of the center of the ellipse
      * @param semiMajorAxis
-     *            is the semimajor axis of the ellipse
+     *        is the semimajor axis of the ellipse
      * @param semiMinorAxis
-     *            is the semiminor axis of the ellipse
+     *        is the semiminor axis of the ellipse
      * @throws IllegalArgumentException
-     *             if either {@code semiMajorAxis} or {@code semiMinorAxis} is negative
+     *         if either {@code semiMajorAxis} or {@code semiMinorAxis} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void filledEllipse(double x, double y, double semiMajorAxis, double semiMinorAxis) {
         validate(x, "x");
@@ -799,20 +800,20 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * degrees).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the circle
+     *        the <em>x</em>-coordinate of the center of the circle
      * @param y
-     *            the <em>y</em>-coordinate of the center of the circle
+     *        the <em>y</em>-coordinate of the center of the circle
      * @param radius
-     *            the radius of the circle
+     *        the radius of the circle
      * @param angle1
-     *            the starting angle. 0 would mean an arc beginning at 3 o'clock.
+     *        the starting angle. 0 would mean an arc beginning at 3 o'clock.
      * @param angle2
-     *            the angle at the end of the arc. For example, if you want a 90 degree arc, then angle2 should be
-     *            angle1 + 90.
+     *        the angle at the end of the arc. For example, if you want a 90 degree arc, then angle2 should be
+     *        angle1 + 90.
      * @throws IllegalArgumentException
-     *             if {@code radius} is negative
+     *         if {@code radius} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void arc(double x, double y, double radius, double angle1, double angle2) {
         validate(x, "x");
@@ -839,15 +840,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a square of the specified size, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the square
+     *        the <em>x</em>-coordinate of the center of the square
      * @param y
-     *            the <em>y</em>-coordinate of the center of the square
+     *        the <em>y</em>-coordinate of the center of the square
      * @param halfLength
-     *            one half the length of any side of the square
+     *        one half the length of any side of the square
      * @throws IllegalArgumentException
-     *             if {@code halfLength} is negative
+     *         if {@code halfLength} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void square(double x, double y, double halfLength) {
         validate(x, "x");
@@ -870,15 +871,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a square of the specified size, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the square
+     *        the <em>x</em>-coordinate of the center of the square
      * @param y
-     *            the <em>y</em>-coordinate of the center of the square
+     *        the <em>y</em>-coordinate of the center of the square
      * @param halfLength
-     *            one half the length of any side of the square
+     *        one half the length of any side of the square
      * @throws IllegalArgumentException
-     *             if {@code halfLength} is negative
+     *         if {@code halfLength} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void filledSquare(double x, double y, double halfLength) {
         validate(x, "x");
@@ -901,17 +902,17 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a rectangle of the specified size, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the rectangle
+     *        the <em>x</em>-coordinate of the center of the rectangle
      * @param y
-     *            the <em>y</em>-coordinate of the center of the rectangle
+     *        the <em>y</em>-coordinate of the center of the rectangle
      * @param halfWidth
-     *            one half the width of the rectangle
+     *        one half the width of the rectangle
      * @param halfHeight
-     *            one half the height of the rectangle
+     *        one half the height of the rectangle
      * @throws IllegalArgumentException
-     *             if either {@code halfWidth} or {@code halfHeight} is negative
+     *         if either {@code halfWidth} or {@code halfHeight} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void rectangle(double x, double y, double halfWidth, double halfHeight) {
         validate(x, "x");
@@ -936,17 +937,17 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Draws a filled rectangle of the specified size, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the center of the rectangle
+     *        the <em>x</em>-coordinate of the center of the rectangle
      * @param y
-     *            the <em>y</em>-coordinate of the center of the rectangle
+     *        the <em>y</em>-coordinate of the center of the rectangle
      * @param halfWidth
-     *            one half the width of the rectangle
+     *        one half the width of the rectangle
      * @param halfHeight
-     *            one half the height of the rectangle
+     *        one half the height of the rectangle
      * @throws IllegalArgumentException
-     *             if either {@code halfWidth} or {@code halfHeight} is negative
+     *         if either {@code halfWidth} or {@code halfHeight} is negative
      * @throws IllegalArgumentException
-     *             if any argument is either NaN or infinite
+     *         if any argument is either NaN or infinite
      */
     public void filledRectangle(double x, double y, double halfWidth, double halfHeight) {
         validate(x, "x");
@@ -972,15 +973,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * <em>y</em><sub>1</sub>), ..., (<em>x</em><sub><em>n</em>–1</sub>, <em>y</em><sub><em>n</em>–1</sub>).
      *
      * @param x
-     *            an array of all the <em>x</em>-coordinates of the polygon
+     *        an array of all the <em>x</em>-coordinates of the polygon
      * @param y
-     *            an array of all the <em>y</em>-coordinates of the polygon
+     *        an array of all the <em>y</em>-coordinates of the polygon
      * @throws IllegalArgumentException
-     *             unless {@code x[]} and {@code y[]} are of the same length
+     *         unless {@code x[]} and {@code y[]} are of the same length
      * @throws IllegalArgumentException
-     *             if any coordinate is either NaN or infinite
+     *         if any coordinate is either NaN or infinite
      * @throws IllegalArgumentException
-     *             if either {@code x[]} or {@code y[]} is {@code null}
+     *         if either {@code x[]} or {@code y[]} is {@code null}
      */
     public void polygon(double[] x, double[] y) {
         validateNotNull(x, "x-coordinate array");
@@ -1013,15 +1014,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * <em>y</em><sub><em>n</em>–1</sub>).
      *
      * @param x
-     *            an array of all the <em>x</em>-coordinates of the polygon
+     *        an array of all the <em>x</em>-coordinates of the polygon
      * @param y
-     *            an array of all the <em>y</em>-coordinates of the polygon
+     *        an array of all the <em>y</em>-coordinates of the polygon
      * @throws IllegalArgumentException
-     *             unless {@code x[]} and {@code y[]} are of the same length
+     *         unless {@code x[]} and {@code y[]} are of the same length
      * @throws IllegalArgumentException
-     *             if any coordinate is either NaN or infinite
+     *         if any coordinate is either NaN or infinite
      * @throws IllegalArgumentException
-     *             if either {@code x[]} or {@code y[]} is {@code null}
+     *         if either {@code x[]} or {@code y[]} is {@code null}
      */
     public void filledPolygon(double[] x, double[] y) {
         validateNotNull(x, "x-coordinate array");
@@ -1095,15 +1096,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * calls will draw the original picture.
      *
      * @param x
-     *            the center <em>x</em>-coordinate of the image
+     *        the center <em>x</em>-coordinate of the image
      * @param y
-     *            the center <em>y</em>-coordinate of the image
+     *        the center <em>y</em>-coordinate of the image
      * @param filename
-     *            the name of the image/picture, e.g., "ball.gif"
+     *        the name of the image/picture, e.g., "ball.gif"
      * @throws IllegalArgumentException
-     *             if the image filename is invalid
+     *         if the image filename is invalid
      * @throws IllegalArgumentException
-     *             if either {@code x} or {@code y} is either NaN or infinite
+     *         if either {@code x} or {@code y} is either NaN or infinite
      */
     public void picture(double x, double y, String filename) {
         validate(x, "x");
@@ -1127,19 +1128,19 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * image formats are JPEG, PNG, and GIF.
      *
      * @param x
-     *            the center <em>x</em>-coordinate of the image
+     *        the center <em>x</em>-coordinate of the image
      * @param y
-     *            the center <em>y</em>-coordinate of the image
+     *        the center <em>y</em>-coordinate of the image
      * @param filename
-     *            the name of the image/picture, e.g., "ball.gif"
+     *        the name of the image/picture, e.g., "ball.gif"
      * @param degrees
-     *            is the number of degrees to rotate counterclockwise
+     *        is the number of degrees to rotate counterclockwise
      * @throws IllegalArgumentException
-     *             if the image filename is invalid
+     *         if the image filename is invalid
      * @throws IllegalArgumentException
-     *             if {@code x}, {@code y}, {@code degrees} is NaN or infinite
+     *         if {@code x}, {@code y}, {@code degrees} is NaN or infinite
      * @throws IllegalArgumentException
-     *             if {@code filename} is {@code null}
+     *         if {@code filename} is {@code null}
      */
     public void picture(double x, double y, String filename, double degrees) {
         validate(x, "x");
@@ -1167,23 +1168,23 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * supported image formats are JPEG, PNG, and GIF.
      *
      * @param x
-     *            the center <em>x</em>-coordinate of the image
+     *        the center <em>x</em>-coordinate of the image
      * @param y
-     *            the center <em>y</em>-coordinate of the image
+     *        the center <em>y</em>-coordinate of the image
      * @param filename
-     *            the name of the image/picture, e.g., "ball.gif"
+     *        the name of the image/picture, e.g., "ball.gif"
      * @param scaledWidth
-     *            the width of the scaled image (in screen coordinates)
+     *        the width of the scaled image (in screen coordinates)
      * @param scaledHeight
-     *            the height of the scaled image (in screen coordinates)
+     *        the height of the scaled image (in screen coordinates)
      * @throws IllegalArgumentException
-     *             if either {@code scaledWidth} or {@code scaledHeight} is negative
+     *         if either {@code scaledWidth} or {@code scaledHeight} is negative
      * @throws IllegalArgumentException
-     *             if the image filename is invalid
+     *         if the image filename is invalid
      * @throws IllegalArgumentException
-     *             if {@code x} or {@code y} is either NaN or infinite
+     *         if {@code x} or {@code y} is either NaN or infinite
      * @throws IllegalArgumentException
-     *             if {@code filename} is {@code null}
+     *         if {@code filename} is {@code null}
      */
     public void picture(double x, double y, String filename, double scaledWidth, double scaledHeight) {
         validate(x, "x");
@@ -1215,21 +1216,21 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * the specified bounding box. The supported image formats are JPEG, PNG, and GIF.
      *
      * @param x
-     *            the center <em>x</em>-coordinate of the image
+     *        the center <em>x</em>-coordinate of the image
      * @param y
-     *            the center <em>y</em>-coordinate of the image
+     *        the center <em>y</em>-coordinate of the image
      * @param filename
-     *            the name of the image/picture, e.g., "ball.gif"
+     *        the name of the image/picture, e.g., "ball.gif"
      * @param scaledWidth
-     *            the width of the scaled image (in screen coordinates)
+     *        the width of the scaled image (in screen coordinates)
      * @param scaledHeight
-     *            the height of the scaled image (in screen coordinates)
+     *        the height of the scaled image (in screen coordinates)
      * @param degrees
-     *            is the number of degrees to rotate counterclockwise
+     *        is the number of degrees to rotate counterclockwise
      * @throws IllegalArgumentException
-     *             if either {@code scaledWidth} or {@code scaledHeight} is negative
+     *         if either {@code scaledWidth} or {@code scaledHeight} is negative
      * @throws IllegalArgumentException
-     *             if the image filename is invalid
+     *         if the image filename is invalid
      */
     public void picture(double x, double y, String filename, double scaledWidth, double scaledHeight, double degrees) {
         validate(x, "x");
@@ -1267,15 +1268,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Writes the given text string in the current font, centered at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the center <em>x</em>-coordinate of the text
+     *        the center <em>x</em>-coordinate of the text
      * @param y
-     *            the center <em>y</em>-coordinate of the text
+     *        the center <em>y</em>-coordinate of the text
      * @param text
-     *            the text to write
+     *        the text to write
      * @throws IllegalArgumentException
-     *             if {@code text} is {@code null}
+     *         if {@code text} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code x} or {@code y} is either NaN or infinite
+     *         if {@code x} or {@code y} is either NaN or infinite
      */
     public void text(double x, double y, String text) {
         validate(x, "x");
@@ -1297,17 +1298,17 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * specified number of degrees.
      *
      * @param x
-     *            the center <em>x</em>-coordinate of the text
+     *        the center <em>x</em>-coordinate of the text
      * @param y
-     *            the center <em>y</em>-coordinate of the text
+     *        the center <em>y</em>-coordinate of the text
      * @param text
-     *            the text to write
+     *        the text to write
      * @param degrees
-     *            is the number of degrees to rotate counterclockwise
+     *        is the number of degrees to rotate counterclockwise
      * @throws IllegalArgumentException
-     *             if {@code text} is {@code null}
+     *         if {@code text} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code x}, {@code y}, or {@code degrees} is either NaN or infinite
+     *         if {@code x}, {@code y}, or {@code degrees} is either NaN or infinite
      */
     public void text(double x, double y, String text, double degrees) {
         validate(x, "x");
@@ -1326,15 +1327,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Writes the given text string in the current font, left-aligned at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the text
+     *        the <em>x</em>-coordinate of the text
      * @param y
-     *            the <em>y</em>-coordinate of the text
+     *        the <em>y</em>-coordinate of the text
      * @param text
-     *            the text
+     *        the text
      * @throws IllegalArgumentException
-     *             if {@code text} is {@code null}
+     *         if {@code text} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code x} or {@code y} is either NaN or infinite
+     *         if {@code x} or {@code y} is either NaN or infinite
      */
     public void textLeft(double x, double y, String text) {
         validate(x, "x");
@@ -1355,15 +1356,15 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Writes the given text string in the current font, right-aligned at (<em>x</em>, <em>y</em>).
      *
      * @param x
-     *            the <em>x</em>-coordinate of the text
+     *        the <em>x</em>-coordinate of the text
      * @param y
-     *            the <em>y</em>-coordinate of the text
+     *        the <em>y</em>-coordinate of the text
      * @param text
-     *            the text to write
+     *        the text to write
      * @throws IllegalArgumentException
-     *             if {@code text} is {@code null}
+     *         if {@code text} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code x} or {@code y} is either NaN or infinite
+     *         if {@code x} or {@code y} is either NaN or infinite
      */
     public void textRight(double x, double y, String text) {
         validate(x, "x");
@@ -1384,7 +1385,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Copies the offscreen buffer to the onscreen buffer, pauses for t milliseconds and enables double buffering.
      *
      * @param t
-     *            number of milliseconds
+     *        number of milliseconds
      * @deprecated replaced by {@link #enableDoubleBuffering()}, {@link #show()}, and {@link #pause(int t)}
      */
     @Deprecated
@@ -1398,7 +1399,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Pause for t milliseconds. This method is intended to support computer animations.
      *
      * @param t
-     *            number of milliseconds
+     *        number of milliseconds
      */
     public void pause(int t) {
         try {
@@ -1444,9 +1445,9 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * suffix must be {@code .jpg} or {@code .png}.
      *
      * @param filename
-     *            the name of the file with one of the required suffixes
+     *        the name of the file with one of the required suffixes
      * @throws IllegalArgumentException
-     *             if {@code filename} is {@code null}
+     *         if {@code filename} is {@code null}
      */
     public void save(String filename) {
         validateNotNull(filename, "filename");
@@ -1503,7 +1504,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Adds a {@link DrawListener} to listen to keyboard and mouse events.
      *
      * @param listener
-     *            the {\tt DrawListener} argument
+     *        the {\tt DrawListener} argument
      */
     public void addListener(DrawListener listener) {
         // ensure there is a window for listenting to events
@@ -1682,7 +1683,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * key codes.
      *
      * @param keycode
-     *            the keycode to check
+     *        the keycode to check
      * @return {@code true} if {@code keycode} is currently being pressed; {@code false} otherwise
      */
     public boolean isKeyPressed(int keycode) {
@@ -1771,7 +1772,7 @@ public final class Draw implements ActionListener, MouseListener, MouseMotionLis
      * Test client.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

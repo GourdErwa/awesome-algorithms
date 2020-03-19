@@ -49,7 +49,7 @@ public class CC {
      * Computes the connected components of the undirected graph {@code G}.
      *
      * @param G
-     *            the undirected graph
+     *        the undirected graph
      */
     public CC(Graph G) {
         marked = new boolean[G.V()];
@@ -67,7 +67,7 @@ public class CC {
      * Computes the connected components of the edge-weighted graph {@code G}.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      */
     public CC(EdgeWeightedGraph G) {
         marked = new boolean[G.V()];
@@ -110,10 +110,10 @@ public class CC {
      * Returns the component id of the connected component containing vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the component id of the connected component containing vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int id(int v) {
         validateVertex(v);
@@ -124,10 +124,10 @@ public class CC {
      * Returns the number of vertices in the connected component containing vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the number of vertices in the connected component containing vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int size(int v) {
         validateVertex(v);
@@ -147,15 +147,15 @@ public class CC {
      * Returns true if vertices {@code v} and {@code w} are in the same connected component.
      *
      * @param v
-     *            one vertex
+     *        one vertex
      * @param w
-     *            the other vertex
+     *        the other vertex
      * @return {@code true} if vertices {@code v} and {@code w} are in the same connected component; {@code false}
      *         otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= w < V}
+     *         unless {@code 0 <= w < V}
      */
     public boolean connected(int v, int w) {
         validateVertex(v);
@@ -167,15 +167,15 @@ public class CC {
      * Returns true if vertices {@code v} and {@code w} are in the same connected component.
      *
      * @param v
-     *            one vertex
+     *        one vertex
      * @param w
-     *            the other vertex
+     *        the other vertex
      * @return {@code true} if vertices {@code v} and {@code w} are in the same connected component; {@code false}
      *         otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= w < V}
+     *         unless {@code 0 <= w < V}
      * @deprecated Replaced by {@link #connected(int, int)}.
      */
     @Deprecated
@@ -196,7 +196,7 @@ public class CC {
      * Unit tests the {@code CC} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

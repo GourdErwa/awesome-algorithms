@@ -27,7 +27,7 @@ import java.util.NoSuchElementException;
  * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Item>
- *            the generic type of an item in this bag
+ *        the generic type of an item in this bag
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -71,7 +71,7 @@ public class Bag<Item> implements Iterable<Item> {
      * Adds the item to this bag.
      *
      * @param item
-     *            the item to add to this bag
+     *        the item to add to this bag
      */
     public void add(Item item) {
         Node<Item> oldfirst = first;
@@ -119,7 +119,7 @@ public class Bag<Item> implements Iterable<Item> {
      * Unit tests the {@code Bag} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Bag<String> bag = new Bag<String>();

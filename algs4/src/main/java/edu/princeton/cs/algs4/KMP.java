@@ -42,7 +42,7 @@ public class KMP {
      * Preprocesses the pattern string.
      *
      * @param pat
-     *            the pattern string
+     *        the pattern string
      */
     public KMP(String pat) {
         this.R = 256;
@@ -64,9 +64,9 @@ public class KMP {
      * Preprocesses the pattern string.
      *
      * @param pattern
-     *            the pattern string
+     *        the pattern string
      * @param R
-     *            the alphabet size
+     *        the alphabet size
      */
     public KMP(char[] pattern, int R) {
         this.R = R;
@@ -90,7 +90,7 @@ public class KMP {
      * Returns the index of the first occurrrence of the pattern string in the text string.
      *
      * @param txt
-     *            the text string
+     *        the text string
      * @return the index of the first occurrence of the pattern string in the text string; N if no such match
      */
     public int search(String txt) {
@@ -111,7 +111,7 @@ public class KMP {
      * Returns the index of the first occurrrence of the pattern string in the text string.
      *
      * @param text
-     *            the text string
+     *        the text string
      * @return the index of the first occurrence of the pattern string in the text string; N if no such match
      */
     public int search(char[] text) {
@@ -133,7 +133,7 @@ public class KMP {
      * string; and prints the first occurrence of the pattern string in the text string.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String pat = args[0];

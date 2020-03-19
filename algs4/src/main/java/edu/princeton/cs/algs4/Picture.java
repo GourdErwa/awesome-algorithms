@@ -13,8 +13,6 @@
 
 package edu.princeton.cs.algs4;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +21,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 /**
  * This class provides methods for manipulating individual pixels of an image using the RGB color format. The alpha
@@ -39,20 +40,20 @@ import java.net.URL;
  * need to create temporary {@code Color} objects. The red (R), green (G), and blue (B) components are encoded using the
  * least significant 24 bits. Given a 32-bit {@code int} encoding the color, the following code extracts the RGB
  * components: <blockquote>
- * 
+ *
  * <pre>
  * int r = (rgb &gt;&gt; 16) &amp; 0xFF;
  * int g = (rgb &gt;&gt; 8) &amp; 0xFF;
  * int b = (rgb &gt;&gt; 0) &amp; 0xFF;
  * </pre>
- * 
+ *
  * </blockquote> Given the RGB components (8-bits each) of a color, the following statement packs it into a 32-bit
  * {@code int}: <blockquote>
- * 
+ *
  * <pre>
  * int rgb = (r &lt;&lt; 16) + (g &lt;&lt; 8) + (b &lt;&lt; 0);
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
  * A <em>W</em>-by-<em>H</em> picture uses ~ 4 <em>W H</em> bytes of memory, since the color of each pixel is encoded as
@@ -77,13 +78,13 @@ public final class Picture implements ActionListener {
      * pixel is black.
      *
      * @param width
-     *            the width of the picture
+     *        the width of the picture
      * @param height
-     *            the height of the picture
+     *        the height of the picture
      * @throws IllegalArgumentException
-     *             if {@code width} is negative or zero
+     *         if {@code width} is negative or zero
      * @throws IllegalArgumentException
-     *             if {@code height} is negative or zero
+     *         if {@code height} is negative or zero
      */
     public Picture(int width, int height) {
         if (width <= 0)
@@ -100,9 +101,9 @@ public final class Picture implements ActionListener {
      * Creates a new picture that is a deep copy of the argument picture.
      *
      * @param picture
-     *            the picture to copy
+     *        the picture to copy
      * @throws IllegalArgumentException
-     *             if {@code picture} is {@code null}
+     *         if {@code picture} is {@code null}
      */
     public Picture(Picture picture) {
         if (picture == null)
@@ -122,11 +123,11 @@ public final class Picture implements ActionListener {
      * Creates a picture by reading an image from a file or URL.
      *
      * @param name
-     *            the name of the file (.png, .gif, or .jpg) or URL.
+     *        the name of the file (.png, .gif, or .jpg) or URL.
      * @throws IllegalArgumentException
-     *             if cannot read image
+     *         if cannot read image
      * @throws IllegalArgumentException
-     *             if {@code name} is {@code null}
+     *         if {@code name} is {@code null}
      */
     public Picture(String name) {
         if (name == null)
@@ -171,11 +172,11 @@ public final class Picture implements ActionListener {
      * Creates a picture by reading the image from a PNG, GIF, or JPEG file.
      *
      * @param file
-     *            the file
+     *        the file
      * @throws IllegalArgumentException
-     *             if cannot read image
+     *         if cannot read image
      * @throws IllegalArgumentException
-     *             if {@code file} is {@code null}
+     *         if {@code file} is {@code null}
      */
     public Picture(File file) {
         if (file == null)
@@ -289,12 +290,12 @@ public final class Picture implements ActionListener {
      * Returns the color of pixel ({@code col}, {@code row}) as a {@link Color}.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @return the color of pixel ({@code col}, {@code row})
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      */
     public Color get(int col, int row) {
         validateColumnIndex(col);
@@ -308,12 +309,12 @@ public final class Picture implements ActionListener {
      * than {@link #get(int, int)} because it does not create a {@code Color} object.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @return the integer representation of the color of pixel ({@code col}, {@code row})
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      */
     public int getRGB(int col, int row) {
         validateColumnIndex(col);
@@ -328,15 +329,15 @@ public final class Picture implements ActionListener {
      * Sets the color of pixel ({@code col}, {@code row}) to given color.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @param color
-     *            the color
+     *        the color
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      * @throws IllegalArgumentException
-     *             if {@code color} is {@code null}
+     *         if {@code color} is {@code null}
      */
     public void set(int col, int row, Color color) {
         validateColumnIndex(col);
@@ -351,13 +352,13 @@ public final class Picture implements ActionListener {
      * Sets the color of pixel ({@code col}, {@code row}) to given color.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @param rgb
-     *            the integer representation of the color
+     *        the integer representation of the color
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      */
     public void setRGB(int col, int row, int rgb) {
         validateColumnIndex(col);
@@ -372,7 +373,7 @@ public final class Picture implements ActionListener {
      * Returns true if this picture is equal to the argument picture.
      *
      * @param other
-     *            the other picture
+     *        the other picture
      * @return {@code true} if this picture is the same dimension as {@code other} and if all pixels have the same
      *         color; {@code false} otherwise
      */
@@ -424,7 +425,7 @@ public final class Picture implements ActionListener {
      *
      * @return does not return a value
      * @throws UnsupportedOperationException
-     *             if called
+     *         if called
      */
     public int hashCode() {
         throw new UnsupportedOperationException("hashCode() is not supported because pictures are mutable");
@@ -434,9 +435,9 @@ public final class Picture implements ActionListener {
      * Saves the picture to a file in either PNG or JPEG format. The filetype extension must be either .png or .jpg.
      *
      * @param name
-     *            the name of the file
+     *        the name of the file
      * @throws IllegalArgumentException
-     *             if {@code name} is {@code null}
+     *         if {@code name} is {@code null}
      */
     public void save(String name) {
         if (name == null)
@@ -449,9 +450,9 @@ public final class Picture implements ActionListener {
      * Saves the picture to a file in a PNG or JPEG image format.
      *
      * @param file
-     *            the file
+     *        the file
      * @throws IllegalArgumentException
-     *             if {@code file} is {@code null}
+     *         if {@code file} is {@code null}
      */
     public void save(File file) {
         if (file == null)
@@ -488,7 +489,7 @@ public final class Picture implements ActionListener {
      * in a window on the screen.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Picture picture = new Picture(args[0]);

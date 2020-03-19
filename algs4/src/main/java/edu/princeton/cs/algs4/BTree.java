@@ -100,11 +100,11 @@ public class BTree<Key extends Comparable<Key>, Value> {
      * Returns the value associated with the given key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with the given key if the key is in the symbol table and {@code null} if the key is
      *         not in the symbol table
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(Key key) {
         if (key == null)
@@ -139,11 +139,11 @@ public class BTree<Key extends Comparable<Key>, Value> {
      * table.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
         if (key == null)
@@ -246,7 +246,7 @@ public class BTree<Key extends Comparable<Key>, Value> {
      * Unit tests the {@code BTree} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         BTree<String, String> st = new BTree<String, String>();

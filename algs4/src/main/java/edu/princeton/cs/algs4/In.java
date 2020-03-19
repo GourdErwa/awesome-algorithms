@@ -74,11 +74,11 @@ public final class In {
      * Initializes an input stream from a socket.
      *
      * @param socket
-     *            the socket
+     *        the socket
      * @throws IllegalArgumentException
-     *             if cannot open {@code socket}
+     *         if cannot open {@code socket}
      * @throws IllegalArgumentException
-     *             if {@code socket} is {@code null}
+     *         if {@code socket} is {@code null}
      */
     public In(Socket socket) {
         if (socket == null)
@@ -96,11 +96,11 @@ public final class In {
      * Initializes an input stream from a URL.
      *
      * @param url
-     *            the URL
+     *        the URL
      * @throws IllegalArgumentException
-     *             if cannot open {@code url}
+     *         if cannot open {@code url}
      * @throws IllegalArgumentException
-     *             if {@code url} is {@code null}
+     *         if {@code url} is {@code null}
      */
     public In(URL url) {
         if (url == null)
@@ -119,11 +119,11 @@ public final class In {
      * Initializes an input stream from a file.
      *
      * @param file
-     *            the file
+     *        the file
      * @throws IllegalArgumentException
-     *             if cannot open {@code file}
+     *         if cannot open {@code file}
      * @throws IllegalArgumentException
-     *             if {@code file} is {@code null}
+     *         if {@code file} is {@code null}
      */
     public In(File file) {
         if (file == null)
@@ -143,11 +143,11 @@ public final class In {
      * Initializes an input stream from a filename or web page name.
      *
      * @param name
-     *            the filename or web page name
+     *        the filename or web page name
      * @throws IllegalArgumentException
-     *             if cannot open {@code name} as a file or URL
+     *         if cannot open {@code name} as a file or URL
      * @throws IllegalArgumentException
-     *             if {@code name} is {@code null}
+     *         if {@code name} is {@code null}
      */
     public In(String name) {
         if (name == null)
@@ -198,9 +198,9 @@ public final class In {
      * Note that this does not create a defensive copy, so the scanner will be mutated as you read on.
      *
      * @param scanner
-     *            the scanner
+     *        the scanner
      * @throws IllegalArgumentException
-     *             if {@code scanner} is {@code null}
+     *         if {@code scanner} is {@code null}
      */
     public In(Scanner scanner) {
         if (scanner == null)
@@ -273,7 +273,7 @@ public final class In {
      *
      * @return the next {@code char} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      */
     public char readChar() {
         scanner.useDelimiter(EMPTY_PATTERN);
@@ -308,7 +308,7 @@ public final class In {
      *
      * @return the next {@code String} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      */
     public String readString() {
         try {
@@ -324,9 +324,9 @@ public final class In {
      *
      * @return the next {@code int} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as an {@code int}
+     *         if the next token cannot be parsed as an {@code int}
      */
     public int readInt() {
         try {
@@ -346,9 +346,9 @@ public final class In {
      *
      * @return the next {@code double} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code double}
+     *         if the next token cannot be parsed as a {@code double}
      */
     public double readDouble() {
         try {
@@ -368,9 +368,9 @@ public final class In {
      *
      * @return the next {@code float} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code float}
+     *         if the next token cannot be parsed as a {@code float}
      */
     public float readFloat() {
         try {
@@ -390,9 +390,9 @@ public final class In {
      *
      * @return the next {@code long} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code long}
+     *         if the next token cannot be parsed as a {@code long}
      */
     public long readLong() {
         try {
@@ -412,9 +412,9 @@ public final class In {
      *
      * @return the next {@code short} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code short}
+     *         if the next token cannot be parsed as a {@code short}
      */
     public short readShort() {
         try {
@@ -436,9 +436,9 @@ public final class In {
      *
      * @return the next {@code byte} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code byte}
+     *         if the next token cannot be parsed as a {@code byte}
      */
     public byte readByte() {
         try {
@@ -459,9 +459,9 @@ public final class In {
      *
      * @return the next {@code boolean} in this input stream
      * @throws NoSuchElementException
-     *             if the input stream is empty
+     *         if the input stream is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code boolean}
+     *         if the next token cannot be parsed as a {@code boolean}
      */
     public boolean readBoolean() {
         try {
@@ -566,7 +566,7 @@ public final class In {
      * Reads all integers from a file and returns them as an array of integers.
      *
      * @param filename
-     *            the name of the file
+     *        the name of the file
      * @return the integers in the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllInts()}.
      */
@@ -579,7 +579,7 @@ public final class In {
      * Reads all doubles from a file and returns them as an array of doubles.
      *
      * @param filename
-     *            the name of the file
+     *        the name of the file
      * @return the doubles in the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllDoubles()}.
      */
@@ -592,7 +592,7 @@ public final class In {
      * Reads all strings from a file and returns them as an array of strings.
      *
      * @param filename
-     *            the name of the file
+     *        the name of the file
      * @return the strings in the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllStrings()}.
      */
@@ -638,7 +638,7 @@ public final class In {
      * Unit tests the {@code In} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in;

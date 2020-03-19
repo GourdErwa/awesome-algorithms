@@ -16,8 +16,6 @@
 
 package edu.princeton.cs.algs4;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +24,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 /**
  * This class provides methods for manipulating individual pixels of a grayscale image. The original image can be read
@@ -63,13 +64,13 @@ public final class GrayscalePicture implements ActionListener {
      * pixel is black.
      *
      * @param width
-     *            the width of the picture
+     *        the width of the picture
      * @param height
-     *            the height of the picture
+     *        the height of the picture
      * @throws IllegalArgumentException
-     *             if {@code width} is negative
+     *         if {@code width} is negative
      * @throws IllegalArgumentException
-     *             if {@code height} is negative
+     *         if {@code height} is negative
      */
     public GrayscalePicture(int width, int height) {
         if (width < 0)
@@ -85,9 +86,9 @@ public final class GrayscalePicture implements ActionListener {
      * Creates a new grayscale picture that is a deep copy of the argument picture.
      *
      * @param picture
-     *            the picture to copy
+     *        the picture to copy
      * @throws IllegalArgumentException
-     *             if {@code picture} is {@code null}
+     *         if {@code picture} is {@code null}
      */
     public GrayscalePicture(GrayscalePicture picture) {
         if (picture == null)
@@ -107,11 +108,11 @@ public final class GrayscalePicture implements ActionListener {
      * Creates a grayscale picture by reading an image from a file or URL.
      *
      * @param name
-     *            the name of the file (.png, .gif, or .jpg) or URL.
+     *        the name of the file (.png, .gif, or .jpg) or URL.
      * @throws IllegalArgumentException
-     *             if cannot read image
+     *         if cannot read image
      * @throws IllegalArgumentException
-     *             if {@code name} is {@code null}
+     *         if {@code name} is {@code null}
      */
     public GrayscalePicture(String name) {
         if (name == null)
@@ -269,12 +270,12 @@ public final class GrayscalePicture implements ActionListener {
      * Returns the grayscale value of pixel ({@code col}, {@code row}) as a {@link Color}.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @return the grayscale value of pixel ({@code col}, {@code row})
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      */
     public Color get(int col, int row) {
         validateColumnIndex(col);
@@ -288,12 +289,12 @@ public final class GrayscalePicture implements ActionListener {
      * method can be more efficient than {@link #get(int, int)} because it does not create a {@code Color} object.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @return the 8-bit integer representation of the grayscale value of pixel ({@code col}, {@code row})
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      */
     public int getGrayscale(int col, int row) {
         validateColumnIndex(col);
@@ -308,15 +309,15 @@ public final class GrayscalePicture implements ActionListener {
      * Sets the color of pixel ({@code col}, {@code row}) to the given grayscale value.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @param color
-     *            the color (converts to grayscale if color is not a shade of gray)
+     *        the color (converts to grayscale if color is not a shade of gray)
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      * @throws IllegalArgumentException
-     *             if {@code color} is {@code null}
+     *         if {@code color} is {@code null}
      */
     public void set(int col, int row, Color color) {
         validateColumnIndex(col);
@@ -331,13 +332,13 @@ public final class GrayscalePicture implements ActionListener {
      * Sets the color of pixel ({@code col}, {@code row}) to the given grayscale value between 0 and 255.
      *
      * @param col
-     *            the column index
+     *        the column index
      * @param row
-     *            the row index
+     *        the row index
      * @param gray
-     *            the 8-bit integer representation of the grayscale value
+     *        the 8-bit integer representation of the grayscale value
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+     *         unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      */
     public void setGrayscale(int col, int row, int gray) {
         validateColumnIndex(col);
@@ -354,7 +355,7 @@ public final class GrayscalePicture implements ActionListener {
      * Returns true if this picture is equal to the argument picture.
      *
      * @param other
-     *            the other picture
+     *        the other picture
      * @return {@code true} if this picture is the same dimension as {@code other} and if all pixels have the same
      *         color; {@code false} otherwise
      */
@@ -405,7 +406,7 @@ public final class GrayscalePicture implements ActionListener {
      *
      * @return does not return a value
      * @throws UnsupportedOperationException
-     *             if called
+     *         if called
      */
     public int hashCode() {
         throw new UnsupportedOperationException("hashCode() is not supported because pictures are mutable");
@@ -415,9 +416,9 @@ public final class GrayscalePicture implements ActionListener {
      * Saves the picture to a file in either PNG or JPEG format. The filetype extension must be either .png or .jpg.
      *
      * @param name
-     *            the name of the file
+     *        the name of the file
      * @throws IllegalArgumentException
-     *             if {@code name} is {@code null}
+     *         if {@code name} is {@code null}
      */
     public void save(String name) {
         if (name == null)
@@ -430,9 +431,9 @@ public final class GrayscalePicture implements ActionListener {
      * Saves the picture to a file in a PNG or JPEG image format.
      *
      * @param file
-     *            the file
+     *        the file
      * @throws IllegalArgumentException
-     *             if {@code file} is {@code null}
+     *         if {@code file} is {@code null}
      */
     public void save(File file) {
         if (file == null)
@@ -469,7 +470,7 @@ public final class GrayscalePicture implements ActionListener {
      * in a window on the screen.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         GrayscalePicture picture = new GrayscalePicture(args[0]);

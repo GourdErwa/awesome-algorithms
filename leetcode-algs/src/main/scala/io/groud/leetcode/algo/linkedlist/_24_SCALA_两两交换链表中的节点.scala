@@ -39,6 +39,9 @@ object _24_SCALA_两两交换链表中的节点 {
     prev.next = curr.next
     curr.next.next = curr
     curr.next = nextNext
+
+    println("111")
+
     helper2(curr)
   }
 }

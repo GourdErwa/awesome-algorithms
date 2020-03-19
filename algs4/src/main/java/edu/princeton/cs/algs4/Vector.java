@@ -36,7 +36,7 @@ public class Vector {
      * Initializes a d-dimensional zero vector.
      *
      * @param d
-     *            the dimension of the vector
+     *        the dimension of the vector
      */
     public Vector(int d) {
         this.d = d;
@@ -48,7 +48,7 @@ public class Vector {
      * variable number of arugments such as Vector x = new Vector(1.0, 2.0, 3.0, 4.0).
      *
      * @param a
-     *            the array or vararg list
+     *        the array or vararg list
      */
     public Vector(double... a) {
         d = a.length;
@@ -83,10 +83,10 @@ public class Vector {
      * Returns the dot product of this vector with the specified vector.
      *
      * @param that
-     *            the other vector
+     *        the other vector
      * @return the dot product of this vector and that vector
      * @throws IllegalArgumentException
-     *             if the dimensions of the two vectors are not equal
+     *         if the dimensions of the two vectors are not equal
      */
     public double dot(Vector that) {
         if (this.d != that.d)
@@ -110,10 +110,10 @@ public class Vector {
      * Returns the Euclidean distance between this vector and the specified vector.
      *
      * @param that
-     *            the other vector
+     *        the other vector
      * @return the Euclidean distance between this vector and that vector
      * @throws IllegalArgumentException
-     *             if the dimensions of the two vectors are not equal
+     *         if the dimensions of the two vectors are not equal
      */
     public double distanceTo(Vector that) {
         if (this.d != that.d)
@@ -125,10 +125,10 @@ public class Vector {
      * Returns the sum of this vector and the specified vector.
      *
      * @param that
-     *            the vector to add to this vector
+     *        the vector to add to this vector
      * @return the vector whose value is {@code (this + that)}
      * @throws IllegalArgumentException
-     *             if the dimensions of the two vectors are not equal
+     *         if the dimensions of the two vectors are not equal
      */
     public Vector plus(Vector that) {
         if (this.d != that.d)
@@ -143,10 +143,10 @@ public class Vector {
      * Returns the difference between this vector and the specified vector.
      *
      * @param that
-     *            the vector to subtract from this vector
+     *        the vector to subtract from this vector
      * @return the vector whose value is {@code (this - that)}
      * @throws IllegalArgumentException
-     *             if the dimensions of the two vectors are not equal
+     *         if the dimensions of the two vectors are not equal
      */
     public Vector minus(Vector that) {
         if (this.d != that.d)
@@ -161,7 +161,7 @@ public class Vector {
      * Returns the ith cartesian coordinate.
      *
      * @param i
-     *            the coordinate index
+     *        the coordinate index
      * @return the ith cartesian coordinate
      */
     public double cartesian(int i) {
@@ -172,7 +172,7 @@ public class Vector {
      * Returns the scalar-vector product of this vector and the specified scalar
      *
      * @param alpha
-     *            the scalar
+     *        the scalar
      * @return the vector whose value is {@code (alpha * this)}
      * @deprecated Replaced by {@link #scale(double)}.
      */
@@ -188,7 +188,7 @@ public class Vector {
      * Returns the scalar-vector product of this vector and the specified scalar
      *
      * @param alpha
-     *            the scalar
+     *        the scalar
      * @return the vector whose value is {@code (alpha * this)}
      */
     public Vector scale(double alpha) {
@@ -203,7 +203,7 @@ public class Vector {
      *
      * @return a unit vector in the direction of this vector
      * @throws ArithmeticException
-     *             if this vector is the zero vector
+     *         if this vector is the zero vector
      */
     public Vector direction() {
         if (this.magnitude() == 0.0)
@@ -228,7 +228,7 @@ public class Vector {
      * Unit tests the {@code Vector} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         double[] xdata = {1.0, 2.0, 3.0, 4.0};

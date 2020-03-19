@@ -42,15 +42,15 @@ public class LinearProgramming {
      * matrix, b is an m-length vector, and c is an n-length vector.
      *
      * @param A
-     *            the <em>m</em>-by-<em>b</em> matrix
+     *        the <em>m</em>-by-<em>b</em> matrix
      * @param b
-     *            the <em>m</em>-length RHS vector
+     *        the <em>m</em>-length RHS vector
      * @param c
-     *            the <em>n</em>-length cost vector
+     *        the <em>n</em>-length cost vector
      * @throws IllegalArgumentException
-     *             unless {@code b[i] >= 0} for each {@code i}
+     *         unless {@code b[i] >= 0} for each {@code i}
      * @throws ArithmeticException
-     *             if the linear program is unbounded
+     *         if the linear program is unbounded
      */
     public LinearProgramming(double[][] A, double[] b, double[] c) {
         m = b.length;
@@ -344,7 +344,7 @@ public class LinearProgramming {
      * Unit tests the {@code LinearProgramming} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

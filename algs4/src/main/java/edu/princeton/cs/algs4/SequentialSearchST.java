@@ -79,10 +79,10 @@ public class SequentialSearchST<Key, Value> {
      * Returns true if this symbol table contains the specified key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains {@code key}; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
         if (key == null)
@@ -94,11 +94,11 @@ public class SequentialSearchST<Key, Value> {
      * Returns the value associated with the given key in this symbol table.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with the given key if the key is in the symbol table and {@code null} if the key is
      *         not in the symbol table
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(Key key) {
         if (key == null)
@@ -116,11 +116,11 @@ public class SequentialSearchST<Key, Value> {
      * symbol table if the specified value is {@code null}.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
         if (key == null)
@@ -144,9 +144,9 @@ public class SequentialSearchST<Key, Value> {
      * Removes the specified key and its associated value from this symbol table (if the key is in this symbol table).
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(Key key) {
         if (key == null)
@@ -184,7 +184,7 @@ public class SequentialSearchST<Key, Value> {
      * Unit tests the {@code SequentialSearchST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         SequentialSearchST<String, Integer> st = new SequentialSearchST<String, Integer>();

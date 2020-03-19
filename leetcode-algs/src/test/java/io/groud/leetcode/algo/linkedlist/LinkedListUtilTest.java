@@ -1,12 +1,13 @@
 package io.groud.leetcode.algo.linkedlist;
 
-import io.groud.leetcode.algo.linkedlist.LinkedListUtil.ListNode;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import io.groud.leetcode.algo.linkedlist.LinkedListUtil.ListNode;
 
 /**
  * @author Li.Wei by 2020/2/19

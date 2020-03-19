@@ -35,7 +35,7 @@ public class Out {
      * Initializes an output stream from a {@link OutputStream}.
      *
      * @param os
-     *            the {@code OutputStream}
+     *        the {@code OutputStream}
      */
     public Out(OutputStream os) {
         try {
@@ -57,7 +57,7 @@ public class Out {
      * Initializes an output stream from a socket.
      *
      * @param socket
-     *            the socket
+     *        the socket
      */
     public Out(Socket socket) {
         try {
@@ -73,7 +73,7 @@ public class Out {
      * Initializes an output stream from a file.
      *
      * @param filename
-     *            the name of the file
+     *        the name of the file
      */
     public Out(String filename) {
         try {
@@ -103,7 +103,7 @@ public class Out {
      * Prints an object to this output stream and then terminates the line.
      *
      * @param x
-     *            the object to print
+     *        the object to print
      */
     public void println(Object x) {
         out.println(x);
@@ -113,7 +113,7 @@ public class Out {
      * Prints a boolean to this output stream and then terminates the line.
      *
      * @param x
-     *            the boolean to print
+     *        the boolean to print
      */
     public void println(boolean x) {
         out.println(x);
@@ -123,7 +123,7 @@ public class Out {
      * Prints a character to this output stream and then terminates the line.
      *
      * @param x
-     *            the character to print
+     *        the character to print
      */
     public void println(char x) {
         out.println(x);
@@ -133,7 +133,7 @@ public class Out {
      * Prints a double to this output stream and then terminates the line.
      *
      * @param x
-     *            the double to print
+     *        the double to print
      */
     public void println(double x) {
         out.println(x);
@@ -143,7 +143,7 @@ public class Out {
      * Prints a float to this output stream and then terminates the line.
      *
      * @param x
-     *            the float to print
+     *        the float to print
      */
     public void println(float x) {
         out.println(x);
@@ -153,7 +153,7 @@ public class Out {
      * Prints an integer to this output stream and then terminates the line.
      *
      * @param x
-     *            the integer to print
+     *        the integer to print
      */
     public void println(int x) {
         out.println(x);
@@ -163,7 +163,7 @@ public class Out {
      * Prints a long to this output stream and then terminates the line.
      *
      * @param x
-     *            the long to print
+     *        the long to print
      */
     public void println(long x) {
         out.println(x);
@@ -175,7 +175,7 @@ public class Out {
      * To write binary data, see {@link BinaryOut}.
      *
      * @param x
-     *            the byte to print
+     *        the byte to print
      */
     public void println(byte x) {
         out.println(x);
@@ -192,7 +192,7 @@ public class Out {
      * Prints an object to this output stream and flushes this output stream.
      *
      * @param x
-     *            the object to print
+     *        the object to print
      */
     public void print(Object x) {
         out.print(x);
@@ -203,7 +203,7 @@ public class Out {
      * Prints a boolean to this output stream and flushes this output stream.
      *
      * @param x
-     *            the boolean to print
+     *        the boolean to print
      */
     public void print(boolean x) {
         out.print(x);
@@ -214,7 +214,7 @@ public class Out {
      * Prints a character to this output stream and flushes this output stream.
      *
      * @param x
-     *            the character to print
+     *        the character to print
      */
     public void print(char x) {
         out.print(x);
@@ -225,7 +225,7 @@ public class Out {
      * Prints a double to this output stream and flushes this output stream.
      *
      * @param x
-     *            the double to print
+     *        the double to print
      */
     public void print(double x) {
         out.print(x);
@@ -236,7 +236,7 @@ public class Out {
      * Prints a float to this output stream and flushes this output stream.
      *
      * @param x
-     *            the float to print
+     *        the float to print
      */
     public void print(float x) {
         out.print(x);
@@ -247,7 +247,7 @@ public class Out {
      * Prints an integer to this output stream and flushes this output stream.
      *
      * @param x
-     *            the integer to print
+     *        the integer to print
      */
     public void print(int x) {
         out.print(x);
@@ -258,7 +258,7 @@ public class Out {
      * Prints a long integer to this output stream and flushes this output stream.
      *
      * @param x
-     *            the long integer to print
+     *        the long integer to print
      */
     public void print(long x) {
         out.print(x);
@@ -269,7 +269,7 @@ public class Out {
      * Prints a byte to this output stream and flushes this output stream.
      *
      * @param x
-     *            the byte to print
+     *        the byte to print
      */
     public void print(byte x) {
         out.print(x);
@@ -281,9 +281,9 @@ public class Out {
      * flushes this output stream.
      *
      * @param format
-     *            the format string
+     *        the format string
      * @param args
-     *            the arguments accompanying the format string
+     *        the arguments accompanying the format string
      */
     public void printf(String format, Object... args) {
         out.printf(LOCALE, format, args);
@@ -295,11 +295,11 @@ public class Out {
      * then flushes this output stream.
      *
      * @param locale
-     *            the locale
+     *        the locale
      * @param format
-     *            the format string
+     *        the format string
      * @param args
-     *            the arguments accompanying the format string
+     *        the arguments accompanying the format string
      */
     public void printf(Locale locale, String format, Object... args) {
         out.printf(locale, format, args);
@@ -310,7 +310,7 @@ public class Out {
      * A test client.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Out out;

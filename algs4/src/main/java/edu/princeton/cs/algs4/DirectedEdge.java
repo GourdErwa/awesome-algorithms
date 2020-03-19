@@ -28,15 +28,15 @@ public class DirectedEdge {
      * Initializes a directed edge from vertex {@code v} to vertex {@code w} with the given {@code weight}.
      *
      * @param v
-     *            the tail vertex
+     *        the tail vertex
      * @param w
-     *            the head vertex
+     *        the head vertex
      * @param weight
-     *            the weight of the directed edge
+     *        the weight of the directed edge
      * @throws IllegalArgumentException
-     *             if either {@code v} or {@code w} is a negative integer
+     *         if either {@code v} or {@code w} is a negative integer
      * @throws IllegalArgumentException
-     *             if {@code weight} is {@code NaN}
+     *         if {@code weight} is {@code NaN}
      */
     public DirectedEdge(int v, int w, double weight) {
         if (v < 0)
@@ -90,7 +90,7 @@ public class DirectedEdge {
      * Unit tests the {@code DirectedEdge} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         DirectedEdge e = new DirectedEdge(12, 34, 5.67);

@@ -46,7 +46,7 @@ public class AmericanFlag {
      * Rearranges the array of extended ASCII strings in ascending order. This is an unstable sorting algorithm.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(String[] a) {
         sort(a, 0, a.length - 1);
@@ -145,7 +145,7 @@ public class AmericanFlag {
      * Rearranges the array of 32-bit integers in ascending order. Currently assumes that the integers are nonnegative.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(int[] a) {
         sort(a, 0, a.length - 1);
@@ -250,7 +250,7 @@ public class AmericanFlag {
      * and prints them to standard output in ascending order.
      *
      * @param args
-     *            the command-line arguments: "int" to read input as non-negative integers
+     *        the command-line arguments: "int" to read input as non-negative integers
      */
     public static void main(String[] args) {
         if (args.length > 0 && args[0].equals("int")) {

@@ -19,8 +19,9 @@ public class _234_JAVA_回文链表 {
      * 恢复被反转的后半部分链表
      */
     public boolean isPalindrome(ListNode head) {
-        if (head == null)
+        if (head == null) {
             return true;
+        }
 
         ListNode middleNode = findMiddleNode(head); // 寻找中间节点
         ListNode reverseList = reverseList(middleNode); // 反转后半部分
@@ -44,7 +45,7 @@ public class _234_JAVA_回文链表 {
      * 反转链表
      *
      * @param node
-     *            待反转链表
+     *        待反转链表
      * @return 反转后的链表
      */
     public ListNode reverseList(ListNode node) {
@@ -68,7 +69,7 @@ public class _234_JAVA_回文链表 {
      * tip：如果进行回文比对时奇数比偶数多比对一个中间点的数值。比如 1,2,3,4,5 时返回 3，对于前后部分都包含了 3 这个节点。
      *
      * @param node
-     *            node
+     *        node
      * @return 中间节点
      */
     public ListNode findMiddleNode(ListNode node) {
@@ -84,11 +85,13 @@ public class _234_JAVA_回文链表 {
     /* -------------------------------解法------------------------------------------- */
     public boolean isPalindrome2(ListNode head) {
         // 1.判断是否是一个节点
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return true;
+        }
         // 2判断是否是2个节点
-        if (head.next.next == null)
+        if (head.next.next == null) {
             return head.val == head.next.val;
+        }
 
         // 如果都不是
         // 1.设定一个slow指针指向当前回文遍历的字符，设定一个fast指针，遍历到slow对应回文的后面的节点的前一个节点，也就是fast.next.val==slow.val

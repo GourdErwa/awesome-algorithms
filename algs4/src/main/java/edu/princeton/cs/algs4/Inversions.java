@@ -70,7 +70,7 @@ public class Inversions {
      * Returns the number of inversions in the integer array. The argument array is not modified.
      *
      * @param a
-     *            the array
+     *        the array
      * @return the number of inversions in the array. An inversion is a pair of indicies {@code i} and {@code j} such
      *         that {@code i < j} and {@code a[i] > a[j]}.
      */
@@ -126,9 +126,9 @@ public class Inversions {
      * Returns the number of inversions in the comparable array. The argument array is not modified.
      *
      * @param a
-     *            the array
+     *        the array
      * @param <Key>
-     *            the inferred type of the elements in the array
+     *        the inferred type of the elements in the array
      * @return the number of inversions in the array. An inversion is a pair of indicies {@code i} and {@code j} such
      *         that {@code i < j} and {@code a[i].compareTo(a[j]) > 0}.
      */
@@ -168,7 +168,7 @@ public class Inversions {
      * Reads a sequence of integers from standard input and prints the number of inversions to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int[] a = StdIn.readAllInts();

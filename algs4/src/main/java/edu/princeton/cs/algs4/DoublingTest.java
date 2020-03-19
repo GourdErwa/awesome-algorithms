@@ -27,7 +27,7 @@ public class DoublingTest {
      * Returns the amount of time to call {@code ThreeSum.count()} with <em>n</em> random 6-digit integers.
      *
      * @param n
-     *            the number of integers
+     *        the number of integers
      * @return amount of time (in seconds) to call {@code ThreeSum.count()} with <em>n</em> random 6-digit integers
      */
     public static double timeTrial(int n) {
@@ -45,7 +45,7 @@ public class DoublingTest {
      * forth.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         for (int n = 250; true; n += n) {

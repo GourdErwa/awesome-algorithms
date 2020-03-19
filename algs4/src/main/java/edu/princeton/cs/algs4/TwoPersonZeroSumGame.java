@@ -21,13 +21,13 @@ package edu.princeton.cs.algs4;
  * programming problem. Assuming the payoff matrix <em>A</em> is strictly positive, the optimal row and column player
  * strategies x* and y* are obtained by solving the following primal and dual pair of linear programs, scaling the
  * results to be probability distributions. <blockquote>
- * 
+ *
  * <pre>
  *  (P)  max  y^T 1           (D)  min   1^T x
  *       s.t  A^T y &le; 1         s.t   A x &ge; 1
  *                y &le; 0                 x &ge; 0
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
  * If the payoff matrix <em>A</em> has any negative entries, we add the same constant to every entry so that every entry
@@ -56,7 +56,7 @@ public class TwoPersonZeroSumGame {
      * Determines an optimal solution to the two-sum zero-sum game with the specified payoff matrix.
      *
      * @param payoff
-     *            the <em>m</em>-by-<em>n</em> payoff matrix
+     *        the <em>m</em>-by-<em>n</em> payoff matrix
      */
     public TwoPersonZeroSumGame(double[][] payoff) {
         m = payoff.length;
@@ -295,7 +295,7 @@ public class TwoPersonZeroSumGame {
      * Unit tests the {@code ZeroSumGameToLP} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         test1();

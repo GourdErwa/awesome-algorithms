@@ -48,7 +48,7 @@ public class PrimMST {
      * Compute a minimum spanning tree (or forest) of an edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      */
     public PrimMST(EdgeWeightedGraph G) {
         edgeTo = new Edge[G.V()];
@@ -186,7 +186,7 @@ public class PrimMST {
      * Unit tests the {@code PrimMST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

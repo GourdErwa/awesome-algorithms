@@ -45,7 +45,7 @@ public class SuffixArray {
      * Initializes a suffix array for the given {@code text} string.
      *
      * @param text
-     *            the input string
+     *        the input string
      */
     public SuffixArray(String text) {
         int n = text.length();
@@ -104,10 +104,10 @@ public class SuffixArray {
      * {@code text.substring(sa.index(i))} is the <em>i</em>th smallest suffix.
      *
      * @param i
-     *            an integer between 0 and <em>n</em>-1
+     *        an integer between 0 and <em>n</em>-1
      * @return the index into the original string of the <em>i</em>th smallest suffix
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= i < n}
+     *         unless {@code 0 <= i < n}
      */
     public int index(int i) {
         if (i < 0 || i >= suffixes.length)
@@ -120,11 +120,11 @@ public class SuffixArray {
      * smallest suffix.
      *
      * @param i
-     *            an integer between 1 and <em>n</em>-1
+     *        an integer between 1 and <em>n</em>-1
      * @return the length of the longest common prefix of the <em>i</em>th smallest suffix and the <em>i</em>-1st
      *         smallest suffix.
      * @throws IllegalArgumentException
-     *             unless {@code 1 <= i < n}
+     *         unless {@code 1 <= i < n}
      */
     public int lcp(int i) {
         if (i < 1 || i >= suffixes.length)
@@ -146,10 +146,10 @@ public class SuffixArray {
      * Returns the <em>i</em>th smallest suffix as a string.
      *
      * @param i
-     *            the index
+     *        the index
      * @return the <em>i</em> smallest suffix as a string
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= i < n}
+     *         unless {@code 0 <= i < n}
      */
     public String select(int i) {
         if (i < 0 || i >= suffixes.length)
@@ -162,7 +162,7 @@ public class SuffixArray {
      * equals {@code i} for each {@code i} between 0 and <em>n</em>-1.
      *
      * @param query
-     *            the query string
+     *        the query string
      * @return the number of suffixes strictly less than {@code query}
      */
     public int rank(String query) {
@@ -196,7 +196,7 @@ public class SuffixArray {
      * Unit tests the {@code SuffixArray} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String s = StdIn.readAll().replaceAll("\\s+", " ").trim();

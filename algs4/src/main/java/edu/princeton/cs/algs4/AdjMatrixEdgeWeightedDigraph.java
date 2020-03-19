@@ -39,9 +39,9 @@ public class AdjMatrixEdgeWeightedDigraph {
      * Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      */
     public AdjMatrixEdgeWeightedDigraph(int V) {
         if (V < 0)
@@ -55,13 +55,13 @@ public class AdjMatrixEdgeWeightedDigraph {
      * Initializes a random edge-weighted digraph with {@code V} vertices and <em>E</em> edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of edges
+     *        the number of edges
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      * @throws IllegalArgumentException
-     *             if {@code E < 0}
+     *         if {@code E < 0}
      */
     public AdjMatrixEdgeWeightedDigraph(int V, int E) {
         this(V);
@@ -102,7 +102,7 @@ public class AdjMatrixEdgeWeightedDigraph {
      * endpoints).
      *
      * @param e
-     *            the edge
+     *        the edge
      */
     public void addEdge(DirectedEdge e) {
         int v = e.from();
@@ -119,10 +119,10 @@ public class AdjMatrixEdgeWeightedDigraph {
      * Returns the directed edges incident from vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the directed edges incident from vertex {@code v} as an Iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<DirectedEdge> adj(int v) {
         validateVertex(v);
@@ -193,7 +193,7 @@ public class AdjMatrixEdgeWeightedDigraph {
      * Unit tests the {@code AdjMatrixEdgeWeightedDigraph} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);

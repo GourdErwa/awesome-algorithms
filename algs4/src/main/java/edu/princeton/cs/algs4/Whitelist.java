@@ -36,7 +36,7 @@ public class Whitelist {
      * from standard input and prints to standard output those integers that are not in the file.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

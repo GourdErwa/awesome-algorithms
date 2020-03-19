@@ -33,7 +33,7 @@ public class TopM {
      * the m largest transactions in descending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int m = Integer.parseInt(args[0]);

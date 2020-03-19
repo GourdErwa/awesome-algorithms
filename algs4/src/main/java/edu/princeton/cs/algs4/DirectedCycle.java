@@ -40,7 +40,7 @@ public class DirectedCycle {
      * Determines whether the digraph {@code G} has a directed cycle and, if so, finds such a cycle.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      */
     public DirectedCycle(Digraph G) {
         marked = new boolean[G.V()];
@@ -123,7 +123,7 @@ public class DirectedCycle {
      * Unit tests the {@code DirectedCycle} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

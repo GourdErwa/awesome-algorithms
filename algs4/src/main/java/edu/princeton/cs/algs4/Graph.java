@@ -49,9 +49,9 @@ public class Graph {
      * Initializes an empty graph with {@code V} vertices and 0 edges. param V the number of vertices
      *
      * @param V
-     *            number of vertices
+     *        number of vertices
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      */
     public Graph(int V) {
         if (V < 0)
@@ -70,15 +70,15 @@ public class Graph {
      * whitespace.
      *
      * @param in
-     *            the input stream
+     *        the input stream
      * @throws IllegalArgumentException
-     *             if {@code in} is {@code null}
+     *         if {@code in} is {@code null}
      * @throws IllegalArgumentException
-     *             if the endpoints of any edge are not in prescribed range
+     *         if the endpoints of any edge are not in prescribed range
      * @throws IllegalArgumentException
-     *             if the number of vertices or edges is negative
+     *         if the number of vertices or edges is negative
      * @throws IllegalArgumentException
-     *             if the input stream is in the wrong format
+     *         if the input stream is in the wrong format
      */
     public Graph(In in) {
         if (in == null)
@@ -110,9 +110,9 @@ public class Graph {
      * Initializes a new graph that is a deep copy of {@code G}.
      *
      * @param G
-     *            the graph to copy
+     *        the graph to copy
      * @throws IllegalArgumentException
-     *             if {@code G} is {@code null}
+     *         if {@code G} is {@code null}
      */
     public Graph(Graph G) {
         this.V = G.V();
@@ -166,11 +166,11 @@ public class Graph {
      * Adds the undirected edge v-w to this graph.
      *
      * @param v
-     *            one vertex in the edge
+     *        one vertex in the edge
      * @param w
-     *            the other vertex in the edge
+     *        the other vertex in the edge
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+     *         unless both {@code 0 <= v < V} and {@code 0 <= w < V}
      */
     public void addEdge(int v, int w) {
         validateVertex(v);
@@ -184,10 +184,10 @@ public class Graph {
      * Returns the vertices adjacent to vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the vertices adjacent to vertex {@code v}, as an iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<Integer> adj(int v) {
         validateVertex(v);
@@ -198,10 +198,10 @@ public class Graph {
      * Returns the degree of vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the degree of vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int degree(int v) {
         validateVertex(v);
@@ -231,7 +231,7 @@ public class Graph {
      * Unit tests the {@code Graph} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

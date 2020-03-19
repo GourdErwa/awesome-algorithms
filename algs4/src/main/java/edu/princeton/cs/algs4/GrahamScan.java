@@ -35,13 +35,13 @@ public class GrahamScan {
      * Computes the convex hull of the specified array of points.
      *
      * @param points
-     *            the array of points
+     *        the array of points
      * @throws IllegalArgumentException
-     *             if {@code points} is {@code null}
+     *         if {@code points} is {@code null}
      * @throws IllegalArgumentException
-     *             if any entry in {@code points[]} is {@code null}
+     *         if any entry in {@code points[]} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code points.length} is {@code 0}
+     *         if {@code points.length} is {@code 0}
      */
     public GrahamScan(Point2D[] points) {
         if (points == null)
@@ -135,7 +135,7 @@ public class GrahamScan {
      * points on the convex hull to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int n = StdIn.readInt();

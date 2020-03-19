@@ -32,15 +32,15 @@ public class FlowEdge {
      * Initializes an edge from vertex {@code v} to vertex {@code w} with the given {@code capacity} and zero flow.
      *
      * @param v
-     *            the tail vertex
+     *        the tail vertex
      * @param w
-     *            the head vertex
+     *        the head vertex
      * @param capacity
-     *            the capacity of the edge
+     *        the capacity of the edge
      * @throws IllegalArgumentException
-     *             if either {@code v} or {@code w} is a negative integer
+     *         if either {@code v} or {@code w} is a negative integer
      * @throws IllegalArgumentException
-     *             if {@code capacity < 0.0}
+     *         if {@code capacity < 0.0}
      */
     public FlowEdge(int v, int w, double capacity) {
         if (v < 0)
@@ -59,19 +59,19 @@ public class FlowEdge {
      * Initializes an edge from vertex {@code v} to vertex {@code w} with the given {@code capacity} and {@code flow}.
      *
      * @param v
-     *            the tail vertex
+     *        the tail vertex
      * @param w
-     *            the head vertex
+     *        the head vertex
      * @param capacity
-     *            the capacity of the edge
+     *        the capacity of the edge
      * @param flow
-     *            the flow on the edge
+     *        the flow on the edge
      * @throws IllegalArgumentException
-     *             if either {@code v} or {@code w} is a negative integer
+     *         if either {@code v} or {@code w} is a negative integer
      * @throws IllegalArgumentException
-     *             if {@code capacity} is negative
+     *         if {@code capacity} is negative
      * @throws IllegalArgumentException
-     *             unless {@code flow} is between {@code 0.0} and {@code capacity}.
+     *         unless {@code flow} is between {@code 0.0} and {@code capacity}.
      */
     public FlowEdge(int v, int w, double capacity, double flow) {
         if (v < 0)
@@ -94,7 +94,7 @@ public class FlowEdge {
      * Initializes a flow edge from another flow edge.
      *
      * @param e
-     *            the edge to copy
+     *        the edge to copy
      */
     public FlowEdge(FlowEdge e) {
         this.v = e.v;
@@ -144,11 +144,11 @@ public class FlowEdge {
      * in which case it returns the same vertex).
      *
      * @param vertex
-     *            one endpoint of the edge
+     *        one endpoint of the edge
      * @return the endpoint of the edge that is different from the given vertex (unless the edge represents a self-loop
      *         in which case it returns the same vertex)
      * @throws IllegalArgumentException
-     *             if {@code vertex} is not one of the endpoints of the edge
+     *         if {@code vertex} is not one of the endpoints of the edge
      */
     public int other(int vertex) {
         if (vertex == v)
@@ -163,12 +163,12 @@ public class FlowEdge {
      * Returns the residual capacity of the edge in the direction to the given {@code vertex}.
      *
      * @param vertex
-     *            one endpoint of the edge
+     *        one endpoint of the edge
      * @return the residual capacity of the edge in the direction to the given vertex If {@code vertex} is the tail
      *         vertex, the residual capacity equals {@code capacity() - flow()}; if {@code vertex} is the head vertex,
      *         the residual capacity equals {@code flow()}.
      * @throws IllegalArgumentException
-     *             if {@code vertex} is not one of the endpoints of the edge
+     *         if {@code vertex} is not one of the endpoints of the edge
      */
     public double residualCapacityTo(int vertex) {
         if (vertex == v)
@@ -185,15 +185,15 @@ public class FlowEdge {
      * the edge by {@code delta}.
      *
      * @param vertex
-     *            one endpoint of the edge
+     *        one endpoint of the edge
      * @param delta
-     *            amount by which to increase flow
+     *        amount by which to increase flow
      * @throws IllegalArgumentException
-     *             if {@code vertex} is not one of the endpoints of the edge
+     *         if {@code vertex} is not one of the endpoints of the edge
      * @throws IllegalArgumentException
-     *             if {@code delta} makes the flow on on the edge either negative or larger than its capacity
+     *         if {@code delta} makes the flow on on the edge either negative or larger than its capacity
      * @throws IllegalArgumentException
-     *             if {@code delta} is {@code NaN}
+     *         if {@code delta} is {@code NaN}
      */
     public void addResidualFlowTo(int vertex, double delta) {
         if (!(delta >= 0.0))
@@ -231,7 +231,7 @@ public class FlowEdge {
      * Unit tests the {@code FlowEdge} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         FlowEdge e = new FlowEdge(12, 23, 4.56);
