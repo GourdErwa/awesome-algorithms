@@ -1,8 +1,8 @@
 package io.groud.algs.data_structures.recursive;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Li.Wei by 2020/2/21

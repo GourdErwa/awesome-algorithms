@@ -48,14 +48,14 @@ import java.util.regex.Pattern;
  * locale {@link Locale#US}; the rules for floating-point numbers are slightly different from those in
  * {@link Double#valueOf(String)}, but unlikely to be of concern to most programmers. p> As an example, the following
  * code fragment reads integers from standard input, one at a time, and prints them one per line.
- * 
+ *
  * <pre>
  * while (!StdIn.isEmpty()) {
  *     double value = StdIn.readDouble();
  *     StdOut.println(value);
  * }
  * </pre>
- * 
+ *
  * p> <b>Reading characters from standard input.</b> You can use the following two methods to read characters from
  * standard input one at a time:
  * <ul>
@@ -66,14 +66,14 @@ import java.util.regex.Pattern;
  * returns the next character of input on standard input (possibly a whitespace character). p> As an example, the
  * following code fragment reads characters from standard input, one character at a time, and prints it to standard
  * output.
- * 
+ *
  * <pre>
  * while (StdIn.hasNextChar()) {
  *     char c = StdIn.readChar();
  *     StdOut.print(c);
  * }
  * </pre>
- * 
+ *
  * p> <b>Reading lines from standard input.</b> You can use the following two methods to read lines from standard input:
  * <ul>
  * <li>{@link #hasNextLine()}
@@ -85,14 +85,14 @@ import java.util.regex.Pattern;
  * (Linux), {@code \r} (old Macintosh), {@code \r\n} (Windows), {@code \}{@code u2028}, {@code \}{@code u2029}, or
  * {@code \}{@code u0085}. p> As an example, the following code fragment reads text from standard input, one line at a
  * time, and prints it to standard output.
- * 
+ *
  * <pre>
  * while (StdIn.hasNextLine()) {
  *     String line = StdIn.readLine();
  *     StdOut.println(line);
  * }
  * </pre>
- * 
+ *
  * p> <b>Reading a sequence of values of the same type from standard input.</b> You can use the following methods to
  * read a sequence numbers, strings, or booleans (all of the same type) from standard input:
  * <ul>
@@ -109,11 +109,11 @@ import java.util.regex.Pattern;
  * The {@code readAll()} method reads all remaining input on standard input and returns it as a string. p> As an
  * example, the following code fragment reads all of the remaining tokens from standard input and returns them as an
  * array of strings.
- * 
+ *
  * <pre>
  * String[] words = StdIn.readAllStrings();
  * </pre>
- * 
+ *
  * p> <b>Differences with Scanner.</b> {@code StdIn} and {@link Scanner} are both designed to parse tokens and convert
  * them to primitive types and strings. The main differences are summarized below:
  * <ul>
@@ -230,7 +230,7 @@ public final class StdIn {
      *
      * @return the next {@code char}
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      */
     public static char readChar() {
         try {
@@ -250,7 +250,7 @@ public final class StdIn {
      *
      * @return the remainder of the input, as a string
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      */
     public static String readAll() {
         if (!scanner.hasNextLine())
@@ -267,7 +267,7 @@ public final class StdIn {
      *
      * @return the next {@code String}
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      */
     public static String readString() {
         try {
@@ -283,9 +283,9 @@ public final class StdIn {
      *
      * @return the next integer on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as an {@code int}
+     *         if the next token cannot be parsed as an {@code int}
      */
     public static int readInt() {
         try {
@@ -306,9 +306,9 @@ public final class StdIn {
      *
      * @return the next double on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code double}
+     *         if the next token cannot be parsed as a {@code double}
      */
     public static double readDouble() {
         try {
@@ -328,9 +328,9 @@ public final class StdIn {
      *
      * @return the next float on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code float}
+     *         if the next token cannot be parsed as a {@code float}
      */
     public static float readFloat() {
         try {
@@ -350,9 +350,9 @@ public final class StdIn {
      *
      * @return the next long integer on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code long}
+     *         if the next token cannot be parsed as a {@code long}
      */
     public static long readLong() {
         try {
@@ -372,9 +372,9 @@ public final class StdIn {
      *
      * @return the next short integer on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code short}
+     *         if the next token cannot be parsed as a {@code short}
      */
     public static short readShort() {
         try {
@@ -394,9 +394,9 @@ public final class StdIn {
      *
      * @return the next byte on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code byte}
+     *         if the next token cannot be parsed as a {@code byte}
      */
     public static byte readByte() {
         try {
@@ -416,10 +416,10 @@ public final class StdIn {
      *
      * @return the next boolean on standard input
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      * @throws InputMismatchException
-     *             if the next token cannot be parsed as a {@code boolean}: {@code true} or {@code 1} for true, and
-     *             {@code false} or {@code 0} for false, ignoring case
+     *         if the next token cannot be parsed as a {@code boolean}: {@code true} or {@code 1} for true, and
+     *         {@code false} or {@code 0} for false, ignoring case
      */
     public static boolean readBoolean() {
         try {
@@ -479,7 +479,7 @@ public final class StdIn {
      *
      * @return all remaining integers on standard input, as an array
      * @throws InputMismatchException
-     *             if any token cannot be parsed as an {@code int}
+     *         if any token cannot be parsed as an {@code int}
      */
     public static int[] readAllInts() {
         String[] fields = readAllStrings();
@@ -494,7 +494,7 @@ public final class StdIn {
      *
      * @return all remaining longs on standard input, as an array
      * @throws InputMismatchException
-     *             if any token cannot be parsed as a {@code long}
+     *         if any token cannot be parsed as a {@code long}
      */
     public static long[] readAllLongs() {
         String[] fields = readAllStrings();
@@ -509,7 +509,7 @@ public final class StdIn {
      *
      * @return all remaining doubles on standard input, as an array
      * @throws InputMismatchException
-     *             if any token cannot be parsed as a {@code double}
+     *         if any token cannot be parsed as a {@code double}
      */
     public static double[] readAllDoubles() {
         String[] fields = readAllStrings();
@@ -543,7 +543,7 @@ public final class StdIn {
      *
      * @return all remaining integers, as an array
      * @throws InputMismatchException
-     *             if any token cannot be parsed as an {@code int}
+     *         if any token cannot be parsed as an {@code int}
      * @deprecated Replaced by {@link #readAllInts()}.
      */
     @Deprecated
@@ -556,7 +556,7 @@ public final class StdIn {
      *
      * @return all remaining doubles, as an array
      * @throws InputMismatchException
-     *             if any token cannot be parsed as a {@code double}
+     *         if any token cannot be parsed as a {@code double}
      * @deprecated Replaced by {@link #readAllDoubles()}.
      */
     @Deprecated
@@ -579,7 +579,7 @@ public final class StdIn {
      * Interactive test of basic functionality.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

@@ -42,7 +42,7 @@ public class Cycle {
      * Determines whether the undirected graph {@code G} has a cycle and, if so, finds such a cycle.
      *
      * @param G
-     *            the undirected graph
+     *        the undirected graph
      */
     public Cycle(Graph G) {
         if (hasSelfLoop(G))
@@ -146,7 +146,7 @@ public class Cycle {
      * Unit tests the {@code Cycle} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

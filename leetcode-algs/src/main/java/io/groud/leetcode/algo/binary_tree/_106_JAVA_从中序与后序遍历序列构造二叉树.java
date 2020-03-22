@@ -47,11 +47,11 @@ public class _106_JAVA_从中序与后序遍历序列构造二叉树 {
      * pRootIndex - 1
      *
      * @param pRootIndex
-     *            root 节点在后序序列的位置
+     *        root 节点在后序序列的位置
      * @param is
-     *            中序序列起始位置
+     *        中序序列起始位置
      * @param ie
-     *            中序序列结束位置
+     *        中序序列结束位置
      * @return root 节点
      */
     public TreeNode buildTreeHelper(int pRootIndex, int is, int ie) {

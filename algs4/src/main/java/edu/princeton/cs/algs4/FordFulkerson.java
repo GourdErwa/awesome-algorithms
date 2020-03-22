@@ -40,19 +40,19 @@ public class FordFulkerson {
      * Compute a maximum flow and minimum cut in the network {@code G} from vertex {@code s} to vertex {@code t}.
      *
      * @param G
-     *            the flow network
+     *        the flow network
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @param t
-     *            the sink vertex
+     *        the sink vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= t < V}
+     *         unless {@code 0 <= t < V}
      * @throws IllegalArgumentException
-     *             if {@code s == t}
+     *         if {@code s == t}
      * @throws IllegalArgumentException
-     *             if initial flow is infeasible
+     *         if initial flow is infeasible
      */
     public FordFulkerson(FlowNetwork G, int s, int t) {
         V = G.V();
@@ -98,10 +98,10 @@ public class FordFulkerson {
      * Returns true if the specified vertex is on the {@code s} side of the mincut.
      *
      * @param v
-     *            vertex
+     *        vertex
      * @return {@code true} if vertex {@code v} is on the {@code s} side of the micut; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean inCut(int v) {
         validate(v);
@@ -234,7 +234,7 @@ public class FordFulkerson {
      * Unit tests the {@code FordFulkerson} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

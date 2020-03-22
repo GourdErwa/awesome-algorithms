@@ -34,7 +34,7 @@ import java.util.NoSuchElementException;
  * Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Key>
- *            the generic type of key on this priority queue
+ *        the generic type of key on this priority queue
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -47,7 +47,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue with the given initial capacity.
      *
      * @param initCapacity
-     *            the initial capacity of this priority queue
+     *        the initial capacity of this priority queue
      */
     public MinPQ(int initCapacity) {
         pq = (Key[])new Object[initCapacity + 1];
@@ -65,9 +65,9 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue with the given initial capacity, using the given comparator.
      *
      * @param initCapacity
-     *            the initial capacity of this priority queue
+     *        the initial capacity of this priority queue
      * @param comparator
-     *            the order in which to compare the keys
+     *        the order in which to compare the keys
      */
     public MinPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
@@ -79,7 +79,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue using the given comparator.
      *
      * @param comparator
-     *            the order in which to compare the keys
+     *        the order in which to compare the keys
      */
     public MinPQ(Comparator<Key> comparator) {
         this(1, comparator);
@@ -91,7 +91,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Takes time proportional to the number of keys, using sink-based heap construction.
      *
      * @param keys
-     *            the array of keys
+     *        the array of keys
      */
     public MinPQ(Key[] keys) {
         n = keys.length;
@@ -126,7 +126,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      *
      * @return a smallest key on this priority queue
      * @throws NoSuchElementException
-     *             if this priority queue is empty
+     *         if this priority queue is empty
      */
     public Key min() {
         if (isEmpty())
@@ -148,7 +148,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Adds a new key to this priority queue.
      *
      * @param x
-     *            the key to add to this priority queue
+     *        the key to add to this priority queue
      */
     public void insert(Key x) {
         // double size of array if necessary
@@ -166,7 +166,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      *
      * @return a smallest key on this priority queue
      * @throws NoSuchElementException
-     *             if this priority queue is empty
+     *         if this priority queue is empty
      */
     public Key delMin() {
         if (isEmpty())
@@ -294,7 +294,7 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Unit tests the {@code MinPQ} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         MinPQ<String> pq = new MinPQ<String>();

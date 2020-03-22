@@ -35,9 +35,9 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue Worst case is O(d)
      *
      * @param d
-     *            dimension of the heap
+     *        dimension of the heap
      * @throws IllegalArgumentException
-     *             if {@code d < 2}
+     *         if {@code d < 2}
      */
     public MultiwayMinPQ(int d) {
         if (d < 2)
@@ -52,11 +52,11 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue Worst case is O(d)
      *
      * @param d
-     *            dimension of the heap
+     *        dimension of the heap
      * @param comparator
-     *            a Comparator over the keys
+     *        a Comparator over the keys
      * @throws IllegalArgumentException
-     *             if {@code d < 2}
+     *         if {@code d < 2}
      */
     public MultiwayMinPQ(Comparator<Key> comparator, int d) {
         if (d < 2)
@@ -71,11 +71,11 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue with given indexes Worst case is O(n*log-d(n))
      *
      * @param d
-     *            dimension of the heap
+     *        dimension of the heap
      * @param a
-     *            an array of keys
+     *        an array of keys
      * @throws IllegalArgumentException
-     *             if {@code d < 2}
+     *         if {@code d < 2}
      */
     public MultiwayMinPQ(Key[] a, int d) {
         if (d < 2)
@@ -92,13 +92,13 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue with given indexes Worst case is O(a*log-d(n))
      *
      * @param d
-     *            dimension of the heap
+     *        dimension of the heap
      * @param comparator
-     *            a Comparator over the keys
+     *        a Comparator over the keys
      * @param a
-     *            an array of keys
+     *        an array of keys
      * @throws IllegalArgumentException
-     *             if {@code d < 2}
+     *         if {@code d < 2}
      */
     public MultiwayMinPQ(Comparator<Key> comparator, Key[] a, int d) {
         if (d < 2)
@@ -133,7 +133,7 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      * Puts a Key on the priority queue Worst case is O(log-d(n))
      *
      * @param key
-     *            a Key
+     *        a Key
      */
     public void insert(Key key) {
         keys[n + d] = key;
@@ -149,7 +149,7 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      *
      * @return the minimum key currently in the priority queue
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key minKey() {
         if (isEmpty())
@@ -162,7 +162,7 @@ public class MultiwayMinPQ<Key> implements Iterable<Key> {
      *
      * @return the minimum key
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key delMin() {
         if (isEmpty())

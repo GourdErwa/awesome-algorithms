@@ -29,9 +29,9 @@ public class StaticSETofInts {
      * Initializes a set of integers specified by the integer array.
      *
      * @param keys
-     *            the array of integers
+     *        the array of integers
      * @throws IllegalArgumentException
-     *             if the array contains duplicate integers
+     *         if the array contains duplicate integers
      */
     public StaticSETofInts(int[] keys) {
 
@@ -53,7 +53,7 @@ public class StaticSETofInts {
      * Is the key in this set of integers?
      *
      * @param key
-     *            the search key
+     *        the search key
      * @return true if the set of integers contains the key; false otherwise
      */
     public boolean contains(int key) {
@@ -65,7 +65,7 @@ public class StaticSETofInts {
      * not in the set).
      *
      * @param key
-     *            the search key
+     *        the search key
      * @return the number of keys in this set less than the key (if the key is in the set) or -1 (if the key is not in
      *         the set).
      */

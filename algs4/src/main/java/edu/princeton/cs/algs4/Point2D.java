@@ -46,12 +46,12 @@ public final class Point2D implements Comparable<Point2D> {
      * Initializes a new point (x, y).
      *
      * @param x
-     *            the x-coordinate
+     *        the x-coordinate
      * @param y
-     *            the y-coordinate
+     *        the y-coordinate
      * @throws IllegalArgumentException
-     *             if either {@code x} or {@code y} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
-     *             {@code Double.NEGATIVE_INFINITY}
+     *         if either {@code x} or {@code y} is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
+     *         {@code Double.NEGATIVE_INFINITY}
      */
     public Point2D(double x, double y) {
         if (Double.isInfinite(x) || Double.isInfinite(y))
@@ -120,11 +120,11 @@ public final class Point2D implements Comparable<Point2D> {
      * Returns true if a→b→c is a counterclockwise turn.
      *
      * @param a
-     *            first point
+     *        first point
      * @param b
-     *            second point
+     *        second point
      * @param c
-     *            third point
+     *        third point
      * @return { -1, 0, +1 } if a→b→c is a { clockwise, collinear; counterclocwise } turn.
      */
     public static int ccw(Point2D a, Point2D b, Point2D c) {
@@ -141,11 +141,11 @@ public final class Point2D implements Comparable<Point2D> {
      * Returns twice the signed area of the triangle a-b-c.
      *
      * @param a
-     *            first point
+     *        first point
      * @param b
-     *            second point
+     *        second point
      * @param c
-     *            third point
+     *        third point
      * @return twice the signed area of the triangle a-b-c
      */
     public static double area2(Point2D a, Point2D b, Point2D c) {
@@ -156,7 +156,7 @@ public final class Point2D implements Comparable<Point2D> {
      * Returns the Euclidean distance between this point and that point.
      *
      * @param that
-     *            the other point
+     *        the other point
      * @return the Euclidean distance between this point and that point
      */
     public double distanceTo(Point2D that) {
@@ -169,7 +169,7 @@ public final class Point2D implements Comparable<Point2D> {
      * Returns the square of the Euclidean distance between this point and that point.
      *
      * @param that
-     *            the other point
+     *        the other point
      * @return the square of the Euclidean distance between this point and that point
      */
     public double distanceSquaredTo(Point2D that) {
@@ -184,7 +184,7 @@ public final class Point2D implements Comparable<Point2D> {
      * {@code x0 < x1}.
      *
      * @param that
-     *            the other point
+     *        the other point
      * @return the value {@code 0} if this string is equal to the argument string (precisely when {@code equals()}
      *         returns {@code true}); a negative integer if this point is less than the argument point; and a positive
      *         integer if this point is greater than the argument point
@@ -320,7 +320,7 @@ public final class Point2D implements Comparable<Point2D> {
      * Compares this point to the specified point.
      *
      * @param other
-     *            the other point
+     *        the other point
      * @return {@code true} if this point equals {@code other}; {@code false} otherwise
      */
     @Override
@@ -368,7 +368,7 @@ public final class Point2D implements Comparable<Point2D> {
      * Plot a line from this point to that point using standard draw.
      *
      * @param that
-     *            the other point
+     *        the other point
      */
     public void drawTo(Point2D that) {
         StdDraw.line(this.x, this.y, that.x, that.y);
@@ -378,7 +378,7 @@ public final class Point2D implements Comparable<Point2D> {
      * Unit tests the point data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int x0 = Integer.parseInt(args[0]);

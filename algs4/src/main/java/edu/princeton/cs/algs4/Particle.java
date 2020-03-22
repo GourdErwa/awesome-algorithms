@@ -34,19 +34,19 @@ public class Particle {
      * Initializes a particle with the specified position, velocity, radius, mass, and color.
      *
      * @param rx
-     *            <em>x</em>-coordinate of position
+     *        <em>x</em>-coordinate of position
      * @param ry
-     *            <em>y</em>-coordinate of position
+     *        <em>y</em>-coordinate of position
      * @param vx
-     *            <em>x</em>-coordinate of velocity
+     *        <em>x</em>-coordinate of velocity
      * @param vy
-     *            <em>y</em>-coordinate of velocity
+     *        <em>y</em>-coordinate of velocity
      * @param radius
-     *            the radius
+     *        the radius
      * @param mass
-     *            the mass
+     *        the mass
      * @param color
-     *            the color
+     *        the color
      */
     public Particle(double rx, double ry, double vx, double vy, double radius, double mass, Color color) {
         this.vx = vx;
@@ -76,7 +76,7 @@ public class Particle {
      * Moves this particle in a straight line (based on its velocity) for the specified amount of time.
      *
      * @param dt
-     *            the amount of time
+     *        the amount of time
      */
     public void move(double dt) {
         rx += vx * dt;
@@ -108,7 +108,7 @@ public class Particle {
      * collisions.
      *
      * @param that
-     *            the other particle
+     *        the other particle
      * @return the amount of time for this particle to collide with the specified particle, assuming no interening
      *         collisions; {@code Double.POSITIVE_INFINITY} if the particles will not collide
      */
@@ -170,7 +170,7 @@ public class Particle {
      * Assumes that the particles are colliding at this instant.
      *
      * @param that
-     *            the other particle
+     *        the other particle
      */
     public void bounceOff(Particle that) {
         double dx = that.rx - this.rx;

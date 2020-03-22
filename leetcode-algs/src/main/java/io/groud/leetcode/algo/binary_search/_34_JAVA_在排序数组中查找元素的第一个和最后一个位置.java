@@ -25,13 +25,13 @@ public class _34_JAVA_在排序数组中查找元素的第一个和最后一个�
          * 在原始数组中找右边界
          *
          * @param nums
-         *            nums
+         *        nums
          * @param left
-         *            left
+         *        left
          * @param right
-         *            right
+         *        right
          * @param target
-         *            目标数
+         *        目标数
          * @return 寻找的右边界
          */
         private int binarySearchRight(int[] nums, int left, int right, int target) {
@@ -55,11 +55,11 @@ public class _34_JAVA_在排序数组中查找元素的第一个和最后一个�
          * 在 0-右边界 范围内找左边界
          *
          * @param nums
-         *            nums
+         *        nums
          * @param right
-         *            右边界
+         *        右边界
          * @param target
-         *            目标数
+         *        目标数
          * @return 寻找的左边界
          */
         private int binarySearchLeft(int[] nums, int right, int target) {

@@ -11,11 +11,12 @@
 
 package edu.princeton.cs.algs4;
 
-import javax.sound.sampled.*;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
+import javax.sound.sampled.*;
 
 /**
  * <i>Standard audio</i>. This class provides a basic capability for creating, reading, and saving audio.
@@ -132,9 +133,9 @@ public final class StdAudio {
      * clipped.
      *
      * @param sample
-     *            the sample to play
+     *        the sample to play
      * @throws IllegalArgumentException
-     *             if the sample is {@code Double.NaN}
+     *         if the sample is {@code Double.NaN}
      */
     public static void play(double sample) {
         if (Double.isNaN(sample))
@@ -165,11 +166,11 @@ public final class StdAudio {
      * be clipped.
      *
      * @param samples
-     *            the array of samples to play
+     *        the array of samples to play
      * @throws IllegalArgumentException
-     *             if any sample is {@code Double.NaN}
+     *         if any sample is {@code Double.NaN}
      * @throws IllegalArgumentException
-     *             if {@code samples} is {@code null}
+     *         if {@code samples} is {@code null}
      */
     public static void play(double[] samples) {
         if (samples == null)
@@ -184,7 +185,7 @@ public final class StdAudio {
      * -1.0 and +1.0. The audio file must be 16-bit with a sampling rate of 44,100. It can be mono or stereo.
      *
      * @param filename
-     *            the name of the audio file
+     *        the name of the audio file
      * @return the array of samples
      */
     public static double[] read(String filename) {
@@ -258,17 +259,17 @@ public final class StdAudio {
      * Saves the double array as an audio file (using .wav or .au format).
      *
      * @param filename
-     *            the name of the audio file
+     *        the name of the audio file
      * @param samples
-     *            the array of samples
+     *        the array of samples
      * @throws IllegalArgumentException
-     *             if unable to save {@code filename}
+     *         if unable to save {@code filename}
      * @throws IllegalArgumentException
-     *             if {@code samples} is {@code null}
+     *         if {@code samples} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code filename} is {@code null}
+     *         if {@code filename} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code filename} extension is not {@code .wav} or {@code .au}
+     *         if {@code filename} extension is not {@code .wav} or {@code .au}
      */
     public static void save(String filename, double[] samples) {
         if (filename == null) {
@@ -310,11 +311,11 @@ public final class StdAudio {
      * Plays an audio file (in .wav, .mid, or .au format) in a background thread.
      *
      * @param filename
-     *            the name of the audio file
+     *        the name of the audio file
      * @throws IllegalArgumentException
-     *             if unable to play {@code filename}
+     *         if unable to play {@code filename}
      * @throws IllegalArgumentException
-     *             if {@code filename} is {@code null}
+     *         if {@code filename} is {@code null}
      */
     public static synchronized void play(final String filename) {
         new Thread(new Runnable() {
@@ -360,9 +361,9 @@ public final class StdAudio {
      * Loops an audio file (in .wav, .mid, or .au format) in a background thread.
      *
      * @param filename
-     *            the name of the audio file
+     *        the name of the audio file
      * @throws IllegalArgumentException
-     *             if {@code filename} is {@code null}
+     *         if {@code filename} is {@code null}
      */
     public static synchronized void loop(String filename) {
         if (filename == null)
@@ -413,13 +414,13 @@ public final class StdAudio {
      * Test client - play an A major scale to standard audio.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     /**
      * Test client - play an A major scale to standard audio.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

@@ -39,7 +39,7 @@ public class SegmentTree {
      * Time-Complexity: O(n*log(n))
      *
      * @param array
-     *            the Initialization array
+     *        the Initialization array
      */
     public SegmentTree(int[] array) {
         this.array = Arrays.copyOf(array, array.length);
@@ -79,9 +79,9 @@ public class SegmentTree {
      * Time-Complexity: O(log(n))
      *
      * @param from
-     *            from index
+     *        from index
      * @param to
-     *            to index
+     *        to index
      * @return sum
      */
     public int rsq(int from, int to) {
@@ -117,9 +117,9 @@ public class SegmentTree {
      * Time-Complexity: O(log(n))
      *
      * @param from
-     *            from index
+     *        from index
      * @param to
-     *            to index
+     *        to index
      * @return min
      */
     public int rMinQ(int from, int to) {
@@ -158,11 +158,11 @@ public class SegmentTree {
      * Time-Complexity: O(log(n))
      *
      * @param from
-     *            from index
+     *        from index
      * @param to
-     *            to index
+     *        to index
      * @param value
-     *            value
+     *        value
      */
     public void update(int from, int to, int value) {
         update(1, from, to, value);
@@ -255,7 +255,7 @@ public class SegmentTree {
      * Example: init set 1 2 3 4 5 6 rsq 1 3 Sum from 1 to 3 = 6 rmq 1 3 Min from 1 to 3 = 1 input up 1 3 [3,2,3,4,5,6]
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

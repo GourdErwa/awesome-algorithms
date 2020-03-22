@@ -43,7 +43,7 @@ public class Knuth {
      * generates independent and uniformly distributed numbers between 0 and 1).
      *
      * @param a
-     *            the array to be shuffled
+     *        the array to be shuffled
      */
     public static void shuffle(Object[] a) {
         int n = a.length;
@@ -61,7 +61,7 @@ public class Knuth {
      * generates independent and uniformly distributed numbers between 0 and 1).
      *
      * @param a
-     *            the array to be shuffled
+     *        the array to be shuffled
      */
     public static void shuffleAlternate(Object[] a) {
         int n = a.length;
@@ -78,7 +78,7 @@ public class Knuth {
      * Reads in a sequence of strings from standard input, shuffles them, and prints out the results.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

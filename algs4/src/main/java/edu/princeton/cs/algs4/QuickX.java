@@ -31,7 +31,7 @@ public class QuickX {
      * Rearranges the array in ascending order, using the natural order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(Comparable[] a) {
         // StdRandom.shuffle(a);
@@ -139,7 +139,7 @@ public class QuickX {
      * quicksort); and prints them to standard output in ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

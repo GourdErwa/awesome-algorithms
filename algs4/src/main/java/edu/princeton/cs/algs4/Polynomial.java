@@ -30,11 +30,11 @@ public class Polynomial {
      * Initializes a new polynomial a x^b
      *
      * @param a
-     *            the leading coefficient
+     *        the leading coefficient
      * @param b
-     *            the exponent
+     *        the exponent
      * @throws IllegalArgumentException
-     *             if {@code b} is negative
+     *         if {@code b} is negative
      */
     public Polynomial(int a, int b) {
         if (b < 0) {
@@ -70,7 +70,7 @@ public class Polynomial {
      * Returns the sum of this polynomial and the specified polynomial.
      *
      * @param that
-     *            the other polynomial
+     *        the other polynomial
      * @return the polynomial whose value is {@code (this(x) + that(x))}
      */
     public Polynomial plus(Polynomial that) {
@@ -87,7 +87,7 @@ public class Polynomial {
      * Returns the result of subtracting the specified polynomial from this polynomial.
      *
      * @param that
-     *            the other polynomial
+     *        the other polynomial
      * @return the polynomial whose value is {@code (this(x) - that(x))}
      */
     public Polynomial minus(Polynomial that) {
@@ -105,7 +105,7 @@ public class Polynomial {
      * the degrees. (Faster algorithms are known, e.g., via FFT.)
      *
      * @param that
-     *            the other polynomial
+     *        the other polynomial
      * @return the polynomial whose value is {@code (this(x) * that(x))}
      */
     public Polynomial times(Polynomial that) {
@@ -122,7 +122,7 @@ public class Polynomial {
      * of the degrees. (Faster algorithms are known, e.g., via FFT.)
      *
      * @param that
-     *            the other polynomial
+     *        the other polynomial
      * @return the polynomial whose value is {@code (this(that(x)))}
      */
     public Polynomial compose(Polynomial that) {
@@ -138,7 +138,7 @@ public class Polynomial {
      * Compares this polynomial to the specified polynomial.
      *
      * @param other
-     *            the other polynoimal
+     *        the other polynoimal
      * @return {@code true} if this polynomial equals {@code other}; {@code false} otherwise
      */
     @Override
@@ -177,7 +177,7 @@ public class Polynomial {
      * Returns the result of evaluating this polynomial at the point x.
      *
      * @param x
-     *            the point at which to evaluate the polynomial
+     *        the point at which to evaluate the polynomial
      * @return the integer whose value is {@code (this(x))}
      */
     public int evaluate(int x) {
@@ -191,7 +191,7 @@ public class Polynomial {
      * Compares two polynomials by degree, breaking ties by coefficient of leading term.
      *
      * @param that
-     *            the other point
+     *        the other point
      * @return the value {@code 0} if this polynomial is equal to the argument polynomial (precisely when
      *         {@code equals()} returns {@code true}); a negative integer if this polynomialt is less than the argument
      *         polynomial; and a positive integer if this polynomial is greater than the argument point
@@ -243,7 +243,7 @@ public class Polynomial {
      * Unit tests the polynomial data type.
      *
      * @param args
-     *            the command-line arguments (none)
+     *        the command-line arguments (none)
      */
     public static void main(String[] args) {
         Polynomial zero = new Polynomial(0, 0);

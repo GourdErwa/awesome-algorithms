@@ -25,7 +25,7 @@ public class LinkedListUtil {
      * 反转链表
      *
      * @param node
-     *            待反转链表
+     *        待反转链表
      * @return 反转后的链表
      */
     public ListNode reverseList(ListNode node) {
@@ -49,7 +49,7 @@ public class LinkedListUtil {
      * tip：如果进行回文比对时奇数比偶数多比对一个中间点的数值。比如 1,2,3,4,5 时返回 3，对于前后部分都包含了 3 这个节点。
      *
      * @param node
-     *            node
+     *        node
      * @return 中间节点
      */
     public ListNode findMiddleNode(ListNode node) {

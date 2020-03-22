@@ -47,9 +47,9 @@ public class Digraph {
      * Initializes an empty digraph with <em>V</em> vertices.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      */
     public Digraph(int V) {
         if (V < 0)
@@ -69,15 +69,15 @@ public class Digraph {
      * whitespace.
      *
      * @param in
-     *            the input stream
+     *        the input stream
      * @throws IllegalArgumentException
-     *             if {@code in} is {@code null}
+     *         if {@code in} is {@code null}
      * @throws IllegalArgumentException
-     *             if the endpoints of any edge are not in prescribed range
+     *         if the endpoints of any edge are not in prescribed range
      * @throws IllegalArgumentException
-     *             if the number of vertices or edges is negative
+     *         if the number of vertices or edges is negative
      * @throws IllegalArgumentException
-     *             if the input stream is in the wrong format
+     *         if the input stream is in the wrong format
      */
     public Digraph(In in) {
         if (in == null)
@@ -108,9 +108,9 @@ public class Digraph {
      * Initializes a new digraph that is a deep copy of the specified digraph.
      *
      * @param G
-     *            the digraph to copy
+     *        the digraph to copy
      * @throws IllegalArgumentException
-     *             if {@code G} is {@code null}
+     *         if {@code G} is {@code null}
      */
     public Digraph(Digraph G) {
         if (G == null)
@@ -172,11 +172,11 @@ public class Digraph {
      * Adds the directed edge v→w to this digraph.
      *
      * @param v
-     *            the tail vertex
+     *        the tail vertex
      * @param w
-     *            the head vertex
+     *        the head vertex
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+     *         unless both {@code 0 <= v < V} and {@code 0 <= w < V}
      */
     public void addEdge(int v, int w) {
         validateVertex(v);
@@ -190,10 +190,10 @@ public class Digraph {
      * Returns the vertices adjacent from vertex {@code v} in this digraph.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the vertices adjacent from vertex {@code v} in this digraph, as an iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<Integer> adj(int v) {
         validateVertex(v);
@@ -205,10 +205,10 @@ public class Digraph {
      * vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the outdegree of vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int outdegree(int v) {
         validateVertex(v);
@@ -220,10 +220,10 @@ public class Digraph {
      * vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the indegree of vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int indegree(int v) {
         validateVertex(v);
@@ -268,7 +268,7 @@ public class Digraph {
      * Unit tests the {@code Digraph} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

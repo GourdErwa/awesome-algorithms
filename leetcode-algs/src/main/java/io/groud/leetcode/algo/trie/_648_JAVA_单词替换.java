@@ -1,6 +1,6 @@
 package io.groud.leetcode.algo.trie;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * https://leetcode-cn.com/problems/replace-words/

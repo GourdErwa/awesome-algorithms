@@ -39,7 +39,7 @@ public class ThreeSum {
      * Prints to standard output the (i, j, k) with {@code i < j < k} such that {@code a[i] + a[j] + a[k] == 0}.
      *
      * @param a
-     *            the array of integers
+     *        the array of integers
      */
     public static void printAll(int[] a) {
         int n = a.length;
@@ -58,7 +58,7 @@ public class ThreeSum {
      * Returns the number of triples (i, j, k) with {@code i < j < k} such that {@code a[i] + a[j] + a[k] == 0}.
      *
      * @param a
-     *            the array of integers
+     *        the array of integers
      * @return the number of triples (i, j, k) with {@code i < j < k} such that {@code a[i] + a[j] + a[k] == 0}
      */
     public static int count(int[] a) {
@@ -81,7 +81,7 @@ public class ThreeSum {
      * sum to exactly zero; prints out the time to perform the computation.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

@@ -38,7 +38,7 @@ public class Accumulator {
      * Adds the specified data value to the accumulator.
      *
      * @param x
-     *            the data value
+     *        the data value
      */
     public void addDataValue(double x) {
         n++;
@@ -99,7 +99,7 @@ public class Accumulator {
      * the accumulator; and prints the mean, sample standard deviation, and sample variance to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Accumulator stats = new Accumulator();

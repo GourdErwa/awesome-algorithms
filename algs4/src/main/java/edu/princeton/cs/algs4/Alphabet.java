@@ -82,7 +82,7 @@ public class Alphabet {
      * Initializes a new alphabet from the given set of characters.
      *
      * @param alpha
-     *            the set of characters
+     *        the set of characters
      */
     public Alphabet(String alpha) {
 
@@ -110,7 +110,7 @@ public class Alphabet {
      * Initializes a new alphabet using characters 0 through R-1.
      *
      * @param radix
-     *            the number of characters in the alphabet (the radix R)
+     *        the number of characters in the alphabet (the radix R)
      */
     private Alphabet(int radix) {
         this.R = radix;
@@ -135,7 +135,7 @@ public class Alphabet {
      * Returns true if the argument is a character in this alphabet.
      *
      * @param c
-     *            the character
+     *        the character
      * @return {@code true} if {@code c} is a character in this alphabet; {@code false} otherwise
      */
     public boolean contains(char c) {
@@ -178,10 +178,10 @@ public class Alphabet {
      * Returns the index corresponding to the argument character.
      *
      * @param c
-     *            the character
+     *        the character
      * @return the index corresponding to the character {@code c}
      * @throws IllegalArgumentException
-     *             unless {@code c} is a character in this alphabet
+     *         unless {@code c} is a character in this alphabet
      */
     public int toIndex(char c) {
         if (c >= inverse.length || inverse[c] == -1) {
@@ -194,10 +194,10 @@ public class Alphabet {
      * Returns the indices corresponding to the argument characters.
      *
      * @param s
-     *            the characters
+     *        the characters
      * @return the indices corresponding to the characters {@code s}
      * @throws IllegalArgumentException
-     *             unless every character in {@code s} is a character in this alphabet
+     *         unless every character in {@code s} is a character in this alphabet
      */
     public int[] toIndices(String s) {
         char[] source = s.toCharArray();
@@ -211,10 +211,10 @@ public class Alphabet {
      * Returns the character corresponding to the argument index.
      *
      * @param index
-     *            the index
+     *        the index
      * @return the character corresponding to the index {@code index}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= index < R}
+     *         unless {@code 0 <= index < R}
      */
     public char toChar(int index) {
         if (index < 0 || index >= R) {
@@ -227,10 +227,10 @@ public class Alphabet {
      * Returns the characters corresponding to the argument indices.
      *
      * @param indices
-     *            the indices
+     *        the indices
      * @return the characters corresponding to the indices {@code indices}
      * @throws IllegalArgumentException
-     *             unless {@code 0 < indices[i] < R} for every {@code i}
+     *         unless {@code 0 < indices[i] < R} for every {@code i}
      */
     public String toChars(int[] indices) {
         StringBuilder s = new StringBuilder(indices.length);
@@ -243,7 +243,7 @@ public class Alphabet {
      * Unit tests the {@code Alphabet} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int[] encoded1 = Alphabet.BASE64.toIndices("NowIsTheTimeForAllGoodMen");

@@ -26,17 +26,17 @@ public final class RectHV {
      * Initializes a new rectangle [<em>xmin</em>, <em>xmax</em>] x [<em>ymin</em>, <em>ymax</em>].
      *
      * @param xmin
-     *            the <em>x</em>-coordinate of the lower-left endpoint
+     *        the <em>x</em>-coordinate of the lower-left endpoint
      * @param ymin
-     *            the <em>y</em>-coordinate of the lower-left endpoint
+     *        the <em>y</em>-coordinate of the lower-left endpoint
      * @param xmax
-     *            the <em>x</em>-coordinate of the upper-right endpoint
+     *        the <em>x</em>-coordinate of the upper-right endpoint
      * @param ymax
-     *            the <em>y</em>-coordinate of the upper-right endpoint
+     *        the <em>y</em>-coordinate of the upper-right endpoint
      * @throws IllegalArgumentException
-     *             if any of {@code xmin}, {@code ymin}, {@code xmax}, or {@code ymax} is {@code Double.NaN}.
+     *         if any of {@code xmin}, {@code ymin}, {@code xmax}, or {@code ymax} is {@code Double.NaN}.
      * @throws IllegalArgumentException
-     *             if {@code xmax < xmin} or {@code ymax < ymin}.
+     *         if {@code xmax < xmin} or {@code ymax < ymin}.
      */
     public RectHV(double xmin, double ymin, double xmax, double ymax) {
         this.xmin = xmin;
@@ -116,7 +116,7 @@ public final class RectHV {
      * boundary of each rectangle) and <em>nested intersctions</em> (when one rectangle is contained inside the other)
      *
      * @param that
-     *            the other rectangle
+     *        the other rectangle
      * @return {@code true} if this rectangle intersect the argument rectangle at one or more points
      */
     public boolean intersects(RectHV that) {
@@ -127,7 +127,7 @@ public final class RectHV {
      * Returns true if this rectangle contain the point.
      *
      * @param p
-     *            the point
+     *        the point
      * @return {@code true} if this rectangle contain the point {@code p}, possibly at the boundary; {@code false}
      *         otherwise
      */
@@ -139,7 +139,7 @@ public final class RectHV {
      * Returns the Euclidean distance between this rectangle and the point {@code p}.
      *
      * @param p
-     *            the point
+     *        the point
      * @return the Euclidean distance between the point {@code p} and the closest point on this rectangle; 0 if the
      *         point is contained in this rectangle
      */
@@ -151,7 +151,7 @@ public final class RectHV {
      * Returns the square of the Euclidean distance between this rectangle and the point {@code p}.
      *
      * @param p
-     *            the point
+     *        the point
      * @return the square of the Euclidean distance between the point {@code p} and the closest point on this rectangle;
      *         0 if the point is contained in this rectangle
      */
@@ -172,7 +172,7 @@ public final class RectHV {
      * Compares this rectangle to the specified rectangle.
      *
      * @param other
-     *            the other rectangle
+     *        the other rectangle
      * @return {@code true} if this rectangle equals {@code other}; {@code false} otherwise
      */
     @Override

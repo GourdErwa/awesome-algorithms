@@ -35,9 +35,9 @@ public class SymbolDigraph {
      * vertex, followed by a list of the names of the vertices adjacent to that vertex, separated by the delimiter.
      *
      * @param filename
-     *            the name of the file
+     *        the name of the file
      * @param delimiter
-     *            the delimiter between fields
+     *        the delimiter between fields
      */
     public SymbolDigraph(String filename, String delimiter) {
         st = new ST<String, Integer>();
@@ -77,7 +77,7 @@ public class SymbolDigraph {
      * Does the digraph contain the vertex named {@code s}?
      *
      * @param s
-     *            the name of a vertex
+     *        the name of a vertex
      * @return {@code true} if {@code s} is the name of a vertex, and {@code false} otherwise
      */
     public boolean contains(String s) {
@@ -88,7 +88,7 @@ public class SymbolDigraph {
      * Returns the integer associated with the vertex named {@code s}.
      *
      * @param s
-     *            the name of a vertex
+     *        the name of a vertex
      * @return the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
      * @deprecated Replaced by {@link #indexOf(String)}.
      */
@@ -101,7 +101,7 @@ public class SymbolDigraph {
      * Returns the integer associated with the vertex named {@code s}.
      *
      * @param s
-     *            the name of a vertex
+     *        the name of a vertex
      * @return the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
      */
     public int indexOf(String s) {
@@ -112,10 +112,10 @@ public class SymbolDigraph {
      * Returns the name of the vertex associated with the integer {@code v}.
      *
      * @param v
-     *            the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
+     *        the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
      * @return the name of the vertex associated with the integer {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      * @deprecated Replaced by {@link #nameOf(int)}.
      */
     @Deprecated
@@ -128,10 +128,10 @@ public class SymbolDigraph {
      * Returns the name of the vertex associated with the integer {@code v}.
      *
      * @param v
-     *            the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
+     *        the integer corresponding to a vertex (between 0 and <em>V</em> - 1)
      * @return the name of the vertex associated with the integer {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public String nameOf(int v) {
         validateVertex(v);
@@ -171,7 +171,7 @@ public class SymbolDigraph {
      * Unit tests the {@code SymbolDigraph} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String filename = args[0];

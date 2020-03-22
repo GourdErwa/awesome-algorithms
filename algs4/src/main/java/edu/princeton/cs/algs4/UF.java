@@ -57,9 +57,9 @@ public class UF {
      * each elements is in its own set.
      *
      * @param n
-     *            the number of elements
+     *        the number of elements
      * @throws IllegalArgumentException
-     *             if {@code n < 0}
+     *         if {@code n < 0}
      */
     public UF(int n) {
         if (n < 0)
@@ -77,10 +77,10 @@ public class UF {
      * Returns the canonical element of the set containing element {@code p}.
      *
      * @param p
-     *            an element
+     *        an element
      * @return the canonical element of the set containing {@code p}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= p < n}
+     *         unless {@code 0 <= p < n}
      */
     public int find(int p) {
         validate(p);
@@ -104,12 +104,12 @@ public class UF {
      * Returns true if the two elements are in the same set.
      *
      * @param p
-     *            one element
+     *        one element
      * @param q
-     *            the other element
+     *        the other element
      * @return {@code true} if {@code p} and {@code q} are in the same set; {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= p < n} and {@code 0 <= q < n}
+     *         unless both {@code 0 <= p < n} and {@code 0 <= q < n}
      * @deprecated Replace with two calls to {@link #find(int)}.
      */
     @Deprecated
@@ -121,11 +121,11 @@ public class UF {
      * Merges the set containing element {@code p} with the the set containing element {@code q}.
      *
      * @param p
-     *            one element
+     *        one element
      * @param q
-     *            the other element
+     *        the other element
      * @throws IllegalArgumentException
-     *             unless both {@code 0 <= p < n} and {@code 0 <= q < n}
+     *         unless both {@code 0 <= p < n} and {@code 0 <= q < n}
      */
     public void union(int p, int q) {
         int rootP = find(p);
@@ -159,7 +159,7 @@ public class UF {
      * two sets and print the pair to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int n = StdIn.readInt();

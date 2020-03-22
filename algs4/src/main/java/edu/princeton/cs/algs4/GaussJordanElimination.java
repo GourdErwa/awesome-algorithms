@@ -51,9 +51,9 @@ public class GaussJordanElimination {
      * matrix and <em>b</em> is a length <em>n</em> vector.
      *
      * @param A
-     *            the <em>n</em>-by-<em>n</em> constraint matrix
+     *        the <em>n</em>-by-<em>n</em> constraint matrix
      * @param b
-     *            the length <em>n</em> right-hand-side vector
+     *        the length <em>n</em> right-hand-side vector
      */
     public GaussJordanElimination(double[][] A, double[] b) {
         n = b.length;
@@ -313,7 +313,7 @@ public class GaussJordanElimination {
      * Unit tests the {@code GaussJordanElimination} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

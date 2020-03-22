@@ -42,7 +42,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue Worst case is O(1)
      *
      * @param C
-     *            a Comparator over the Keys
+     *        a Comparator over the Keys
      */
     public FibonacciMinPQ(Comparator<Key> C) {
         comp = C;
@@ -59,7 +59,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue with given keys Worst case is O(n)
      *
      * @param a
-     *            an array of keys
+     *        an array of keys
      */
     public FibonacciMinPQ(Key[] a) {
         comp = new MyComparator();
@@ -71,9 +71,9 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue with given keys Worst case is O(n)
      *
      * @param C
-     *            a comparator over the keys
+     *        a comparator over the keys
      * @param a
-     *            an array of keys
+     *        an array of keys
      */
     public FibonacciMinPQ(Comparator<Key> C, Key[] a) {
         comp = C;
@@ -103,7 +103,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      * Insert a key in the queue Worst case is O(1)
      *
      * @param key
-     *            a Key
+     *        a Key
      */
     public void insert(Key key) {
         Node x = new Node();
@@ -121,7 +121,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      *
      * @return the minimum key currently in the priority queue
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key minKey() {
         if (isEmpty())
@@ -134,7 +134,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      *
      * @return the minimum key
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key delMin() {
         if (isEmpty())
@@ -159,7 +159,7 @@ public class FibonacciMinPQ<Key> implements Iterable<Key> {
      * Merges two heaps together This operation is destructive Worst case is O(1)
      *
      * @param that
-     *            a Fibonacci heap
+     *        a Fibonacci heap
      * @return the union of the two heaps
      */
     public FibonacciMinPQ<Key> union(FibonacciMinPQ<Key> that) {

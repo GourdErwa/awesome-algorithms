@@ -35,7 +35,7 @@ public class DirectedEulerianPath {
      * Computes an Eulerian path in the specified digraph, if one exists.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      */
     public DirectedEulerianPath(Digraph G) {
 
@@ -201,7 +201,7 @@ public class DirectedEulerianPath {
      * Unit tests the {@code DirectedEulerianPath} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);

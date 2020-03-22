@@ -67,7 +67,7 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
      * Adds the item to this bag.
      *
      * @param item
-     *            the item to add to this bag
+     *        the item to add to this bag
      */
     public void add(Item item) {
         if (n == a.length)
@@ -107,7 +107,7 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
      * Unit tests the {@code ResizingArrayBag} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         ResizingArrayBag<String> bag = new ResizingArrayBag<String>();

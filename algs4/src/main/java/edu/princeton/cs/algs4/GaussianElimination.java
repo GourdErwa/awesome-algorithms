@@ -48,11 +48,11 @@ public class GaussianElimination {
      * matrix and <em>b</em> is a length <em>m</em> vector.
      *
      * @param A
-     *            the <em>m</em>-by-<em>n</em> constraint matrix
+     *        the <em>m</em>-by-<em>n</em> constraint matrix
      * @param b
-     *            the length <em>m</em> right-hand-side vector
+     *        the length <em>m</em> right-hand-side vector
      * @throws IllegalArgumentException
-     *             if the dimensions disagree, i.e., the length of {@code b} does not equal {@code m}
+     *         if the dimensions disagree, i.e., the length of {@code b} does not equal {@code m}
      */
     public GaussianElimination(double[][] A, double[] b) {
         m = A.length;
@@ -265,7 +265,7 @@ public class GaussianElimination {
      * Unit tests the {@code GaussianElimination} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         test1();

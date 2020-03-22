@@ -1,10 +1,10 @@
 package io.groud.leetcode.algo.array;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * @author Li.Wei by 2020/2/8

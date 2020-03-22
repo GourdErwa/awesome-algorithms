@@ -46,7 +46,7 @@ public class NFA {
      * Initializes the NFA from the specified regular expression.
      *
      * @param regexp
-     *            the regular expression
+     *        the regular expression
      */
     public NFA(String regexp) {
         this.regexp = regexp;
@@ -87,7 +87,7 @@ public class NFA {
      * Returns true if the text is matched by the regular expression.
      *
      * @param txt
-     *            the text
+     *        the text
      * @return {@code true} if the text is matched by the regular expression, {@code false} otherwise
      */
     public boolean recognizes(String txt) {
@@ -131,7 +131,7 @@ public class NFA {
      * Unit tests the {@code NFA} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String regexp = "(" + args[0] + ")";

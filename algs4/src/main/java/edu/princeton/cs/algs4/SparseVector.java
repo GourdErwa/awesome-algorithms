@@ -32,7 +32,7 @@ public class SparseVector {
      * Initializes a d-dimensional zero vector.
      *
      * @param d
-     *            the dimension of the vector
+     *        the dimension of the vector
      */
     public SparseVector(int d) {
         this.d = d;
@@ -43,11 +43,11 @@ public class SparseVector {
      * Sets the ith coordinate of this vector to the specified value.
      *
      * @param i
-     *            the index
+     *        the index
      * @param value
-     *            the new value
+     *        the new value
      * @throws IllegalArgumentException
-     *             unless i is between 0 and d-1
+     *         unless i is between 0 and d-1
      */
     public void put(int i, double value) {
         if (i < 0 || i >= d)
@@ -62,10 +62,10 @@ public class SparseVector {
      * Returns the ith coordinate of this vector.
      *
      * @param i
-     *            the index
+     *        the index
      * @return the value of the ith coordinate of this vector
      * @throws IllegalArgumentException
-     *             unless i is between 0 and d-1
+     *         unless i is between 0 and d-1
      */
     public double get(int i) {
         if (i < 0 || i >= d)
@@ -109,10 +109,10 @@ public class SparseVector {
      * Returns the inner product of this vector with the specified vector.
      *
      * @param that
-     *            the other vector
+     *        the other vector
      * @return the dot product between this vector and that vector
      * @throws IllegalArgumentException
-     *             if the lengths of the two vectors are not equal
+     *         if the lengths of the two vectors are not equal
      */
     public double dot(SparseVector that) {
         if (this.d != that.d)
@@ -136,10 +136,10 @@ public class SparseVector {
      * Returns the inner product of this vector with the specified array.
      *
      * @param that
-     *            the array
+     *        the array
      * @return the dot product between this vector and that array
      * @throws IllegalArgumentException
-     *             if the dimensions of the vector and the array are not equal
+     *         if the dimensions of the vector and the array are not equal
      */
     public double dot(double[] that) {
         double sum = 0.0;
@@ -172,7 +172,7 @@ public class SparseVector {
      * Returns the scalar-vector product of this vector with the specified scalar.
      *
      * @param alpha
-     *            the scalar
+     *        the scalar
      * @return the scalar-vector product of this vector with the specified scalar
      */
     public SparseVector scale(double alpha) {
@@ -186,10 +186,10 @@ public class SparseVector {
      * Returns the sum of this vector and the specified vector.
      *
      * @param that
-     *            the vector to add to this vector
+     *        the vector to add to this vector
      * @return the sum of this vector and that vector
      * @throws IllegalArgumentException
-     *             if the dimensions of the two vectors are not equal
+     *         if the dimensions of the two vectors are not equal
      */
     public SparseVector plus(SparseVector that) {
         if (this.d != that.d)
@@ -220,7 +220,7 @@ public class SparseVector {
      * Unit tests the {@code SparseVector} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         SparseVector a = new SparseVector(10);

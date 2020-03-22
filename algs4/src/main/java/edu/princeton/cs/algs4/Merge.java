@@ -79,7 +79,7 @@ public class Merge {
      * Rearranges the array in ascending order, using the natural order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(Comparable[] a) {
         Comparable[] aux = new Comparable[a.length];
@@ -139,7 +139,7 @@ public class Merge {
      * Returns a permutation that gives the elements in the array in ascending order.
      *
      * @param a
-     *            the array
+     *        the array
      * @return a permutation {@code p[]} such that {@code a[p[0]]}, {@code a[p[1]]}, ..., {@code a[p[N-1]]} are in
      *         ascending order
      */
@@ -176,7 +176,7 @@ public class Merge {
      * ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

@@ -58,10 +58,10 @@ public class FFT {
      * Returns the FFT of the specified complex array.
      *
      * @param x
-     *            the complex array
+     *        the complex array
      * @return the FFT of the complex array {@code x}
      * @throws IllegalArgumentException
-     *             if the length of {@code x} is not a power of 2
+     *         if the length of {@code x} is not a power of 2
      */
     public static Complex[] fft(Complex[] x) {
         int n = x.length;
@@ -105,10 +105,10 @@ public class FFT {
      * Returns the inverse FFT of the specified complex array.
      *
      * @param x
-     *            the complex array
+     *        the complex array
      * @return the inverse FFT of the complex array {@code x}
      * @throws IllegalArgumentException
-     *             if the length of {@code x} is not a power of 2
+     *         if the length of {@code x} is not a power of 2
      */
     public static Complex[] ifft(Complex[] x) {
         int n = x.length;
@@ -140,13 +140,13 @@ public class FFT {
      * Returns the circular convolution of the two specified complex arrays.
      *
      * @param x
-     *            one complex array
+     *        one complex array
      * @param y
-     *            the other complex array
+     *        the other complex array
      * @return the circular convolution of {@code x} and {@code y}
      * @throws IllegalArgumentException
-     *             if the length of {@code x} does not equal the length of {@code y} or if the length is not a power of
-     *             2
+     *         if the length of {@code x} does not equal the length of {@code y} or if the length is not a power of
+     *         2
      */
     public static Complex[] cconvolve(Complex[] x, Complex[] y) {
 
@@ -176,13 +176,13 @@ public class FFT {
      * Returns the linear convolution of the two specified complex arrays.
      *
      * @param x
-     *            one complex array
+     *        one complex array
      * @param y
-     *            the other complex array
+     *        the other complex array
      * @return the linear convolution of {@code x} and {@code y}
      * @throws IllegalArgumentException
-     *             if the length of {@code x} does not equal the length of {@code y} or if the length is not a power of
-     *             2
+     *         if the length of {@code x} does not equal the length of {@code y} or if the length is not a power of
+     *         2
      */
     public static Complex[] convolve(Complex[] x, Complex[] y) {
         Complex[] a = new Complex[2 * x.length];
@@ -218,7 +218,7 @@ public class FFT {
      * Unit tests the {@code FFT} class.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);

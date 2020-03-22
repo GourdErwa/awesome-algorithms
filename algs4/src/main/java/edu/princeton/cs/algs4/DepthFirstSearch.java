@@ -37,11 +37,11 @@ public class DepthFirstSearch {
      * Computes the vertices in graph {@code G} that are connected to the source vertex {@code s}.
      *
      * @param G
-     *            the graph
+     *        the graph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public DepthFirstSearch(Graph G, int s) {
         marked = new boolean[G.V()];
@@ -64,10 +64,10 @@ public class DepthFirstSearch {
      * Is there a path between the source vertex {@code s} and vertex {@code v}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if there is a path, {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean marked(int v) {
         validateVertex(v);
@@ -94,7 +94,7 @@ public class DepthFirstSearch {
      * Unit tests the {@code DepthFirstSearch} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

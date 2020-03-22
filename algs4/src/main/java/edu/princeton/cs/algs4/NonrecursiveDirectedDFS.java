@@ -40,11 +40,11 @@ public class NonrecursiveDirectedDFS {
      * Computes the vertices reachable from the source vertex {@code s} in the digraph {@code G}.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public NonrecursiveDirectedDFS(Digraph G, int s) {
         marked = new boolean[G.V()];
@@ -83,11 +83,11 @@ public class NonrecursiveDirectedDFS {
      * Is vertex {@code v} reachable from the source vertex {@code s}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if vertex {@code v} is reachable from the source vertex {@code s}, and {@code false}
      *         otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean marked(int v) {
         validateVertex(v);
@@ -105,7 +105,7 @@ public class NonrecursiveDirectedDFS {
      * Unit tests the {@code NonrecursiveDirectedDFS} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

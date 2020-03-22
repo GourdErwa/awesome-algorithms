@@ -49,7 +49,7 @@ public class LazyPrimMST {
      * Compute a minimum spanning tree (or forest) of an edge-weighted graph.
      *
      * @param G
-     *            the edge-weighted graph
+     *        the edge-weighted graph
      */
     public LazyPrimMST(EdgeWeightedGraph G) {
         mst = new Queue<Edge>();
@@ -172,7 +172,7 @@ public class LazyPrimMST {
      * Unit tests the {@code LazyPrimMST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

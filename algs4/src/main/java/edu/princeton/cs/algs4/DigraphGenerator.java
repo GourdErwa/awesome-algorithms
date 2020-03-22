@@ -48,12 +48,12 @@ public class DigraphGenerator {
      * Returns a random simple digraph containing {@code V} vertices and {@code E} edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of vertices
+     *        the number of vertices
      * @return a random simple digraph on {@code V} vertices, containing a total of {@code E} edges
      * @throws IllegalArgumentException
-     *             if no such simple digraph exists
+     *         if no such simple digraph exists
      */
     public static Digraph simple(int V, int E) {
         if (E > (long)V * (V - 1))
@@ -80,13 +80,13 @@ public class DigraphGenerator {
      * propotional to V^2 (even if {@code p} is small).
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param p
-     *            the probability of choosing an edge
+     *        the probability of choosing an edge
      * @return a random simple digraph on {@code V} vertices, with an edge between any two vertices with probability
      *         {@code p}
      * @throws IllegalArgumentException
-     *             if probability is not between 0 and 1
+     *         if probability is not between 0 and 1
      */
     public static Digraph simple(int V, double p) {
         if (p < 0.0 || p > 1.0)
@@ -105,7 +105,7 @@ public class DigraphGenerator {
      * connected by two antiparallel edges. There are {@code V*(V-1)} edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @return the complete digraph on {@code V} vertices
      */
     public static Digraph complete(int V) {
@@ -122,12 +122,12 @@ public class DigraphGenerator {
      * at random among all such DAGs.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of vertices
+     *        the number of vertices
      * @return a random simple DAG on {@code V} vertices, containing a total of {@code E} edges
      * @throws IllegalArgumentException
-     *             if no such simple DAG exists
+     *         if no such simple DAG exists
      */
     public static Digraph dag(int V, int E) {
         if (E > (long)V * (V - 1) / 2)
@@ -158,7 +158,7 @@ public class DigraphGenerator {
      * graph.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @return a random tournament digraph on {@code V} vertices
      */
     public static Digraph tournament(int V) {
@@ -179,7 +179,7 @@ public class DigraphGenerator {
      * vertex reachable from every other vertex. A complete rooted in-DAG has V*(V-1)/2 edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @return a complete rooted-in DAG on {@code V} vertices
      */
     public static Digraph completeRootedInDAG(int V) {
@@ -201,9 +201,9 @@ public class DigraphGenerator {
      * among all such DAGs.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of edges
+     *        the number of edges
      * @return a random rooted-in DAG on {@code V} vertices and {@code E} edges
      */
     public static Digraph rootedInDAG(int V, int E) {
@@ -245,7 +245,7 @@ public class DigraphGenerator {
      * reachable from a single vertex. A complete rooted in-DAG has V*(V-1)/2 edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @return a complete rooted-out DAG on {@code V} vertices
      */
     public static Digraph completeRootedOutDAG(int V) {
@@ -267,9 +267,9 @@ public class DigraphGenerator {
      * DAGs.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of edges
+     *        the number of edges
      * @return a random rooted-out DAG on {@code V} vertices and {@code E} edges
      */
     public static Digraph rootedOutDAG(int V, int E) {
@@ -312,7 +312,7 @@ public class DigraphGenerator {
      * such trees.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @return a random rooted-in tree on {@code V} vertices
      */
     public static Digraph rootedInTree(int V) {
@@ -325,7 +325,7 @@ public class DigraphGenerator {
      * tree returned is not chosen uniformly at random among all such trees.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @return a random rooted-out tree on {@code V} vertices
      */
     public static Digraph rootedOutTree(int V) {
@@ -336,7 +336,7 @@ public class DigraphGenerator {
      * Returns a path digraph on {@code V} vertices.
      *
      * @param V
-     *            the number of vertices in the path
+     *        the number of vertices in the path
      * @return a digraph that is a directed path on {@code V} vertices
      */
     public static Digraph path(int V) {
@@ -355,7 +355,7 @@ public class DigraphGenerator {
      * Returns a complete binary tree digraph on {@code V} vertices.
      *
      * @param V
-     *            the number of vertices in the binary tree
+     *        the number of vertices in the binary tree
      * @return a digraph that is a complete binary tree on {@code V} vertices
      */
     public static Digraph binaryTree(int V) {
@@ -374,7 +374,7 @@ public class DigraphGenerator {
      * Returns a cycle digraph on {@code V} vertices.
      *
      * @param V
-     *            the number of vertices in the cycle
+     *        the number of vertices in the cycle
      * @return a digraph that is a directed cycle on {@code V} vertices
      */
     public static Digraph cycle(int V) {
@@ -394,12 +394,12 @@ public class DigraphGenerator {
      * Returns an Eulerian cycle digraph on {@code V} vertices.
      *
      * @param V
-     *            the number of vertices in the cycle
+     *        the number of vertices in the cycle
      * @param E
-     *            the number of edges in the cycle
+     *        the number of edges in the cycle
      * @return a digraph that is a directed Eulerian cycle on {@code V} vertices and {@code E} edges
      * @throws IllegalArgumentException
-     *             if either {@code V <= 0} or {@code E <= 0}
+     *         if either {@code V <= 0} or {@code E <= 0}
      */
     public static Digraph eulerianCycle(int V, int E) {
         if (E <= 0)
@@ -421,12 +421,12 @@ public class DigraphGenerator {
      * Returns an Eulerian path digraph on {@code V} vertices.
      *
      * @param V
-     *            the number of vertices in the path
+     *        the number of vertices in the path
      * @param E
-     *            the number of edges in the path
+     *        the number of edges in the path
      * @return a digraph that is a directed Eulerian path on {@code V} vertices and {@code E} edges
      * @throws IllegalArgumentException
-     *             if either {@code V <= 0} or {@code E < 0}
+     *         if either {@code V <= 0} or {@code E < 0}
      */
     public static Digraph eulerianPath(int V, int E) {
         if (E < 0)
@@ -452,15 +452,15 @@ public class DigraphGenerator {
      * vertices.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of edges
+     *        the number of edges
      * @param c
-     *            the (maximum) number of strong components
+     *        the (maximum) number of strong components
      * @return a random simple digraph on {@code V} vertices and {@code E} edges, with (at most) {@code c} strong
      *         components
      * @throws IllegalArgumentException
-     *             if {@code c} is larger than {@code V}
+     *         if {@code c} is larger than {@code V}
      */
     public static Digraph strong(int V, int E, int c) {
         if (c >= V || c <= 0)
@@ -534,7 +534,7 @@ public class DigraphGenerator {
      * Unit tests the {@code DigraphGenerator} library.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);

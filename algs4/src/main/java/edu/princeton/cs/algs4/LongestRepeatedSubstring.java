@@ -40,9 +40,9 @@ public class LongestRepeatedSubstring {
      * Returns the longest common string of the two specified strings.
      *
      * @param s
-     *            one string
+     *        one string
      * @param t
-     *            the other string
+     *        the other string
      * @return the longest common string that appears as a substring
      */
 
@@ -50,7 +50,7 @@ public class LongestRepeatedSubstring {
      * Returns the longest repeated substring of the specified string.
      *
      * @param text
-     *            the string
+     *        the string
      * @return the longest repeated substring that appears in {@code text}; the empty string if no such string
      */
     public static String lrs(String text) {
@@ -71,7 +71,7 @@ public class LongestRepeatedSubstring {
      * Unit tests the {@code lrs()} method.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String text = StdIn.readAll().replaceAll("\\s+", " ");

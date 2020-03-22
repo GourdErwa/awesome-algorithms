@@ -40,7 +40,7 @@ public class Topological {
      * Determines whether the digraph {@code G} has a topological order and, if so, finds such a topological order.
      *
      * @param G
-     *            the digraph
+     *        the digraph
      */
     public Topological(Digraph G) {
         DirectedCycle finder = new DirectedCycle(G);
@@ -58,7 +58,7 @@ public class Topological {
      * Determines whether the edge-weighted digraph {@code G} has a topological order and, if so, finds such an order.
      *
      * @param G
-     *            the edge-weighted digraph
+     *        the edge-weighted digraph
      */
     public Topological(EdgeWeightedDigraph G) {
         EdgeWeightedDirectedCycle finder = new EdgeWeightedDirectedCycle(G);
@@ -104,10 +104,10 @@ public class Topological {
      * The the rank of vertex {@code v} in the topological order; -1 if the digraph is not a DAG
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the position of vertex {@code v} in a topological order of the digraph; -1 if the digraph is not a DAG
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int rank(int v) {
         validateVertex(v);
@@ -128,7 +128,7 @@ public class Topological {
      * Unit tests the {@code Topological} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String filename = args[0];

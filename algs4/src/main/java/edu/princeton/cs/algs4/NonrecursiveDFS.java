@@ -43,11 +43,11 @@ public class NonrecursiveDFS {
      * Computes the vertices connected to the source vertex {@code s} in the graph {@code G}.
      *
      * @param G
-     *            the graph
+     *        the graph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public NonrecursiveDFS(Graph G, int s) {
         marked = new boolean[G.V()];
@@ -87,10 +87,10 @@ public class NonrecursiveDFS {
      * Is vertex {@code v} connected to the source vertex {@code s}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if vertex {@code v} is connected to the source vertex {@code s}, and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean marked(int v) {
         validateVertex(v);
@@ -108,7 +108,7 @@ public class NonrecursiveDFS {
      * Unit tests the {@code NonrecursiveDFS} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

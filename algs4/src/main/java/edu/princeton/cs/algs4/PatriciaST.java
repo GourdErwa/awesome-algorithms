@@ -103,13 +103,13 @@ public class PatriciaST<Value> {
      * symbol table.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public void put(String key, Value val) {
         if (key == null)
@@ -158,13 +158,13 @@ public class PatriciaST<Value> {
      * Retrieves the value associated with the given key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with the given key if the key is in the symbol table and {@code null} if the key is
      *         not in the symbol table
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public Value get(String key) {
         if (key == null)
@@ -190,11 +190,11 @@ public class PatriciaST<Value> {
      * Removes a key and its associated value from the symbol table, if it exists.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public void delete(String key) {
         if (key == null)
@@ -258,12 +258,12 @@ public class PatriciaST<Value> {
      * Returns {@code true} if the key-value pair, specified by the given key, exists within the symbol table.
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains the given {@code key} and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public boolean contains(String key) {
         return get(key) != null;
@@ -390,7 +390,7 @@ public class PatriciaST<Value> {
      * start of each pass).
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         PatriciaST<Integer> st = new PatriciaST<Integer>();

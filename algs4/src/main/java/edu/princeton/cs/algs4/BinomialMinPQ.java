@@ -44,7 +44,7 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      * Initializes an empty priority queue using the given Comparator Worst case is O(1)
      *
      * @param C
-     *            a comparator over the keys
+     *        a comparator over the keys
      */
     public BinomialMinPQ(Comparator<Key> C) {
         comp = C;
@@ -54,7 +54,7 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue with given keys Worst case is O(n*log(n))
      *
      * @param a
-     *            an array of keys
+     *        an array of keys
      */
     public BinomialMinPQ(Key[] a) {
         comp = new MyComparator();
@@ -66,9 +66,9 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue with given keys using the given Comparator Worst case is O(n*log(n))
      *
      * @param C
-     *            a comparator over the keys
+     *        a comparator over the keys
      * @param a
-     *            an array of keys
+     *        an array of keys
      */
     public BinomialMinPQ(Comparator<Key> C, Key[] a) {
         comp = C;
@@ -90,7 +90,7 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      *
      * @return the number of elements on the priority queue
      * @throws ArithmeticException
-     *             if there are more than 2^63-1 elements in the queue
+     *         if there are more than 2^63-1 elements in the queue
      */
     public int size() {
         int result = 0, tmp;
@@ -109,7 +109,7 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      * Puts a Key in the heap Worst case is O(log(n))
      *
      * @param key
-     *            a Key
+     *        a Key
      */
     public void insert(Key key) {
         Node x = new Node();
@@ -125,7 +125,7 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      *
      * @return the minimum key currently in the priority queue
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key minKey() {
         if (isEmpty())
@@ -144,7 +144,7 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      *
      * @return the minimum key
      * @throws NoSuchElementException
-     *             if the priority queue is empty
+     *         if the priority queue is empty
      */
     public Key delMin() {
         if (isEmpty())
@@ -172,10 +172,10 @@ public class BinomialMinPQ<Key> implements Iterable<Key> {
      * Merges two Binomial heaps together This operation is destructive Worst case is O(log(n))
      *
      * @param heap
-     *            a Binomial Heap to be merged with the current heap
+     *        a Binomial Heap to be merged with the current heap
      * @return the union of two heaps
      * @throws IllegalArgumentException
-     *             if the heap in parameter is null
+     *         if the heap in parameter is null
      */
     public BinomialMinPQ<Key> union(BinomialMinPQ<Key> heap) {
         if (heap == null)

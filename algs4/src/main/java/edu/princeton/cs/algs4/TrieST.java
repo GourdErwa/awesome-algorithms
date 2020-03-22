@@ -50,11 +50,11 @@ public class TrieST<Value> {
      * Returns the value associated with the given key.
      *
      * @param key
-     *            the key
+     *        the key
      * @return the value associated with the given key if the key is in the symbol table and {@code null} if the key is
      *         not in the symbol table
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public Value get(String key) {
         if (key == null)
@@ -69,10 +69,10 @@ public class TrieST<Value> {
      * Does this symbol table contain the given key?
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if this symbol table contains {@code key} and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(String key) {
         if (key == null)
@@ -95,11 +95,11 @@ public class TrieST<Value> {
      * table.
      *
      * @param key
-     *            the key
+     *        the key
      * @param val
-     *            the value
+     *        the value
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void put(String key, Value val) {
         if (key == null)
@@ -156,7 +156,7 @@ public class TrieST<Value> {
      * Returns all of the keys in the set that start with {@code prefix}.
      *
      * @param prefix
-     *            the prefix
+     *        the prefix
      * @return all of the keys in the set that start with {@code prefix}, as an iterable
      */
     public Iterable<String> keysWithPrefix(String prefix) {
@@ -183,7 +183,7 @@ public class TrieST<Value> {
      * character.
      *
      * @param pattern
-     *            the pattern
+     *        the pattern
      * @return all of the keys in the symbol table that match {@code pattern}, as an iterable, where . is treated as a
      *         wildcard character.
      */
@@ -220,11 +220,11 @@ public class TrieST<Value> {
      * string.
      *
      * @param query
-     *            the query string
+     *        the query string
      * @return the string in the symbol table that is the longest prefix of {@code query}, or {@code null} if no such
      *         string
      * @throws IllegalArgumentException
-     *             if {@code query} is {@code null}
+     *         if {@code query} is {@code null}
      */
     public String longestPrefixOf(String query) {
         if (query == null)
@@ -255,9 +255,9 @@ public class TrieST<Value> {
      * Removes the key from the set if the key is present.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(String key) {
         if (key == null)
@@ -290,7 +290,7 @@ public class TrieST<Value> {
      * Unit tests the {@code TrieST} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

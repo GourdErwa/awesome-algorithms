@@ -79,7 +79,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
      * Adds the item to this stack.
      *
      * @param item
-     *            the item to add
+     *        the item to add
      */
     public void push(Item item) {
         if (n == a.length)
@@ -92,7 +92,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
      *
      * @return the item most recently added
      * @throws NoSuchElementException
-     *             if this stack is empty
+     *         if this stack is empty
      */
     public Item pop() {
         if (isEmpty())
@@ -111,7 +111,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
      *
      * @return the item most recently added to this stack
      * @throws NoSuchElementException
-     *             if this stack is empty
+     *         if this stack is empty
      */
     public Item peek() {
         if (isEmpty())
@@ -155,7 +155,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
      * Unit tests the {@code Stack} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         ResizingArrayStack<String> stack = new ResizingArrayStack<String>();

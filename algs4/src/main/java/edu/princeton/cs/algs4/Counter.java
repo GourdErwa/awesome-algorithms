@@ -29,7 +29,7 @@ public class Counter implements Comparable<Counter> {
      * Initializes a new counter starting at 0, with the given id.
      *
      * @param id
-     *            the name of the counter
+     *        the name of the counter
      */
     public Counter(String id) {
         name = id;
@@ -64,7 +64,7 @@ public class Counter implements Comparable<Counter> {
      * Compares this counter to the specified counter.
      *
      * @param that
-     *            the other counter
+     *        the other counter
      * @return {@code 0} if the value of this counter equals the value of that counter; a negative integer if the value
      *         of this counter is less than the value of that counter; and a positive integer if the value of this
      *         counter is greater than the value of that counter
@@ -84,7 +84,7 @@ public class Counter implements Comparable<Counter> {
      * prints results.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);

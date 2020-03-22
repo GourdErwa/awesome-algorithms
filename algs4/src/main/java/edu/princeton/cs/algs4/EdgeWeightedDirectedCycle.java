@@ -36,7 +36,7 @@ public class EdgeWeightedDirectedCycle {
      * Determines whether the edge-weighted digraph {@code G} has a directed cycle and, if so, finds such a cycle.
      *
      * @param G
-     *            the edge-weighted digraph
+     *        the edge-weighted digraph
      */
     public EdgeWeightedDirectedCycle(EdgeWeightedDigraph G) {
         marked = new boolean[G.V()];
@@ -136,7 +136,7 @@ public class EdgeWeightedDirectedCycle {
      * Unit tests the {@code EdgeWeightedDirectedCycle} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

@@ -51,7 +51,7 @@ public final class BinaryIn {
      * Initializes a binary input stream from an {@code InputStream}.
      *
      * @param is
-     *            the {@code InputStream} object
+     *        the {@code InputStream} object
      */
     public BinaryIn(InputStream is) {
         in = new BufferedInputStream(is);
@@ -62,7 +62,7 @@ public final class BinaryIn {
      * Initializes a binary input stream from a socket.
      *
      * @param socket
-     *            the socket
+     *        the socket
      */
     public BinaryIn(Socket socket) {
         try {
@@ -78,7 +78,7 @@ public final class BinaryIn {
      * Initializes a binary input stream from a URL.
      *
      * @param url
-     *            the URL
+     *        the URL
      */
     public BinaryIn(URL url) {
         try {
@@ -95,7 +95,7 @@ public final class BinaryIn {
      * Initializes a binary input stream from a filename or URL name.
      *
      * @param name
-     *            the name of the file or URL
+     *        the name of the file or URL
      */
     public BinaryIn(String name) {
 
@@ -160,7 +160,7 @@ public final class BinaryIn {
      *
      * @return the next bit of data from this binary input stream as a {@code boolean}
      * @throws NoSuchElementException
-     *             if this binary input stream is empty
+     *         if this binary input stream is empty
      */
     public boolean readBoolean() {
         if (isEmpty())
@@ -177,7 +177,7 @@ public final class BinaryIn {
      *
      * @return the next 8 bits of data from this binary input stream as a {@code char}
      * @throws NoSuchElementException
-     *             if there are fewer than 8 bits available
+     *         if there are fewer than 8 bits available
      */
     public char readChar() {
         if (isEmpty())
@@ -208,12 +208,12 @@ public final class BinaryIn {
      * Reads the next r bits from this binary input stream and return as an r-bit character.
      *
      * @param r
-     *            number of bits to read
+     *        number of bits to read
      * @return the next {@code r} bits of data from this binary input streamt as a {@code char}
      * @throws NoSuchElementException
-     *             if there are fewer than {@code r} bits available
+     *         if there are fewer than {@code r} bits available
      * @throws IllegalArgumentException
-     *             unless {@code 1 <= r <= 16}
+     *         unless {@code 1 <= r <= 16}
      */
     public char readChar(int r) {
         if (r < 1 || r > 16)
@@ -238,8 +238,8 @@ public final class BinaryIn {
      *
      * @return the remaining bytes of data from this binary input stream as a {@code String}
      * @throws NoSuchElementException
-     *             if this binary input stream is empty or if the number of bits available is not a multiple of 8
-     *             (byte-aligned)
+     *         if this binary input stream is empty or if the number of bits available is not a multiple of 8
+     *         (byte-aligned)
      */
     public String readString() {
         if (isEmpty())
@@ -258,7 +258,7 @@ public final class BinaryIn {
      *
      * @return the next 16 bits of data from this binary input stream as a {@code short}
      * @throws NoSuchElementException
-     *             if there are fewer than 16 bits available
+     *         if there are fewer than 16 bits available
      */
     public short readShort() {
         short x = 0;
@@ -275,7 +275,7 @@ public final class BinaryIn {
      *
      * @return the next 32 bits of data from this binary input stream as a {@code int}
      * @throws NoSuchElementException
-     *             if there are fewer than 32 bits available
+     *         if there are fewer than 32 bits available
      */
     public int readInt() {
         int x = 0;
@@ -291,12 +291,12 @@ public final class BinaryIn {
      * Reads the next r bits from this binary input stream return as an r-bit int.
      *
      * @param r
-     *            number of bits to read
+     *        number of bits to read
      * @return the next {@code r} bits of data from this binary input stream as a {@code int}
      * @throws NoSuchElementException
-     *             if there are fewer than r bits available
+     *         if there are fewer than r bits available
      * @throws IllegalArgumentException
-     *             unless {@code 1 <= r <= 32}
+     *         unless {@code 1 <= r <= 32}
      */
     public int readInt(int r) {
         if (r < 1 || r > 32)
@@ -321,7 +321,7 @@ public final class BinaryIn {
      *
      * @return the next 64 bits of data from this binary input stream as a {@code long}
      * @throws NoSuchElementException
-     *             if there are fewer than 64 bits available
+     *         if there are fewer than 64 bits available
      */
     public long readLong() {
         long x = 0;
@@ -338,7 +338,7 @@ public final class BinaryIn {
      *
      * @return the next 64 bits of data from this binary input stream as a {@code double}
      * @throws NoSuchElementException
-     *             if there are fewer than 64 bits available
+     *         if there are fewer than 64 bits available
      */
     public double readDouble() {
         return Double.longBitsToDouble(readLong());
@@ -349,7 +349,7 @@ public final class BinaryIn {
      *
      * @return the next 32 bits of data from this binary input stream as a {@code float}
      * @throws NoSuchElementException
-     *             if there are fewer than 32 bits available
+     *         if there are fewer than 32 bits available
      */
     public float readFloat() {
         return Float.intBitsToFloat(readInt());
@@ -360,7 +360,7 @@ public final class BinaryIn {
      *
      * @return the next 8 bits of data from this binary input stream as a {@code byte}
      * @throws NoSuchElementException
-     *             if there are fewer than 8 bits available
+     *         if there are fewer than 8 bits available
      */
     public byte readByte() {
         char c = readChar();
@@ -372,7 +372,7 @@ public final class BinaryIn {
      * writes it to a file (second command-line argument).
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         BinaryIn in = new BinaryIn(args[0]);

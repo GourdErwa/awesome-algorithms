@@ -42,13 +42,13 @@ public class DijkstraSP {
      * digraph {@code G}.
      *
      * @param G
-     *            the edge-weighted digraph
+     *        the edge-weighted digraph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             if an edge weight is negative
+     *         if an edge weight is negative
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public DijkstraSP(EdgeWeightedDigraph G, int s) {
         for (DirectedEdge e : G.edges()) {
@@ -95,11 +95,11 @@ public class DijkstraSP {
      * Returns the length of a shortest path from the source vertex {@code s} to vertex {@code v}.
      *
      * @param v
-     *            the destination vertex
+     *        the destination vertex
      * @return the length of a shortest path from the source vertex {@code s} to vertex {@code v};
      *         {@code Double.POSITIVE_INFINITY} if no such path
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public double distTo(int v) {
         validateVertex(v);
@@ -110,11 +110,11 @@ public class DijkstraSP {
      * Returns true if there is a path from the source vertex {@code s} to vertex {@code v}.
      *
      * @param v
-     *            the destination vertex
+     *        the destination vertex
      * @return {@code true} if there is a path from the source vertex {@code s} to vertex {@code v}; {@code false}
      *         otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean hasPathTo(int v) {
         validateVertex(v);
@@ -125,11 +125,11 @@ public class DijkstraSP {
      * Returns a shortest path from the source vertex {@code s} to vertex {@code v}.
      *
      * @param v
-     *            the destination vertex
+     *        the destination vertex
      * @return a shortest path from the source vertex {@code s} to vertex {@code v} as an iterable of edges, and
      *         {@code null} if no such path
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<DirectedEdge> pathTo(int v) {
         validateVertex(v);
@@ -207,7 +207,7 @@ public class DijkstraSP {
      * Unit tests the {@code DijkstraSP} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

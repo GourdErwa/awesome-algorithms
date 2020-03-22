@@ -37,9 +37,9 @@ public class LSD {
      * Rearranges the array of w-character strings in ascending order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      * @param w
-     *            the number of characters per string
+     *        the number of characters per string
      */
     public static void sort(String[] a, int w) {
         int n = a.length;
@@ -72,7 +72,7 @@ public class LSD {
      * Rearranges the array of 32-bit integers in ascending order. This is about 2-3x faster than Arrays.sort().
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(int[] a) {
         final int BITS = 32; // each int is 32 bits
@@ -123,7 +123,7 @@ public class LSD {
      * standard output in ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

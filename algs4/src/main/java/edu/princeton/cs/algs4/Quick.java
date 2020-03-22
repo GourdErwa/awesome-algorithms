@@ -40,7 +40,7 @@ public class Quick {
      * Rearranges the array in ascending order, using the natural order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(Comparable[] a) {
         StdRandom.shuffle(a);
@@ -98,12 +98,12 @@ public class Quick {
      * {@code a[k]}.
      *
      * @param a
-     *            the array
+     *        the array
      * @param k
-     *            the rank of the key
+     *        the rank of the key
      * @return the key of rank {@code k}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= k < a.length}
+     *         unless {@code 0 <= k < a.length}
      */
     public static Comparable select(Comparable[] a, int k) {
         if (k < 0 || k >= a.length) {
@@ -168,7 +168,7 @@ public class Quick {
      * the select method.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

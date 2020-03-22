@@ -1,7 +1,5 @@
 package io.groud.leetcode.algo.dfs_bfs;
 
-import scala.Int;
-
 import java.util.LinkedList;
 import java.util.Queue;
 

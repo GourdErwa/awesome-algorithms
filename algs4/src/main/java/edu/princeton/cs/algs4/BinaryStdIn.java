@@ -89,7 +89,7 @@ public final class BinaryStdIn {
      *
      * @return the next bit of data from standard input as a {@code boolean}
      * @throws NoSuchElementException
-     *             if standard input is empty
+     *         if standard input is empty
      */
     public static boolean readBoolean() {
         if (isEmpty())
@@ -107,7 +107,7 @@ public final class BinaryStdIn {
      *
      * @return the next 8 bits of data from standard input as a {@code char}
      * @throws NoSuchElementException
-     *             if there are fewer than 8 bits available on standard input
+     *         if there are fewer than 8 bits available on standard input
      */
     public static char readChar() {
         if (isEmpty())
@@ -138,12 +138,12 @@ public final class BinaryStdIn {
      * Reads the next r bits from standard input and return as an r-bit character.
      *
      * @param r
-     *            number of bits to read.
+     *        number of bits to read.
      * @return the next r bits of data from standard input as a {@code char}
      * @throws NoSuchElementException
-     *             if there are fewer than {@code r} bits available on standard input
+     *         if there are fewer than {@code r} bits available on standard input
      * @throws IllegalArgumentException
-     *             unless {@code 1 <= r <= 16}
+     *         unless {@code 1 <= r <= 16}
      */
     public static char readChar(int r) {
         if (r < 1 || r > 16)
@@ -168,8 +168,8 @@ public final class BinaryStdIn {
      *
      * @return the remaining bytes of data from standard input as a {@code String}
      * @throws NoSuchElementException
-     *             if standard input is empty or if the number of bits available on standard input is not a multiple of
-     *             8 (byte-aligned)
+     *         if standard input is empty or if the number of bits available on standard input is not a multiple of
+     *         8 (byte-aligned)
      */
     public static String readString() {
         if (isEmpty())
@@ -188,7 +188,7 @@ public final class BinaryStdIn {
      *
      * @return the next 16 bits of data from standard input as a {@code short}
      * @throws NoSuchElementException
-     *             if there are fewer than 16 bits available on standard input
+     *         if there are fewer than 16 bits available on standard input
      */
     public static short readShort() {
         short x = 0;
@@ -205,7 +205,7 @@ public final class BinaryStdIn {
      *
      * @return the next 32 bits of data from standard input as a {@code int}
      * @throws NoSuchElementException
-     *             if there are fewer than 32 bits available on standard input
+     *         if there are fewer than 32 bits available on standard input
      */
     public static int readInt() {
         int x = 0;
@@ -221,12 +221,12 @@ public final class BinaryStdIn {
      * Reads the next r bits from standard input and return as an r-bit int.
      *
      * @param r
-     *            number of bits to read.
+     *        number of bits to read.
      * @return the next r bits of data from standard input as a {@code int}
      * @throws NoSuchElementException
-     *             if there are fewer than {@code r} bits available on standard input
+     *         if there are fewer than {@code r} bits available on standard input
      * @throws IllegalArgumentException
-     *             unless {@code 1 <= r <= 32}
+     *         unless {@code 1 <= r <= 32}
      */
     public static int readInt(int r) {
         if (r < 1 || r > 32)
@@ -251,7 +251,7 @@ public final class BinaryStdIn {
      *
      * @return the next 64 bits of data from standard input as a {@code long}
      * @throws NoSuchElementException
-     *             if there are fewer than 64 bits available on standard input
+     *         if there are fewer than 64 bits available on standard input
      */
     public static long readLong() {
         long x = 0;
@@ -268,7 +268,7 @@ public final class BinaryStdIn {
      *
      * @return the next 64 bits of data from standard input as a {@code double}
      * @throws NoSuchElementException
-     *             if there are fewer than 64 bits available on standard input
+     *         if there are fewer than 64 bits available on standard input
      */
     public static double readDouble() {
         return Double.longBitsToDouble(readLong());
@@ -279,7 +279,7 @@ public final class BinaryStdIn {
      *
      * @return the next 32 bits of data from standard input as a {@code float}
      * @throws NoSuchElementException
-     *             if there are fewer than 32 bits available on standard input
+     *         if there are fewer than 32 bits available on standard input
      */
     public static float readFloat() {
         return Float.intBitsToFloat(readInt());
@@ -290,7 +290,7 @@ public final class BinaryStdIn {
      *
      * @return the next 8 bits of data from standard input as a {@code byte}
      * @throws NoSuchElementException
-     *             if there are fewer than 8 bits available on standard input
+     *         if there are fewer than 8 bits available on standard input
      */
     public static byte readByte() {
         char c = readChar();
@@ -301,7 +301,7 @@ public final class BinaryStdIn {
      * Test client. Reads in a binary input file from standard input and writes it to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

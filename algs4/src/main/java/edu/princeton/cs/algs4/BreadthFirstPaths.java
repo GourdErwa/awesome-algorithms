@@ -44,11 +44,11 @@ public class BreadthFirstPaths {
      * Computes the shortest path between the source vertex {@code s} and every other vertex in the graph {@code G}.
      *
      * @param G
-     *            the graph
+     *        the graph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public BreadthFirstPaths(Graph G, int s) {
         marked = new boolean[G.V()];
@@ -65,11 +65,11 @@ public class BreadthFirstPaths {
      * graph {@code G}.
      *
      * @param G
-     *            the graph
+     *        the graph
      * @param sources
-     *            the source vertices
+     *        the source vertices
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V} for each vertex {@code s} in {@code sources}
+     *         unless {@code 0 <= s < V} for each vertex {@code s} in {@code sources}
      */
     public BreadthFirstPaths(Graph G, Iterable<Integer> sources) {
         marked = new boolean[G.V()];
@@ -128,10 +128,10 @@ public class BreadthFirstPaths {
      * Is there a path between the source vertex {@code s} (or sources) and vertex {@code v}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if there is a path, and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean hasPathTo(int v) {
         validateVertex(v);
@@ -143,10 +143,10 @@ public class BreadthFirstPaths {
      * {@code v}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the number of edges in a shortest path
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int distTo(int v) {
         validateVertex(v);
@@ -158,10 +158,10 @@ public class BreadthFirstPaths {
      * such path.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the sequence of vertices on a shortest path, as an Iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<Integer> pathTo(int v) {
         validateVertex(v);
@@ -244,7 +244,7 @@ public class BreadthFirstPaths {
      * Unit tests the {@code BreadthFirstPaths} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

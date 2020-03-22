@@ -49,10 +49,10 @@ public class TrieSET implements Iterable<String> {
      * Does the set contain the given key?
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if the set contains {@code key} and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public boolean contains(String key) {
         if (key == null)
@@ -76,9 +76,9 @@ public class TrieSET implements Iterable<String> {
      * Adds the key to the set if it is not already present.
      *
      * @param key
-     *            the key to add
+     *        the key to add
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void add(String key) {
         if (key == null)
@@ -132,7 +132,7 @@ public class TrieSET implements Iterable<String> {
      * Returns all of the keys in the set that start with {@code prefix}.
      *
      * @param prefix
-     *            the prefix
+     *        the prefix
      * @return all of the keys in the set that start with {@code prefix}, as an iterable
      */
     public Iterable<String> keysWithPrefix(String prefix) {
@@ -158,7 +158,7 @@ public class TrieSET implements Iterable<String> {
      * Returns all of the keys in the set that match {@code pattern}, where . symbol is treated as a wildcard character.
      *
      * @param pattern
-     *            the pattern
+     *        the pattern
      * @return all of the keys in the set that match {@code pattern}, as an iterable, where . is treated as a wildcard
      *         character.
      */
@@ -195,10 +195,10 @@ public class TrieSET implements Iterable<String> {
      * Returns the string in the set that is the longest prefix of {@code query}, or {@code null}, if no such string.
      *
      * @param query
-     *            the query string
+     *        the query string
      * @return the string in the set that is the longest prefix of {@code query}, or {@code null} if no such string
      * @throws IllegalArgumentException
-     *             if {@code query} is {@code null}
+     *         if {@code query} is {@code null}
      */
     public String longestPrefixOf(String query) {
         if (query == null)
@@ -228,9 +228,9 @@ public class TrieSET implements Iterable<String> {
      * Removes the key from the set if the key is present.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      */
     public void delete(String key) {
         if (key == null)
@@ -263,7 +263,7 @@ public class TrieSET implements Iterable<String> {
      * Unit tests the {@code TrieSET} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         TrieSET set = new TrieSET();

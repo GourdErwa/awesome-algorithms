@@ -37,11 +37,11 @@ public class DepthFirstPaths {
      * Computes a path between {@code s} and every other vertex in graph {@code G}.
      *
      * @param G
-     *            the graph
+     *        the graph
      * @param s
-     *            the source vertex
+     *        the source vertex
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= s < V}
+     *         unless {@code 0 <= s < V}
      */
     public DepthFirstPaths(Graph G, int s) {
         this.s = s;
@@ -66,10 +66,10 @@ public class DepthFirstPaths {
      * Is there a path between the source vertex {@code s} and vertex {@code v}?
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return {@code true} if there is a path, {@code false} otherwise
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public boolean hasPathTo(int v) {
         validateVertex(v);
@@ -80,11 +80,11 @@ public class DepthFirstPaths {
      * Returns a path between the source vertex {@code s} and vertex {@code v}, or {@code null} if no such path.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the sequence of vertices on a path between the source vertex {@code s} and vertex {@code v}, as an
      *         Iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<Integer> pathTo(int v) {
         validateVertex(v);
@@ -108,7 +108,7 @@ public class DepthFirstPaths {
      * Unit tests the {@code DepthFirstPaths} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

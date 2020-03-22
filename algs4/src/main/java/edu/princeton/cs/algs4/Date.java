@@ -27,13 +27,13 @@ public class Date implements Comparable<Date> {
      * Initializes a new date from the month, day, and year.
      *
      * @param month
-     *            the month (between 1 and 12)
+     *        the month (between 1 and 12)
      * @param day
-     *            the day (between 1 and 28-31, depending on the month)
+     *        the day (between 1 and 28-31, depending on the month)
      * @param year
-     *            the year
+     *        the year
      * @throws IllegalArgumentException
-     *             if this date is invalid
+     *         if this date is invalid
      */
     public Date(int month, int day, int year) {
         if (!isValid(month, day, year))
@@ -47,9 +47,9 @@ public class Date implements Comparable<Date> {
      * Initializes new date specified as a string in form MM/DD/YYYY.
      *
      * @param date
-     *            the string representation of this date
+     *        the string representation of this date
      * @throws IllegalArgumentException
-     *             if this date is invalid
+     *         if this date is invalid
      */
     public Date(String date) {
         String[] fields = date.split("/");
@@ -128,7 +128,7 @@ public class Date implements Comparable<Date> {
      * Compares two dates chronologically.
      *
      * @param that
-     *            the other date
+     *        the other date
      * @return {@code true} if this date is after that date; {@code false} otherwise
      */
     public boolean isAfter(Date that) {
@@ -139,7 +139,7 @@ public class Date implements Comparable<Date> {
      * Compares two dates chronologically.
      *
      * @param that
-     *            the other date
+     *        the other date
      * @return {@code true} if this date is before that date; {@code false} otherwise
      */
     public boolean isBefore(Date that) {
@@ -184,7 +184,7 @@ public class Date implements Comparable<Date> {
      * Compares this date to the specified date.
      *
      * @param other
-     *            the other date
+     *        the other date
      * @return {@code true} if this date equals {@code other}; {@code false} otherwise
      */
     @Override
@@ -213,7 +213,7 @@ public class Date implements Comparable<Date> {
      * Unit tests the {@code Date} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Date today = new Date(2, 25, 2004);

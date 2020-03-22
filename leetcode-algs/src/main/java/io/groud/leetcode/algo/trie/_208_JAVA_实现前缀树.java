@@ -1,6 +1,9 @@
 package io.groud.leetcode.algo.trie;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * https://leetcode-cn.com/problems/implement-trie-prefix-tree/
@@ -187,13 +190,13 @@ public class _208_JAVA_实现前缀树 {
     }
     /*
      Trie trie = new Trie();
-    
+
      trie.insert("apple");
      trie.search("apple");   // 返回 true
      trie.search("app");     // 返回 false
      trie.startsWith("app"); // 返回 true
      trie.insert("app");
      trie.search("app");     // 返回 true
-    
+
      */
 }

@@ -32,7 +32,7 @@ import java.util.NoSuchElementException;
  * 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  * @param <Item>
- *            the generic type of an item in this stack
+ *        the generic type of an item in this stack
  * @author Robert Sedgewick
  * @author Kevin Wayne
  */
@@ -76,7 +76,7 @@ public class Stack<Item> implements Iterable<Item> {
      * Adds the item to this stack.
      *
      * @param item
-     *            the item to add
+     *        the item to add
      */
     public void push(Item item) {
         Node<Item> oldfirst = first;
@@ -91,7 +91,7 @@ public class Stack<Item> implements Iterable<Item> {
      *
      * @return the item most recently added
      * @throws NoSuchElementException
-     *             if this stack is empty
+     *         if this stack is empty
      */
     public Item pop() {
         if (isEmpty())
@@ -107,7 +107,7 @@ public class Stack<Item> implements Iterable<Item> {
      *
      * @return the item most recently added to this stack
      * @throws NoSuchElementException
-     *             if this stack is empty
+     *         if this stack is empty
      */
     public Item peek() {
         if (isEmpty())
@@ -167,7 +167,7 @@ public class Stack<Item> implements Iterable<Item> {
      * Unit tests the {@code Stack} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Stack<String> stack = new Stack<String>();

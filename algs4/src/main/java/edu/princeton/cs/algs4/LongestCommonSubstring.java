@@ -60,9 +60,9 @@ public class LongestCommonSubstring {
      * Returns the longest common string of the two specified strings.
      *
      * @param s
-     *            one string
+     *        one string
      * @param t
-     *            the other string
+     *        the other string
      * @return the longest common string that appears as a substring in both {@code s} and {@code t}; the empty string
      *         if no such string
      */
@@ -92,7 +92,7 @@ public class LongestCommonSubstring {
      * computes the longest common substring; and prints the results to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in1 = new In(args[0]);

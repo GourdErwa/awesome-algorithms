@@ -36,7 +36,7 @@ public class CollisionSystem {
      * the simulation.
      *
      * @param particles
-     *            the array of particles
+     *        the array of particles
      */
     public CollisionSystem(Particle[] particles) {
         this.particles = particles.clone(); // defensive copy
@@ -80,7 +80,7 @@ public class CollisionSystem {
      * Simulates the system of particles for the specified amount of time.
      *
      * @param limit
-     *            the amount of time
+     *        the amount of time
      */
     public void simulate(double limit) {
 
@@ -171,7 +171,7 @@ public class CollisionSystem {
      * (or generates {@code N} random particles if a command-line integer is specified); simulates the system.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

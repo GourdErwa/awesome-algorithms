@@ -43,7 +43,7 @@ public class AmericanFlagX {
      * algorithm.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(String[] a) {
         sort(a, 0, a.length - 1);
@@ -152,7 +152,7 @@ public class AmericanFlagX {
      * and prints them to standard output in ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

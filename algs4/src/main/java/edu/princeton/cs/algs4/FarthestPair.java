@@ -40,9 +40,9 @@ public class FarthestPair {
      * Computes the farthest pair of points in the specified array of points.
      *
      * @param points
-     *            the array of points
+     *        the array of points
      * @throws IllegalArgumentException
-     *             if {@code points} is {@code null} or if any entry in {@code points[]} is {@code null}
+     *         if {@code points} is {@code null} or if any entry in {@code points[]} is {@code null}
      */
     public FarthestPair(Point2D[] points) {
         if (points == null)
@@ -148,7 +148,7 @@ public class FarthestPair {
      * the pair to standard output.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int n = StdIn.readInt();

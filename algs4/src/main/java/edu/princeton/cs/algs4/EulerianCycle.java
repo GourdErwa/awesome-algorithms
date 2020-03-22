@@ -62,7 +62,7 @@ public class EulerianCycle {
      * Computes an Eulerian cycle in the specified graph, if one exists.
      *
      * @param G
-     *            the graph
+     *        the graph
      */
     public EulerianCycle(Graph G) {
 
@@ -245,7 +245,7 @@ public class EulerianCycle {
      * Unit tests the {@code EulerianCycle} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);

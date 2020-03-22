@@ -28,15 +28,15 @@ public class Edge implements Comparable<Edge> {
      * Initializes an edge between vertices {@code v} and {@code w} of the given {@code weight}.
      *
      * @param v
-     *            one vertex
+     *        one vertex
      * @param w
-     *            the other vertex
+     *        the other vertex
      * @param weight
-     *            the weight of this edge
+     *        the weight of this edge
      * @throws IllegalArgumentException
-     *             if either {@code v} or {@code w} is a negative integer
+     *         if either {@code v} or {@code w} is a negative integer
      * @throws IllegalArgumentException
-     *             if {@code weight} is {@code NaN}
+     *         if {@code weight} is {@code NaN}
      */
     public Edge(int v, int w, double weight) {
         if (v < 0)
@@ -72,10 +72,10 @@ public class Edge implements Comparable<Edge> {
      * Returns the endpoint of this edge that is different from the given vertex.
      *
      * @param vertex
-     *            one endpoint of this edge
+     *        one endpoint of this edge
      * @return the other endpoint of this edge
      * @throws IllegalArgumentException
-     *             if the vertex is not one of the endpoints of this edge
+     *         if the vertex is not one of the endpoints of this edge
      */
     public int other(int vertex) {
         if (vertex == v)
@@ -91,7 +91,7 @@ public class Edge implements Comparable<Edge> {
      * the reference equality implementation inherited from {@code Object}.
      *
      * @param that
-     *            the other edge
+     *        the other edge
      * @return a negative integer, zero, or positive integer depending on whether the weight of this is less than, equal
      *         to, or greater than the argument edge
      */
@@ -113,7 +113,7 @@ public class Edge implements Comparable<Edge> {
      * Unit tests the {@code Edge} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         Edge e = new Edge(12, 34, 5.67);

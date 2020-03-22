@@ -40,7 +40,7 @@ public class Selection {
      * Rearranges the array in ascending order, using the natural order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(Comparable[] a) {
         int n = a.length;
@@ -60,9 +60,9 @@ public class Selection {
      * Rearranges the array in ascending order, using a comparator.
      *
      * @param a
-     *            the array
+     *        the array
      * @param comparator
-     *            the comparator specifying the order
+     *        the comparator specifying the order
      */
     public static void sort(Object[] a, Comparator comparator) {
         int n = a.length;
@@ -141,7 +141,7 @@ public class Selection {
      * ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();

@@ -49,9 +49,9 @@ public class EdgeWeightedGraph {
      * Initializes an empty edge-weighted graph with {@code V} vertices and 0 edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      */
     public EdgeWeightedGraph(int V) {
         if (V < 0)
@@ -68,13 +68,13 @@ public class EdgeWeightedGraph {
      * Initializes a random edge-weighted graph with {@code V} vertices and <em>E</em> edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of edges
+     *        the number of edges
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      * @throws IllegalArgumentException
-     *             if {@code E < 0}
+     *         if {@code E < 0}
      */
     public EdgeWeightedGraph(int V, int E) {
         this(V);
@@ -95,13 +95,13 @@ public class EdgeWeightedGraph {
      * entry separated by whitespace.
      *
      * @param in
-     *            the input stream
+     *        the input stream
      * @throws IllegalArgumentException
-     *             if {@code in} is {@code null}
+     *         if {@code in} is {@code null}
      * @throws IllegalArgumentException
-     *             if the endpoints of any edge are not in prescribed range
+     *         if the endpoints of any edge are not in prescribed range
      * @throws IllegalArgumentException
-     *             if the number of vertices or edges is negative
+     *         if the number of vertices or edges is negative
      */
     public EdgeWeightedGraph(In in) {
         if (in == null)
@@ -136,7 +136,7 @@ public class EdgeWeightedGraph {
      * Initializes a new edge-weighted graph that is a deep copy of {@code G}.
      *
      * @param G
-     *            the edge-weighted graph to copy
+     *        the edge-weighted graph to copy
      */
     public EdgeWeightedGraph(EdgeWeightedGraph G) {
         this(G.V());
@@ -181,9 +181,9 @@ public class EdgeWeightedGraph {
      * Adds the undirected edge {@code e} to this edge-weighted graph.
      *
      * @param e
-     *            the edge
+     *        the edge
      * @throws IllegalArgumentException
-     *             unless both endpoints are between {@code 0} and {@code V-1}
+     *         unless both endpoints are between {@code 0} and {@code V-1}
      */
     public void addEdge(Edge e) {
         int v = e.either();
@@ -199,10 +199,10 @@ public class EdgeWeightedGraph {
      * Returns the edges incident on vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the edges incident on vertex {@code v} as an Iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<Edge> adj(int v) {
         validateVertex(v);
@@ -213,10 +213,10 @@ public class EdgeWeightedGraph {
      * Returns the degree of vertex {@code v}.
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the degree of vertex {@code v}
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public int degree(int v) {
         validateVertex(v);
@@ -272,7 +272,7 @@ public class EdgeWeightedGraph {
      * Unit tests the {@code EdgeWeightedGraph} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

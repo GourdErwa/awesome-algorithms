@@ -35,9 +35,9 @@ public class FlowNetwork {
      * Initializes an empty flow network with {@code V} vertices and 0 edges.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      */
     public FlowNetwork(int V) {
         if (V < 0)
@@ -54,13 +54,13 @@ public class FlowNetwork {
      * between 0 and 99 and the flow values are zero.
      *
      * @param V
-     *            the number of vertices
+     *        the number of vertices
      * @param E
-     *            the number of edges
+     *        the number of edges
      * @throws IllegalArgumentException
-     *             if {@code V < 0}
+     *         if {@code V < 0}
      * @throws IllegalArgumentException
-     *             if {@code E < 0}
+     *         if {@code E < 0}
      */
     public FlowNetwork(int V, int E) {
         this(V);
@@ -80,11 +80,11 @@ public class FlowNetwork {
      * separated by whitespace.
      *
      * @param in
-     *            the input stream
+     *        the input stream
      * @throws IllegalArgumentException
-     *             if the endpoints of any edge are not in prescribed range
+     *         if the endpoints of any edge are not in prescribed range
      * @throws IllegalArgumentException
-     *             if the number of vertices or edges is negative
+     *         if the number of vertices or edges is negative
      */
     public FlowNetwork(In in) {
         this(in.readInt());
@@ -129,9 +129,9 @@ public class FlowNetwork {
      * Adds the edge {@code e} to the network.
      *
      * @param e
-     *            the edge
+     *        the edge
      * @throws IllegalArgumentException
-     *             unless endpoints of edge are between {@code 0} and {@code V-1}
+     *         unless endpoints of edge are between {@code 0} and {@code V-1}
      */
     public void addEdge(FlowEdge e) {
         int v = e.from();
@@ -147,10 +147,10 @@ public class FlowNetwork {
      * Returns the edges incident on vertex {@code v} (includes both edges pointing to and from {@code v}).
      *
      * @param v
-     *            the vertex
+     *        the vertex
      * @return the edges incident on vertex {@code v} as an Iterable
      * @throws IllegalArgumentException
-     *             unless {@code 0 <= v < V}
+     *         unless {@code 0 <= v < V}
      */
     public Iterable<FlowEdge> adj(int v) {
         validateVertex(v);
@@ -193,7 +193,7 @@ public class FlowNetwork {
      * Unit tests the {@code FlowNetwork} data type.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         In in = new In(args[0]);

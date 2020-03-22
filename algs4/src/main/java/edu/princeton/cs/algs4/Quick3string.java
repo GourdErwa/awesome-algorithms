@@ -30,7 +30,7 @@ public class Quick3string {
      * Rearranges the array of strings in ascending order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(String[] a) {
         StdRandom.shuffle(a);
@@ -121,7 +121,7 @@ public class Quick3string {
      * standard output in ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

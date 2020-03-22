@@ -98,11 +98,11 @@ public class PatriciaSET implements Iterable<String> {
      * Adds the key to the set if it is not already present.
      *
      * @param key
-     *            the key to add
+     *        the key to add
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public void add(String key) {
         if (key == null)
@@ -148,12 +148,12 @@ public class PatriciaSET implements Iterable<String> {
      * Does the set contain the given key?
      *
      * @param key
-     *            the key
+     *        the key
      * @return {@code true} if the set contains {@code key} and {@code false} otherwise
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public boolean contains(String key) {
         if (key == null)
@@ -176,11 +176,11 @@ public class PatriciaSET implements Iterable<String> {
      * Removes the key from the set if the key is present.
      *
      * @param key
-     *            the key
+     *        the key
      * @throws IllegalArgumentException
-     *             if {@code key} is {@code null}
+     *         if {@code key} is {@code null}
      * @throws IllegalArgumentException
-     *             if {@code key} is the empty string.
+     *         if {@code key} is the empty string.
      */
     public void delete(String key) {
         if (key == null)
@@ -375,7 +375,7 @@ public class PatriciaSET implements Iterable<String> {
      * start of each pass).
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         PatriciaSET set = new PatriciaSET();

@@ -56,7 +56,7 @@ public class StdArrayIO {
      * Prints an array of doubles to standard output.
      *
      * @param a
-     *            the 1D array of doubles
+     *        the 1D array of doubles
      */
     public static void print(double[] a) {
         int n = a.length;
@@ -88,7 +88,7 @@ public class StdArrayIO {
      * Prints the 2D array of doubles to standard output.
      *
      * @param a
-     *            the 2D array of doubles
+     *        the 2D array of doubles
      */
     public static void print(double[][] a) {
         int m = a.length;
@@ -120,7 +120,7 @@ public class StdArrayIO {
      * Prints an array of integers to standard output.
      *
      * @param a
-     *            the 1D array of integers
+     *        the 1D array of integers
      */
     public static void print(int[] a) {
         int n = a.length;
@@ -152,7 +152,7 @@ public class StdArrayIO {
      * Print a 2D array of integers to standard output.
      *
      * @param a
-     *            the 2D array of integers
+     *        the 2D array of integers
      */
     public static void print(int[][] a) {
         int m = a.length;
@@ -184,7 +184,7 @@ public class StdArrayIO {
      * Prints a 1D array of booleans to standard output.
      *
      * @param a
-     *            the 1D array of booleans
+     *        the 1D array of booleans
      */
     public static void print(boolean[] a) {
         int n = a.length;
@@ -219,7 +219,7 @@ public class StdArrayIO {
      * Prints a 2D array of booleans to standard output.
      *
      * @param a
-     *            the 2D array of booleans
+     *        the 2D array of booleans
      */
     public static void print(boolean[][] a) {
         int m = a.length;
@@ -240,7 +240,7 @@ public class StdArrayIO {
      * Unit tests {@code StdArrayIO}.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
 

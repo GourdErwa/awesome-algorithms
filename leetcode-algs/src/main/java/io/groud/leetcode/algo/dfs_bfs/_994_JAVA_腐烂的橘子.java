@@ -12,6 +12,12 @@ public class _994_JAVA_腐烂的橘子 {
         // 遍历四个方向的节点
         private final int[][] around = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
+        /**
+         * aa
+         *
+         * @param grid aa
+         * @return aa
+         */
         public int orangesRotting(int[][] grid) {
             if (grid == null || grid.length == 0)
                 return 0;

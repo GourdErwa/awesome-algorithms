@@ -33,7 +33,7 @@ public class MSD {
      * Rearranges the array of extended ASCII strings in ascending order.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(String[] a) {
         int n = a.length;
@@ -114,7 +114,7 @@ public class MSD {
      * Rearranges the array of 32-bit integers in ascending order. Currently assumes that the integers are nonnegative.
      *
      * @param a
-     *            the array to be sorted
+     *        the array to be sorted
      */
     public static void sort(int[] a) {
         int n = a.length;
@@ -190,7 +190,7 @@ public class MSD {
      * standard output in ascending order.
      *
      * @param args
-     *            the command-line arguments
+     *        the command-line arguments
      */
     public static void main(String[] args) {
         String[] a = StdIn.readAllStrings();
