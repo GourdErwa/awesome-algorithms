@@ -43,10 +43,34 @@ public class _72_JAVA_编辑距离 {
      *
      * 5. 优化时间空间复杂度
      */
+    /*
+     * aaaaa -> bbbbbaaaaa
+     */
     static class Solution {
         public int minDistance(String word1, String word2) {
-
-            return -1;
+            int l1 = word1.length();
+            int l2 = word2.length();
+            int[][] dp = new int[l1 + 1][l2 + 1];
+            for (int i = 0; i <= l1; i++) {
+                for (int y = 0; y <= l2; y++) {
+                    if (i == 0) {
+                        dp[0][y] = y;
+                    } else if (y == 0) {
+                        dp[i][0] = i;
+                    } else if (word1.charAt(i - 1) == word2.charAt(y - 1)) { // 0 被空字符串代替，因此下标 - 1
+                        dp[i][y] = dp[i - 1][y - 1];
+                    } else {
+                        dp[i][y] = Math.min(dp[i - 1][y], Math.min(dp[i][y - 1], dp[i - 1][y - 1])) + 1;
+                    }
+                    System.out.println("dp[" + i + "][" + y + "]=" + dp[i][y]);
+                }
+            }
+            return dp[l1][l2];
         }
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.minDistance("aaa", "bbbaaa"));
     }
 }
