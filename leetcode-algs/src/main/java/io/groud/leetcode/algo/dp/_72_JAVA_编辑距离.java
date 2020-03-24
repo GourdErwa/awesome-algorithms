@@ -8,7 +8,7 @@ package io.groud.leetcode.algo.dp;
  */
 public class _72_JAVA_编辑距离 {
 
-    /*
+    /**
      * dp 思路
      * ==========================================
      * 1. 确定状态
@@ -53,9 +53,9 @@ public class _72_JAVA_编辑距离 {
             int[][] dp = new int[l1 + 1][l2 + 1];
             for (int i = 0; i <= l1; i++) {
                 for (int y = 0; y <= l2; y++) {
-                    if (i == 0) {
+                    if (i == 0) { // 边界初始化
                         dp[0][y] = y;
-                    } else if (y == 0) {
+                    } else if (y == 0) { // 边界初始化
                         dp[i][0] = i;
                     } else if (word1.charAt(i - 1) == word2.charAt(y - 1)) { // 0 被空字符串代替，因此下标 - 1
                         dp[i][y] = dp[i - 1][y - 1];

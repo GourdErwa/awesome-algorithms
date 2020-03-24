@@ -7,7 +7,8 @@ package io.groud.leetcode.algo.dp;
  * <p>
  * 示例 1：
  * <p>
- * 输入: "babad" 输出: "bab" 注意: "aba" 也是一个有效答案。 示例 2：
+ * 输入: "babad" 输出: "bab" 注意: "aba" 也是一个有效答案。
+ * 示例 2：
  * <p>
  * 输入: "cbbd" 输出: "bb"
  * <p>
@@ -19,15 +20,17 @@ package io.groud.leetcode.algo.dp;
  */
 public class _5_JAVA_最长回文子串 {
 
-    /*
+    /**
      * dp 思路
      * ==========================================
      * 1. 确定状态
      * 最优策略的最后一步：找到最长的回文子串
      * 子问题：
+     * dp[i][j] 为 i-j 位置最长的回文子串
+     * 如果当前数字为
      *
      * 2. 转移方程
-     * dp[i][j] = max(dp[i+1,j-1],S(j)==S(i-1))
+     * dp[i][j] = max(dp[i+1,j-1] , S(j)==S(i-1))
      *
      * 3. 初始条件与边界情况
      *
@@ -43,11 +46,15 @@ public class _5_JAVA_最长回文子串 {
             boolean[][] dp = new boolean[length][length];
             int maxLen = 1;
             int start = 0;
-            for (int i = 1; i < length; i++) {
-                for (int j = 0; j < i; j++) {
-                    boolean b = (i - j < 3 || dp[i + 1][j - 1]) && s.charAt(i) == s.charAt(j);
+
+            for (int i = 0; i < length; i++) { // i 先移动
+                for (int j = 0; j < i; j++) { // j 开始扫描 [0,i) 的位置
+                    if (s.charAt(i) == s.charAt(j)) {
+
+                    }
+                    boolean b = ((i - j <= 3) || dp[i + 1][j - 1]) && s.charAt(i) == s.charAt(j);
                     if (b) {
-                        dp[j][j] = true;
+                        dp[i][j] = true;
                         int curLen = i - j + 1;
                         if (curLen > maxLen) {
                             maxLen = curLen;
@@ -63,5 +70,6 @@ public class _5_JAVA_最长回文子串 {
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.longestPalindrome("babad"));
+        System.out.println(solution.longestPalindrome("abccbaaaaa"));
     }
 }
