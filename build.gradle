@@ -1,6 +1,7 @@
 allprojects {
   repositories {
     mavenCentral()
+    jcenter()
   }
 
   apply plugin: 'idea'
@@ -8,8 +9,9 @@ allprojects {
   version '0.1'
 }
 
+
 subprojects {
-  apply plugin: 'java'
+  apply plugin: 'java-library'
   apply plugin: 'scala'
 
   sourceCompatibility = 1.8
@@ -28,8 +30,25 @@ subprojects {
   dependencies {
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.13.1'
     testCompile group: 'org.scalatest', name: 'scalatest_2.13', version: '3.2.0-M1'
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.6.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.4.2'
   }
+
+  idea {
+    targetVersion = "11"
+  }
+
+//  sourceSets {
+//    main {
+//      scala {
+//        srcDirs = ['src/java', 'src/scala']
+//      }
+//    }
+//    test {
+//      scala {
+//        srcDirs = ['test/java', 'test/scala']
+//      }
+//    }
+//  }
 
   test {
     useJUnitPlatform()

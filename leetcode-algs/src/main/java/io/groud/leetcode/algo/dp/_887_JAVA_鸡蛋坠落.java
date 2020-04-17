@@ -1,4 +1,4 @@
-package io.groud.leetcode.algo;
+package io.groud.leetcode.algo.dp;
 
 /**
  * https://leetcode-cn.com/problems/super-egg-drop/
