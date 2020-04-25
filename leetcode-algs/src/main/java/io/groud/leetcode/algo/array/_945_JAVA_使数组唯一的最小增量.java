@@ -11,7 +11,8 @@ public class _945_JAVA_使数组唯一的最小增量 {
      */
     class Solution {
         public int minIncrementForUnique(int[] A) {
-            if (A == null || A.length == 0) return 0;
+            if (A == null || A.length == 0)
+                return 0;
             Arrays.sort(A); // sort
             int ans = 0;
             for (int i = 1; i < A.length; i++) {
@@ -33,7 +34,8 @@ public class _945_JAVA_使数组唯一的最小增量 {
         private final int[] pos = new int[80000];
 
         public int minIncrementForUnique(int[] A) {
-            if (A == null || A.length == 0) return 0;
+            if (A == null || A.length == 0)
+                return 0;
             Arrays.fill(pos, -1); // 填充 -1 ，表示该位置没有值
             int ans = 0;
             for (int i : A) {

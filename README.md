@@ -7,10 +7,10 @@ JDK 1.8、Scala 2.13、Gradle 6.2
 |[data-structures](./data-structures)|数据结构实现|√|×|
 |[algs4](./algs4)|《算法 4》源码|√|×|
 |[algs-template](./algs-template)|常用算法模板总结|√|×|
-|[leetcode-algs](./leetcode-algs)|LeetCode-算法专栏|√|×|
-|[leetcode-concurrency](./leetcode-concurrency)|LeetCode-并发专栏|√|×|
-|[leetcode-jz_offer](./leetcode-jz_offer)|LeetCode-剑指-Offer 专栏|√|×|
-|[leetcode-msbd](./leetcode-msbd)|LeetCode-程序员面试宝典专栏|√|×|
+|[leetcode-algs](./leetcode-algs)|力扣-算法专栏|√|×|
+|[leetcode-concurrency](./leetcode-concurrency)|力扣-并发专栏|√|×|
+|[leetcode-jz_offer](./leetcode-jz_offer)|力扣-《剑指 Offer》专栏|√|×|
+|[leetcode-cxymsjd6](./leetcode-cxymsjd6)|力扣-《程序员面试金典（第 6 版）》专栏|√|×|
 
 ## 推荐
 - [Leetcode](https://leetcode-cn.com/) - 算法练习

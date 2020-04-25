@@ -9,7 +9,6 @@ public class _887_JAVA_鸡蛋坠落 {
     class Solution {
         public int superEggDrop(int K, int N) {
 
-
             return -1;
         }
     }

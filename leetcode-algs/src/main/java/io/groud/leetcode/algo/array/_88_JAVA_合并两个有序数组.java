@@ -1,7 +1,5 @@
 package io.groud.leetcode.algo.array;
 
-import java.util.Arrays;
-
 /**
  * https://leetcode-cn.com/problems/merge-sorted-array/
  */
